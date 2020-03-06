@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{%- include title.html -%}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            {{ content }}
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            {%- include menu.html -%}
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
