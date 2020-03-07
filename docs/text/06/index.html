@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="6장-브랜치">6장 브랜치</h2>
+<p>소스 코드 이력을 관리하는 버전 외에 깃과 같은 VCS 도구를 사용하는 또 다른 이유는 브랜치 작업 때문입니다. 이 장에서는 브랜치를 자세히 알아봅니다.</p>
+
+<h2><br /></h2>
+
+<h3 id="학습내용">학습내용</h3>
+<ul>
+  <li>6.1 새로운 작업 163
+    <ul>
+      <li>6.1.1 브랜치 작업 163</li>
+      <li>6.1.2 깃 브랜치 특징 164</li>
+    </ul>
+  </li>
+  <li>6.2 실습 준비 165
+    <ul>
+      <li>6.2.1 저장소 생성 및 초기화 165</li>
+      <li>6.2.2 기본 브랜치 166</li>
+    </ul>
+  </li>
+  <li>6.3 브랜치 생성 166
+    <ul>
+      <li>6.3.1 브랜치 생성 167</li>
+      <li>6.3.2 브랜치 이름 169</li>
+      <li>6.3.3 소스트리 브랜치 170</li>
+    </ul>
+  </li>
+  <li>6.4 브랜치 확인 172
+    <ul>
+      <li>6.4.1 간단 브랜치 목록 172</li>
+      <li>6.4.2 브랜치 해시 173</li>
+      <li>6.4.3 브랜치 세부 사항 확인 173</li>
+    </ul>
+  </li>
+  <li>6.5 브랜치 이동 174
+    <ul>
+      <li>6.5.1 체크아웃 174</li>
+      <li>6.5.2 브랜치 동작 원리 176</li>
+      <li>6.5.3 소스트리 176</li>
+      <li>6.5.4 이전 브랜치 177</li>
+      <li>6.5.5 워킹 디렉터리 정리 177</li>
+    </ul>
+  </li>
+  <li>6.6 브랜치 공간 179
+    <ul>
+      <li>6.6.1 브랜치 로그 179</li>
+      <li>6.6.2 브랜치 소스 확인 180</li>
+      <li>6.7 HEAD 포인터 181</li>
+      <li>6.7.1 마지막 커밋 181</li>
+      <li>6.7.2 브랜치 HEAD 182</li>
+      <li>6.7.3 소스트리 HEAD 183</li>
+      <li>6.7.4 상대적 위치 183</li>
+      <li>6.7.5 AHEAD, BHEAD 184</li>
+    </ul>
+  </li>
+  <li>6.8 생성과 이동 185
+    <ul>
+      <li>6.8.1 자동 이동 옵션 185</li>
+      <li>6.8.2 커밋 이동 186</li>
+      <li>6.8.3 HEAD를 활용한 이동 188</li>
+      <li>6.8.4 돌아오기 188</li>
+    </ul>
+  </li>
+  <li>6.9 원격 브랜치 189
+    <ul>
+      <li>6.9.1 리모트 브랜치 189</li>
+      <li>6.9.2 실습 준비 190</li>
+      <li>6.9.3 브랜치 추적 191</li>
+      <li>6.9.4 브랜치 업로드 191</li>
+      <li>6.9.5 이름이 다른 브랜치 194</li>
+      <li>6.9.6 업스트림 트래킹 195</li>
+      <li>6.9.7 원격 브랜치 복사 200</li>
+      <li>6.9.8 업스트림 연결 203</li>
+    </ul>
+  </li>
+  <li>6.10 브랜치 전송 205
+    <ul>
+      <li>6.10.1 브랜치 푸시 205</li>
+      <li>6.10.2 브랜치 페치 207</li>
+    </ul>
+  </li>
+  <li>6.11 브랜치 삭제 208
+    <ul>
+      <li>6.11.1 일반적인 삭제 방법 208</li>
+      <li>6.11.2 강제로 삭제하는 방법 209</li>
+      <li>6.11.3 소스트리에서 삭제하는 방법 210</li>
+      <li>6.11.4 리모트 브랜치를 삭제하는 방법 211</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="-1"><br /></h2>
+
+<h3 id="정리">정리</h3>
+<p>이 장에서는 브랜치 개념과 여러 브랜치를 이동하고 작업하는 방법들을 알아보았습니다. 브랜치는 기존 코드를 가상으로 분리합니다. 분리해서 격리된 브랜치는 상호 간섭 없이 별개 작업을 수행할 수 있습니다. 새로운 프로젝트로 발전시켜 나아갈 때 브랜치 기능은 매우 유용합니다.</p>
+
+<p>깃의 브랜치는 다른 개발자와 협업하여 프로젝트를 진행할 때도 매우 유용합니다. 서로 간섭 없이 코드를 개선하고, 나아가 병합도 가능하기 때문입니다. 처음에는 브랜치를 좀 어렵게 느낄 수 있습니다. 하지만 깃의 원리와 개념을 잘 이해하고, 자주 사용하다 보면 생각보다 그리 어렵지 않습니다.</p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

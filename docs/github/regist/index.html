@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="회원가입">회원가입</h1>
+<p>깃허브 서비스를 사용하기위해서는 회원 가입을 해야 합니다.
+깃허브의 공식 사이트는 <code class="highlighter-rouge">https://github.com</code> 입니다. 사이트로 접속합니다.</p>
+
+<p><img src="./img/regist_01.png" alt="호스팅" /></p>
+
+<p>깃허브에 회원가입을 하기 위해서는 <code class="highlighter-rouge">이메일</code> 주소가 필요합니다. 
+깃은 커밋을 할때 사용자 정보로 이메일을 사용합니다. 동일한 이메일로 회원가입을 하는 것을 추천합니다.</p>
+
+<p>이메일은 향후 깃의 커밋과 각종 알람 등을 메일로 받아 보는 데 좋습니다. 또한, 상대방의 이메일 주소를 알기 때문에 연락도 할 수 있을 것입니다.
+사이트 오른쪽 상단의 <code class="highlighter-rouge">sign up</code>을 클릭합니다. 회원 가입 항목은 간단합니다. 단한 몇 개의 정보 입력만으로 쉽게 회원 가입을 할 수 있습니다.</p>
+
+<p><img src="./img/regist_02.png" alt="호스팅" /></p>
+
+<p><code class="highlighter-rouge">Username</code>은 중복하여 생성할 수 없습니다. 사용자 이름은 영문으로 작성하며, 저장소를 구별하는 값으로 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/사용자이름
+</code></pre></div></div>
+
+<p>또한, 다른 조직(organization) 이름으로도 사용을 할 수 없습니다. 이메일 주소와 암호를 입력합니다.</p>
+
+<p><img src="./img/regist_03.png" alt="호스팅" /></p>
+
+<p>깃허브의 모든 서비스는 무료입니다. 하지만 좀 더 큰 조직의 운영과 저장소를 유지하기 위해서는 약간의 비용을 받습니다. Free를 선택합니다.</p>
+
+<p>Free는 공개된 저장소를 무제한으로 생성할 수 있습니다. 최근에는 3명까지 협업할 수 있는 개인 저장소도 제공하고 있습니다. 가격 정책은 매번 변동되니, 이를 확인하여 계정을 유지하도록 합니다.</p>
+
+<p>마지막으로 간이 설문조사에 응답하면 회원 가입 절차가 끝납니다.</p>
+
+<p><img src="./img/regist_04.png" alt="호스팅" /></p>
+
+<p>다음을 선택하면 깃허브의 첫 대시보드가 출력됩니다. 상세한 대시보드 구성에 대해서는 다시 설명합니다.</p>
+
+<p><img src="./img/regist_05.png" alt="호스팅" /></p>
+
+<h2 id="이메일-인증">이메일 인증</h2>
+<p>회원을 가입하게 되면 한 가지 더 해주어야 할 것이 있는데, 이메일을 통한 본인 인증입니다.</p>
+
+<p>자신의 이메일을 확인해봅니다. 메일목록에서 <code class="highlighter-rouge">[GitHub] Please verify your email address.</code>로 표시된 메일을 클릭하여 메일 안에 있는 <code class="highlighter-rouge">Verify email address</code>를 클릭합니다. 자신의 메일 계정의 소유자인지를 확인하는 절차입니다.</p>
+
+<p><img src="./img/regist_06.png" alt="호스팅" /></p>
+
+<p>이제 모든 회원 가입 절차가 끝났습니다. 새로운 저장소를 만들어 깃허브를 사용해 봅니다.</p>
+
+<h2 id="대시보드">대시보드</h2>
+<p>깃허브 사이트에 로그인 시 자동으로 대시보드로 이동하게 됩니다. 
+대시보드는 상단의 메뉴 부분과 여러 사람들과의 이야기 내역, 오른쪽에는 자신의 깃저장소 상태를 확인할 수 있습니다.</p>
+
+<p><img src="./img/regist_07.png" alt="호스팅" /></p>
+
+<p>깃허브의 사이트 구조는 매우 단순하게 되어 있습니다. 상단에는 메뉴 대신 빠르게 서비스에 접근할 수 있도록 툴바 형태로 되어 있습니다.</p>
+
+<p>상단툴바 왼쪽에는 깃허브 로고가 위치하고 있습니다. 로고를 클릭하면 언제든지 내 계정의 대시보드로 이동합니다. 로고 옆에는 검색창이 있습니다. 사용자 또는 저장소를 검색할 수 있습니다.</p>
+
+<h2 id="단축키">단축키</h2>
+<p>깃허브는 웹 기반의 서비스 사이트입니다. 하지만 브라우저를 통하여 쉽고 빠르게 깃허브를 사용할 수 있도록 단축키를 지원합니다.</p>
+
+<p>깃허브 페이지에 접속한 후에 <code class="highlighter-rouge">shift+/</code> 키를 눌러 봅니다. 그림과 같이 단축키 화면이 실행되는 것을 볼 수 있습니다.</p>
+
+<p><img src="./img/regist_08.png" alt="호스팅" /></p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

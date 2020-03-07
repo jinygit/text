@@ -1,8 +1,7 @@
 ---
-layout: page
-title:  "오류 메시지 처리"
+layout: home
 ---
-
+## 오류 메시지 처리
 ## refusing to merge unrelated histories
 만일 서로다른 두개의 프로젝트를 병합하고자 할때, 공통된 커밋이 존재하지 않는다. 따라서, 두개의 프로젝트는 기본적으로 병합을 할 수 없습니다.
 

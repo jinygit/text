@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="상용과-오픈-소스">상용과 오픈 소스</h2>
+<p>코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</p>
+
+<h3 id="대가-지급">대가 지급</h3>
+<p>소프트웨어는 지적재산권에 의해서 보호를 받습니다. 원칙적으로 소프트웨어는 저작권자만 독점 사용 권리를 갖습니다. 저작권은 임의로 사용할 수 없으며 이에 대한 대가를 지불하여야 합니다.</p>
+
+<p>하지만 창작자가 독점적 저작권을 배제하여 공공의 대상을 상대로 사용을 허락한 오픈 소스도 존재합니다. 이를 구별하는 관점은 크게 3가지입니다.</p>
+
+<ul>
+  <li>커뮤니티</li>
+  <li>소프트웨어 개발</li>
+  <li>비즈니스</li>
+</ul>
+
+<p>이 3가지 관점은 오픈 소스와 상용 소프트웨어의 접근 방식에 차이점을 가지게 됩니다.</p>
+
+<p>소프트웨어 저작권은 다른 사람들도 사용할 수 있도록 대여 형식으로 조건부 허락합니다. 이와 관련하여 유료와 무료로 구분합니다.</p>
+
+<h3 id="상용-소프트웨어">상용 소프트웨어</h3>
+<p>상용 소프트웨어는 시장 요구에 의해서 제작된 제품입니다. 특정한 사용자를 대상으로 하며 사용에 대한 비용을 지급하여야 합니다.</p>
+
+<p>상용 소프트웨어의 특징은 사용자 요구 사항에 맞추어 기능을 추출하고, 설계가 이루어집니다. 주로 기업에 의해서 주도되고, 고객에 대한 높은 수준의 제품 제공하며 기술을 지원합니다.</p>
+
+<h3 id="오픈-소스">오픈 소스</h3>
+<p>오픈 소스의 공통된 점은 한사람의 아이디어에서 시작되었다는 것입니다. 상용 소프트웨어와 달리 커뮤니티에 의해서 자발적 수행된 결과를 반영하는 것이 특징입니다. 오픈 소스는 비용을 지불하지 않고도 사용할 수 있습니다. 대신 라이선스가 존재하며 이를 유지할 의무가 있습니다.</p>
+
+<p>오픈 소스는 아이디어의 독창성과 파급으로 인하여 전체에 확산됩니다. 오픈 소스는 커뮤니티 주도 하에 개발되기 때문에 속도가 느린 단점이 있습니다. 그리고 배포(release)가 잦은 특징이 있습니다. 대신 오랫동안 프로젝트가 유지되고 존재합니다.</p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

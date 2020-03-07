@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="hotfix">Hotfix</h1>
+<p>Hotfix는 배포된 버전에 문제가 생기면 해결하기 위한 전략입니다. 별도로 브랜치를 생성하고 버그를 수정합니다. Hotfix는 짧은 호흡의 브랜치로 한 가지 작업만을 위해서 생성되고 삭제됩니다.</p>
+
+<h2 id="브랜치-의미">브랜치 의미</h2>
+<p>Hotfix 전략은 기존의 코드가 새로운 배포의 버전이 아닙니다. 코드의 안정성을 위해서 긴급히 버그를 수정해야 하는 경우를 의미합니다. 
+버그 수정(hotfix)은 develop와 master 특정 버전의 버그를 수정 작업을 동시에 할 수 있습니다.</p>
+
+<h2 id="브랜치-생성">브랜치 생성</h2>
+<p>핫픽스 브랜치는 master 브랜치에 있는 태그를 기준으로 파생합니다. 하지만 태그를 이용하여 새로운 브랜치를 생성할 수 없기 때문에 hotfix를 만들기 위해서는 커밋 ID 또는 임시 브랜치를 생성한 후에 사용하는 것을 추천합니다.</p>
+
+<p>핫픽스를 생성하기 전에 원격 저장소에서 fetch를 통하여 최신 상태로 유지해주는 것이 좋습니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch origin
+</code></pre></div></div>
+
+<p>핫픽스로 명칭할 버전 이름을 생성합니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow hotfix start 버전명 브랜치명
+</code></pre></div></div>
+
+<p>플로우는 핫픽스를 처리하기 위해서 hofix 명령어를 제공합니다. 새로운 핫픽스를 생성합니다.</p>
+
+<p>기존의 1.0.0 버전을 기반으로 새로운 1.0.1 핫픽스를 생성합니다. 기준점이 없는 경우에는 최신의 master의 커밋 ID를 기준으로 새로운 핫픽스를 생성합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git flow hotfix start <span class="s1">'1.0.1'</span>
+Switched to a new branch <span class="s1">'hotfix/1.0.1'</span>
+Summary of actions:
+- A new branch <span class="s1">'hotfix/1.0.1'</span> was created, based on <span class="s1">'1.0.0'</span>
+- You are now on branch <span class="s1">'hotfix/1.0.1'</span>
+Follow-up actions:
+- Bump the version number now!
+- Start committing your hot fixes
+- When <span class="k">done</span>, run:
+     git flow hotfix finish <span class="s1">'1.0.1'</span>
+</code></pre></div></div>
+
+<p><img src="./img/gitflow_hotfix_01.png" alt="Hotfix" /></p>
+
+<h2 id="버그-수정">버그 수정</h2>
+<p>생성된 핫픽스에서 긴급하게 수정해야 되는 버그들을 수정합니다. 이때 테스트도 같이 진행하도록 합니다.</p>
+
+<p>공동으로 버그의 수정과 테스트가 필요한 경우 원격 저장소로 핫픽스를 배포할 수도 있습니다.</p>
+
+<p>코드를 수정해봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>code hello.htm ☜ VS Code를 실행합니다.
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>깃 플로우 실습<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>새로운 feature 기능1 추가<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>현재 버전 1.0.0 으로 배포 가능합니다. - hotfix 수정 1.0.1<span class="nt">&lt;/h3&gt;</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>hotfix/1.0.1<span class="o">)</span>
+<span class="nv">$ </span>git commit <span class="nt">-am</span> <span class="s2">"fix bug"</span>
+<span class="o">[</span>hotfix/1.0.1 649455a] fix bug
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></div>
+
+<p>버그를 수정하고 다시 커밋합니다.</p>
+
+<h2 id="핫픽스-완료">핫픽스 완료</h2>
+<p>핫픽스 브랜치에서 잘못된 코드를 수정합니다. 수정을 완료한 후에는 핫픽스를 종료합니다. Finish 옵션을 이용하여 핫픽스 브랜치를 종료할 수 있습니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow hotfix finish 버전이름
+</code></pre></div></div>
+
+<p>핫픽스가 브랜치가 종료되면 hotfix 브랜치는 master 브랜치로 병합이 이루어지게 됩니다. 또한, 병합과 동시에 지정한 핫픽스의 태그도 자동 생성됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>hotfix/1.0.1<span class="o">)</span>
+<span class="nv">$ </span>git flow hotfix finish 1.0.1
+Switched to branch <span class="s1">'master'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/master'</span><span class="nb">.</span>
+Merge made by the <span class="s1">'recursive'</span> strategy. ☜ 병합
+ hello.htm | 2 +-
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+Switched to branch <span class="s1">'develop'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/develop'</span><span class="nb">.</span>
+Merge made by the <span class="s1">'recursive'</span> strategy.
+ hello.htm | 2 +-
+ 1 file changed, 1 insertion<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+Deleted branch hotfix/1.0.1 <span class="o">(</span>was 649455a<span class="o">)</span><span class="nb">.</span>
+
+Summary of actions:
+- Hotfix branch <span class="s1">'hotfix/1.0.1'</span> has been merged into <span class="s1">'master'</span>
+- The hotfix was tagged <span class="s1">'1.0.1'</span>
+- Hotfix tag <span class="s1">'1.0.1'</span> has been back-merged into <span class="s1">'develop'</span>
+- Hotfix branch <span class="s1">'hotfix/1.0.1'</span> has been locally deleted
+- You are now on branch <span class="s1">'develop'</span>
+</code></pre></div></div>
+
+<p>① 핫픽스를 종료할 때는 병합 마스터 커밋 메시지를 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Merge branch 'hotfix/1.0.1'
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+</code></pre></div></div>
+
+<p>② 태그 메시지도 같이 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fix 1.0.1
+
+# Write a message for tag:
+#   1.0.1
+# Lines starting with '#' will be ignored.
+</code></pre></div></div>
+<p>③ 개발 브랜치 머지 커밋 메시지도 같이 작성합니다.</p>
+
+<p>핫픽스로 생성된 태그를 확인해봅니다. tag 명령어를 입력합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (develop)
+$ git tag
+1.0.0
+1.0.1
+</code></pre></div></div>
+<p>핫픽스를 통하여 생성된 태그를 확인할 수 있습니다.</p>
+
+<h2 id="핫픽스-배포">핫픽스 배포</h2>
+<p>로컬 저장소에 반영된 핫픽스는 완료된 후 자동으로 깃허브에 전송되지 않습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (develop)
+$ git branch -v
+* develop 5f4ef12 [ahead 3] Merge tag '1.0.1' into develop
+  master  bf5ec36 [ahead 2] Merge branch 'hotfix/1.0.1'
+</code></pre></div></div>
+
+<p>배포 과정과 유사한 작업으로 각각의 브랜치와 태그를 원격 저장소로 전송해주어야 합니다.</p>
+
+<p>생성된 태그를 원격 저장소로 전송합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (develop)
+$ git push --tags
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 503 bytes | 100.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/jinygit/gitstudy13.git
+ * [new tag]         1.0.1 -&gt; 1.0.1 ☜ 핫픽스 태그 배포
+</code></pre></div></div>
+
+<p>태그를 갱신합니다. 깃허브에 갱신된 hotfix 태그를 확인할 수 있습니다.</p>
+
+<p><img src="./img/gitflow_hotfix_02.png" alt="Hotfix" /></p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

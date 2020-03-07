@@ -1,3 +1,6 @@
+---
+layout: home
+---
 # Develop
 깃 플로우를 초기화하면 자동으로 develop 브랜치를 생성합니다. develop 브랜치는 깃 플로우의 첫 번째 전략입니다.
 

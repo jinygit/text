@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 # insights
 insights는 저장소의 활동 사항을 표시합니다.
 

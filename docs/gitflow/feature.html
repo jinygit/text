@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="featuer">Featuer</h1>
+<p>Feature 브랜치는 새로운 기능을 추가하기 위한 작업 브랜치 입니다. 실제의 코드작업들은 Feature 브랜치에서 이루어 집니다. 코드를 수정하고 커밋을 합니다.</p>
+
+<h2 id="브랜치-의미">브랜치 의미</h2>
+<p>Feature 브랜치는 플로우 초기화 명령어로 자동 생성되는 브랜치는 아닙니다. 깃 플로우 전략에서 새로운 기능을 추가하기 위해서 생성되는 브랜치 전략입니다.</p>
+
+<p>기능(feature) 브랜치는 하나의 개별 기능별로 브랜치를 생성하는 것이 좋습니다. 슬래시(/)를 구분하여 브랜치 이름을 사용할 수 있습니다.</p>
+
+<p>[예시]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch freature/기능
+</code></pre></div></div>
+
+<h2 id="브랜치-생성">브랜치 생성</h2>
+<p>기능(feature) 브랜치의 생성은 develop 브랜치에서 파생됩니다.</p>
+
+<p><img src="./img/gitflow_feature_01.png" alt="feature" /></p>
+
+<p>Feature 브랜치 작업을 하기 위해서는 직접 명령어를 통해 브랜치를 생성해야 합니다.</p>
+
+<p>기본 branch 명령어 대신 깃 플로우 명령어를 사용하여 feature 브랜치를 생성할 수 있습니다. 깃 플로우 명령어에서 다음과 같이 입력합니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow feature start 브랜치이름
+</code></pre></div></div>
+
+<p>start 옵션을 같이 사용합니다. 플로우 명령어를 통하여 새로운 feature 브랜치를 생성합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git flow feature start func1
+Switched to a new branch <span class="s1">'feature/func1'</span>
+
+Summary of actions:
+- A new branch <span class="s1">'feature/func1'</span> was created, based on <span class="s1">'develop'</span>
+- You are now on branch <span class="s1">'feature/func1'</span>
+
+Now, start committing on your feature. When <span class="k">done</span>, use:
+     git flow feature finish func1
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+</code></pre></div></div>
+
+<p>새로운 기능(feature) 브랜치가 생성되었습니다. 생성된 브랜치 목록을 확인해봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+develop       29990c7 first
+<span class="k">*</span> feature/func1 29990c7 first ☜ 체크아웃
+  master        29990c7 first
+</code></pre></div></div>
+
+<p>목록에서 <code class="highlighter-rouge">feature/func1</code>이 생성됨과 동시에 체크아웃도 같이 됩니다. 깃 플로우를 이용하여 브랜치를 생성하면 슬래시(/)로 구분된 브랜치로 생성됩니다.</p>
+
+<p>feature /이름 형태의 브랜치는 계층적으로 목록을 관리할 수 있습니다.</p>
+
+<p>이제 새로운 feature 브랜치에서 작업의 코드를 추가해봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+<span class="nv">$ </span>code hello.htm ☜ VS Code를 실행합니다.
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>깃 플로우 실습<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>새로운 feature 기능1 추가<span class="nt">&lt;/h2&gt;</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+<span class="nv">$ </span>git commit <span class="nt">-am</span> <span class="s2">"new feature func1"</span>
+<span class="o">[</span>feature/func1 d33afd4] new feature func1
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></div>
+
+<p>수정 후 커밋도 같이 합니다. 소스트리에서 커밋 로그를 확인해봅니다.</p>
+
+<p><img src="./img/gitflow_feature_02.png" alt="feature" /></p>
+
+<p><code class="highlighter-rouge">feature/func1</code> 브랜치가 develop 브랜치보다 한 단계 더 전진한 것을 확인할 수 있습니다.</p>
+
+<p>원격 저장소와 연동되는 로컬 저장소에 새로운 커밋이 발생하면 원격 저장소로 푸시할 수 있습니다. 소스트리는 상단 push 버튼에 푸시할 작업의 커밋 개수를 숫자로 같이 표시합니다.</p>
+
+<p><img src="./img/gitflow_feature_03.png" alt="feature" /></p>
+
+<h2 id="feature-배포">feature 배포</h2>
+<p>로컬 저장소에서 새로운 기능(feature) 브랜치를 생성하여 추가 작업을 하였습니다.</p>
+
+<p>개발된 새로운 기능은 작업 후 develop 브랜치로 병합합니다. 하지만 develop 브랜치 병합 전 다른 개발자와 완성된 기능을 공유할 수 있습니다. 공유를 통하여 코드 리뷰와 버그를 발견할 수도 있습니다.</p>
+
+<p>기능(feature) 브랜치를 공유하기 위해서는 원적 저장소에 배포해야 합니다. 여기서 배포란 원격 저장소에 푸시하는 것입니다.</p>
+
+<p>협업하는 다른 개발자들은 원격 저장소에 배포된 feature 브랜치를 확인할 수 있습니다. 또한, 공유된 브랜치는 다른 개발자들에게 자신의 작업 현황을 알리는 효과도 있습니다.</p>
+
+<p>이때 모든 개발자가 쉽게 새로운 기능을 파악할 수 있는 브랜치 이름을 사용하는 것이 좋습니다. 브랜치의 이름을 잘 작성하는 것이 협업을 원활하게 하는 방법입니다.</p>
+
+<p>깃 플로우 명령어를 통하여 작업한 기능을 원격 저장소로 배포할 수 있습니다. 원격 저장소로 배포할 때는 publish 옵션을 사용합니다. 원격 저장소로 feature 브랜치가 공유됩니다.</p>
+
+<p>[명령어]</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git flow feature publish 이름
+</code></pre></div></div>
+
+<p>생성한 feature/func1 브랜치를 깃허브로 전송해보도록 합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+<span class="nv">$ </span>git flow feature publish func1
+Enumerating objects: 5, <span class="k">done</span><span class="nb">.</span>
+Counting objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Delta compression using up to 8 threads
+Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, 308 bytes | 102.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+Total 3 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+remote:
+remote: Create a pull request <span class="k">for</span> <span class="s1">'feature/func1'</span> on GitHub by visiting:
+remote:      https://github.com/jinygit/gitstudy13/pull/new/feature/func1
+remote:
+To https://github.com/jinygit/gitstudy13.git
+ <span class="k">*</span> <span class="o">[</span>new branch]      feature/func1 -&gt; feature/func1 ☜ 원격 브랜치 생성
+Branch <span class="s1">'feature/func1'</span> <span class="nb">set </span>up to track remote branch <span class="s1">'feature/func1'</span> from <span class="s1">'origin'</span><span class="nb">.</span>
+Already on <span class="s1">'feature/func1'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/feature/func1'</span><span class="nb">.</span>
+
+Summary of actions:
+- The remote branch <span class="s1">'feature/func1'</span> was created or updated
+- The <span class="nb">local </span>branch <span class="s1">'feature/func1'</span> was configured to track the remote
+branch
+- You are now on branch <span class="s1">'feature/func1'</span>
+</code></pre></div></div>
+
+<p>전송 완료 후에 깃허브 페이지를 확인해봅니다. 브랜치의 개수가 3 branches로 증가되었습니다.</p>
+
+<p><img src="./img/gitflow_feature_04.png" alt="feature" /></p>
+
+<p>왼쪽의 브랜치 선택 메뉴를 클릭해봅니다. 새로운 Feature/func1 브랜치가 추가된 것이 확인됩니다. 해당 브랜치를 선택하면 선택된 원격 브랜치로 이동합니다.</p>
+
+<h2 id="feature-배포-1">feature 배포</h2>
+<p>새로운 기능이 개발 완료되면 feature 브랜치는 develop 브랜치로 병합됩니다.</p>
+
+<p><img src="./img/gitflow_feature_05.png" alt="feature" /></p>
+
+<p>Develop 브랜치는 최신의 테스트된 개발 코드를 가지고 있기 때문입니다. 병합된 develop 브랜치는 완성된 기능을 포함하고 있습니다. 깃허브-플로우 전략으로 develop 브랜치는 다시 master로 병합됩니다.</p>
+
+<p>병합이 완료된 feature 브랜치는 삭제합니다. 향후 개발된 코드에 버그가 발견된 경우, hotfix와 같은 브랜치를 생성하여 수정하도록 합니다.</p>
+
+<h2 id="브랜치-닫기">브랜치 닫기</h2>
+<p>개발이 완료된 feature 브랜치는 develop브랜치로 병합됩니다. 병합은 직접 명령어를 통하여 작업할 수 있으며, 플로우 명령어로 처리할 수도 있습니다.</p>
+
+<p>깃 플로우 명령어를 사용하면 좀 더 편리하게 feature 작업을 마무리할 수 있습니다. finish 옵션은 브랜치의 병합과 병합 후 브렌치의 삭제까지의 동작을 한 번에 수행합니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow feature finish 브랜치이름
+</code></pre></div></div>
+
+<p><img src="./img/gitflow_feature_06.png" alt="feature" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>feature/func1<span class="o">)</span>
+<span class="nv">$ </span>git flow feature finish func1
+Switched to branch <span class="s1">'develop'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/develop'</span><span class="nb">.</span>
+Updating 29990c7..d33afd4
+Fast-forward ☜ 병합 
+ hello.htm | 3 ++-
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+To https://github.com/jinygit/gitstudy13.git
+ - <span class="o">[</span>deleted]         feature/func1 ☜ 브랜치 삭제
+Deleted branch feature/func1 <span class="o">(</span>was d33afd4<span class="o">)</span><span class="nb">.</span>
+
+Summary of actions:
+- The feature branch <span class="s1">'feature/func1'</span> was merged into <span class="s1">'develop'</span>
+- Feature branch <span class="s1">'feature/func1'</span> has been locally deleted<span class="p">;</span> it has been remotely deleted from <span class="s1">'origin'</span>
+- You are now on branch <span class="s1">'develop'</span>
+</code></pre></div></div>
+
+<p>Finish 옵션은 현재의 feature 브랜치를 develop 브랜치에 병합 작업을 처리합니다. 문제없이 병합이 완료 되면 현재의 feature 브랜치는 자동 삭제 됩니다.</p>
+
+<p>소스트리를 사용하여 현재의 상태를 확인합니다.</p>
+
+<p><img src="./img/gitflow_feature_07.png" alt="feature" /></p>
+
+<p>feature 브랜치와 develop 브랜치가 병합되고 feature 브랜치는 삭제된 상태를 확인할 수 있습니다.</p>
+
+<p>finish된 후에 브랜치는 develop로 체크아웃됩니다. 현재의 브랜치 목록을 확인해봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+<span class="k">*</span> develop d33afd4 <span class="o">[</span>ahead 1] new feature func1 ☜ 푸시 필요
+master  29990c7 first
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">feature</code> 브랜치는 <code class="highlighter-rouge">develop</code>로 병합되었지만, 아직 원격 저장소에는 반영되지 않았습니다. 브랜치 목록에서 <code class="highlighter-rouge">ahead 1</code> 메시지를 확인합니다.</p>
+
+<p>작업 결과를 원격 저장소로 푸시하여 동일한 상태로 업데이트합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git push origin develop
+Enumerating objects: 5, <span class="k">done</span><span class="nb">.</span>
+Counting objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Delta compression using up to 8 threads
+Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, 308 bytes | 154.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+Total 3 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To https://github.com/jinygit/gitstudy13.git
+   29990c7..d33afd4  develop -&gt; develop
+</code></pre></div></div>
+
+<p>푸시후에 다시 브랜치를 확인해 봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+<span class="k">*</span> develop d33afd4 new feature func1
+  master  29990c7 first
+</code></pre></div></div>
+
+<p>원격 저장소로 더 이상 푸시할 내용이 없는 것을 확인할 수 있습니다.</p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

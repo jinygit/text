@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="release">Release</h1>
+<p>Release 브랜치는 개발 완료된 코드 버전을 배포하기 위한 전략입니다. 현재의 코드 상태가 최신으로 최종 사용자에게 배포할 수 있는 상태라면 release 브랜치를 생성합니다.</p>
+
+<h2 id="브랜치-의미">브랜치 의미</h2>
+<p>Release는 develop와 master를 이어주는 중간 단계의 브랜치입니다. Release 전략은 깃랩-플로우의 production 브랜치 전략과 유사합니다. 또한, 테스트 과정의 pre-production 중간 단계의 브랜치와도 유사합니다.</p>
+
+<p>테스트가 완료되면 release는 master로 병합됩니다. master는 항상 안정적인 버전을 가지고 배포(deploy)할 수 있는 상태를 유지해야 합니다.</p>
+
+<h2 id="브랜치-생성">브랜치 생성</h2>
+<p>Release 브랜치의 생성은 develop 브랜치를 기준으로 파생합니다. Release는 개발이 완료된 배포 버전이기 때문입니다.</p>
+
+<p>개발된 코드를 테스트하고 완성된 배포하기 위해서 release 브랜치를 생성합니다. 깃-플로우 명령어로 쉽게 release 브랜치를 생성할 수 있습니다.</p>
+
+<p><img src="./img/gitflow+release_01.png" alt="Release" /></p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow release start 버전
+</code></pre></div></div>
+
+<p>새로운 배포 버전을 생성할 때는 start 옵션을 사용합니다. Release 브랜치를 생성할 때 브랜치 이름의 버전을 작성합니다.</p>
+
+<p>배포(release) 브랜치의 이름을 버전 형식으로 작성을 하는 이유는 브랜치 이름이 태그로 생성되기 때문입니다.</p>
+
+<blockquote>
+  <p>배포용 브랜치를 생성할 때는 develop 브랜치 상에 있는 특정 커밋 ID를 지정할 수 있습니다. 특정 지정된 커밋 ID를 기반으로 release 브랜치를 생성합니다.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git flow release start <span class="s1">'1.0.0'</span>
+Branches <span class="s1">'develop'</span> and <span class="s1">'origin/develop'</span> have diverged.
+And <span class="nb">local </span>branch <span class="s1">'develop'</span> is ahead of <span class="s1">'origin/develop'</span><span class="nb">.</span>
+Switched to a new branch <span class="s1">'release/1.0.0'</span>
+
+Summary of actions:
+- A new branch <span class="s1">'release/1.0.0'</span> was created, based on <span class="s1">'develop'</span>
+- You are now on branch <span class="s1">'release/1.0.0'</span>
+
+Follow-up actions:
+- Bump the version number now!
+- Start committing last-minute fixes <span class="k">in </span>preparing your release
+- When <span class="k">done</span>, run:
+
+     git flow release finish <span class="s1">'1.0.0'</span>
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+</code></pre></div></div>
+
+<p>브랜치를 목록을 확인해보겠습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+develop       d33afd4 new feature func1
+  master        29990c7 first
+<span class="k">*</span> release/1.0.0 d33afd4 new feature func1 ☜ 체크아웃.
+</code></pre></div></div>
+
+<p>배포를 위한 release/1.0.0이 생성된 것을 확인할 수 있습니다. 또한, 자동으로 release 브랜치로 체크아웃됩니다. 배포 브랜치 또한 다음과 같이 <code class="highlighter-rouge">release/배포버전</code> 형태로 브랜치 이름이 정해지는 것을 확인할 수 있습니다.</p>
+
+<h2 id="테스트">테스트</h2>
+<p>배포(release) 브랜치를 통하여 최종 버전을 생성하기 위한 테스트 과정을 수행할 수 있습니다. 테스트 과정에서 발생되는 버그들을 release 브랜치에서 수정할 수 있습니다. Release 브랜치에서는 작은 오류들 위주로 수정합니다.</p>
+
+<p>새로운 추가 기능을 개발할 때는 별개의 feature 브랜치에 작업한 후, 다른 배포(release) 버전으로 처리하는 것이 좋습니다.</p>
+
+<p>배포의 테스트가 완료된 것으로 가정하여 코드를 조금 수정해봅니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+<span class="nv">$ </span>code hello.htm ☜ VS Code를 실행합니다.
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>깃 플로우 실습<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>새로운 feature 기능1 추가<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>현재 버전 1.0.0 으로 배포 가능합니다.<span class="nt">&lt;/h3&gt;</span>
+</code></pre></div></div>
+
+<p>수정한 후 커밋도 같이 진행합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+<span class="nv">$ </span>git commit <span class="nt">-am</span> <span class="s2">"release test 1.0.0"</span>
+<span class="o">[</span>release/1.0.0 58c6d46] release <span class="nb">test </span>1.0.0
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+</code></pre></div></div>
+
+<p>소스트리를 사용하여 생성된 커밋과 트리를 확인해봅니다.</p>
+
+<p><img src="./img/gitflow+release_02.png" alt="Release" /></p>
+
+<p>좀 더 확실한 배포를 위해서 release 브랜치 기반으로 테스트를 수행하는 것이 좋습니다. 실제적인 동작을 테스트하여 배포 시 발생될 수 있는 문제점들을 미리 방지합니다.</p>
+
+<h2 id="원격-배포">원격 배포</h2>
+<p>배포를 준비하는 과정에서 다른 협업 개발자와 공동으로 테스트를 진행할 수 있습니다. 이런 경우 생성된 release 브랜치를 원격 저장소로 배포해야 합니다.</p>
+
+<p>Release 브랜치를 원격 저장소로 배포하기 위해서는 플로우의 publish 옵션을 사용합니다.</p>
+
+<p>[명령어]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow release publish 버전
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+<span class="nv">$ </span>git flow release publish 1.0.0
+Enumerating objects: 5, <span class="k">done</span><span class="nb">.</span>
+Counting objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Delta compression using up to 8 threads
+Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, 366 bytes | 183.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+Total 3 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+remote:
+remote: Create a pull request <span class="k">for</span> <span class="s1">'release/1.0.0'</span> on GitHub by visiting:
+remote:      https://github.com/jinygit/gitstudy13/pull/new/release/1.0.0
+remote:
+To https://github.com/jinygit/gitstudy13.git
+ <span class="k">*</span> <span class="o">[</span>new branch]      release/1.0.0 -&gt; release/1.0.0 ☜ 원격 브랜치 생성
+Branch <span class="s1">'release/1.0.0'</span> <span class="nb">set </span>up to track remote branch <span class="s1">'release/1.0.0'</span> from <span class="s1">'origin'</span><span class="nb">.</span>
+Already on <span class="s1">'release/1.0.0'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/release/1.0.0'</span><span class="nb">.</span>
+
+Summary of actions:
+- The remote branch <span class="s1">'release/1.0.0'</span> was created or updated
+- The <span class="nb">local </span>branch <span class="s1">'release/1.0.0'</span> was configured to track the remote
+branch
+- You are now on branch <span class="s1">'release/1.0.0'</span>
+</code></pre></div></div>
+
+<p>깃허브에서 브랜치 항목을 확인합니다. 3 branches로 변경된 것을 확인할 수 있습니다.</p>
+
+<p><img src="./img/gitflow+release_03.png" alt="Release" /></p>
+
+<p>배포된 브랜치를 통하여 다른 개발자와 협업 테스트를 진행할 수 있습니다.</p>
+
+<h2 id="브랜치-종료">브랜치 종료</h2>
+<p>배포를 위한 테스트를 완료한 후에는 실제 배포를 해야 합니다. 테스트가 완성된 release를 안정된 마스터 브랜치로 병합합니다.</p>
+
+<p>병합된 mastr 브랜치에서 배포를 위한 태그를 생성하고, 실제 배포를 진행합니다. 배포후에는 release 브랜치는 삭제합니다.</p>
+
+<p>플로우 명령어의 finish 옵션을 이용하면 release와 master의 브랜치를 자동 병합합니다. 병합한 후에는 새로운 태그를 추가합니다. 기존 생성된 release도 삭제합니다.</p>
+
+<p>finish 옵션은 배포를 위한 일련의 작업들을 한 번에 수행합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>release/1.0.0<span class="o">)</span>
+<span class="nv">$ </span>git flow release finish 1.0.0
+Switched to branch <span class="s1">'master'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/master'</span><span class="nb">.</span>
+Merge made by the <span class="s1">'recursive'</span> strategy. ☜ 병합
+ hello.htm | 4 +++-
+ 1 file changed, 3 insertions<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+Already on <span class="s1">'master'</span>
+Your branch is ahead of <span class="s1">'origin/master'</span> by 3 commits.
+  <span class="o">(</span>use <span class="s2">"git push"</span> to publish your <span class="nb">local </span>commits<span class="o">)</span>
+Switched to branch <span class="s1">'develop'</span>
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/develop'</span><span class="nb">.</span>
+Merge made by the <span class="s1">'recursive'</span> strategy.
+ hello.htm | 3 ++-
+ 1 file changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>, 1 deletion<span class="o">(</span>-<span class="o">)</span>
+To https://github.com/jinygit/gitstudy13.git
+ - <span class="o">[</span>deleted]         release/1.0.0 ☜ 브랜치 삭제
+Deleted branch release/1.0.0 <span class="o">(</span>was 58c6d46<span class="o">)</span><span class="nb">.</span>
+
+Summary of actions:
+- Release branch <span class="s1">'release/1.0.0'</span> has been merged into <span class="s1">'master'</span>
+- The release was tagged <span class="s1">'1.0.0'</span>
+- Release tag <span class="s1">'1.0.0'</span> has been back-merged into <span class="s1">'develop'</span>
+- Release branch <span class="s1">'release/1.0.0'</span> has been locally deleted<span class="p">;</span> it has been remotely deleted from <span class="s1">'origin'</span>
+- You are now on branch <span class="s1">'develop'</span>
+</code></pre></div></div>
+
+<p>release 브랜치를 종료하면 2개의 메시지 입력을 요청합니다. Master로 병합을 위한 메시지와 태그의 생성을 위한 메시지입니다.</p>
+
+<p>① 병합 메시지를 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Merge branch 'release/1.0.0'
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+</code></pre></div></div>
+
+<p>② 태그 메시지를 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+# Write a message for tag:
+#   1.0.0
+# Lines starting with '#' will be ignored.
+</code></pre></div></div>
+
+<p>Vi 에디터를 사용하여 메시지를 작성합니다. 작성 후 저장 및 종료하세요. 병합 후에는 다시 develop 브랜치로 돌아옵니다. 브랜치를 목록을 확인합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+<span class="k">*</span> develop 060ff55 <span class="o">[</span>ahead 3] Merge tag <span class="s1">'1.0.0'</span> into develop
+master  5f40326 <span class="o">[</span>ahead 3] Merge branch <span class="s1">'release/1.0.0'</span>
+</code></pre></div></div>
+
+<p>소스트리를 통하여 결과를 확인합니다.</p>
+
+<p><img src="./img/gitflow+release_04.png" alt="Release" /></p>
+
+<p>새로운 병합이 이루어진 것을 확인할 수 있습니다. 배포가 완료되면 release 브랜치도 자동으로 삭제됩니다.</p>
+
+<p>release 브랜치는 배포가 완료되면 자동으로 태그를 추가합니다. tag 명령어를 통하여 생성된 태그를 확인합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git tag
+1.0.0
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git tag <span class="nt">-v</span> 1.0.0
+object 5f40326d8133e8db5e20e3ee73113be69e742ce8
+<span class="nb">type </span>commit
+tag 1.0.0
+tagger hojin &lt;infohojin@gmail.com&gt; 1559380711 +0900
+
+release 1.0.0:
+error: no signature found
+</code></pre></div></div>
+
+<p>새로운 태그가 생성된 것을 확인할 수 있습니다.</p>
+
+<p><img src="./img/gitflow+release_05.png" alt="Release" /></p>
+
+<h2 id="직접-배포">직접 배포</h2>
+<p>로컬 저장소는 release 브랜치를 이용하여 새로운 배포 버전이 생성되었습니다. 하지만 아직 새로운 배포 버전은 원격 저장소에 등록되지 않았습니다.</p>
+
+<p>브랜치의 목록을 확인합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+<span class="k">*</span> develop 060ff55 <span class="o">[</span>ahead 3] Merge tag <span class="s1">'1.0.0'</span> into develop
+master  5f40326 <span class="o">[</span>ahead 3] Merge branch <span class="s1">'release/1.0.0'</span>
+</code></pre></div></div>
+
+<p>ahead 3로 원격 저장소에 푸시할 내용들이 남아 있습니다.</p>
+
+<p>① 푸시를 통하여 원격 저장소에 개발 브랜치를 갱신해줍니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git push <span class="nt">-u</span> origin develop
+Enumerating objects: 9, <span class="k">done</span><span class="nb">.</span>
+Counting objects: 100% <span class="o">(</span>9/9<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Delta compression using up to 8 threads
+Compressing objects: 100% <span class="o">(</span>4/4<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>5/5<span class="o">)</span>, 665 bytes | 133.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+Total 5 <span class="o">(</span>delta 1<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+remote: Resolving deltas: 100% <span class="o">(</span>1/1<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+To https://github.com/jinygit/gitstudy13.git
+   d33afd4..060ff55  develop -&gt; develop
+Branch <span class="s1">'develop'</span> <span class="nb">set </span>up to track remote branch <span class="s1">'develop'</span> from <span class="s1">'origin'</span><span class="nb">.</span>
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+<span class="k">*</span> develop 060ff55 Merge tag <span class="s1">'1.0.0'</span> into develop
+master  5f40326 <span class="o">[</span>ahead 3] Merge branch <span class="s1">'release/1.0.0'</span>
+</code></pre></div></div>
+
+<p>아직 master 브랜치도 푸시할 내용이 남아 있습니다.</p>
+
+<p>② 마스터 브랜치로 체크아웃합니다. 마스터 브랜치로 갱신합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>develop<span class="o">)</span>
+<span class="nv">$ </span>git checkout master
+Switched to branch <span class="s1">'master'</span>
+Your branch is ahead of <span class="s1">'origin/master'</span> by 3 commits.
+  <span class="o">(</span>use <span class="s2">"git push"</span> to publish your <span class="nb">local </span>commits<span class="o">)</span>
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git push <span class="nt">-u</span> origin master
+Total 0 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To https://github.com/jinygit/gitstudy13.git
+   29990c7..5f40326  master -&gt; master
+Branch <span class="s1">'master'</span> <span class="nb">set </span>up to track remote branch <span class="s1">'master'</span> from <span class="s1">'origin'</span><span class="nb">.</span>
+
+infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git branch <span class="nt">-v</span>
+  develop 060ff55 Merge tag <span class="s1">'1.0.0'</span> into develop
+<span class="k">*</span> master  5f40326 Merge branch <span class="s1">'release/1.0.0'</span>
+</code></pre></div></div>
+
+<p>③ 태그 정보를 서버로 전송합니다. 
+변경된 모든 브랜치의 정보가 원격 저장소로 푸시되었습니다. 하지만 생성된 태그의 정보는 아직 원격 저장소로 전송되지 않았습니다.</p>
+
+<p>태그의 전송은 별도의 푸시 옵션을 이용하여 실행해야 합니다. –tags 옵션을 같이 사용하여 한 번 더 원적 저장소로 전송합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git push <span class="nt">--tags</span>
+Enumerating objects: 1, <span class="k">done</span><span class="nb">.</span>
+Counting objects: 100% <span class="o">(</span>1/1<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+Writing objects: 100% <span class="o">(</span>1/1<span class="o">)</span>, 157 bytes | 78.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+Total 1 <span class="o">(</span>delta 0<span class="o">)</span>, reused 0 <span class="o">(</span>delta 0<span class="o">)</span>
+To https://github.com/jinygit/gitstudy13.git
+ <span class="k">*</span> <span class="o">[</span>new tag]         1.0.0 -&gt; 1.0.0 ☜ 태그 배포
+</code></pre></div></div>
+
+<p>깃허브의 저장소를 확인해봅니다. 새롭게 추가한 태그 정보를 확인할 수 있습니다. release 부분이 1로 변경된 것을 확인할 수 있습니다. 깃허브의 release 부분을 클릭해봅니다.</p>
+
+<p><img src="./img/gitflow+release_06.png" alt="Release" /></p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="insights">insights</h1>
+<p>insights는 저장소의 활동 사항을 표시합니다.</p>
+
+<h2 id="pluse">pluse</h2>
+<p>깃허브는 자신의 프로젝트가 얼마나 활성 되고 있는지 한눈에 알 수 있는 pluse 기능을 제공합니다. Pluse는 당일, 3일, 1주, 한달등의 기간을 정하여 확인할 수 있습니다.</p>
+
+<p><img src="./img/insights_01.png" alt="github" /></p>
+
+<p>Pluse는 활성화된 풀-리퀘스트 내역들을 확인할 수 있습니다. 활성화된 이슈들을 확인합니다. 커밋 작업들에 대한 요약을 출력합니다. 작성자 수, 커밋 횟수, 변경된 파일 및 라인의 수 등을 표시합니다.</p>
+
+<h2 id="release">release</h2>
+<p>배포와 관련된 정보들을 표시합니다.</p>
+
+<h2 id="unresolved">unresolved</h2>
+<p>해결되지 않은 댓글들을 확인할 수 있습니다.</p>
+
+<h2 id="contributor">contributor</h2>
+<p>저장소에 코드를 기여한 활동등에 대해서 출력합니다. 기여자는 실제적인 코드가 병합되어 반영될 때 결과가 갱신됩니다.</p>
+
+<p><img src="./img/insights_02.png" alt="github" /></p>
+
+<h2 id="commit">commit</h2>
+<p>코드 커밋의 빈도를 그래프로 표시합니다. 커밋은 기간별, 요일별로 출력됩니다. 커밋 빈도를 통하여 개발의 활성화, 방향 등을 알 수 있습니다.</p>
+
+<h2 id="code-frequency">code frequency</h2>
+<p>코드의 변화도를 감지할 수 있습니다. 일반적인 커밋은 코드의 변화가 크지 않습니다. 하지만 리팩토링과 같은 대규모의 개선 작업이 있을 경우, 커밋의 횟수는 많지 않고 코드의 변화가 많이 발생합니다.</p>
+
+<p>이를 통하여 프로젝트의 작업 규모를 파악할 수 있습니다.</p>
+
+<h2 id="network">network</h2>
+<p>네트워크 항목은 브랜치의 수와 각 브랜치의 커밋 수를 표시합니다.</p>
+
+<p><img src="./img/insights_03.png" alt="github" /></p>
+
+<h2 id="traffic">Traffic</h2>
+<p>트래픽은 저장소의 소유자, 협력자만 접근하여 볼 수 있습니다. 일정기간 방문자 수를 확인할 수 있습니다.</p>
+
+<p>오픈 소스를 운영하고 있는 경우 트래픽을 통하여 인기도를 확인할 수 있습니다.</p>
+
+<h2 id="포크">포크</h2>
+<p>자신의 저장소를 포크한 맴버들의 목록을 확인할 수 있습니다.</p>
+
+<p><img src="./img/insights_04.png" alt="github" /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

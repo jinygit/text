@@ -14,7 +14,7 @@
                 font-family: "Nanum Gothic", sans-serif;
             }
             img {
-                width:100%;
+                max-width:100%;
             }
         </style>
         
@@ -56,9 +56,9 @@
             </div>
             <div class="col-lg-9">
                 <h1 class="display-3">Git 교과서</h1>
-                <h2>코드입력-하나도 놓치지 마라!</h2>
-                <p>버전관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시처리, 병합, 복귀, 서브모듈, 테그까지 깃.<br>
-                    소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
                 </p>
                 <p>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
@@ -76,18 +76,56 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <h2 id="준비작업">준비작업</h2>
-<p>깃을 사용하기 위해서는 별도로 설치를 해주어야 합니다. 깃은 다양한 운영체제를 지원합니다.<br />
-깃은 https://git-scm.com/ 애서 무료로 다운로드하여 설치할 수 있습니다.</p>
+<p>깃은 별도의 응용 프로그램입니다. 이 장에서는 깃 프로그램을 설치하고 환경을 설정해 보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="깃설치">깃설치</h3>
+<p>깃을 사용하려면 먼저 깃 프로그램을 설치해야 합니다. 윈도, 리눅스, macOS 등 여러 운영 체제에서 깃을 설치하고 사용할 수 있습니다.</p>
+
+<p>깃은 오픈 소스이기 때문에 공개된 소스를 직접 내려받아 설치할 수 있지만, 컴파일 작업과 설치가 쉽지 않습니다. 따라서 깃의 개발을 이끄는 단체에서는 일반 개발자도 쉽게 사용할 수 있도록 운영 체제별 설치 프로그램을 만들어 제공합니다.</p>
+
+<p>깃 공식 사이트(<code class="highlighter-rouge">https://git-scm.com</code>)에서 운영 체제별로 만든 배포판을 내려받아 설치할 수 있습니다.</p>
+
+<p><img src="./img/git-scm.png" alt="git-scm" /></p>
+
+<blockquote>
+  <p>Note: 깃의 소스 코드는 https://github.com/git/git에 모두 공개되어 있습니다. 여기에 공개된 버전은 깃 공식
+사이트에 공개된 버전보다 좀 더 최신이므로, 최신 버전을 사용하고 싶다면 깃의 소스 코드를 직접 내려받아 컴파일한
+후 설치해야 합니다. 책에서는 깃 공식 사이트에서 내려받아 사용하는 것을 추천하니 참고만 하세요. 또 오픈 소스에도 직접 참여할 수 있습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h4 id="windows-os환경">Windows OS환경</h4>
+<p>윈도우 환경에서 설치할 수 있는 설치파일을 다운로드 받습니다.</p>
 
 <ul>
   <li><a href="windows">윈도우</a></li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="mac-os환경">Mac OS환경</h4>
+<ul>
   <li>[맥]</li>
+</ul>
+
+<p><br /></p>
+
+<h4 id="linux-os환경">Linux OS환경</h4>
+<ul>
   <li>[리눅스]</li>
 </ul>
 
-<h2 id="도구설치">도구설치</h2>
-<p>기본적인 깃의 동작환경은 <code class="highlighter-rouge">터미널</code> 입니다. 보다 쉽게 깃을 사용하기 위해서 몇가지 GUI 도구들이 개발되어 제공되고 있습니다.<br />
-대표적으로 많이 사용하는 <code class="highlighter-rouge">소스트리</code>가 있습니다.</p>
+<p><br /></p>
+<hr />
+
+<h3 id="도구설치">도구설치</h3>
+<p>기본적인 깃의 동작환경은 <code class="highlighter-rouge">터미널</code> 입니다. 보다 쉽게 깃을 사용하기 위해서 몇가지 GUI 도구들이 개발되어 제공되고 있습니다.</p>
+
+<h4 id="소스트리">소스트리</h4>
+<p>대표적으로 많이 사용하는 <code class="highlighter-rouge">소스트리</code>가 있습니다.</p>
 
 <ul>
   <li><a href="sourcetree">소스트리</a></li>
@@ -113,18 +151,25 @@
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
-</ul></div>
+</ul>
+
+<br><br><br></div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container -->  <!-- Footer -->
-  <footer class="py-3 bg-dark">
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
     </div>
     <!-- /.container -->
-  </footer><!--부트스트랩4-->
+</footer><!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

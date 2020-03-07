@@ -1,7 +1,7 @@
 ---
-layout: page
-title:  "BitBucket"
+layout: home
 ---
+# BitBucket
 비트버킷은 깃허브와 양대산맥으로 가장 많은 사람이 이용하는 깃호스팅 서비스입니다. 
 
 ## 비트버킷

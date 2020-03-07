@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="마크다운">마크다운</h2>
+<p>깃허브는 마크다운을 지원합니다. 마크다운을 이용하여 HTML 대신하여 문서를 작성할 수 있습니다.</p>
+
+<h3 id="마크다운-1">마크다운</h3>
+<p>마크다운(markdown)은 텍스트 문서에 양식을 추가하는 방법중에 하나 입니다. 인터넷상에서 문서를 작성을 하는 것은 일반 문서를 작성하기 것과는 좀 다릅니다. 먼저 텍스트로 내용을 작성한 후에 다시 웹으로 표시할 수 있는 HTML 형태의 변환 작업이 필요로 합니다.</p>
+
+<p>John Gruber는 2004년 텍스트 형식의 문서를 보다 직관적이고 쉽게 작성을 할 수 있도록 새로운 텍스트 문서구조를 생각하였습니다. 간단하게 에디터로 텍스트 문서를 제작하고, 이를 HTML로 변환하여 표현할 수 있습니다.</p>
+
+<p>마크다운의 시작은 웹상에서 좀더 쉽게 글을 쓰기 위한 목적에서 시작되었습니다.
+마크다운의 장점마크다운은 복잡한 HTML 코드 대신에 쉽게 작성을 할 수 있습니다.제목은 ‘#’ 기호, 굵은 글씨는 ‘**’ 기호로 사용이 가능합니다. 마크다운의 문법은 간단합니다.</p>
+
+<p>쉬운 가독성기존 웹문서들은 HTML 코드로 제작되어 있습니다. HTML 코드의 문서들은 브라우저를 통하여 랜더링 된 상태에서확인을 해야 되기 때문에 쉽게 코드만으로 내용을 알기가 어렵습니다. 또한, 일반인등 웹문서를 작성하기 우히ㅐ서는 별도의 html 문법을 학습을 해야만 했습니다.</p>
+
+<p>하지만 마크다운 텍스트 그대로 출력이 되기 때문에 글의 쉽게 읽을 수 있습니다.마크다운은 키보드 조막만 가지고 글의 흐름을 방해하지 않고 텍스트와 이미지를 같이 작업을 할 수 있습니다.</p>
+
+<p>마크다운의 장점은 글쓰기에 대해 집중을 할 수 있다는 것입니다.</p>
+
+<h3 id="확장자">확장자</h3>
+<p>마크다운은 일반적인 텍스트 파일로 구성된 문서 파일 입니다. 일반 텍스트 문서는 보통 확장자를 .txt를 많이 사용을 합니다. 이럼 유사점은 일반 텍스트 문서와 마크다운 문서를 서로 구별을 하기 쉽지 않습니다.</p>
+
+<p>좀더 직관적으로 마크다운 파일을 관리하고 처리하기 위해서 markdown 의 약자인 .md 확장자를 사용합니다.</p>
+
+<h3 id="전용-에디터">전용 에디터</h3>
+<p>최근에는 많은 웹사이트들이 마크다운 문법의 작성을 지원하고 있는 추세입니다. 워드프레스, 블로거(blogger.com)등 글을 포스팅 할 때 마크다운 문법을 지원합니다. 또한 전용 마크다운 문서 작성 어플리케이션도 출시 되고 있습니다.</p>
+
+<p>타이포라(Typora)는 마크다운 문법을 좀더 쉽게 작성을 할 수 있도록 제작된 전문 에디터중의 하나 입니다. 무료서 사용을 할 수 있습니다.
+설치 방법은 https://jinygit.github.io/textbook/typora 를 참고하시길 바랍니다.</p>
+
+<p>타이포라가 정상적으로 설치하 되었다면 바탕화면에 다음과 같은 아이콘이 생성이 됩니다.</p>
+
+<p>클릭하여 타이포라를 실행합니다. 다음은 타이포라를 실행후의 모습입니다. 간단한 에디터 형태의 모습을 보실 수 있습니다.</p>
+
+<h2 id="마크다운-문법">마크다운 문법</h2>
+<p>마크다운은 간략하지만 나름대로의 문법을 가지고 있습니다. 많이 복잡하지는 않지만 자주 사용하는 문법에 대해서 간략하게 알아 봅니다.</p>
+
+<p>마크다운 문법은 직접 에디터에 타이핑하여 서식을 지정하기 편하게 기호를 기준으로 구성되어 있습니다.</p>
+
+<h3 id="제목">제목</h3>
+<p>우리가 글을 작성할 때 대제목, 중제목, 소재목등을 분리하여 표현을 합니다. 보통 제목은 글자의 크기를 기준으로 많이 구분을 합니다.</p>
+
+<p>마크다운은 총 6개의 글자 크기를 이용하여 제목을 구분할 수 있습니다. 제목을 사용하기 위해서는 제목 앞에 #기호를 작성합니다. 제목으로 사용하는 글자의 크기는 제목 앞에 #의 개수에 따라 차이가 있습니다.</p>
+
+<p>예제파일: markdown-01.md
+#제목1
+##제목2
+###제목3
+####제목4
+#####제목5
+######제목6</p>
+
+<p>꼭 샾기호(#)를 통하여 들여 쓰기를 하는 것과 유사해 보입니다.</p>
+
+<h3 id="인용구">인용구</h3>
+<p>마크다운은 인용구 작성 기능을 지원합니다. 인용구는 &gt; 기호를 문장 앞에 사용하면 됩니다. 이중인용구는 &gt;를 두번 사용하면 됩니다.</p>
+
+<p>예제파일: markdown-02.md
+인용구를 작성할 수 있습니다.</p>
+
+<blockquote>
+  <p>This is a blockquote with two paragraphs. This is first paragraph.</p>
+</blockquote>
+
+<h3 id="목록">목록</h3>
+<p>마크다운에서는 우리가 많이 사용하는 목록을 쉽게 작성을 할 수 있습니다. 숫자(1, 2, 3, 4)가 붙어 있는 목록 또는 점과 같이 붙어있는 비정렬 항목만 출력되는 목록도 작성할 수 있습니다.</p>
+
+<p>비정렬 모드로 사용을 할 때 -, +, * 세가지의 기호를 모두 사용을 할 수 있습니다. 기호들은 비슷한 효과를 나타내지만, 서로 다른 기호로서 출력시에는 분리가 됩니다.</p>
+
+<p>리스트를 작성할 때 내부 들여쓰기는 스페이스로 사용합니다.</p>
+
+<p>예제파일: markdown-03.md</p>
+<h2 id="un-ordered-list">un-ordered list</h2>
+<ul>
+  <li>Red</li>
+  <li>Green</li>
+  <li>Blue</li>
+</ul>
+
+<h2 id="ordered-list">ordered list</h2>
+<ol>
+  <li>Red</li>
+  <li>Green
+    3.Blue</li>
+</ol>
+
+<h3 id="이텔릭체">이텔릭체</h3>
+<p>이텔릭체는 글자를 약간 기울게 작성을 하는 표현을 말합니다. 글자를 기울게 작성을 하기 위해서는 <em>기울기</em> 또는 <em>기울기</em> 형태로 작성을 하면 됩니다.</p>
+
+<p>예제파일: markdown-04.md
+<em>기울기</em></p>
+
+<p><em>기울기</em></p>
+
+<h3 id="굵은-글씨">굵은 글씨</h3>
+<p>글의 내용을 강조하기 위해서 Bold 처리를 많이 합니다. 마크다운에서는 글자의 볼드 처리를 위하여 ** 기호 또는 __ 기호를 사용합니다. 굵은 글씨는 기호를 2개을 연속하여 사용을 합니다.</p>
+
+<p>강조하고자 하는 단어나 문장 앞뒤에 <strong>강조내용</strong> 또는 <strong>강조내용</strong> 형태로 작성을 해주면 됩니다.</p>
+
+<p>만일 볼드 처리와 이텔릭체 처리를 같이 하고자 하는 경우에는 <strong>_ 또는 _</strong> 형태의 기호를 사용하면 됩니다.</p>
+
+<p>예제파일: markdown-05.md
+강조내용 처리 …
+<strong>강조내용</strong>
+<strong>강조내용</strong></p>
+
+<p>이테릴체와 횬용 …
+<strong><em>강조내용</em></strong>
+<strong><em>강조내용</em></strong></p>
+
+<h3 id="코드처리">코드처리</h3>
+<p>개발자들은 문서를 작성을 할 때 소스코드와 같은 예제를 만이 작성을 합니다. 마크다운은 이러한 소스코드를 문서내에서 쉽게 삽입을 할 수 있는 별도의 처리를 지원합니다. 역따옴표(`) 를 사용합니다.</p>
+
+<p>예제파일: markdown-06.md
+코드처리 실습</p>
+
+<p>PHP에서 문자열을 출력 하기 위해서는 <code class="highlighter-rouge">echo "hello world";</code> 를 사용하면 됩니다.</p>
+
+<h3 id="이미지-삽입">이미지 삽입</h3>
+<p>마크다운 문서내에서도 이미지를 삽입하여 출력을 할 수 있습니다. <img src="링크" alt="대체 텍스트" /> 형태로 문서내에서 작성을 하시면 됩니다.</p>
+
+<p>마크다운에서는 이미지의 크기를 수정하여 출력을 할 수 없습니다. 만일 이미지의 크기와 출력을 조금 수정하고 싶을 경우 CSS 코드를 같이 사용을 할 수 있습니다. <img src="주소" alt="" title="타이틀&quot; &quot;width:200px;height:100px" /> 와 같이 사용을 하시면 됩니다.</p>
+
+<p>이미지 이외에도 미디어 파일도 삽입이 가능합니다. 삽입 가능한 타입은 다음과 같습니다.</p>
+
+<p>확장자 	형태 
+mp4	video/mpeg
+ogv	video/ogg 
+webm	video/webm</p>
+
+<p>예제파일: markdown-07.md</p>
+
+<h3 id="링크">링크</h3>
+<p>마크다운에서는 하이퍼링크와 같은 링크를 추가할 수 있습니다. 인라인 링크, 참조형 링크 2가지를 모두 지원합니다.</p>
+
+<p><a href="주소">이름</a></p>
+
+<p>사용법이 약간 이미지를 삽입하는 것과 문법이 유사하지만 ! 기호가 없는 것이 차이점 입니다.</p>
+
+<p>참조형 링크의 경우 [이름][참조명]와 [참조명]: 링크 주소 와 같은 형태로 작성을 합니다.</p>
+
+<p>예제파일: markdown-08.md</p>
+
+<h3 id="페이지-분할">페이지 분할</h3>
+<p>페이지 분할은 -, *, _ 3가지 기호중 하나를 5번 연속으로 사용으로 페이지 분할을 표현할 수 있습니다.</p>
+
+<p>¬¬ 예제파일: markdown-09.md
+페이지내용1
+—–</p>
+
+<p>페이지내용2
+*****
+페이지내용3
+_____</p>
+
+<p>페이지내용4
+<em>_</em><em>*</em><em>_</em></p>
+
+<h3 id="코드블럭">코드블럭</h3>
+<p>마크다운은 개발소스 코드를 간단하게 표시를 할 수 있습니다. 코드블럭을 작성하기 위해서는 백따움표 또는 모양양 3개를 연속으로 사용하면 됩니다.</p>
+
+<p><code class="highlighter-rouge">표현언어</code> 또는 ~~~표현언어 ~~~ 형태로 작성을 하면 됩니다.</p>
+
+<p>예제파일: markdown-10.md
+코드블럭</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">"hello world"</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<h3 id="취소선">취소선</h3>
+<p>취소선은 글자 가운데에 선을 그어서 취한것과 같은 표현을 작성하는 것입니다.
+취소선은 문자 앞뒤에 ~기호 2개를 넣어 주시면 됩니다.</p>
+
+<p><del>취소문자</del></p>
+
+<p>예제파일: markdown-11.md
+안녕하세요. 제 이름은 지니<del>홍길동</del> 입니다.</p>
+
+<h3 id="체크박스">체크박스</h3>
+<p>마크다운 문서내에 체크박스와 같은 항목을 삽입을 할 수 있습니다.</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />-[x]
+형태로 기호를 삽입을 하면 됩니다.</li>
+</ul>
+
+<p>예제파일: markdown-12.md
+항목체크</p>
+
+<ul class="task-list">
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />깃허브</p>
+  </li>
+  <li class="task-list-item">
+    <p><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />빗버켓</p>
+  </li>
+</ul>
+
+<h3 id="테이블표시">테이블표시</h3>
+<p>마크다운 기호를 사용하여 간단하게 테이블을 구현할 수 있습니다.</p>
+
+<p>예제파일: markdown-13.md
+| First Header  | Second Header |
+| ————- | ————- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |</p>
+
+<p>20.6.14 Footnotes
+예제파일: markdown-14.md
+You can create footnotes like this<sup id="fnref:footnote"><a href="#fn:footnote" class="footnote">1</a></sup>.</p>
+
+<h3 id="수학표현">수학표현</h3>
+<p>마크다운에서 수학 표현식을 작성을 할 수 있습니다. $ 기호를 사용하여 표현할 수 있습니다.수학표현은 수학적 기호를 키보드로 작성 표현하기 어렵기 때문에 약간의 수학 문법을 알고 있어야 합니다.</p>
+
+<p>예제파일: markdown-20.md
+<script type="math/tex">H(x)=-\sum\limits_{i=1}^n \times P(i) log_2P(i)</script></p>
+
+<p>보다 자세한 것은 laTeX를 참고 바랍니다.</p>
+
+<h3 id="유의사항">유의사항</h3>
+<p>마크다운 문법과 HTML문법을 혼용하여 작성할 경우 &lt; 기호는 두개의 문법에서 충돌을 발생합니다. 충돌을 방지 하기 위해서 &lt; 형태의 인코딩을 통하여 충돌을 방지 할 수 있습니다.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:footnote">
+      <p>Here is the <em>text</em> of the <strong>footnote</strong>. <a href="#fnref:footnote" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

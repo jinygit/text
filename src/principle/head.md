@@ -1,4 +1,6 @@
-
+---
+layout: home
+---
 # HEAD
 HEAD는 브랜치의 마지막 커밋을 가리키고 있습니다. HEAD는 refs로 간접적인 심볼(symbolic)값 입니다.
 

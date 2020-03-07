@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="49-커밋-로그">4.9 커밋 로그</h2>
+<p>깃은 터미널 기반의 응용 프로그램입니다. 앞서 커밋 목록을 나열하는 로그를 간단하게 살펴보았습니다. 깃의 로그는 저장소 커밋 기록들을 확인할 수 있습니다. 또 커밋 메시지, 아이디도 확인할 수 있고, 브랜치 경로 등을 분석할 수 있는 옵션들도 제공합니다.</p>
+
+<h3 id="491-간략-로그">4.9.1 간략 로그</h3>
+<p>커밋 메시지를 여러 줄 작성했다면 일반적인 로그 정보를 복잡하게 느낄 수 있습니다. 로그 옵션 중에서 –pretty=short를 사용하면 로그를 출력할 때 첫 번째 줄의 커밋 메시지만 출력합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+
+$ git log --pretty=short
+
+252425.png
+로그 확인
+
+commit aa92947d350db27b604d1351930d4f809f96886e (HEAD -&gt; master)
+
+Author: hojin &lt;infohojin@gmail.com&gt;
+
+ 
+
+commit aa1dd51a8883b2ea9a54209a00f434a2da01ee85
+
+Author: hojin &lt;infohojin@gmail.com&gt;
+
+hello git world 추가
+
+ 
+
+commit e2bce41380691b0a34aeab7db889a6c30fed8287
+
+Author: hojin &lt;infohojin@gmail.com&gt;
+
+인덱스 페이지 레이아웃
+</code></pre></div></div>
+
+<p>특정 커밋의 상세 정보도 확인할 수 있습니다. 특정 커밋의 상세 정보를 확인하고 싶다면 show 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 커밋ID
+</code></pre></div></div>
+
+<h3 id="492-특정-파일의-로그">4.9.2 특정 파일의 로그</h3>
+<p>전체 커밋과 달리 특정 파일의 로그 기록만 볼 수도 있습니다. 이때는 log 명령어 뒤에 파일 이름을 적어 주면 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+
+$ git log index.htm
+
+253486.png
+파일의 로그 확인
+
+commit aa92947d350db27b604d1351930d4f809f96886e (HEAD -&gt; master)
+
+Author: hojin &lt;infohojin@gmail.com&gt;
+
+Date: Sat Jan 5 20:09:48 2019 +0900
+</code></pre></div></div>
+
+<p>log 명령어의 옵션은 매우 다양합니다. 실습해 나가면서 다양한 옵션을 사용해 볼 것입니다. 소스트리를 이용하면 log 명령어와 복잡한 옵션을 사용하지 않아도 쉽게 로그 흐름을 파악할 수 있는 장점이 있습니다.</p>
+
+<blockquote>
+  <p>Note: log 명령어의 여러 옵션</p>
+  <ul>
+    <li>-p 옵션: diff 기능(수정한 라인 비교)을 같이 포함하여 출력할 수 있습니다.</li>
+    <li>–stat 옵션: 히스토리를 출력합니다.</li>
+    <li>–pretty=oneline 옵션: 각 커밋을 한 줄로 표시합니다.</li>
+  </ul>
+</blockquote>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

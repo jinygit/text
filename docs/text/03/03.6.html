@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="36-깃-저장소-복제">3.6 깃 저장소 복제</h2>
+<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
+
+<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
+
+<p>그림 3-20] 외부의 깃 저장소 복제</p>
+
+<h3 id="361-공개-저장소">3.6.1 공개 저장소</h3>
+<p>깃은 다수의 사람과 코드를 공유하고 협업하여 개발하는 도구입니다. 이미 깃을 기반으로 하는 공개 저장소가 여럿 있습니다. 대표적으로 깃허브, 비트버킷 같은 깃 호스팅 사이트가 있습니다(외부 저장소, 서버 관련 내용은 5장에서 설명합니다).</p>
+
+<p>깃 호스팅 서비스는 공개된 저장소와 비공개된 저장소를 모두 지원합니다. 공개된 저장소는 누구나 복제하여 코드를 내려받을 수 있습니다. 요즘은 오픈 소스가 활성화되어 저장소를 공개하고 있습니다. 이미 수많은 오픈 소스를 깃으로 관리하고, 공개 저장소를 이용하여 배포합니다.</p>
+
+<h3 id="362-다운로드-vs-복제">3.6.2 다운로드 vs 복제</h3>
+<p>일반적으로 공개된 소스 코드를 얻으려면 웹 사이트에서 압축 파일을 내려받습니다. 소스 코드를 내려받는다는 것은 해당 코드의 최종 복사본을 내 컴퓨터로 가져오는 것입니다. 하지만 이러한 내려받기는 깃의 이력을 포함한 저장 영역까지 내려받는 것은 아닙니다.</p>
+
+<p>그림 3-21] 공개된 소스 코드의 최종 복사본 내려받기</p>
+
+<p>이와 달리 깃을 이용하여 저장소를 복제하면, 최종 코드뿐만 아니라 중간에 커밋 같은 변화의 모든 이력도 같이 내려받을 수 있습니다. 또 일부 코드를 변경하여 기여하는 것도 가능할 것입니다.</p>
+
+<h3 id="363-복제-명령어">3.6.3 복제 명령어</h3>
+<p>깃의 저장소를 복제하는 명령어는 clone입니다. 복제하려면 공개된 저장소의 URL이 필요합니다. 복제할 때 폴더 이름을 지정하지 않으면 공개 저장소에서 사용된 폴더와 동일한 이름으로 새 폴더를 만듭니다. 다른 이름으로 복제하길 원한다면 새 폴더 이름을 추가 인자로 적어 줍니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone 원격저장소URL 새폴더이름
+</code></pre></div></div>
+
+<p>다음은 필자가 운영하는 jinyphp 오픈 소스 사이트의 주소를 이용하여 저장소를 복제하는 예입니다. 새 폴더 이름을 적지 않아 공개 저장소에서 사용된 폴더와 동일한 이름으로 새 폴더를 만들 것입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/jinyphp/jiny
+Cloning into 'jiny'...
+remote: Enumerating objects: 975, done.
+remote: Total 975 (delta 0), reused 0 (delta 0), pack-reused 975
+Receiving objects: 100% (975/975), 4.98 MiB | 3.67 MiB/s, done.
+Resolving deltas: 100% (307/307), done.
+</code></pre></div></div>
+
+<p>git clone 명령어를 사용하면 깃은 자동으로 깃 서버에 접속합니다. 그리고 저장소의 모든 소스 코드를 자동으로 내려받습니다.</p>
+
+<p>깃은 저장소 안에 있는 파일들과 .git 리포지터리를 기반으로 이력을 관리합니다. 따라서 복제한 후에는 복제된 폴더 이름을 그대로 사용하지 않아도 됩니다. 필요에 따라 깃의 폴더 이름을 변경해도 괜찮습니다.</p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

@@ -1,4 +1,6 @@
-
+---
+layout: home
+---
 ### GNU General Public License V2.0
 자유소프트웨어 재단(Free Software Foundation, FSF)에 만들어 배포된 라이선스입니다. 현재 가장 많은 오픈 소스에 적용된 라이선스입니다.
 

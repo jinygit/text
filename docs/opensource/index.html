@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="오픈-소스">오픈 소스</h1>
+<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 
+개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
+
+<h2 id="저작권">저작권</h2>
+<p>오픈소스를 학습하기 전에 저작물에 대한 몇가지 용어에 대해서 학습해 보도록 하겠습니다. <a href="copyright">»상품권환</a></p>
+
+<h2 id="상용과-오픈-소스">상용과 오픈 소스</h2>
+<p>유료 소프트웨어와 무료 소프트웨어에 대해서 알아 봅니다. <a href="copyleft">»대가지급</a></p>
+
+<h2 id="라이센스">라이센스</h2>
+<p>소프트웨어의 보호와 제약 사항들에 대해서 알아 봅니다. <a href="license">»라이선스</a></p>
+
+<h2 id="자유소프트">자유소프트</h2>
+<p>자유로운 코드의 공유와 배포. <a href="freesoft">»FSF</a></p>
+
+<h2 id="오픈소스">오픈소스</h2>
+<ul>
+  <li><a href="opensource">오픈소스</a></li>
+</ul>
+
+<h2 id="오픈소스-라인센스">오픈소스 라인센스</h2>
+<p>오픈소스 라이센스 종류에 대해서 알아 봅니다. <a href="openlicense">»라이센스종류</a></p>
+
+<h2 id="라이센스-적요">라이센스 적요</h2>
+<p>오픈소스 라이센스 적용시 고려해야 되는 부분들에 대해서 알아 봅니다. <a href="apply">»적용</a></p>
+
+<h2 id="커뮤니티">커뮤니티</h2>
+<p>깃과 깃허브와 같은 호스팅 서비스들은 커뮤니티를 형성하고 관리하는 데 매우 유용합니다. <a href="comunity">»커뮤니티</a></p>
+
+<h2 id="거버넌스">거버넌스</h2>
+<ul>
+  <li><a href="governance">거버넌스</a></li>
+</ul>
+
+<h2 id="개발방식">개발방식</h2>
+<ul>
+  <li><a href="develop">개발 방식</a></li>
+</ul>
+
+<h2 id="참여">참여</h2>
+<p>커뮤니티 또는 깃허브 저장소에 기여할 수 있습니다.</p>
+<ul>
+  <li><a href="contributor">오픈소스 참여</a></li>
+</ul>
+
+<h2 id="정리">정리</h2>
+<p>오픈 소스는 라이선스를 적용하고 있습니다. 
+라이선스를 잘 준수하여 안전하게 SW를 사용함과 동시에 향후 발생할 수 있는 법적 문제도 미연에 방지할 수 있습니다.</p>
+
+<p>깃허브는 처음에 저장소를 생성할 때 라이선스 정보를 같이 선택할 수 있도록 제공하고 있습니다. 
+자신이 프로젝트가 오픈 소스인지 아니면 다른 상용 코드인지를 구분할 수 있습니다.</p>
+
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

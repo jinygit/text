@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="깃허브-계정">깃허브 계정</h1>
+<p>깃허브 회원은 무료입니다. 회원 가입 후 자신의 계정을 설정합니다. 
+깃허브의 계정은 앞으로 여러분이 협업하고, 오픈 소스의 커뮤니티 회원으로써의 프로필이 됩니다.</p>
+
+<h2 id="계정">계정</h2>
+<p>깃허브 웹 사이트 오른쪽 상단에 위치한 자신의 계정 아이콘을 클릭합니다. 
+자신의 계정 활동에 관련된 몇 개의 항목들이 출력됩니다.</p>
+
+<ul>
+  <li>Set your status</li>
+  <li>Your profile</li>
+  <li>Your repositories</li>
+  <li>Your projects</li>
+  <li>Your stars</li>
+  <li>Settings</li>
+</ul>
+
+<p><img src="./img/account_01.png" alt="github" /></p>
+
+<h3 id="set-your-status">Set your status</h3>
+<p>깃허브의 계정은 자신의 이력서 프로필과도 같습니다. 다른 기업에서 자신의 코드를 보고 입사 지원을 요청하는 경우도 있습니다. 
+또한, 자신의 개발 프로젝트와 관련된 메일을 받기도 합니다.</p>
+
+<p>깃허브 계정에서 status 부분은 ‘현재 휴가 중’과 같은 상태를 표현할 수 있는 재미있는 기능이 추가되었습니다. 
+계정에서 [Set your status]를 선택합니다.</p>
+
+<p><img src="./img/account_02.png" alt="github" /></p>
+
+<p>모달 창이 출력되면서, 자신의 상태를 선택할 수 있습니다. 상태는 조직 또는 현재의 계정에 표시할 수 있습니다.</p>
+
+<h3 id="your-profile">Your profile</h3>
+<p>내 계정의 대시보드입니다. 왼쪽에서는 자신의 정보와 오른쪽에는 활동 내역들이 표시됩니다.</p>
+
+<p><img src="./img/account_03.png" alt="github" /></p>
+
+<p>프로필은 누구나 볼 수 있습니다. 깃허브에서 저장소의 소유자 또는 커밋한 개발자 등 프로필 아이콘을 클릭하면 상대방의 프로필로 이동합니다. 
+공개된 이력서와 개인 정보라고 보면 됩니다.</p>
+
+<p>오른쪽에는 Overview / Repositories / Projects / Stars / Followers / Following 메뉴가 있습니다. 
+이중 몇 개의 메뉴는 바로가기 메뉴로 링크되어 있습니다.</p>
+
+<ul>
+  <li>Your repositories</li>
+  <li>Your projects</li>
+  <li>Your stars</li>
+</ul>
+
+<h3 id="settings">Settings</h3>
+<p>자신의 계정 정보를 수정할 수 있는 페이지입니다. 프로필 사진을 변경할 수 있습니다.</p>
+
+<p><img src="./img/account_04.png" alt="github" /></p>
+
+<p>SSH 접속키, 유료 지불 정보 등의 설정을 변경할 수도 있습니다.</p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/part2">협업하기</a></li>
+    <li class="list-group-item"><a href="#">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

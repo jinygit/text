@@ -14,7 +14,7 @@
                 font-family: "Nanum Gothic", sans-serif;
             }
             img {
-                width:100%;
+                max-width:100%;
             }
         </style>
         
@@ -56,9 +56,9 @@
             </div>
             <div class="col-lg-9">
                 <h1 class="display-3">Git 교과서</h1>
-                <h2>코드입력-하나도 놓치지 마라!</h2>
-                <p>버전관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시처리, 병합, 복귀, 서브모듈, 테그까지 깃.<br>
-                    소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
                 </p>
                 <p>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
@@ -78,18 +78,56 @@
             <h2 id="3장-깃-개념-잡기">3장 깃 개념 잡기</h2>
 <p>이 장에서는 깃의 저장소 개념을 알아보고, 직접 생성해 봅니다. 깃을 효과적으로 잘 사용하려면 저장소의 동작 원리를 이해하는 것이 중요합니다.</p>
 
-<ul>
-  <li>3.1 깃 저장소 생성</li>
-  <li>3.2 워킹 디렉터리</li>
-  <li>3.3 스테이지</li>
-  <li>3.4 파일의 상태 확인</li>
-  <li>3.5 파일 관리 목록에서 제외하기</li>
-  <li>3.6 깃 저장소 복제</li>
-</ul>
-
 <h2><br /></h2>
 
-<h2 id="정리">정리</h2>
+<h3 id="학습내용">학습내용</h3>
+<ul>
+  <li>3.1 깃 저장소 생성 68
+    <ul>
+      <li>3.1.1 폴더와 깃 저장소 68</li>
+      <li>3.1.2 초기화 68</li>
+      <li>3.1.3 숨겨진 폴더 = .git 폴더 71</li>
+      <li>3.1.4 소스트리와 연결 72</li>
+    </ul>
+  </li>
+  <li>3.2 워킹 디렉터리 77
+    <ul>
+      <li>3.2.1 워킹 디렉터리란? 78</li>
+      <li>3.2.2 파일의 untracked 상태와 tracked 상태 78</li>
+    </ul>
+  </li>
+  <li>3.3 스테이지 79
+    <ul>
+      <li>3.3.1 스테이지 = 임시 영역 80</li>
+      <li>3.3.2 파일의 stage 상태와 unstage 상태 80</li>
+      <li>3.3.3 파일의 modified 상태와 unmodified 상태 81</li>
+    </ul>
+  </li>
+  <li>3.4 파일의 상태 확인 83
+    <ul>
+      <li>3.4.1 status 명령어로 깃 상태 확인 83</li>
+      <li>3.4.2 소스트리에서 깃 상태 확인 83</li>
+    </ul>
+  </li>
+  <li>3.5 파일 관리 목록에서 제외: .gitignore 84
+    <ul>
+      <li>3.5.1 .gitignore 파일 85</li>
+      <li>3.5.2 .gitignore 파일 표기법 85</li>
+    </ul>
+  </li>
+  <li>3.6 깃 저장소 복제 86
+    <ul>
+      <li>3.6.1 공개 저장소 87</li>
+      <li>3.6.2 다운로드 vs 복제 87</li>
+      <li>3.6.3 복제 명령어 88</li>
+    </ul>
+  </li>
+  <li>3.7 정리 89</li>
+</ul>
+
+<h2 id="-1"><br /></h2>
+
+<h3 id="정리">정리</h3>
 <p>깃 저장소와 저장소 개념을 학습했습니다. 앞으로 깃을 학습하려면 이 장에서 배운
 저장소 개념을 잘 알고 있어야 합니다. 또 각 용어들을 구분하고 이해하는 것도 필요합니다(특히 워킹 디렉터리와 스테이지 영역). 각 장의 기능을 학습하다 용어 이해가 부족하다고 느낄 때 이 장
 을 다시 읽어 보는 것도 좋습니다.</p>
@@ -116,18 +154,25 @@
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
-</ul></div>
+</ul>
+
+<br><br><br></div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container -->  <!-- Footer -->
-  <footer class="py-3 bg-dark">
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020</p>
+        	</div>
+    	</div>
+      
     </div>
     <!-- /.container -->
-  </footer><!--부트스트랩4-->
+</footer><!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
