@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+{%- include title.html -%}
+
+<!-- Page Content -->
+<div class="container">
+<div class="row">
+
+<!-- Post Content Column -->
+<div class="col-lg-9">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">setup</li>
+          </ol>    
+    </nav>
+    
+    <!-- Title -->
+    <h1 class="mt-4">{{ page.title }}</h1>
+    <hr>
+
+    {{ content }}
+</div>
+
+<!-- Sidebar Column -->
+<div class="col-md-3">
+    {%- include menu.html -%}
+</div>
+
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->

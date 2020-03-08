@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="npm">NPM</h2>
+<p>NPM은 Node package manager의 약자 입니다. 노드 기반으로 작성된 라이브러리 패키지를 관리해 주는 도구 입니다.</p>
+
+<h3 id="npm-사이트">npm 사이트</h3>
+<p>NPM의 공식사이트는 https://www.npmjs.com 입니다. Npm은 무료로 회원 가입하여 사용을 할 수 있습니다.</p>
+
+<p><img src="./imgs/npm1.jpg" alt="" /></p>
+
+<p>NPM 사이트는 다양한 자바스크립트 언어로 작성된 코드의 허브 저장소 입니다.다른 개발자들이 작성한 코드를 찾아 볼 수 있고, 공개된 패키지를 쉽게 설치 할 수 있도록 도와 줍니다. 현재 npm 사이트에는 2019년 2월 현재 90만개 이상의 패키지들이 등록되어 있습니다.</p>
+
+<h3 id="패키지-생성">패키지 생성</h3>
+<p>Npm 패키지는 고유한 정보를 package.json 파일안에 기록해 둡니다. 이 파일은 npm init 명령을 통하여 생성할 수 있습니다.</p>
+
+<p>Npm은 자체적인 깃 호스팅을 운영하고 있습니다. Npm publish 명령은 현재의 패키지를 npm 호스팅에 등록을 하는 과정을 자동으로 수행합니다.</p>
+
+<p>등록한 패키지를 삭제할때는 npm unpublish 명령을 사용할 수 있습니다. 다만, 24시간 이내만 가능합니다.</p>
+
+<h3 id="깃허브-연동">깃허브 연동</h3>
+<p>NPM의 package.json 속성중에는 git repository 설정부분이 있습니다. 이곳에 코드의 깃 저장소를 적어 줍니다. 향후 배포되는 코드에 문제 발생시 이 주소를 찾아 문제를 보고하시면 됩니다. 또한, 코드 개선에 기여자로 참여할 수 있습니다.</p>
+
+<p>NPM 저장소를 통하여 페키지를 설치하는 방법이 일반적입니다. 하지만 깃허브에 있는 노드 페키지 라이브러리를 직접 설치를 할 수 있습니다.</p>
+
+<p>NPM은 다양한 방법의 설치 옵션을 제공합니다. 콘솔창에서 npm help install 명령을 실행해 보면 몇가지의 설치 옵션방법이 출력이 됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit
+<span class="nv">$ </span>npm <span class="nt">-help</span> <span class="nb">install
+
+</span>npm <span class="nb">install</span> <span class="o">(</span>with no args, <span class="k">in </span>package <span class="nb">dir</span><span class="o">)</span>
+npm <span class="nb">install</span> <span class="o">[</span>&lt;@scope&gt;/]&lt;pkg&gt;
+npm <span class="nb">install</span> <span class="o">[</span>&lt;@scope&gt;/]&lt;pkg&gt;@&lt;tag&gt;
+npm <span class="nb">install</span> <span class="o">[</span>&lt;@scope&gt;/]&lt;pkg&gt;@&lt;version&gt;
+npm <span class="nb">install</span> <span class="o">[</span>&lt;@scope&gt;/]&lt;pkg&gt;@&lt;version range&gt;
+npm <span class="nb">install</span> &lt;folder&gt;
+npm <span class="nb">install</span> &lt;tarball file&gt;
+npm <span class="nb">install</span> &lt;tarball url&gt;
+npm <span class="nb">install</span> &lt;git:// url&gt;
+npm <span class="nb">install</span> &lt;github username&gt;/&lt;github project&gt;
+
+aliases: i, isntall, add
+common options: <span class="o">[</span><span class="nt">--save-prod</span>|--save-dev|--save-optional] <span class="o">[</span><span class="nt">--save-exact</span><span class="o">]</span> <span class="o">[</span><span class="nt">--no-save</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>깃의 저장소를 이용하여 직접 설치를 할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install 저장소URL
+</code></pre></div></div>
+
+<h3 id="실습">실습</h3>
+<p>새로운 npm 모듈을 위한 폴더를 하나 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir npmtest
+$ cd npmtest
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
+</code></pre></div></div>
+
+<p>깃 저장소를 초기화 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
+$ git init
+Initialized empty Git repository in E:/jinygit/npmtest/.git/
+</code></pre></div></div>
+
+<p>깃허브에 새로운 저장소를 하나 생성합니다. 원격 저장소를 등록합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+$ git remote add origin https://github.com/jinygit/mpntest.git
+</code></pre></div></div>
+
+<p>NPM 패키지를 초기화 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">infoh</span><span class="p">@</span><span class="n">DESKTOP</span><span class="p">-</span><span class="n">VAKLOFQ</span> <span class="n">MINGW64</span> <span class="p">/</span><span class="n">e</span><span class="p">/</span><span class="n">jinygit</span><span class="p">/</span><span class="n">npmtest</span>
+<span class="p">$</span> <span class="n">npm</span> <span class="n">init</span>
+<span class="n">This</span> <span class="n">utility</span> <span class="n">will</span> <span class="n">walk</span> <span class="n">you</span> <span class="n">through</span> <span class="n">creating</span> <span class="n">a</span> <span class="k">package</span><span class="p">.</span><span class="n">json</span> <span class="n">file</span><span class="p">.</span>
+<span class="n">It</span> <span class="n">only</span> <span class="n">covers</span> <span class="n">the</span> <span class="n">most</span> <span class="n">common</span> <span class="n">items</span><span class="p">,</span> <span class="k">and</span> <span class="n">tries</span> <span class="k">to</span> <span class="n">guess</span> <span class="n">sensible</span> <span class="n">defaults</span><span class="p">.</span>
+
+<span class="n">See</span> <span class="p">`</span><span class="n">npm</span> <span class="n">help</span> <span class="n">json</span><span class="p">`</span> <span class="n">for</span> <span class="n">definitive</span> <span class="n">documentation</span> <span class="n">on</span> <span class="n">these</span> <span class="n">fields</span>
+<span class="k">and</span> <span class="n">exactly</span> <span class="n">what</span> <span class="n">they</span> <span class="k">do</span><span class="p">.</span>
+
+<span class="n">Use</span> <span class="p">`</span><span class="n">npm</span> <span class="n">install</span> <span class="p">&lt;</span><span class="n">pkg</span><span class="p">&gt;`</span> <span class="n">afterwards</span> <span class="k">to</span> <span class="n">install</span> <span class="n">a</span> <span class="k">package</span> <span class="k">and</span>
+<span class="n">save</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">dependency</span> <span class="k">in</span> <span class="n">the</span> <span class="k">package</span><span class="p">.</span><span class="n">json</span> <span class="n">file</span><span class="p">.</span>
+
+<span class="n">Press</span> <span class="p">^</span><span class="n">C</span> <span class="n">at</span> <span class="n">any</span> <span class="n">time</span> <span class="k">to</span> <span class="n">quit</span><span class="p">.</span>
+<span class="k">package</span> <span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">npmtest</span><span class="p">)</span> <span class="n">jinyjs</span><span class="p">-</span><span class="n">npmtest</span>
+<span class="k">version</span><span class="p">:</span> <span class="p">(</span><span class="m">1.0.0</span><span class="p">)</span>
+<span class="n">description</span><span class="p">:</span> <span class="err">깃허브</span> <span class="n">npm</span><span class="err">테스트</span>
+<span class="n">entry</span> <span class="n">point</span><span class="p">:</span> <span class="p">(</span><span class="n">index</span><span class="p">.</span><span class="n">js</span><span class="p">)</span>
+<span class="n">test</span> <span class="nf">command</span><span class="p">:</span>
+<span class="n">git</span> <span class="n">repository</span><span class="p">:</span>
+<span class="n">keywords</span><span class="p">:</span>
+<span class="n">author</span><span class="p">:</span>
+<span class="n">license</span><span class="p">:</span> <span class="p">(</span><span class="n">ISC</span><span class="p">)</span>
+<span class="n">About</span> <span class="k">to</span> <span class="nb">write</span> <span class="k">to</span> <span class="n">E</span><span class="p">:\</span><span class="n">jinygit</span><span class="p">\</span><span class="n">npmtest</span><span class="p">\</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">:</span>
+
+<span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"jinyjs-npmtest"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"index.js"</span><span class="p">,</span>
+  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"test"</span><span class="p">:</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span>
+  <span class="p">},</span>
+  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"ISC"</span>
+<span class="p">}</span>
+<span class="n">Is</span> <span class="n">this</span> <span class="n">OK</span><span class="p">?</span> <span class="p">(</span><span class="n">yes</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Npm 패키지 생성을 위한 package.json 파일을 만들었습니다. 이번에는 새로운 테스트 모듈 파일을 생성해 봅니다.</p>
+
+<p>Index.js</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = () =&gt; {
+    return 'hello gitnpm package';
+}
+</code></pre></div></div>
+
+<p>파일 등록과 커밋을 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+$ git add index.js
+
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+$ git add package.json
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+$ git commit -m "first npm"
+[master (root-commit) 3f85879] first npm
+ 2 files changed, 14 insertions(+)
+ create mode 100644 index.js
+ create mode 100644 package.json
+</code></pre></div></div>
+
+<p>작성된 npm 패키지 코드를 깃허브 원격 저장소로 푸시를 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 456 bytes | 228.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/jinygit/mpntest.git
+ * [new branch]      master -&gt; master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+</code></pre></div></div>
+
+<p>이제는 깃허브의 주소를 이용하여 npm 패키지를 설치해 보도록 합니다. 새로운 폴더를 하나 생성합니다. 또한, npm init을 통하여 초기화를 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
+$ npm install https://github.com/jinygit/mpntest.git
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN jinyjs-npmapp@1.0.0 No description
+npm WARN jinyjs-npmapp@1.0.0 No repository field.
+
++ jinyjs-npmtest@1.0.0
+added 1 package and audited 1 package in 9.94s
+found 0 vulnerabilities
+</code></pre></div></div>
+
+<p>깃허브 저장소를 이용하여 페키지를 설치하였습니다. ls명령을 통하여 설치 디렉토리를 확인해 봅니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
+$ ls
+node_modules/  package.json  package-lock.json
+</code></pre></div></div>
+
+<p>새로운 node_modules 패키지가 생성된 것을 확인 할 수 있습니다.</p>
+
+<p><br /><br /><br /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

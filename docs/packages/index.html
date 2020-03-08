@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="페키지">페키지</h2>
+<p>깃은 오픈소스 개발 생태계, 배포와 매우 밀접한 관계를 가지고 있습니다. 깃은 소스의 버전관리 뿐만 아니라 다양한 언어의 라이브러리를 배포하는 시스템으로 자리를 잡아 가고 있습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="라이브러리">라이브러리</h3>
+<p>깃 호스팅으로 관리는 수많은 저장소는 각자의 고유적인 프로젝트 또는 다른 프로젝트의 일부 라이브러리 입니다.</p>
+
+<h4 id="페키지-메니저">페키지 메니저</h4>
+<p>과거의 라이브러리는 분산되어 있는 각자의 웹사이트에 압축파일 형태로 공개가 되었습니다. 하지만 최근들어 다양한 언어들이 코드를 패키지화 하여 자기들 만의 고유한 배포 사이트를 운영하고 있습니다.</p>
+
+<p>PHP는 컴포저, 노드는 NPM, 루비는 gem, 파이썬은 PIP등 이 있습니다.</p>
+
+<h4 id="페키지-저장소">페키지 저장소</h4>
+<p>깃의 저장소와 호스팅은 다양한 라이브러리 패키지를 외부에 공개하고 배포를 쉽게 할 수 있는 최적의 환경입니다. 이는 대부분의 패키지 배포 사이트들이 깃과 연동이 되거나, 깃에 의해서 내부관리를 하고 있다는 것입니다.</p>
+
+<p>컴포저의 경우 깃허브나 빗버켓 호스팅 저장소와 연동하여 패키지를 배포합니다. 노드 NPM의 경우에도 내부적 또는 호스팅을 이용하여 배포할 수 있습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="컴포저">컴포저</h3>
+<p>페키지스트(packagist)는 PHP 라이브러리 저장소 입니다. <a href="composer">»composer</a></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="npm">NPM</h3>
+<p>노드 기반으로 작성된 라이브러리 패키지를 관리해 주는 도구 입니다. <a href="npm">»npm</a></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="pip">PIP</h3>
+<p>PIP는 파이썬의 페키지 메니저 관리 도구 입니다. <a href="pip">»pip</a></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="gem">GEM</h3>
+<p>잼(gem)은 루비 언어의 패키지 관리 도구 입니다. <a href="gem">»gem</a></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="nuget">Nuget</h3>
+<p>Nuget은 마이크로소프트의 .net 코드의 패키지를 관리하는 도구 입니다. <a href="nuget">»nuget</a></p>
+
+<p><br /><br /><br /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br><br><br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>
