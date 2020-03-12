@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -102,7 +102,7 @@
 <p>그럼 index.htm 파일을 등록합시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git add index.htm
+$ git add index.htm ☜ 스테이지 등록
 </code></pre></div></div>
 
 <p>index.htm 파일을 등록하는 과정은 다음과 같이 표현할 수 있습니다.</p>
@@ -141,12 +141,12 @@ $ git add index.htm
 <p>워킹 디렉터리에 있는 새로운 파일이 스테이지 영역에 등록되었습니다. 콘솔창에서 status 명령어를 사용하여 등록 상태를 다시 한 번 확인해 보겠습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git status
+$ git status ☜ 상태를 확인합니다.
 On branch master
 No commits yet
 Changes to be committed:
-(use "git rm --cached &lt;file&gt;..." to unstage)
-new file: index.htm
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   index.htm ☜ 스테이지 등록, 새 파일 상태
 </code></pre></div></div>
 
 <p>이전 상태와 달리 new file 메시지가 출력됩니다. 이는 스테이지 영역에 파일을 정상적으로 등록했다는 의미입니다.</p>
@@ -160,29 +160,31 @@ new file: index.htm
 
 <p>그림 4-10] 스테이지 영역의 파일 등록 취소</p>
 
-<p>rm 명령어로 삭제해 보겠습니다. 스테이지 영역에서만 등록된 파일을 삭제하려고 –cached 옵션을 함께 사용합니다.</p>
+<p>rm 명령어로 삭제해 보겠습니다. 스테이지 영역에서만 등록된 파일을 삭제하려고 <code class="highlighter-rouge">--cached</code> 옵션을 함께 사용합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git rm --cached index.htm
+$ git rm --cached index.htm ☜ 스테이지 삭제
 rm 'index.htm'
 </code></pre></div></div>
 
 <p>스테이지의 캐시 목록에서 파일이 삭제됩니다. 다시 status 명령어를 실행하여 확인합시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git status
+$ git status ☜ 상태 확인
 On branch master
 No commits yet
-Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
-index.htm
+Untracked files: ☜ 추적하지 않음
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        index.htm ☜ 스테이지 삭제
+
 nothing added to commit but untracked files present (use "git add" to track)
 </code></pre></div></div>
 
 <p>등록하기 이전의 untracked 상태로 변경되었습니다. 다음 실습에 대비하여 다시 tracked 상태로 변경해 놓습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git add index.htm
+$ git add index.htm ☜ 스테이지 다시등록
+
 </code></pre></div></div>
 
 <p>파일을 등록한 후 커밋하지 않고 바로 삭제하려면 rm –cached 명령어를 사용합니다. 하지만 한 번이라도 커밋을 했다면 reset 명령어를 사용해야 합니다. 리셋 방법은 9장에서 자세히 설명합니다.</p>
@@ -192,6 +194,7 @@ $ git add index.htm
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git rm --cached index.htm
 rm 'index.htm'
+
 </code></pre></div></div>
 
 <p>삭제한 후 status 명령어를 실행하면 다음과 같이 이전과 다른 결과가 나옵니다.</p>
@@ -200,25 +203,27 @@ rm 'index.htm'
 $ git status
 On branch master
 Changes to be committed:
-(use "git reset HEAD &lt;file&gt;..." to unstage)
-deleted: index.htm
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+        deleted:    index.htm
 Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
-index.htm
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        index.htm ☜ 스테이지 삭제
+
 </code></pre></div></div>
 
 <p>파일이 untracked 상태가 되고, 스테이지 영역에서 파일이 삭제 처리됩니다. 커밋 후 삭제는 파일이 삭제 또는 변화된 것으로 간주합니다. 따라서 커밋된 파일은 리셋으로 삭제한 후 정리해 주어야 합니다. 다음은 간단한 리셋 후 정리하는 명령어를 사용한 예입니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git reset HEAD index.htm
+$ git reset HEAD index.htm ☜ 리셋을 시도합니다.
 </code></pre></div></div>
 
 <p>그리고 다시 status 명령어로 확인하면 정상적으로 커밋이 정리되었습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git status
+$ git status ☜ 상태 확인
 On branch master
 nothing to commit, working tree clean
+
 </code></pre></div></div>
 
 <p>이처럼 터미널에서 unstage 상태 및 untracked 상태로 변경하는 것은 복잡합니다. 소스트리를 이용하면 스테이지 영역에 등록된 파일을 좀 더 쉽게 등록 취소할 수 있습니다. 모두 스테이지에서 내리기와 선택 내용 스테이지에서 내리기를 사용하면 untracked 상태로 쉽게 변경할 수 있습니다.</p>
@@ -234,17 +239,19 @@ nothing to commit, working tree clean
 <p>다음과 같이 index.htm 파일의 이름을 변경하고 상태를 확인해 보면 깃에서 변경된 파일을 계속 추적하는 것을 알 수 있습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git mv index.htm home.htm
+$ git mv index,htm home.htm
 $ git status
 On branch master
 No commits yet
+
 Changes to be committed:
-(use "gt rm --cached &lt;file&gt;..." to unstage)
-new file: home.htm
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   home.htm ☜ 파일 이름 변경
 </code></pre></div></div>
 
 <p>굳이 git mv 명령어를 사용하지 않고, 운영 체제의 mv 명령어를 사용해도 됩니다. 깃의 git mv 명령어를 여러 단계의 명령으로 풀면 다음과 같습니다.</p>
 
+<p>[예시]</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ mv index.htm home.htm
 $ git rm index.htm
@@ -256,8 +263,10 @@ $ git add home.htm
 <p>다음 실습을 위해 이전 이름으로 되돌려 놓습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git mv home.htm index.htm
+$ git mv home.htm index,htm
 </code></pre></div></div>
+
+<p><br /><br /></p>
 
         </div>
 
@@ -265,9 +274,9 @@ $ git mv home.htm index.htm
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -281,7 +290,7 @@ $ git mv home.htm index.htm
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -297,7 +306,7 @@ $ git mv home.htm index.htm
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

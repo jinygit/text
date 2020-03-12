@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -87,47 +87,22 @@
 <p>브랜치 생성과 체크아웃을 동시에 하는 실습을 하겠습니다. -b 옵션으로 브랜치를 생성하면서 동시에 체크아웃도 합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git checkout -b hotfix ☜ 체크아웃합니다
+Switched to a new branch 'hotfix' ☜ ①브랜치를 생성합니다
 
-$ git checkout -b hotfix
+infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix) ☜ ②체크아웃
 
-318940.png
-체크아웃
-
-Switched to a new branch 'hotfix'
-
-318970.png
-① 브랜치 생성
-
- 
-
-infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
-
-319003.png
-② 체크아웃
 </code></pre></div></div>
 
 <p>새로운 브랜치가 생성된 메시지와 함께 hotfix 브랜치로 자동 전환되었습니다. 브랜치 목록을 살펴봅시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
-
 $ git branch -v
+  feature d84766c first
+  footer  d84766c first
+* hotfix  dcdb1c1 master working...
+master  dcdb1c1 master working...
 
-342879.png
-브랜치 목록
-
-feature d84766c first
-
-footer d84766c first
-
-* hotfix dcdb1c1 master working...
-
-342909.png
-현재의 브랜치
-
-master dcdb1c1 master working...
-
-342939.png
-브랜치 생성만 했기 때문에 같은 커밋 ID를 가리킴
 </code></pre></div></div>
 
 <p>새로운 hotfix 브랜치가 보이고 앞에 별표(*)가 표시된 것을 확인할 수 있습니다.</p>
@@ -143,64 +118,33 @@ master dcdb1c1 master working...
 <p>커밋 해시키를 사용하여 체크아웃하려면 해시키를 알고 있어야 합니다. 커밋 해시 값은 40자리로 매우 길어 입력할 때 오류가 많이 생깁니다. 해시키를 전체 사용하지 않고, 앞의 7자리 정도만 사용해도 무리가 없습니다. 이는 유일한 해시 값이 가지는 특징입니다. 7자리만 사용해도 중복될 확률이 적습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
-
-367183.png
-367159.png
-이 자리만 표시됨
-
 $ git branch -v
+  feature d84766c first
+  footer  d84766c first
+* hotfix  dcdb1c1 master working...
+master  dcdb1c1 master working...
 
-342973.png
-브랜치 목록
-
-feature d84766c first
-
-footer d84766c first
-
-* hotfix dcdb1c1 master working...
-
-master dcdb1c1 master working...
 </code></pre></div></div>
 
 <p>이번에는 브랜치 이름 대신에 직접 master 브랜치의 dcdb1c1 커밋 값을 사용하여 체크아웃해 볼까요?</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
-
 $ git checkout dcdb1c1
-
-343131.png
-커밋으로 브랜치 이동
-
 Note: checking out 'dcdb1c1'.
 
- 
-
 You are in 'detached HEAD' state. You can look around, make experimental
-
 changes and commit them, and you can discard any commits you make in this
-
 state without impacting any branches by performing another checkout.
 
- 
-
 If you want to create a new branch to retain commits you create, you may
-
 do so (now or later) by using -b with the checkout command again. Example:
 
- 
-
-git checkout -b &lt;new-branch-name&gt;
-
- 
+  git checkout -b &lt;new-branch-name&gt;
 
 HEAD is now at dcdb1c1 master working...
 
- 
-
 infoh@DESKTOP MINGW64 /e/gitstudy06 ((dcdb1c1...))
 
-343162.png
-브랜치 이름이 커밋 ID로 표시됨
 </code></pre></div></div>
 
 <p>지정한 커밋 위치로 체크아웃되었습니다. 깃 배시의 브랜치 이름에 입력한 커밋 해시 값이 표시됩니다. 이처럼 브랜치 중간에 작업한 특정 커밋으로 직접 이동하여 상태를 확인할 수 있습니다.</p>
@@ -231,35 +175,21 @@ infoh@DESKTOP MINGW64 /e/gitstudy06 ((dcdb1c1...))
 
 <p>대시(<code class="highlighter-rouge">-</code>)를 사용하면 바로 이전의 브랜치로 복귀합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 ((dcdb1c1...))
-
-343303.png
-브랜치 복귀
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 ((dcdb1c1…))
 $ git checkout -
-
-343228.png
-이전 브랜치로 이동
-
-
 Switched to branch 'hotfix'
-
- 
-
 infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+
 </code></pre></div></div>
 
 <p>커밋 단계를 여러 번 이동한 후 원래 브랜치(현재)로 되돌아오려면 대시(-) 명령어를 여러 번 실행해야 합니다. 이때는 그냥 직접 브랜치 이름을 입력하는 것이 편리합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-$ git checkout master
-
-343263.png
-특정 브랜치로 복귀
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout master
 </code></pre></div></div>
 
 <p>이 명령을 실행하면 master 브랜치로 이동합니다. 브랜치 이름을 입력하면 브랜치의 마지막 커밋 위치인 HEAD 포인트로 복귀합니다.</p>
 
+<p><br /><br /></p>
 
         </div>
 
@@ -267,9 +197,9 @@ $ git checkout master
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -283,7 +213,7 @@ $ git checkout master
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -299,7 +229,7 @@ $ git checkout master
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

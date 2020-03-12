@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -86,97 +86,53 @@
 <p>실습을 위해 feature 브랜치에 새 파일을 하나 생성합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+$ echo “this is temp” &gt; temp.htm ☜새로운 파일
 
-$ echo "this is temp" &gt; temp.htm
-
-320021.png
-새로운 파일
-
- 
-
-infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)2
-
-$ git status
-
-320051.png
-상태 확인
-
+infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+$ git status ☜상태확인
 On branch feature
-
 Changes not staged for commit:
-
-(use "git add &lt;file&gt;..." to update what will be committed)
-
-(use "git restore &lt;file&gt;..." to discard changes in working directory)
-
-modified: stash.htm
-
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+        modified:   stash.htm
 Untracked files:
-
-(use "git add &lt;file&gt;..." to include in what will be committed)
-
-temp.htm
-
-320083.png
-추적하지 않는 파일
-
- 
-
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        temp.htm ☜ 추적하지 않는 파일
 no changes added to commit (use "git add" and/or "git commit -a")
+
 </code></pre></div></div>
 
 <p>새로운 파일을 하나 생성하여 추적되지 않는 새 파일을 만들었습니다. 새로 만든 파일이 불필요해졌습니다. clean 명령어를 사용하여 생성된 untracked 상태의 파일들을 삭제합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
-
 $ git clean
-
-346198.png
-정리 실행
-
 fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; refusing to clean
+
 </code></pre></div></div>
 
 <p>앗, 삭제 명령이 거부되었습니다. 삭제 명령은 민감해서 몇 가지 옵션을 같이 사용해야 합니다. 어떤 옵션이 있는지 -help 옵션으로 살펴봅시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clean -help
-
-346228.png
-도움말
-
 usage: git clean [-d] [-f] [-i] [-n] [-q] [-e &lt;pattern&gt;] [-x | -X] [--] &lt;paths&gt;...
 
- 
+    -q, --quiet           do not print names of files removed
+    -n, --dry-run         dry run
+    -f, --force           force
+    -i, --interactive     interactive cleaning
+    -d                    remove whole directories
+    -e, --exclude &lt;pattern&gt;
+                          add &lt;pattern&gt; to ignore rules
+    -x                    remove ignored files, too
+    -X                    remove only ignored files
 
--q, --quiet do not print names of files removed
-
--n, --dry-run dry run
-
--f, --force force
-
--i, --interactive interactive cleaning
-
--d remove whole directories
-
--e, --exclude &lt;pattern&gt;
-
-add &lt;pattern&gt; to ignore rules
-
--x remove ignored files, too
-
--X remove only ignored files
 </code></pre></div></div>
 
 <p>그럼 -f 옵션을 사용하여 강제로 삭제해 보겠습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
-
 $ git clean -f
-
-346259.png
-강제 청소
-
 Removing temp.htm
+
 </code></pre></div></div>
 
 <p>추적하지 않는 파일들을 강제로 삭제했습니다. -f 옵션 외에도 다음 옵션을 많이 사용합니다.</p>
@@ -197,15 +153,17 @@ Removing temp.htm
   <p>Note: 깃에 저장된 것을 완벽히 삭제하기는 쉽지 않습니다. 깃은 실수로 변경하거나 삭제되는 것을 방지하는 도구입니다. 따라서 좀 더 완벽하게 깃 저장소를 청소하려면 깃의 원리를 이해해야 합니다. 커밋 기록을 완벽하게 제거하고 싶다면 reflog 기록도 같이 삭제해야 합니다. 추가 내용은 이 책의 학습 사이트(https://git.jiny.dev)를 이용합니다.</p>
 </blockquote>
 
+<p><br /><br /></p>
+
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -219,7 +177,7 @@ Removing temp.htm
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -235,7 +193,7 @@ Removing temp.htm
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

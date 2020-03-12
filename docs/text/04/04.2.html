@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -81,27 +81,28 @@
 <h3 id="421-새-파일-생성">4.2.1 새 파일 생성</h3>
 <p>실습을 위해 간단한 HTML 파일을 하나 작성합니다. 에디터를 이용하여 코드를 작성하면 됩니다. 필자는 VS Code를 이용하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir gitstudy04
-$ cd gitstudy04
-$ git init
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mdkir gitstudy04 ☜ 새로운 실습 폴더를 생성합니다.
+$ code index.htm ☜ VS Code를 사용해 파일을 작성합니다.
+$ git init ☜ 저장소를 깃으로 초기화합니다.
 Initialized empty Git repository in E:/gitstudy04/.git/
 </code></pre></div></div>
 
 <p>VS Code를 사용하여 파일 작성</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ code index.htm
+$ code index.htm ☜ VS Code 실행
+
 </code></pre></div></div>
 
 <p>index.htm은 다음과 같이 작성합니다.</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-
+    
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
@@ -113,18 +114,20 @@ $ code index.htm
 <p>이렇게 파일을 생성하면 워킹 디렉터리에 index.htm 이름으로 저장됩니다. 모든 작업은 워킹 디렉터리 안에서 진행됩니다.</p>
 
 <h3 id="422-깃에서-새-파일-생성-확인">4.2.2 깃에서 새 파일 생성 확인</h3>
-<p>워킹 디렉터리에 새 파일이 생성되었습니다. 워킹 디렉터리에 새 파일이 추가되면 깃은 변화된 상태를 자동으로 감지합니다. 이때 깃 상태를 확인할 수 있는 명령어가 status입니다.</p>
+<p>워킹 디렉터리에 새 파일이 생성되었습니다. 워킹 디렉터리에 새 파일이 추가되면 깃은 변화된 상태를 자동으로 감지합니다. 이때 깃 상태를 확인할 수 있는 명령어가 <code class="highlighter-rouge">status</code>입니다.</p>
 
 <p>status 명령어를 입력하면 메시지가 출력되는 것을 볼 수 있습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git status
+$ git status ☜ 명령을 입력합니다.
 On branch master
 No commits yet
-Untracked files:
-(use "git add &lt;file&gt;..." to include in what will be committed)
-index.htm
+
+Untracked files: 
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+        index.htm ☜ 새로운 파일이 등록된 것을 확인
 nothing added to commit but untracked files present (use "git add" to track)
+
 </code></pre></div></div>
 
 <p>깃의 상태 메시지에서 Untracked files 표시 부분을 확인합니다. 깃 배시 터미널로 실행하면 추적되지 않은 파일은 빨간색으로 표시합니다. “Untracked files” 메시지는 워킹 디렉터리에 새로운 파일이 등록되었다고 알려 주는 것입니다.</p>
@@ -148,15 +151,17 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 <p>소스트리는 GUI로 상태를 직관적으로 표시해 줍니다. 사실 내부적으로는 소스트리가 status 명령어를 대신 깃에 입력하는 것입니다. 따라서 직접 status 명령어를 실행하지 않아도 쉽게 확인할 수 있습니다.</p>
 
+<p><br /><br /></p>
+
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -170,7 +175,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -186,7 +191,7 @@ nothing added to commit but untracked files present (use "git add" to track)
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

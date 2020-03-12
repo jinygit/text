@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -86,68 +86,34 @@
 <p>앞에서 업로드한 원격 저장소를 다른 이름의 로컬 저장소로 복제해 보겠습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 메인폴더
-
 $ mkdir gitstudy05_clone
-
-341337.png
-복제할 새 폴더 만들기
-
 $ cd gitstudy05_clone/
 
- 
-
 infoh@hojin MINGW64 /e/gitstudy05_clone
-
 $ git clone https://github.com/jinygit/gitstudy05.git .
-
-341445.png
-저장소 복제
-
 Cloning into '.'...
-
 remote: Enumerating objects: 3, done.
-
 remote: Counting objects: 100% (3/3), done.
-
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
-
 Unpacking objects: 100% (3/3), done.
 
-복사한 후 la -all 명령어로 목록을 확인해 보세요.
-
 infoh@hojin MINGW64 /e/gitstudy05_clone (master)
-
 $ ls -all
-
-341471.png
-목록 확인
-
 total 13
-
-drwxr-xr-x 1 infoh 197609 0 12월 12 17:23 .
-
-drwxr-xr-x 1 infoh 197609 0 12월 12 17:23 ..
-
-drwxr-xr-x 1 infoh 197609 0 12월 12 17:23 .git
-
-341497.png
-숨김 저장소
-
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 .
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 ..
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 .git
 -rw-r--r-- 1 infoh 197609 14 12월 12 17:23 README.md
+
 </code></pre></div></div>
 
 <p>원격 서버를 정상적으로 복제했습니다. 복제 후 remote 명령어를 사용하여 원격 저장소 정보를 확인합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@gitstudy MINGW64 /e/gitstudy05_clone (master)
-
 $ git remote -v
+origin  https://github.com/jinygit/gitstudy05.git (fetch)
+origin  https://github.com/jinygit/gitstudy05.git (push)
 
-341527.png
-원격 저장소 목록
-
-origin https://github.com/jinygit/gitstudy05.git (fetch)
-
-origin https://github.com/jinygit/gitstudy05.git (push)
 </code></pre></div></div>
 
 <p>remote로 확인하면 연결된 서버 설정들이 표시됩니다. 로컬 저장소를 생성한 후, 처음으로 서버에서 코드를 내려받을 때는 clone 명령어를 사용하면 좀 더 편리합니다.</p>
@@ -165,173 +131,101 @@ origin https://github.com/jinygit/gitstudy05.git (push)
 <p>실습을 위해 원본 로컬 저장소로 이동합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@gitstudy MINGW64 /e/gitstudy05_clone (master)
-
-$ cd ../ gitstudy05
-
-317910.png
-원본 폴더로 이동
-
- 
+$ cd ../ gitstudy05 ☜ 폴더 이동
 
 infoh@gitstudy MINGW64 /e/gitstudy05 (master)
+$ code server.htm ☜ VS Code 실행
+</code></pre></div></div>
 
-$ code server.htm
-
-317941.png
-VS Code 실행
-
-server.htm
-
-&lt;h1&gt;서버 실습입니다.&lt;/h1&gt;
-
-&lt;h2&gt;오늘도 좋은 하루입니다.&lt;/h2&gt;
+<p>server.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>서버 실습입니다.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>오늘도 좋은 하루입니다.<span class="nt">&lt;/h2&gt;</span>
 </code></pre></div></div>
 
 <p>작성한 server.htm 파일을 커밋합니다.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
-
 $ git add server.htm
 
- 
-
 infoh@hojin MINGW64 /e/gitstudy05 (master)
-
 $ git commit -m "good day"
-
 [master 6a947b8] good day
+ 1 file changed, 2 insertions(+)
+ create mode 100644 server.htm
 
-1 file changed, 2 insertions(+)
-
-create mode 100644 server.htm
 </code></pre></div></div>
 
 <p>커밋한 내용을 원격 저장소(서버)로 업로드합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
-
-$ git push origin master
-
-317971.png
-푸시, 원격 서버로 전송
-
+$ git push origin master ☜ 푸시, 원격 서버로 전송
 Enumerating objects: 4, done.
-
 Counting objects: 100% (4/4), done.
-
 Delta compression using up to 8 threads
-
 Compressing objects: 100% (3/3), done.
-
 Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.
-
 Total 3 (delta 0), reused 0 (delta 0)
-
 To https://github.com/jinygit/gitstudy05.git
+   4864581..6a947b8  master -&gt; master
 
-4864581..6a947b8 master -&gt; master
 </code></pre></div></div>
 
 <p>방금 작성한 코드와 커밋으로 원격 저장소를 갱신했습니다. 갱신된 원격 저장소의 커밋을 복제한 저장소에도 동기화합시다.</p>
 
 <p>복제된 저장소로 이동합니다. 복제된 저장소에서 커밋 로그를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ../gitstudy05_clone/
-
-341582.png
-복제 저장소 폴더
-
- 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ../ gitstudy05_clone/
 
 infoh@hojin MINGW64 /e/gitstudy05_clone (master)
-
 $ git log
-
 commit 486458111de5ec909e43460ec8ebf945ba9e932c (HEAD -&gt; master, origin/master, origin/HEAD)
-
 Author: hojinlee &lt;infohojin@gmail.com&gt;
+Date:   Thu Dec 12 17:16:37 2019 +0900
 
-Date: Thu Dec 12 17:16:37 2019 +0900
+    first commit
 
- 
-
-first commit
 </code></pre></div></div>
 
 <p>복제된 저장소에는 아직 커밋 하나만 있습니다. 이번에는 원격 저장소에서 갱신된 새 커밋 정보를 가지고 옵니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
-
-$ git pull
-
-318001.png
-서버에서 정보를 가져오기
-
+$ git pull ☜ 서버에서 정보를 가지고 옵니다
 remote: Enumerating objects: 4, done.
-
 remote: Counting objects: 100% (4/4), done.
-
 remote: Compressing objects: 100% (3/3), done.
-
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
-
 Unpacking objects: 100% (3/3), done.
-
 From https://github.com/jinygit/gitstudy05
-
-4864581..6a947b8 master -&gt; origin/master
-
+   4864581..6a947b8  master     -&gt; origin/master
 Updating 4864581..6a947b8
-
 Fast-forward
+ server.htm | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 server.htm
 
-server.htm | 2 ++
-
-1 file changed, 2 insertions(+)
-
-create mode 100644 server.htm
 </code></pre></div></div>
 
 <p>pull 명령어는 원격 저장소에 갱신된 커밋을 로컬 저장소의 커밋 정보와 비교하여 갱신합니다. 원격 저장소에서 복제된 저장소를 동기화했습니다. 이제 다시 복제된 저장소에서 log 명령어를 실행합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
-
 $ git log
 
-341610.png
-로그 확인
-
- 
-
 commit 6a947b89517661cde95c9bec4c766302a763437e (HEAD -&gt; master, origin/master, origin/HEAD)
+Author: hojinlee infohojin@gmail.com ☜ 2번째 커밋 정보를 내려받았습습니다
+Date:   Thu Dec 12 17:28:20 2019 +0900
 
-Author: hojinlee infohojin@gmail.com
-
-318031.png
-2번째 커밋 정보를 내려받았음
-
- 
-
-Date: Thu Dec 12 17:28:20 2019 +0900
-
- 
-
-good day
-
- 
+    good day
 
 commit 486458111de5ec909e43460ec8ebf945ba9e932c
-
 Author: hojinlee &lt;infohojin@gmail.com&gt;
+Date:   Thu Dec 12 17:16:37 2019 +0900
 
-Date: Thu Dec 12 17:16:37 2019 +0900
+    first commit
 
- 
-
-first commit
 </code></pre></div></div>
 
 <p>복제된 저장소에 새로 추가된 커밋을 확인할 수 있습니다. 이처럼 pull은 원격 저장소와 로컬 저장소 간 커밋을 반영할 수 있습니다.</p>
 
+<p><br /><br /></p>
 
         </div>
 
@@ -339,9 +233,9 @@ first commit
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -355,7 +249,7 @@ first commit
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -371,7 +265,7 @@ first commit
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

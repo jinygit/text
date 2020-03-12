@@ -30,12 +30,12 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비작업
+            <a class="nav-link" href="/setup">준비 작업
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/text">기초탄탄 깃</a>
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/part2">협업하기</a>
@@ -64,7 +64,7 @@
                     <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
                     <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">길벗</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
         </div>
@@ -92,7 +92,7 @@
 $ code index.htm
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 
 <span class="nt">&lt;html&gt;</span>
@@ -119,40 +119,21 @@ $ code index.htm
 </code></pre></div></div>
 
 <p>그리고 diff 명령어를 실행해 봅시다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-infoh@hojin MINGW64 /e/gitstudy04 (master)
-
-$ git diff
-
-252486.png
-스테이지 vs 워킹 디렉터리 비교
-
-diff --git a/index.htm b/index.htm
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@hojin MINGW64 /e/gitstudy04 (master)
+</span><span class="err">$</span> git diff ☜ 스테이지 vs 워킹 디렉터리 비교.
+<span class="gh">diff --git a/index.htm b/index.htm
 index f5097d9..56af0de 100644
+</span><span class="gd">--- a/index.htm
+</span><span class="gi">+++ b/index.htm
+</span><span class="p">@@ -7,5 +7,6 @@</span>
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;h1&gt;hello GIT world!&lt;/h1&gt;
+<span class="gi">+    &lt;h2&gt;깃을 이용하면 소스의 버전 관리를 쉽게 할 수 있습니다.&lt;/h2&gt; ☜ 추가
+</span> &lt;/body&gt;
+ &lt;/html&gt;
+<span class="err">\</span> No newline at end of file
 
---- a/index.htm
-
-+++ b/index.htm
-
-@@ -7,5 +7,6 @@
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;h1&gt;hello GIT world!&lt;/h1&gt;
-
-+ &lt;h2&gt;깃을 이용하면 소스의 버전 관리를 쉽게 할 수 있습니다.&lt;/h2&gt;
-
-252456.png
-추가
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-\ No newline at end of file
 </code></pre></div></div>
 
 <p>이처럼 워킹 디렉터리 내용과 스테이지 내용의 차이점을 출력합니다.</p>
@@ -160,14 +141,12 @@ index f5097d9..56af0de 100644
 <p>이번에는 변경한 파일을 add 명령어로 추가하여 스테이지 영역에 등록합시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-
 $ git add index.htm
 </code></pre></div></div>
 
 <p>그런 다음 다시 diff 명령어를 수행합니다. 아무 내용도 출력되지 않습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-
 $ git diff
 </code></pre></div></div>
 
@@ -178,37 +157,22 @@ $ git diff
 
 <p>워킹 디렉터리와 마지막 커밋을 비교해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-
-$ git diff head
-
-252517.png
-head 포인터 입력
-
-diff --git a/index.htm b/index.htm
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@hojin MINGW64 /e/gitstudy04 (master)
+</span><span class="err">$</span> git diff head ☜ head 포인터를 입력
+<span class="gh">diff --git a/index.htm b/index.htm
 index f5097d9..56af0de 100644
-
---- a/index.htm
-
-+++ b/index.htm
-
-@@ -7,5 +7,6 @@
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;h1&gt;hello GIT world!&lt;/h1&gt;
-
-+ &lt;h2&gt;깃을 이용하면 소스의 버전 관리를 쉽게 할 수 있습니다.&lt;/h2&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-\ No newline at end of file
+</span><span class="gd">--- a/index.htm
+</span><span class="gi">+++ b/index.htm
+</span><span class="p">@@ -7,5 +7,6 @@</span>
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;h1&gt;hello GIT world!&lt;/h1&gt;
+<span class="gi">+    &lt;h2&gt;깃을 이용하면 소스의 버전 관리를 쉽게 할 수 있습니다.&lt;/h2&gt;
+</span> &lt;/body&gt;
+ &lt;/html&gt;
+<span class="err">\</span> No newline at end of file
 </code></pre></div></div>
+
 <p>HEAD는 최근의 커밋 중 가장 마지막 커밋의 위치를 가리키는 값입니다. HEAD를 이용하면 최신 커밋과 이전 커밋을 비교하여 출력할 수 있습니다.</p>
 
 <h3 id="4104-소스트리에서-간단하게-변경-이력-확인">4.10.4 소스트리에서 간단하게 변경 이력 확인</h3>
@@ -238,67 +202,15 @@ index f5097d9..56af0de 100644
 <h3 id="4105-diff-내용을-추가하여-커밋">4.10.5 diff 내용을 추가하여 커밋</h3>
 <p>커밋 메시지를 작성할 때 -v 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-infoh@hojin MINGW64 /e/gitstudy04 (master)
-
-$ git commit -v
-
-252555.png
-diff 내용 추가
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git commit -v ☜ diff 내용 추가
 </code></pre></div></div>
 
 <p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
 
 <p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Please enter the commit message for your changes. Lines starting
-
-# with '#' will be ignored, and an empty message aborts the commit.
-
-#
-
-# On branch master
-
-# Changes to be committed:
-
-# modified: index.htm
-
-#
-
-# ------------------------------------------------------------
-
-# Do not modify or remove the line above.
-
-# Everything below it will be ignored.
-
-diff --git a/index.htm b/index.htm
-
-index 56af0de..a82537d 100644
-
---- a/index.htm
-
-+++ b/index.htm
-
-@@ -8,5 +8,6 @@
-
-&lt;body&gt;
-
-&lt;h1&gt;hello GIT world!&lt;/h1&gt;
-
-&lt;h2&gt;깃을 이용하면 소스의 버전 관리를 쉽게 할 수 있습니다.&lt;/h2&gt;
-
-&lt;p&gt;커밋 -v 옵션을 통하여 diff 내용을 추가할 수 있습니다.&lt;/p&gt;
-
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-E:/gitstudy/.git/COMMIT_EDITMSG [unix] (02:40 14/01/2019) 1,0-1 꼭대기
-
-"E:/gitstudy/.git/COMMIT_EDITMSG" [유닉스] 23L, 718C
-
-</code></pre></div></div>
-
+<p><br /><br /></p>
 
         </div>
 
@@ -306,9 +218,9 @@ E:/gitstudy/.git/COMMIT_EDITMSG [unix] (02:40 14/01/2019) 1,0-1 꼭대기
         <div class="col-md-3"><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
-    <li class="list-group-item"><a href="/setup">준비작업</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초탄탄 깃</a>
+        <a href="/text">기초 탄탄 깃</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -322,7 +234,7 @@ E:/gitstudy/.git/COMMIT_EDITMSG [unix] (02:40 14/01/2019) 1,0-1 꼭대기
 <!--사이드메뉴2-->
 <ul class="list-group">
     <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타리뷰</a>
+        <a href="/BetaReview">베타 리뷰</a>
         <span class="badge badge-primary badge-pill">2</span>
     </li>
     <li class="list-group-item"><a href="/copyright">저작권</a></li>
@@ -338,7 +250,7 @@ E:/gitstudy/.git/COMMIT_EDITMSG [unix] (02:40 14/01/2019) 1,0-1 꼭대기
     <div class="container">
     	<div class="row">
         	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판</p>
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
 			
     	</div>

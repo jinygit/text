@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="106-lightweight-태그">10.6 Lightweight 태그</h2>
+<p>Lightweight 태그는 가장 기본적인 태그입니다. Annotated 태그와 달리 버전 이름만 있습니다.</p>
+
+<h3 id="1061-체크섬">10.6.1 체크섬</h3>
+<p>Annotated 태그에는 커밋 해시 값과 부가적인 정보가 같이 있습니다. 반면 Lightweight 태그 방식은 커밋의 체크섬만 가지고 있습니다. 또 Annotated 태그에서 사용했던 -a, -m 같은 옵션은 사용할 수 없습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag 태그이름
+</code></pre></div></div>
+
+<p>Lightweight 태그의 사용법은 간단합니다. 명령어 뒤에 태그 이름만 작성하면 됩니다. Lightweight 태그를 생성해 보겠습니다. 실습을 위해 version.htm 파일을 수정하고 저장한 후 커밋합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ code version.htm
+
+</code></pre></div></div>
+
+<p>version.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>태그 버전 실습 파일입니다.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 1.0.0 실습<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 1.1.0 실습
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>수정 작업 1.1.1<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>수정 버전 1.1.2<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 2.0.0 lightweight 실습<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git commit -am "test 2.0.0"
+[master 3ba46c0] test 2.0.0
+ 1 file changed, 1 insertion(+)
+
+</code></pre></div></div>
+
+<p>새로 생성된 커밋에 Lightweight 태그를 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git tag 2.0.0 ☜ 태그명만 작성
+
+</code></pre></div></div>
+
+<p>생성한 태그 목록을 확인합니다. 2.0.0 태그가 새로 추가되었습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git tag
+1.0.0
+1.1.0
+2.0.0 ☜ lightweight 태그
+
+</code></pre></div></div>
+
+<h3 id="1062-태그의-상세-정보-확인">10.6.2 태그의 상세 정보 확인</h3>
+<p>생성된 Lightweight 태그의 상세 정보를 확인해 보겠습니다. Annotated 태그와 동일하게 show 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+</span><span class="err">$</span> git show 2.0.0
+<span class="p">commit 3ba46c0a20a9812341e057818ef155f6801d0760 (HEAD -&gt; master, tag: 2.0.0) ☜ lightweight 태그는 이 위치에 정보가 없습니다.
+</span>
+Author: hojin &lt;infohojin@gmail.com&gt;
+<span class="p">Date:   Thu May 23 19:14:41 2019 +0900
+</span>    test 2.0.0
+<span class="gh">diff --git a/version.htm b/version.htm
+index 78de597..c9c61dc 100644
+</span><span class="gd">--- a/version.htm
+</span><span class="gi">+++ b/version.htm
+</span><span class="p">@@ -7,4 +7,5 @@</span>
+             &lt;li&gt;수정 버전 1.1.2&lt;/li&gt;
+         &lt;/ul&gt;
+     &lt;/li&gt;
+<span class="gi">+    &lt;li&gt;버전 2.0.0 lightweight 실습&lt;/li&gt;
+</span> &lt;/ul&gt;
+<span class="err">\</span> No newline at end of file
+
+</code></pre></div></div>
+
+<p>Annotated 태그와 달리 별도의 정보가 없는 것을 확인할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>
