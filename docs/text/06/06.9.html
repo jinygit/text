@@ -60,10 +60,10 @@
                 깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
                 </p>
                 <p>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
                     <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
@@ -96,12 +96,12 @@
 <h3 id="692-실습-준비">6.9.2 실습 준비</h3>
 <p>실습을 위해 깃허브에 새로운 실습 저장소를 하나 생성합시다. 저장소는 5장에서 설명했듯이, 반드시 자신의 계정으로 로그인합니다. New 버튼 또는 +  New repository를 클릭합니다. Repository name에 깃허브의 저장소 이름을 입력합니다. 필자는 이름을 gitstudy06으로 했습니다.</p>
 
-<p>그림 6-15] 깃허브에서 새 저장소 생성
+<p>그림 6-15] 깃허브에서 새 저장소 생성<br />
 <img src="./img/06-15.jpg" alt="" /></p>
 
 <p>모두 입력한 후 Create repository를 누르면 다음 화면이 나오고 저장소 주소를 확인할 수 있습니다.</p>
 
-<p>그림 6-16] 새 저장소의 주소
+<p>그림 6-16] 새 저장소의 주소<br />
 <img src="./img/06-16.jpg" alt="" /></p>
 
 <p>새 저장소를 생성했다면 다음과 같이 실행해 보세요.</p>
@@ -171,7 +171,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 </code></pre></div></div>
 
-<p>그림 6-17] 원격 저장소 전송
+<p>그림 6-17] 원격 저장소 전송<br />
 <img src="./img/06-17.jpg" alt="" /></p>
 
 <p>git push -u origin master 명령어는 ‘선택한 브랜치(master)를 원격 서버(origin)로 전달한다’는 의미입니다.</p>
@@ -182,7 +182,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 <p>깃허브 저장소로 이동해서 확인해 봅시다. 이전과 달리 새로운 master 브랜치가 생성되고, 관련된 커밋이 등록되었습니다.</p>
 
-<p>그림 6-18] 깃허브에서 브랜치 확인
+<p>그림 6-18] 깃허브에서 브랜치 확인<br />
 <img src="./img/06-18.jpg" alt="" /></p>
 
 <p>그럼 다시 현재 로컬 저장소의 브랜치를 확인합니다.</p>
@@ -213,7 +213,7 @@ Branch 'hotfix' set up to track remote branch 'hotfix' from 'origin'.
 
 <p>정상적으로 hotfix 브랜치가 푸시되었습니다. 깃허브를 보면 새로운 hotfix 리모트 브랜치가 추가된 것을 확인할 수 있습니다.</p>
 
-<p>그림 6-19] 푸시된 hotfix 브랜치 확인
+<p>그림 6-19] 푸시된 hotfix 브랜치 확인<br />
 <img src="./img/06-19.jpg" alt="" /></p>
 
 <h3 id="695-이름이-다른-브랜치">6.9.5 이름이 다른 브랜치</h3>
@@ -241,7 +241,7 @@ Branch 'feature' set up to track remote branch 'function' from 'origin'.
 
 <p>깃허브에서 새로 추가한 리모트 브랜치를 확인합니다.</p>
 
-<p>그림 6-20] 깃허브에서 생성한 브랜치 확인
+<p>그림 6-20] 깃허브에서 생성한 브랜치 확인<br />
 <img src="./img/06-20.jpg" alt="" /></p>
 
 <p>로컬 저장소의 feature 브랜치가 깃허브에는 새로운 function 브랜치로 등록된 것을 확인할 수 있습니다.</p>
@@ -251,7 +251,7 @@ Branch 'feature' set up to track remote branch 'function' from 'origin'.
 
 <p>리모트 브랜치는 브랜치 이름을 동일하게 생성할 수도 있고, 다른 이름으로 생성할 수도 있습니다. 이처럼 로컬 저장소의 브랜치와 원격 저장소의 브랜치는 업로드할 수 있도록 매칭되어 있습니다. 이러한 매칭을 업스트림 트래킹이라고 합니다.</p>
 
-<p>그림 6-21] 업스트림 트래킹
+<p>그림 6-21] 업스트림 트래킹<br />
 <img src="./img/06-21.jpg" alt="" /></p>
 
 <p>트래킹 브랜치(업스트림)는 리모트 브랜치와 로컬 브랜치를 연결해 주는 중간 다리 역할을 합니다. clone 명령어로 저장소를 복제할 때 원격 저장소에 등록된 트래킹 브랜치들을 자동으로 함께 설정합니다.</p>
@@ -271,7 +271,7 @@ $ cd gitstudy06_clone ☜ 복제된 폴더로 이동합니다.
 
 </code></pre></div></div>
 
-<p>그림 6-22] 복제 저장소
+<p>그림 6-22] 복제 저장소<br />
 <img src="./img/06-22.jpg" alt="" /></p>
 
 <blockquote>
@@ -385,7 +385,7 @@ To https://github.com/jinygit/gitstudy06.git
 
 </code></pre></div></div>
 
-<p>그림 6-23] 변경 내용 전송
+<p>그림 6-23] 변경 내용 전송<br />
 <img src="./img/06-23.jpg" alt="" /></p>
 
 <p>복제된 저장소에서 수정된 커밋이 원격 저장소로 전송되었습니다.</p>
@@ -413,7 +413,7 @@ Fast-forward
 
 </code></pre></div></div>
 
-<p>그림 6-24] 변경 내용 받기
+<p>그림 6-24] 변경 내용 받기<br />
 <img src="./img/06-24.jpg" alt="" /></p>
 
 <p>로컬 저장소의 feature 브랜치에 수정한 내용이 반영되었는지 확인해 볼까요? cat 명령어를 사용하여 잘 반영된 것을 확인합니다.</p>
@@ -432,12 +432,12 @@ $ cat branch.htm
 
 <p>실습을 위해 깃허브 원격 저장소에서 새로운 브랜치를 하나 생성하겠습니다. 깃허브 저장소에서 브랜치 항목(Branch: master)을 선택합니다. 입력란에 원하는 새 이름을 입력합니다. 책에서는 aaa로 만들겠습니다. 입력란에 aaa를 입력한 후 Create branch: aaa를 클릭합니다.</p>
 
-<p>그림 6-25] aaa 브랜치 생성
+<p>그림 6-25] aaa 브랜치 생성<br />
 <img src="./img/06-25.jpg" alt="" /></p>
 
 <p>aaa 브랜치가 생성되었습니다. 이처럼 깃허브는 자체적으로 새로운 리모트 브랜치를 생성할 수 있습니다.</p>
 
-<p>그림 6-26] aaa 브랜치 생성
+<p>그림 6-26] aaa 브랜치 생성<br />
 <img src="./img/06-26.jpg" alt="" /></p>
 
 <p>이제 원격 저장소의 브랜치 정보를 로컬 저장소로 가져오겠습니다.</p>
@@ -454,7 +454,7 @@ $ git branch -r
 
 </code></pre></div></div>
 
-<p>그림 6-27] 원격 브랜치 가져오기
+<p>그림 6-27] 원격 브랜치 가져오기<br />
 <img src="./img/06-27.jpg" alt="" /></p>
 
 <p>페치된 리모트 브랜치 목록을 이용하여 새로운 로컬 브랜치를 만들어 봅시다. 원격 저장소의 브랜치 목록에서 origin/aaa가 추가된 것을 확인할 수 있습니다. origin/aaa 리모트 브랜치를 기반으로 로컬 저장소에 aaa 브랜치를 새롭게 생성합니다.</p>
@@ -468,7 +468,7 @@ infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 
 </code></pre></div></div>
 
-<p>그림 6-28] 로컬 브랜치 생성
+<p>그림 6-28] 로컬 브랜치 생성<br />
 <img src="./img/06-28.jpg" alt="" /></p>
 
 <p>잘 만들어졌는지 트래킹 브랜치 목록을 확인합니다.</p>
@@ -531,7 +531,7 @@ To https://github.com/jinygit/gitstudy06.git
 
 <p>깃허브의 원격 저장소 브랜치에서 수정된 내용을 확인합니다. 깃허브에서 aaa 브랜치를 선택하고, 파일 목록에서 branch.htm 파일을 클릭합니다. 수정된 내용과 커밋을 확인할 수 있습니다.</p>
 
-<p>그림 6-29] aaa 브랜치 수정 내용과 커밋 확인
+<p>그림 6-29] aaa 브랜치 수정 내용과 커밋 확인<br />
 <img src="./img/06-29.jpg" alt="" /></p>
 
 <h3 id="698-업스트림-연결">6.9.8 업스트림 연결</h3>
@@ -544,7 +544,7 @@ To https://github.com/jinygit/gitstudy06.git
 
 <p>실습을 위해 깃허브에 새로운 브랜치를 추가해 봅시다. 깃허브 페이지에서 Branch: master를 클릭하고 bbb를 입력합니다. Create branch: bbb를 클릭하여 bbb 브랜치를 생성합니다.</p>
 
-<p>그림 6-30] bbb 브랜치 생성
+<p>그림 6-30] bbb 브랜치 생성<br />
 <img src="./img/06-30.jpg" alt="" /></p>
 
 <p>깃허브에 생성한 bbb 브랜치는 아직 로컬 저장소에 없습니다. 깃 배시에서 깃허브 원격 저장소의 리모트 브랜치 목록을 확인합니다.</p>

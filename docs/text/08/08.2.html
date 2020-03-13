@@ -60,10 +60,10 @@
                 깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
                 </p>
                 <p>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
                     <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
@@ -104,14 +104,14 @@ f123d5c9fd0c1f8a2f4ec86f63451a179371ae09
 
 <p>이 내용은 다음과 같이 나타낼 수 있습니다.</p>
 
-<p>그림 8-3] 브랜치 생성
+<p>그림 8-3] 브랜치 생성<br />
 <img src="./img/08-3.jpg" alt="" /></p>
 
 <p>소스트리에서 생성된 브랜치를 확인할 수 있습니다. 이 장에서는 깃 배시와 소스트리를 번갈아 가며 실습을 합니다. 먼저 소스트리의 새 탭에서 Add 버튼을 클릭합니다. 탐색을 눌러 앞에서 만든 gitstudy08 폴더를 찾아 선택한 후 추가를 누릅니다. 그러면 gitstudy08 저장소와 연결됩니다.</p>
 
 <p>생성한 feature 브랜치를 클릭하면 feature 브랜치와 master 브랜치의 시작 위치가 동일한 것을 확인할 수 있습니다.</p>
 
-<p>그림 8-4] 소스트리에서 브랜치 위치 확인
+<p>그림 8-4] 소스트리에서 브랜치 위치 확인<br />
 <img src="./img/08-4.jpg" alt="" /></p>
 
 <p>생성한 feature 브랜치 안에 있는 index.htm 파일을 수정하겠습니다.</p>
@@ -143,7 +143,7 @@ $ git commit -am "add header"
 
 <p>소스트리에서 커밋 로그를 확인해 보겠습니다. feature 브랜치가 master 브랜치보다 커밋이 하나 더 있는 것을 볼 수 있습니다.</p>
 
-<p>그림 8-6] 소스트리에서 커밋 위치 확인
+<p>그림 8-6] 소스트리에서 커밋 위치 확인<br />
 <img src="./img/08-6.jpg" alt="" /></p>
 
 <p>실습을 위해 수정과 커밋을 몇 번 더 합시다. 이번에는 <code class="highlighter-rouge">&lt;header&gt;</code> 코드 안에 <code class="highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code> 태그를 추가하여 두 번 커밋할 것입니다.</p>
@@ -209,7 +209,7 @@ $ git commit -am "add menu2"
 
 <p>지금까지 과정을 그림으로 나타내면 다음과 같습니다.</p>
 
-<p>그림 8-7] 브랜치 생성 후 추가 커밋 진행 상태
+<p>그림 8-7] 브랜치 생성 후 추가 커밋 진행 상태<br />
 <img src="./img/08-7.jpg" alt="" /></p>
 
 <p>feature 브랜치에 추가된 커밋 로그를 확인해 봅시다.</p>
@@ -240,7 +240,7 @@ Date:   Thu May 16 16:14:38 2019 +0900
 
 <p>소스트리에서 브랜치의 커밋 로그를 확인해 보면, feature 브랜치가 master 브랜치에서 분리되어 header, menu1, menu2 커밋 작업을 세 번 수행한 것을 확인할 수 있습니다.</p>
 
-<p>그림 8-8] feature 브랜치에 세 번 커밋됨
+<p>그림 8-8] feature 브랜치에 세 번 커밋됨<br />
 <img src="./img/08-8.jpg" alt="" /></p>
 
 <p>우리는 브랜치를 만들어 feature 브랜치에 기능을 추가했습니다. 하지만 소스트리에서 브랜치를 확인하면 브랜치 경로가 일직선으로 1개만 있습니다. 서로 다른 브랜치이지만 순차적으로 커밋을 했기 때문에 일직선으로 보이는 것입니다. 이러한 모양의 브랜치에서 병합 작업을 할 때는 Fast-Forward 방식의 알고리즘이 적용됩니다.</p>
@@ -263,7 +263,7 @@ infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 
 <p>병합을 할 수 있게 기준 브랜치(master 브랜치)로 이동했습니다.</p>
 
-<p>그림 8-9] 병합을 할 수 있게 기준 브랜치로 이동
+<p>그림 8-9] 병합을 할 수 있게 기준 브랜치로 이동<br />
 <img src="./img/08-9.jpg" alt="" /></p>
 
 <p>master 브랜치로 체크아웃한 상태에서 파일(코드)을 확인해 봅시다. feature 브랜치에서 작업한 내용이 사라졌습니다.</p>
@@ -305,12 +305,12 @@ Fast-forward ☜ 병합 방식 표시
 
 <p>이 과정을 그림으로 나타내면 다음과 같습니다.</p>
 
-<p>그림 8-10] 병합한 후 커밋 구조
+<p>그림 8-10] 병합한 후 커밋 구조<br />
 <img src="./img/08-10.jpg" alt="" /></p>
 
 <p>이 그림처럼 feature 브랜치의 커밋들이 하나씩 master 브랜치로 병합합니다. master 브랜치에는 커밋이 하나도 없기 때문에 feature 브랜치가 master 브랜치로 이동한 것처럼 보입니다. 소스트리에서 병합 결과를 확인합니다.</p>
 
-<p>그림 8-11] 소스트리에서 병합 결과 확인
+<p>그림 8-11] 소스트리에서 병합 결과 확인<br />
 <img src="./img/08-11.jpg" alt="" /></p>
 
 <p>이처럼 병합한 후에는 master 브랜치의 마지막 커밋 위치와 feature 브랜치의 마지막 커밋 위치가 같습니다. 동일한 HEAD 포인터를 가지게 됩니다.</p>

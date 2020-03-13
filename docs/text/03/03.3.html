@@ -60,10 +60,10 @@
                 깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
                 </p>
                 <p>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="#" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
                     <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
                 </p>
             </div>
@@ -81,7 +81,7 @@
 <h3 id="331-스테이지--임시-영역">3.3.1 스테이지 = 임시 영역</h3>
 <p>스테이지는 워킹 디렉터리와 <code class="highlighter-rouge">실제로 저장하여 기록하는 공간</code> 사이에 있는 임시 영역입니다. 깃은 워킹 디렉터리에서 작업이 끝난 파일을 스테이지로 잠시 복사합니다. 스테이지가 임시 영역이라고 해서 파일의 콘텐츠 내용을 직접 가지고 있지는 않습니다. 단지 커밋하려는 파일의 추적 상태 정보들만 기록합니다.</p>
 
-<p>그림 3-16] 스테이지는 커밋하려는 파일의 추적 정보만 기록
+<p>그림 3-16] 스테이지는 커밋하려는 파일의 추적 정보만 기록<br />
 <img src="./img/03-16.jpg" alt="" /></p>
 
 <p>이처럼 임시 영역인 스테이지를 별도로 운영하는 것은 커밋을 빠르게 처리하기 위해서입니다. <code class="highlighter-rouge">실제로 저장하여 기록하는 공간</code>인 저장소는 스테이지 영역에서 가리키는 파일 내용을 기반으로 변경된 차이점만 기록합니다.</p>
@@ -113,7 +113,7 @@ $ git ls-files --stage
 
 <p>앞에서 설명했듯이 깃은 tracked 상태인 파일만 수정 여부를 관리할 수 있습니다. tracked 상태인 파일이 수정되면 스테이지는 파일 상태를 modified 상태로 변경합니다.</p>
 
-<p>그림 3-17] 파일 수정 여부 확인
+<p>그림 3-17] 파일 수정 여부 확인<br />
 <img src="./img/03-17.jpg" alt="" /></p>
 
 <p>그러면 수정된 파일은 스테이지에서 잠시 제외됩니다. 깃은 수정 여부만 체크해 주기 때문에 modified 상태로 변경된 파일은 스테이지로 재등록해야 합니다. 수정된 파일을 스테이지 영역으로 다시 적용하려면 git add 명령어로 재등록합니다.</p>
@@ -125,7 +125,7 @@ unmodified 상태는 tracked 상태이면서 스테이지에서 한 번도 수�
 
 <p>3.2절과 3.3절에서 배운 개념을 그림 하나로 정리하면 다음과 같습니다. 워킹 디렉터리에서 등록 명령(git add 명령어)을 실행하면 스테이지에 등록됩니다. 이때 자동으로 tracked 상태가 됩니다. 파일을 수정하지 않으면 계속 stage 상태에 머무릅니다. 파일이 수정되면 modified 상태가 되고, 스테이지에서 떨어져 나와 unstage 상태가 됩니다. unstage 상태의 파일은 워킹 디렉터리에 잠시 담아 둡니다. 이때 다시 등록 명령을 실행하면 stage 상태로 변경됩니다.</p>
 
-<p>그림 3-18] 워킹 디렉터리와 스테이지 상태 구분
+<p>그림 3-18] 워킹 디렉터리와 스테이지 상태 구분<br />
 <img src="./img/03-18.jpg" alt="" /></p>
 
 <p><br /><br /></p>
