@@ -75,10 +75,13 @@
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="54-서버-전송">5.4 서버 전송</h2>
+            <h2 id="서버-전송">서버 전송</h2>
 <p>로컬 저장소의 커밋을 원격 저장소로 전송하는 방법을 알아보았습니다. 원격 저장소가 연결되면 로컬 저장소의 커밋들을 업로드할 수 있습니다.</p>
 
-<h3 id="541-push-서버에-전송">5.4.1 push: 서버에 전송</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="push-서버에-전송">push: 서버에 전송</h3>
 <p>푸시(push)는 원격 저장소로 커밋된 파일들을 업로드하는 동작입니다. 원격 저장소와 연결된 서버 목록을 확인해 봅시다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
@@ -108,7 +111,6 @@ Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/jinygit/gitstudy05.git
  * [new branch]      master -&gt; master
-
 </code></pre></div></div>
 
 <p>준비한 깃허브 저장소를 확인합니다. 처음 푸시하면 서버에 새로운 master 브랜치를 생성합니다. 그리고 로컬의 master 브랜치 안에 있는 소스 코드를 서버의 master 브랜치로 업로드합니다. 다음과 같이 깃허브에서 확인할 수 있습니다.</p>

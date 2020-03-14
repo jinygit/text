@@ -75,7 +75,7 @@
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="72-워킹-디렉터리-청소">7.2 워킹 디렉터리 청소</h2>
+            <h2 id="워킹-디렉터리-청소">워킹 디렉터리 청소</h2>
 <p>개발하는 과정에서는 컴파일 등 임시로 생성되는 파일들이 생깁니다. 이 파일들은 .gitignore 목록에 넣어 관리할 수도 있지만, 반복해서 불필요하게 생성되는 파일들은 귀찮을 뿐입니다. 이때 clean 명령어를 사용하면 워킹 디렉터리에 있는 추적되지 않는 파일들을 찾아 삭제합니다. clean 명령어를 사용할 때는 주의할 점이 있는데, clean 명령어를 실행하는 순간 워킹 디렉터리의 추적되지 않는 모든 파일을 삭제한다는 것입니다.</p>
 
 <p>clean 명령어는 단독으로 실행하거나 몇 가지 추가 옵션을 같이 사용할 수 있습니다.</p>
@@ -132,7 +132,6 @@ usage: git clean [-d] [-f] [-i] [-n] [-q] [-e &lt;pattern&gt;] [-x | -X] [--] &l
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git clean -f
 Removing temp.htm
-
 </code></pre></div></div>
 
 <p>추적하지 않는 파일들을 강제로 삭제했습니다. -f 옵션 외에도 다음 옵션을 많이 사용합니다.</p>

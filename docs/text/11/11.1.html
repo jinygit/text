@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="대형-프로젝트">대형 프로젝트</h2>
+<p>깃은 작은 프로젝트부터 대용량 프로젝트까지 관리할 수 있는 버전 관리 도구입니다. 깃은 작은
+프로젝트뿐만 아니라 큰 규모의 프로젝트도 관리하기 쉽도록 저장소를 여러 개 이용하여 단일 프
+로젝트를 진행할 수 있습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="저장-용량">저장 용량</h3>
+<p>깃 저장소는 용량 한계가 없습니다. 컴퓨터의 하드디스크에서 지원하는 용량만큼 깃 저장소를 생
+성할 수 있습니다. 또 깃은 파일을 기반으로 데이터베이스를 관리합니다. 하지만 저장소 크기가
+너무 크면 컴퓨터에 부담을 줍니다.</p>
+
+<p>이러한 이유로 깃 호스팅 서비스들은 제공되는 저장소 용량을 제한합니다. 보통 1GB 용량을 제
+공하기 때문에 파일 개수가 많은 프로젝트에서는 좀 더 효율적인 관리 방법이 필요합니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="저장소-분리">저장소 분리</h3>
+<p>규모가 큰 프로젝트는 저장소 용량이 많이 필요합니다. 또 단지 용량이 크기만 한 저장소는 비효
+율적입니다. 필요에 맞게 작은 저장소로 분할하여 운영하는 것이 좀 더 효율적입니다. 깃 역시 큰
+규모의 저장소를 작은 저장소로 나누어 관리할 수 있습니다.</p>
+
+<p>즉, 저장소 하나를 작은 저장소 몇 개로 분할할 수 있다는 의미입니다. 이러한 저장소의 분할 개념
+을 서브모듈이라고 합니다. 서브모듈은 저장소 하나가 다른 깃 저장소를 포함하는 형태를 의미합니
+다. 이러한 서브모듈 개념을 적용하면 대형 프로젝트도 효과적으로 관리할 수 있습니다.</p>
+
+<p>그림 11-1 분할된 저장소<br />
+<img src="./img/11-1.jpg" alt="" /></p>
+
+<p>작게 나뉜 모듈 형태의 저장소는 다른 프로젝트에서도 재사용할 수 있습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="상하-관계">상하 관계</h3>
+<p>요즘 규모가 큰 프로젝트는 모듈화하여 개발하는 추세입니다. 각 기능들을 모듈화하여 독립된 깃
+저장소로 관리합니다. 그리고 독립된 깃 저장소는 모듈로서 다시 메인 저장소와 결합하여 재사용
+됩니다.</p>
+
+<p>메인 저장소에는 서브 저장소가 여러 개 있습니다. 따라서 저장소 간 상하 관계가 발생합니다. 보
+통 부모 저장소와 자식 저장소 형태로 나눕니다. 부모 자식 관계로 분리된 로컬 저장소는 또다시
+개별 원격 저장소와 연결됩니다. 원격 저장소로 동기화된 자식들은 언제든지 다른 프로젝트의 모
+듈별로 기능을 처리하고 결합할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

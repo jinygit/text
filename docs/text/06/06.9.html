@@ -75,7 +75,7 @@
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="69-원격-브랜치">6.9 원격 브랜치</h2>
+            <h2 id="원격-브랜치">원격 브랜치</h2>
 <p>깃은 다수의 개발자와 협업으로 코드를 유지할 수 있습니다. 주요 개발 작업들은 로컬 저장소에서 하지만 협업은 원격 저장소도 공유합니다.</p>
 
 <p>로컬 저장소도 하나의 저장소고, 원격 저장소도 하나의 저장소입니다. 깃은 분산형 버전 관리로서 다수의 저장소를 만들어 연결할 수 있기 때문입니다. 이번에는 브랜치를 이용하여 협업하는 방법을 알아봅니다.</p>
@@ -84,7 +84,10 @@
   <p>Note: 원격 브랜치 실습을 하려면 원격 저장소가 필요합니다. 원격 저장소는 5장에서 설명한 깃허브를 이용합니다.</p>
 </blockquote>
 
-<h3 id="691-리모트-브랜치">6.9.1 리모트 브랜치</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="리모트-브랜치">리모트 브랜치</h3>
 <p>저장소는 각자의 고유한 브랜치를 생성하고 관리합니다. 원격 저장소에 생성한 브랜치를 리모트 브랜치라고 합니다.</p>
 
 <p>로컬 저장소에 생성한 브랜치는 서버로 공유할 수 있습니다. 원격 저장소와 연결된 로컬 저장소에서 새로운 브랜치를 생성한다고 해서 자동으로 원격 저장소에도 브랜치가 생성되는 것은 아닙니다. 또 원격 저장소에 등록된 브랜치가 자동으로 로컬 저장소를 만들지도 않습니다. 별도 명령을 실행하여 저장소를 동기화해야 합니다.</p>
@@ -93,7 +96,10 @@
 
 <p>리모트 브랜치는 보통 <code class="highlighter-rouge">별칭/브랜치 이름</code> 형태입니다.</p>
 
-<h3 id="692-실습-준비">6.9.2 실습 준비</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="실습-준비">실습 준비</h3>
 <p>실습을 위해 깃허브에 새로운 실습 저장소를 하나 생성합시다. 저장소는 5장에서 설명했듯이, 반드시 자신의 계정으로 로그인합니다. New 버튼 또는 +  New repository를 클릭합니다. Repository name에 깃허브의 저장소 이름을 입력합니다. 필자는 이름을 gitstudy06으로 했습니다.</p>
 
 <p>그림 6-15] 깃허브에서 새 저장소 생성<br />
@@ -120,7 +126,10 @@ origin  https://github.com/jinygit/gitstudy06.git (push)
   <p>Note: 실습할 때 원격 저장소의 주소는 깃허브에서 생성한 자신의 저장소 주소를 입력해야 합니다. 책의 주소를 그대로 입력하거나 다른 사람의 저장소를 등록하면 권한이 없어 접속이 거부됩니다.</p>
 </blockquote>
 
-<h3 id="693-브랜치-추적">6.9.3 브랜치 추적</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="브랜치-추적">브랜치 추적</h3>
 <p>깃의 브랜치는 특정 커밋 해시 값을 가리키는 포인터입니다. 리모트 브랜치 또한 원격 저장소의 브랜치를 가리키는 포인터입니다. 원격 저장소의 브랜치를 가리키는 것을 브랜치 추적이라고 합니다.</p>
 
 <p>다른 용어로 추적 브랜치를 트래킹 브랜치라고 합니다. 트래킹 브랜치는 원격 브랜치를 가리키는 북마크와 같습니다. 추적 브랜치는 원격 브랜치의 마지막 커밋 해시 값을 가리킵니다. 이 포인터 정보는 .git/refs 폴더 안에 저장되어 있습니다.</p>
@@ -129,12 +138,11 @@ origin  https://github.com/jinygit/gitstudy06.git (push)
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ ls .git/refs/
 heads  tags
-
 </code></pre></div></div>
 
 <p>로컬 저장소가 원격 저장소와 연결될 때 원격 브랜치의 트래킹 정보는 자동으로 갱신됩니다. 로컬 저장소는 마지막으로 연결된 리모트 브랜치의 커밋 해시 값을 항상 가지고 있습니다.</p>
 
-<h3 id="694-브랜치-업로드">6.9.4 브랜치 업로드</h3>
+<h3 id="브랜치-업로드">브랜치 업로드</h3>
 <p>지금까지 로컬 저장소에서만 브랜치를 생성했습니다. 로컬 저장소의 브랜치 정보는 원격 저장소에 자동으로 등록되지 않습니다.</p>
 
 <p>등록된 원격 저장소의 리모트 <code class="highlighter-rouge">브랜치는 remote show</code> 명령어로 확인할 수 있습니다.</p>
@@ -216,7 +224,10 @@ Branch 'hotfix' set up to track remote branch 'hotfix' from 'origin'.
 <p>그림 6-19] 푸시된 hotfix 브랜치 확인<br />
 <img src="./img/06-19.jpg" alt="" /></p>
 
-<h3 id="695-이름이-다른-브랜치">6.9.5 이름이 다른 브랜치</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="이름이-다른-브랜치">이름이 다른 브랜치</h3>
 <p>일반적으로 로컬 저장소의 브랜치 이름과 원격 저장소의 브랜치 이름은 동일하게 사용합니다. 하지만 반드시 이름이 동일할 필요는 없습니다. 가끔은 동일한 브랜치 이름을 사용하기 어려울 때가 있습니다. 예를 들어 다른 개발자가 만든 원격 서버의 브랜치를 테스트하려고 할 때 자신의 브랜치 이름과 동일하면 충돌이 생깁니다. 이때는 어떻게 해야 할까요?</p>
 
 <p>깃은 서로 다른 로컬 브랜치와 리모트 브랜치를 수동으로 지정하여 연결할 수 있습니다. 브랜치를 직접 수동으로 지정할 때는 콜론(:)으로 구분합니다.</p>
@@ -246,7 +257,10 @@ Branch 'feature' set up to track remote branch 'function' from 'origin'.
 
 <p>로컬 저장소의 feature 브랜치가 깃허브에는 새로운 function 브랜치로 등록된 것을 확인할 수 있습니다.</p>
 
-<h3 id="696-업스트림-트래킹">6.9.6 업스트림 트래킹</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="업스트림-트래킹">업스트림 트래킹</h3>
 <p>업스트림(upstream)은 브랜치 추적을 다르게 표현한 것입니다. 앞에서 원격 저장소에 새로운 리모트 브랜치를 생성하는 방법을 알아보았습니다.</p>
 
 <p>리모트 브랜치는 브랜치 이름을 동일하게 생성할 수도 있고, 다른 이름으로 생성할 수도 있습니다. 이처럼 로컬 저장소의 브랜치와 원격 저장소의 브랜치는 업로드할 수 있도록 매칭되어 있습니다. 이러한 매칭을 업스트림 트래킹이라고 합니다.</p>
@@ -367,7 +381,6 @@ infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
 $ git branch -vv
 * function 85f1dfa [origin/function: ahead 1] functionmaster2 working ☜ AHEAD 표시
 master   dcdb1c1 [origin/master] master working...
-
 </code></pre></div></div>
 
 <p>function 브랜치 정보에 AHEAD 1이 표시됩니다. 원격 저장소로 전송되지 않은 커밋이 하나 있다는 의미입니다. push 명령어를 사용하여 원격 저장소로 새롭게 추가된 커밋을 전송합시다.</p>
@@ -382,7 +395,6 @@ Writing objects: 100% (3/3), 346 bytes | 115.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/jinygit/gitstudy06.git
    d84766c..85f1dfa  function -&gt; function ☜ 원격 저장소로 전송
-
 </code></pre></div></div>
 
 <p>그림 6-23] 변경 내용 전송<br />
@@ -399,7 +411,6 @@ $ git checkout feature ☜ feature 브랜치로 체크아웃
 Switched to branch 'feature'
 Your branch is behind 'origin/function' by 1 commit, and can be fast-forwarded.
   (use "git pull" to update your local branch)
-
 </code></pre></div></div>
 
 <p>원격 저장소의 function 브랜치를 로컬 저장소의 feature 브랜치로 내려받습니다.</p>
@@ -410,7 +421,6 @@ Updating d84766c..85f1dfa
 Fast-forward
  branch.htm | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
-
 </code></pre></div></div>
 
 <p>그림 6-24] 변경 내용 받기<br />
@@ -423,6 +433,9 @@ $ cat branch.htm
 &lt;h1&gt;브랜치 실습을 합니다.&lt;/h1&gt;
 복제된 gitstudy06_clone의 function 브랜치를 수정합니다.
 </code></pre></div></div>
+
+<p><br /></p>
+<hr />
 
 <h3 id="697-원격-브랜치-복사">6.9.7 원격 브랜치 복사</h3>
 <p>원격 저장소와 로컬 저장소의 브랜치 목록은 서로 다를 수 있습니다. 다른 개발자가 원격 저장소에 새로운 리모트 브랜치를 생성할 수 있기 때문입니다. 이렇게 생성된 원격 저장소의 리모트 브랜치를 이용해서 로컬 저장소에도 새로운 브랜치를 생성하여 동기화할 수 있습니다.</p>
@@ -533,6 +546,9 @@ To https://github.com/jinygit/gitstudy06.git
 
 <p>그림 6-29] aaa 브랜치 수정 내용과 커밋 확인<br />
 <img src="./img/06-29.jpg" alt="" /></p>
+
+<p><br /></p>
+<hr />
 
 <h3 id="698-업스트림-연결">6.9.8 업스트림 연결</h3>
 <p>기존에 있는 브랜치를 업스트림으로 직접 설정할 수도 있습니다. 브랜치를 생성한 후 직접 트래킹 브랜치를 지정했습니다. 업스트림을 직접 설정하면 원격 저장소로 트래킹 브랜치가 설정됩니다.</p>

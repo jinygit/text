@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="실습을-위한-저장소-준비">실습을 위한 저장소 준비</h2>
+<p>서브모듈을 실습할 수 있는 환경을 구축하겠습니다. 서브모듈을 테스트하려면 저장소가 2개 필요
+합니다. 먼저 로컬 컴퓨터에 깃 저장소를 2개 생성할 것입니다. 그리고 원격 저장소도 2개 생성하
+여 각 로컬 저장소와 연결하겠습니다.</p>
+
+<p>그림 11-2 깃 저장소 생성 후 원격 저장소와 연결<br />
+<img src="./img/11-2.jpg" alt="" /></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="메인-저장소-생성">메인 저장소 생성</h3>
+<p>먼저 부모 역할의 메인 저장소를 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+$ mkdir gitstudy11_parent 새 폴더 만들기
+$ cd gitstudy11_parent
+
+infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ git init 저장소 초기화
+Initialized empty Git repository in E:/gitstudy11_parent/.git/
+</code></pre></div></div>
+
+<p>메인 저장소( gitstudy11_parent)에 parent.htm 파일을 생성하고 저장합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ code parent.htm VS Code 실행
+</code></pre></div></div>
+
+<p>parent.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>부모 저장소<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p>첫 번째 커밋을 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ git add parent.htm 등록
+infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ git commit -m "parent first" 커밋
+[master (root-commit) 6a9851e] parent first
+1 file changed, 1 insertion(+)
+create mode 100644 parent.htm
+</code></pre></div></div>
+
+<p>메인 저장소와 동기화할 원격 저장소를 생성합시다. 먼저 깃허브에 로그인한 후 New 버튼 또는
+<code class="highlighter-rouge">+</code> &gt; New repository를 클릭합니다.</p>
+
+<p>그림 11-3 깃허브에서 새 저장소 메뉴 선택<br />
+<img src="./img/11-3.jpg" alt="" /></p>
+
+<p>다음 화면에서 원하는 저장소 이름을 입력하고 Create repository를 누릅니다. 필자는
+gitstudy11_parent로 정했는데, 로컬 저장소 이름과 동일하지 않아도 됩니다.</p>
+
+<p>그림 11-4 원하는 이름으로 새 저장소 생성<br />
+<img src="./img/11-4.jpg" alt="" /></p>
+
+<p>저장소가 생성되면 <code class="highlighter-rouge">https://github.com/jinygit/gitstudy11_parent.git</code> 주소가 나옵니다. 이 주
+소와 로컬 저장소를 연결할 것입니다. 이 주소를 복사해 둡니다.</p>
+
+<p>다시 깃 배시 화면으로 돌아갑니다. 메인 저장소에 리모트 등록을 합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ git remote add origin https://github.com/jinygit/gitstudy11_parent.git 원격 저장소 등록
+커밋 정보를 원격 저장소로 전송합니다.
+infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+$ git push -u origin master 커밋 전송
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 235 bytes | 117.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jinygit/gitstudy11_parent.git
+* [new branch] master -&gt; master
+</code></pre></div></div>
+
+<p>깃허브에서 커밋 정보가 잘 전송된 것을 확인할 수 있습니다.</p>
+
+<p>그림 11-5 부모 저장소의 커밋 정보 확인<br />
+<img src="./img/11-5.jpg" alt="" /></p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="자식-저장소-생성">자식 저장소 생성</h3>
+<p>이번에는 메인 저장소와 연결되는 자식 저장소를 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+$ mkdir gitstudy11_child 
+$ cd gitstudy11_child
+
+infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ git init
+Initialized empty Git repository in E:/gitstudy11_child/.git/
+</code></pre></div></div>
+
+<p>자식 저장소에 child.htm 파일을 생성하고 저장합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ code child.htm
+</code></pre></div></div>
+
+<p>child.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>자식 저장소<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p>자식 저장소에서 첫 번째 커밋을 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ git add child.htm 등록
+infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ git commit -m "child first" 커밋
+[master (root-commit) 2573787] child first
+1 file changed, 1 insertion(+)
+create mode 100644 child.htm
+</code></pre></div></div>
+
+<p>자식 저장소와 동기화할 원격 저장소도 생성합시다. 깃허브에서 gitstudy11_child로 저장소를
+만듭니다. 생성된 https://github.com/jinygit/gitstudy11_child.git 주소를 복사합니다.
+그리고 다시 깃 배시로 돌아와 원격 저장소와 연결한 후 자식 저장소의 커밋을 원격 저장소로 전
+송합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ git remote add origin https://github.com/jinygit/gitstudy11_child.git 
+infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+$ git push -u origin master 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 232 bytes | 116.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jinygit/gitstudy11_child.git
+* [new branch] master -&gt; master
+</code></pre></div></div>
+
+<p>깃허브에서 커밋 정보가 전송된 것을 확인할 수 있습니다.</p>
+
+<p>그림 11-6 자식 저장소의 커밋 정보 확인<br />
+<img src="./img/11-6.jpg" alt="" /></p>
+
+<p><br /><br /></p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

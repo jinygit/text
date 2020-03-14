@@ -1,22 +1,88 @@
-고급 기능
-12.1 refs
-12.2 reflog
-12.3 파일 애너테이션
-12.4 replace
-12.5 가비지 콜렉트
-12.6 prune
-12.7 rerere
-12.8 정리
-깃은 안전한 저장소를 유지하는 고급 명령어들을 제공합니다. 이 장에서는 각
-장에서 다루지 못했던 몇 가지 고급 기능을 모아서 알아보겠습니다.
-깃교과서_06.indd 387 2020-03-05 오후 1:51:51
-388
-refs 12.1 git
-깃은 커밋으로 코드 이력을 관리합니다. 커밋은 고유의 SHA1 해시 값을 가지고 있으며, 이 해시
-값은 여러 기능에서 참조합니다. 깃에서는 참조하는 해시 값을 refs 목록으로 가지고 있습니다.
-12.1.1 실습 환경 준비
-먼저 refs 기능을 학습할 수 있도록 실습 환경을 만들겠습니다. 저장소를 생성합니다.
-$ cd 실습폴더
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h2 id="121-git">12.1 git</h2>
+<p>깃은 커밋으로 코드 이력을 관리합니다. 커밋은 고유의 SHA1 해시 값을 가지고 있으며, 이 해시
+값은 여러 기능에서 참조합니다. 깃에서는 참조하는 해시 값을 refs 목록으로 가지고 있습니다.</p>
+
+<h3 id="1211-실습-환경-준비">12.1.1 실습 환경 준비</h3>
+<p>먼저 refs 기능을 학습할 수 있도록 실습 환경을 만들겠습니다. 저장소를 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir gitstudy12 새 폴더 만들기
 $ cd gitstudy12
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
@@ -27,81 +93,91 @@ infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ code index.htm VS Code 실행
 index.htm
 hello world
-간단한 인사말만 작성했습니다. 저장한 후 커밋합니다.
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+</code></pre></div></div>
+
+<p>간단한 인사말만 작성했습니다. 저장한 후 커밋합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git add index.htm 등록
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git commit -m "first" 커밋
 [master (root-commit) d0943cf] first
 1 file changed, 1 insertion(+)
 create mode 100644 index.htm
-깃교과서_06.indd 388 2020-03-05 오후 1:51:51
-389
-12
-고급 기능
-12.1.2 해시
-깃에서 해시 값은 매우 중요합니다. 깃은 SHA1 알고리즘을 사용하여 해시 값을 생성합니다. 해
-시 값은 깃의 동작을 구분하며, 중복되지 않는 유일한 값입니다.
-깃의 모든 작업은 SHA1 해시 값을 참조합니다. 깃 내부적으로 동작하는 작업들은 SHA1 해시 값
+</code></pre></div></div>
+
+<h3 id="1212-해시">12.1.2 해시</h3>
+<p>깃에서 해시 값은 매우 중요합니다. 깃은 SHA1 알고리즘을 사용하여 해시 값을 생성합니다. 해
+시 값은 깃의 동작을 구분하며, 중복되지 않는 유일한 값입니다.</p>
+
+<p>깃의 모든 작업은 SHA1 해시 값을 참조합니다. 깃 내부적으로 동작하는 작업들은 SHA1 해시 값
 으로 연결 고리를 생성합니다. 따라서 깃의 동작을 정확히 이해하려면 해시 값을 자세히 알아볼
-필요가 있습니다.
-생성된 모든 해시 값은 show 명령어로 확인할 수 있습니다.
-$ git show 해시값
-저장소의 로그를 확인해 보겠습니다.
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-$ git log 커밋 로그
-commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -> master)
-Author: hojin <infohojin@gmail.com>
+필요가 있습니다.</p>
+
+<p>생성된 모든 해시 값은 show 명령어로 확인할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 해시값
+</code></pre></div></div>
+
+<p>저장소의 로그를 확인해 보겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+</span><span class="err">$</span> git log 커밋 로그
+<span class="p">commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
+Author: hojin &lt;infohojin@gmail.com&gt;
 Date: Sat May 25 18:06:47 2019 +0900
 first
-커밋 로그가 1개 출력됩니다. 출력된 d0943cf 해시 값의 정보를 확인해 봅시다.
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-$ git show d0943cf 커밋 정보
-commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -> master)
-Author: hojin <infohojin@gmail.com>
+</span><span class="err">커밋</span> 로그가 1개 출력됩니다. 출력된 d0943cf 해시 값의 정보를 확인해 봅시다.
+<span class="p">infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+</span><span class="err">$</span> git show d0943cf 커밋 정보
+<span class="p">commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
+Author: hojin &lt;infohojin@gmail.com&gt;
 Date: Sat May 25 18:06:47 2019 +0900
 first
-diff --git a/index.htm b/index.htm
-new file mode 100644
-index 0000000..95d09f2
---- /dev/null
-+++ b/index.htm
-@@ -0,0 +1 @@
-+hello world
-\ No newline at end of file
-깃교과서_06.indd 389 2020-03-05 오후 1:51:51
-390
-해시 값을 사용하여 커밋의 상세 정보를 확인할 수 있습니다.
-12.1.3 역조회
-show 명령어는 해시 값을 사용하여 커밋 정보를 확인합니다. 반대로 rev-parse 명령어로 포인터
+</span><span class="gh">diff --git a/index.htm b/index.htm
+</span><span class="p">new file mode 100644
+</span><span class="gh">index 0000000..95d09f2
+</span><span class="gd">--- /dev/null
+</span><span class="gi">+++ b/index.htm
+</span><span class="p">@@ -0,0 +1 @@</span>
+<span class="gi">+hello world
+</span><span class="err">\</span> No newline at end of file
+</code></pre></div></div>
+
+<h3 id="1213-역조회">12.1.3 역조회</h3>
+<p>show 명령어는 해시 값을 사용하여 커밋 정보를 확인합니다. 반대로 rev-parse 명령어로 포인터
 의 해시 값을 알 수 있습니다. 예를 들어 브랜치는 커밋 해시 값을 가리키는 포인터입니다. 따라서
 브랜치 이름을 사용하여 참조하는 해시 값을 조회할 수 있습니다. master 브랜치의 해시 값을 확
-인해 봅시다.
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+인해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git rev-parse master
 d0943cfbc5e092668be3b96e98f32e363e05feb1
-12.1.4 참조 목록
-깃은 SHA1 해시 값을 생성하고, 커밋은 생성된 해시 값을 간접적으로 사용합니다. 또 깃에서는
+</code></pre></div></div>
+
+<h3 id="1214-참조-목록">12.1.4 참조 목록</h3>
+<p>깃은 SHA1 해시 값을 생성하고, 커밋은 생성된 해시 값을 간접적으로 사용합니다. 또 깃에서는
 생성된 해시 값을 쉽게 참조할 수 있도록 refs 목록을 생성합니다. 깃의 모든 refs 목록은 저장소의
-숨긴 영역인 .git/refs 폴더 안에 저장됩니다.
+숨긴 영역인 .git/refs 폴더 안에 저장됩니다.<br />
 또 복잡한 SHA1 해시 값을 쉽게 찾아 사용할 수 있도록 별칭도 쓸 수 있습니다. 별칭은 .git/refs
 폴더 안에서 생성 및 관리할 수 있습니다. 즉, refs 정보는 깃의 기능들을 구현하는 내부 메커니즘
-입니다.
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ ls .git/refs -all 저장소 refs 파일 목록
 total 4
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:02 .
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:06 ..
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:06 heads
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:02 tags
-처음 저장소를 생성하면 .git/refs 폴더에는 heads와 tags 폴더만 있습니다. 새로운 브랜치를 만
-들 때마다 해시 값을 가지는 refs 파일들을 생성합니다.
-새로운 feature 브랜치를 만들고 .git/refs 폴더를 확인합니다.
-깃교과서_06.indd 390 2020-03-05 오후 1:51:51
-391
-12
-고급 기능
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+</code></pre></div></div>
+
+<p>처음 저장소를 생성하면 .git/refs 폴더에는 heads와 tags 폴더만 있습니다. 새로운 브랜치를 만
+들 때마다 해시 값을 가지는 refs 파일들을 생성합니다.</p>
+
+<p>새로운 feature 브랜치를 만들고 .git/refs 폴더를 확인합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git branch feature 브랜치 생성
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ ls .git/refs/heads -all 저장소 refs 정보
@@ -110,8 +186,11 @@ drwxr-xr-x 1 infoh 197609 0 5월 25 18:14 .
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:02 ..
 -rw-r--r-- 1 infoh 197609 41 5월 25 18:14 feature 브랜치의 HEAD 포인트
 -rw-r--r-- 1 infoh 197609 41 5월 25 18:06 master
-feature 브랜치의 refs가 생성되었습니다.
-reflog 12.2 git
+</code></pre></div></div>
+
+<p>feature 브랜치의 refs가 생성되었습니다.</p>
+
+<p>reflog 12.2 git
 깃은 안정적인 작업을 유지하려고 참조된 모든 refs를 기록합니다. 그리고 내부적으로 작업한 모
 든 HEAD와 브랜치 포인터를 기록합니다. 이때 사용된 포인터들의 기록을 reflog라고 합니다.
 12.2.1 참조 기록
@@ -121,34 +200,34 @@ reflog는 한 번이라도 사용했던 HEAD와 브랜치를 기록합니다. �
 가지고 있지는 않습니다. reflog는 시스템에서 정의한 며칠 간의 기록만 보관합니다. 그 이전의 작업
 들은 모두 삭제합니다.
 깃교과서_06.indd 391 2020-03-05 오후 1:51:51
-392
+392</p>
 
-그림 12-1 ref 기록  
-![](./img/12-1.jpg)
+<p>그림 12-1 ref 기록<br />
+<img src="./img/12-1.jpg" alt="" /></p>
 
-C1
+<p>C1
 C2
 reflog
 HEAD C3
 지금까지 작업한 reflog 기록을 확인해 봅시다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git reflog reflog 기록
-d0943cf (HEAD -> master, feature) HEAD@{0}: commit (initial): first
-...
+d0943cf (HEAD -&gt; master, feature) HEAD@{0}: commit (initial): first
+…
 12.2.2 기록 확인
 reflog의 기록들은 HEAD@{숫자} 형태입니다. 각 숫자는 작업을 수행한 해시 값을 가리킵니다.
 따라서 reflog에 기록된 HEAD@{숫자} 포인터를 이용하여 커밋 정보를 확인할 수 있습니다.
 마지막에 참조한 refs 로그의 해시 값 정보를 확인해 봅시다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git show HEAD@{0} 커밋 정보
-commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -> master, feature)
-Author: hojin <infohojin@gmail.com>
+commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master, feature)
+Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 Date: Sat May 25 18:06:47 2019 +0900
 first
-diff --git a/index.htm b/index.htm
+diff –git a/index.htm b/index.htm
 new file mode 100644
 index 0000000..95d09f2
---- /dev/null
+— /dev/null
 +++ b/index.htm
 @@ -0,0 +1 @@
 +hello world
@@ -166,13 +245,13 @@ $ git show master@{yesterday}
 니다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git log -g 커밋 로그
-commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -> master, feature)
-Reflog: HEAD@{0} (hojin <infohojin@gmail.com>)
+commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master, feature)
+Reflog: HEAD@{0} (hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>)
 Reflog message: commit (initial): first
-Author: hojin <infohojin@gmail.com>
+Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 Date: Sat May 25 18:06:47 2019 +0900
 first
-...
+…
 12.2.4 기록 유지
 refs는 현재 로컬 저장소에서 작업한 모든 로그의 참조 기록입니다. 깃은 커밋, 브랜치 등 내부적
 으로 사용한 모든 객체의 로그를 기록합니다. 하지만 refs는 로컬 저장소에만 기록하므로 원격 저
@@ -192,19 +271,19 @@ refs는 현재 로컬 저장소에서 작업한 모든 로그의 참조 기록�
 blame 기능을 실습하기 위해 index.htm 파일을 수정한 후 커밋해 보겠습니다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ code index.htm VS Code 실행
-index.htm
+index.htm</p>
 <h1>hello world</h1>
-infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-$ git commit -am "add h1 tag" 등록 및 커밋
+<p>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+$ git commit -am “add h1 tag” 등록 및 커밋
 [master 520aadf] add h1 tag
 1 file changed, 1 insertion(+), 1 deletion(-)
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ code index.htm VS Code 실행
-index.htm
+index.htm</p>
 <h1>hello world</h1>
-깃을 이용하여 코드 이력을 관리할 수 있습니다.
+<p>깃을 이용하여 코드 이력을 관리할 수 있습니다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-$ git commit -am "add description" 등록 및 커밋
+$ git commit -am “add description” 등록 및 커밋
 [master 023dade] add description
 1 file changed, 2 insertions(+), 1 deletion(-)
 깃교과서_06.indd 394 2020-03-05 오후 1:51:51
@@ -213,12 +292,12 @@ $ git commit -am "add description" 등록 및 커밋
 고급 기능
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ code index.htm VS Code 실행
-index.htm
+index.htm</p>
 <h1>hello world</h1>
-깃을 이용하여 코드 이력을 관리할 수 있습니다.
+<p>깃을 이용하여 코드 이력을 관리할 수 있습니다.
 깃은 ref를 참조하여 작업이 이루어집니다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-$ git commit -am "ref description" 등록 및 커밋
+$ git commit -am “ref description” 등록 및 커밋
 [master 71099d0] ref description
 1 file changed, 2 insertions(+), 1 deletion(-)
 12.3.3 blame 명령어
@@ -227,7 +306,7 @@ $ git blame 파일이름
 작성한 파일의 blame을 확인해 봅시다.
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git blame index.htm 메타 정보 출력
-023dadec (hojin 2019-05-26 16:19:05 +0900 1) <h1>hello world</h1>
+023dadec (hojin 2019-05-26 16:19:05 +0900 1) &lt;h1&gt;hello world&lt;/h1&gt;
 71099d05 (hojin 2019-05-26 16:31:18 +0900 2) 깃을 이용하여 코드 이력을 관리할 수 있습니다.
 71099d05 (hojin 2019-05-26 16:31:18 +0900 3) 깃은 ref를 참조하여 작업이 이루어집니다.
 출력 결과를 보니 각 커밋에 대한 해시 값, 작성자, 코드 등 내용도 함께 보여 주네요. blame은
@@ -272,64 +351,64 @@ Initialized empty Git repository in E:/git-replace/.git/
 실습을 위해 work.md 파일을 생성하고 저장한 후 커밋합니다.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ code work.md VS Code 실행
-work.md
-# 작업1
-infoh@DESKTOP MINGW64 /e/git-replace (master)
+work.md</p>
+<h1 id="작업1">작업1</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git add work.md 등록
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git commit -m "work1" 커밋
+$ git commit -m “work1” 커밋
 [master (root-commit) 6584676] work1
 1 file changed, 1 insertion(+)
 create mode 100644 work.md
 코드를 좀 더 수정하고, 두 번째 커밋을 합니다. 반복되는 code work.md 과정은 표시를 생략합
 니다.
-work.md
-# 작업1 6584676
-# 작업2
-infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git commit -am "work2" 등록 및 커밋
+work.md</p>
+<h1 id="작업1-6584676">작업1 6584676</h1>
+<h1 id="작업2">작업2</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-replace (master)
+$ git commit -am “work2” 등록 및 커밋
 깃교과서_06.indd 397 2020-03-05 오후 1:51:52
 398
 [master c4cb167] work2
 1 file changed, 2 insertions(+), 1 deletion(-)
 같은 방법으로 작업5까지 순차적으로 입력한 후 여러 번 커밋합니다.
-work.md
-# 작업1 6584676
-# 작업2 c4cb167
-# 작업3
-infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git commit -am "work3" 등록 및 커밋
+work.md</p>
+<h1 id="작업1-6584676-1">작업1 6584676</h1>
+<h1 id="작업2-c4cb167">작업2 c4cb167</h1>
+<h1 id="작업3">작업3</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-replace (master)
+$ git commit -am “work3” 등록 및 커밋
 [master 8681d97] work3
 1 file changed, 2 insertions(+), 1 deletion(-)
-work.md
-# 작업1 6584676
-# 작업2 c4cb167
-# 작업3 8681d97
-# 작업4
-infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git commit -am "work4" 등록 및 커밋
+work.md</p>
+<h1 id="작업1-6584676-2">작업1 6584676</h1>
+<h1 id="작업2-c4cb167-1">작업2 c4cb167</h1>
+<h1 id="작업3-8681d97">작업3 8681d97</h1>
+<h1 id="작업4">작업4</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-replace (master)
+$ git commit -am “work4” 등록 및 커밋
 [master e4363d5] work4
 1 file changed, 2 insertions(+), 1 deletion(-)
-work.md
-# 작업1 6584676
-# 작업2 c4cb167
-# 작업3 8681d97
-# 작업4 e4363d5
-# 작업5
-infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git commit -am "work5" 등록 및 커밋
+work.md</p>
+<h1 id="작업1-6584676-3">작업1 6584676</h1>
+<h1 id="작업2-c4cb167-2">작업2 c4cb167</h1>
+<h1 id="작업3-8681d97-1">작업3 8681d97</h1>
+<h1 id="작업4-e4363d5">작업4 e4363d5</h1>
+<h1 id="작업5">작업5</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-replace (master)
+$ git commit -am “work5” 등록 및 커밋
 [master 939b41c] work5
 1 file changed, 2 insertions(+), 1 deletion(-)
 깃교과서_06.indd 398 2020-03-05 오후 1:51:52
 399
 12
 고급 기능
-지금까지 작업 과정을 그림으로 표현하면 다음과 같습니다.
+지금까지 작업 과정을 그림으로 표현하면 다음과 같습니다.</p>
 
-그림 12-2 저장소의 커밋 순서  
-![](./img/12-2.jpg)
+<p>그림 12-2 저장소의 커밋 순서<br />
+<img src="./img/12-2.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 w2
 c4cb167
@@ -341,8 +420,8 @@ w5
 939b41c
 새 저장소의 커밋들을 확인해 봅시다. 커밋 해시 값도 같이 주의 깊게 살펴보세요.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git log --oneline --decorate 커밋 기록
-939b41c (HEAD -> master) work5
+$ git log –oneline –decorate 커밋 기록
+939b41c (HEAD -&gt; master) work5
 e4363d5 work4
 8681d97 work3
 c4cb167 work2
@@ -352,12 +431,12 @@ c4cb167 work2
 1단계. 저장소를 분리할 수 있게 새로운 브랜치를 하나 생성합니다. 작업3을 기준으로 브랜치를
 만듭니다.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git branch worked 8681d97 work3 해시 값 입력
+$ git branch worked 8681d97 work3 해시 값 입력</p>
 
-그림 12-3 분리할 위치에 브랜치 생성  
-![](./img/12-3.jpg)
+<p>그림 12-3 분리할 위치에 브랜치 생성<br />
+<img src="./img/12-3.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 w2
 c4cb167
@@ -372,18 +451,18 @@ w5
 깃허브에서 git-replace 저장소와 동기화할 새로운 원격 저장소를 생성합니다. 먼저 깃허브에 로
 그인한 후 New 버튼 또는 +  New repository를 클릭합니다.
 깃교과서_06.indd 399 2020-03-05 오후 1:51:52
-400
+400</p>
 
-그림 12-4 깃허브에서 새 저장소 메뉴 선택  
-![](./img/12-4.jpg)
+<p>그림 12-4 깃허브에서 새 저장소 메뉴 선택<br />
+<img src="./img/12-4.jpg" alt="" /></p>
 
-다음 화면에서 원하는 저장소 이름을 입력하고 Create repository를 누릅니다. 필자는
-gitstudy11_parent로 정했는데, 로컬 저장소 이름과 동일하지 않아도 됩니다.
+<p>다음 화면에서 원하는 저장소 이름을 입력하고 Create repository를 누릅니다. 필자는
+gitstudy11_parent로 정했는데, 로컬 저장소 이름과 동일하지 않아도 됩니다.</p>
 
-그림 12-5 원하는 이름으로 새 저장소 생성  
-![](./img/12-5.jpg)
+<p>그림 12-5 원하는 이름으로 새 저장소 생성<br />
+<img src="./img/12-5.jpg" alt="" /></p>
 
-저장소가 생성되면 https://github.com/jinygit/git-replace.git처럼 주소가 나옵니다. 이 주소
+<p>저장소가 생성되면 https://github.com/jinygit/git-replace.git처럼 주소가 나옵니다. 이 주소
 와 로컬 저장소를 연결할 것입니다. 이 주소를 복사해 둡니다.
 다시 깃 배시 화면으로 돌아갑니다. 이 원격 저장소에는 분리된 저장소를 저장할 것입니다. 원격
 저장소를 등록합니다.1
@@ -413,13 +492,15 @@ Delta compression using up to 8 threads
 Compressing objects: 100% (3/3), done.
 Writing objects: 100% (9/9), 667 bytes | 222.00 KiB/s, done.
 Total 9 (delta 0), reused 0 (delta 0)
-To https://github.com/jinygit/git-replace.git
-* [new branch] worked -> master
+To https://github.com/jinygit/git-replace.git</p>
+<ul>
+  <li>[new branch] worked -&gt; master</li>
+</ul>
 
-그림 12-6 브랜치 전송  
-![](./img/12-6.jpg)
+<p>그림 12-6 브랜치 전송<br />
+<img src="./img/12-6.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 w2
 c4cb167
@@ -436,12 +517,12 @@ w5
 이제 원격 저장소는 커밋 3개만 master 브랜치에 가지고 있습니다. 깃허브의 원격 저장소에서 커
 밋들을 확인해 봅시다. jinygit 부분을 클릭하면 다음과 같이 커밋 목록을 확인할 수 있습니다.
 깃교과서_06.indd 401 2020-03-05 오후 1:51:52
-402
+402</p>
 
-그림 12-7 원격 저장소의 커밋  
-![](./img/12-7.jpg)
+<p>그림 12-7 원격 저장소의 커밋<br />
+<img src="./img/12-7.jpg" alt="" /></p>
 
-work1, work2, work3 커밋만 전송된 것을 확인합니다.
+<p>work1, work2, work3 커밋만 전송된 것을 확인합니다.
 12.4.3 저장소 분리
 앞에서 우리는 저장소를 분리하려고 커밋을 지정했습니다. 또 지정한 커밋을 기준으로 브랜치를
 만들고, 이를 원격 저장소의 다른 브랜치 이름으로 전송했습니다. 하지만 아직 로컬 저장소는 변
@@ -451,19 +532,19 @@ work1, work2, work3 커밋만 전송된 것을 확인합니다.
 용합니다. commit-tree는 저수준 깃 명령어입니다.
 commit-tree 명령어를 사용하여 수동으로 객체를 생성합니다.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ echo "devide history" | git commit-tree c4cb167^{tree} work2의 해시 값
+$ echo “devide history” | git commit-tree c4cb167^{tree} work2의 해시 값
 744e61522896c3ee222fd4f74a099964851454cf
 저수준 명령어를 사용하여 임시 객체를 생성했습니다. 임시 객체는 아직 다른 어떤 객체와도 연결
 되지 않고, 떨어져 있는 외톨이 객체입니다.
 깃교과서_06.indd 402 2020-03-05 오후 1:51:52
 403
 12
-고급 기능
+고급 기능</p>
 
-그림 12-8 임시 객체 생성  
-![](./img/12-8.jpg)
+<p>그림 12-8 임시 객체 생성<br />
+<img src="./img/12-8.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 w2
 c4cb167
@@ -477,26 +558,26 @@ w5
 939b41c
 5단계. 생성된 임시 객체를 다른 커밋 객체와 리베이스하여 병합합니다.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git rebase --onto 744e615 c4cb167 리베이스 병합(임시 객체)
-First, rewinding head to replay your work on top of it...
+$ git rebase –onto 744e615 c4cb167 리베이스 병합(임시 객체)
+First, rewinding head to replay your work on top of it…
 Applying: work3
 Applying: work4
 Applying: work5
 새로 생성된 임시 객체와 리베이스되었습니다. 작업한 결과를 로그로 확인해 봅시다.
 infoh@DESKTOP MINGW64 /e/git-replace (master)
-$ git log --oneline 커밋 기록
-c282ad0 (HEAD -> master) work5
+$ git log –oneline 커밋 기록
+c282ad0 (HEAD -&gt; master) work5
 461d0a2 work4
 c3502a6 work3
 744e615 devide history
 work1과 work2 커밋이 사라졌습니다. 이전에 있던 work1과 work2 커밋은 work3과 연결 고
 리가 끊어져 분리되었습니다. 그 대신 로그 기록에는 최상위 부모 커밋이 임시 객체(744e615)로
-변경되었습니다.
+변경되었습니다.</p>
 
-그림 12-9 리베이스 변경  
-![](./img/12-9.jpg)
+<p>그림 12-9 리베이스 변경<br />
+<img src="./img/12-9.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 w2
 c4cb167
@@ -526,15 +607,17 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (12/12), 939 bytes | 234.00 KiB/s, done.
 Total 12 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/jinygit/git-replace2.git
-* [new branch] master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-푸시한 원격 저장소(깃허브)를 확인해 봅시다.
+To https://github.com/jinygit/git-replace2.git</p>
+<ul>
+  <li>[new branch] master -&gt; master
+Branch ‘master’ set up to track remote branch ‘master’ from ‘origin’.
+푸시한 원격 저장소(깃허브)를 확인해 봅시다.</li>
+</ul>
 
-그림 12-10 분리된 원격 저장소  
-![](./img/12-10.jpg)
+<p>그림 12-10 분리된 원격 저장소<br />
+<img src="./img/12-10.jpg" alt="" /></p>
 
-임시 객체로 시작되는 커밋 기록 3개를 확인할 수 있습니다.
+<p>임시 객체로 시작되는 커밋 기록 3개를 확인할 수 있습니다.
 자신의 URL 주소
 깃교과서_06.indd 404 2020-03-05 오후 1:51:53
 405
@@ -547,7 +630,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 7단계. 분리된 두 원격 저장소 중에서 마지막에 작업한 커밋으로 원격 저장소를 복제합니다.
 $ cd 실습폴더
 $ git clone https://github.com/jinygit/git-replace2.git git-replace2 저장소 복제
-Cloning into 'git-replace2'...
+Cloning into ‘git-replace2’…
 remote: Enumerating objects: 12, done.
 remote: Counting objects: 100% (12/12), done.
 remote: Compressing objects: 100% (5/5), done.
@@ -557,8 +640,8 @@ Unpacking objects: 100% (12/12), done.
 infoh@DESKTOP MINGW64 (master)
 $ cd git-replace2 복제 저장소 이동
 infoh@DESKTOP MINGW64 /e/git-replace2 (master)
-$ git log --oneline --decorate 커밋 기록
-c282ad0 (HEAD -> master, origin/master, origin/HEAD) work5
+$ git log –oneline –decorate 커밋 기록
+c282ad0 (HEAD -&gt; master, origin/master, origin/HEAD) work5
 461d0a2 work4
 c3502a6 work3
 744e615 devide history
@@ -579,11 +662,12 @@ remote: Counting objects: 100% (9/9), done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0
 Unpacking objects: 100% (9/9), done.
-From https://github.com/jinygit/git-replace
-* [new branch] master -> worked/master
+From https://github.com/jinygit/git-replace</p>
+<ul>
+  <li>[new branch] master -&gt; worked/master
 패치로 가져온 worked의 로그 기록을 확인해 봅시다.
 infoh@DESKTOP MINGW64 /e/git-replace2 (master)
-$ git log --oneline worked/master 커밋 기록
+$ git log –oneline worked/master 커밋 기록
 8681d97 (worked/master) work3
 c4cb167 work2
 6584676 work1
@@ -591,12 +675,13 @@ c4cb167 work2
 9단계. 이제 origin/master의 c3502a6과 worked/master의 8681d97을 replace 명령어로 연
 결합니다.
 infoh@DESKTOP MINGW64 /e/git-replace2 (master)
-$ git replace c3502a6 8681d97 커밋 연결
+$ git replace c3502a6 8681d97 커밋 연결</li>
+</ul>
 
-그림 12-11 원격 저장소 2개 연결  
-![](./img/12-11.jpg)
+<p>그림 12-11 원격 저장소 2개 연결<br />
+<img src="./img/12-11.jpg" alt="" /></p>
 
-w1
+<p>w1
 6584676
 https://github.com/jinygit/git-replace https://github.com/jinygit/git-replace2
 w2
@@ -616,8 +701,8 @@ replace 명령어를 사용하여 두 커밋을 연결했습니다. 저장소의
 12
 고급 기능
 infoh@DESKTOP MINGW64 /e/git-replace2 (master)
-$ git log --oneline 커밋 기록
-c282ad0 (HEAD -> master, origin/master, origin/HEAD) work5
+$ git log –oneline 커밋 기록
+c282ad0 (HEAD -&gt; master, origin/master, origin/HEAD) work5
 461d0a2 work4
 c3502a6 (replaced) work3
 c4cb167 work2
@@ -649,7 +734,7 @@ Note
 collect의 약어입니다. 깃에서 내부적으로 가비지 정리가 필요하다고 생각할 때, gc 명령어를 자
 동으로 실행합니다. gc 명령어가 실행되면 오래된 객체들은 삭제하고 저장소 용량도 정리합니다.
 자동 실행 외에 사용자가 직접 gc 명령어를 실행할 수 있습니다.
-$ git gc --auto
+$ git gc –auto
 gc 명령어를 실행할 때는 prune, repack, pack, rerere 등 하위 명령어와 같이 사용합니다. gc
 명령어가 실행되면 객체를 압축하고 pack 파일 형태로 저장하거나 제거합니다.
 12.5.4 refs 압축
@@ -696,12 +781,12 @@ Initialized empty Git repository in E:/git-prune/.git/
 prune.md 파일을 만들고 첫 번째 커밋을 합니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ code prune.md VS Code 실행
-prune.md
-# Prune 실습입니다.
-infoh@DESKTOP MINGW64 /e/git-prune (master)
+prune.md</p>
+<h1 id="prune-실습입니다">Prune 실습입니다.</h1>
+<p>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git add prune.md 등록
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git commit -m "first" 커밋
+$ git commit -m “first” 커밋
 [master (root-commit) ea57d7f] first
 1 file changed, 1 insertion(+)
 create mode 100644 prune.md
@@ -709,9 +794,9 @@ create mode 100644 prune.md
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ code prune.md VS Code 실행
 prune.md
-prune.md
-# Prune 실습입니다.
-Prune은 깃 객체를 정리하는 내부 유틸리티입니다.
+prune.md</p>
+<h1 id="prune-실습입니다-1">Prune 실습입니다.</h1>
+<p>Prune은 깃 객체를 정리하는 내부 유틸리티입니다.
 깃교과서_06.indd 410 2020-03-05 오후 1:51:53
 411
 12
@@ -719,14 +804,14 @@ Prune은 깃 객체를 정리하는 내부 유틸리티입니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git add prune.md 등록
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git commit -m "second" 커밋
+$ git commit -m “second” 커밋
 [master 72c9f62] second
-1 file changed, 2 insertions(+), 1 deletion(-)
+1 file changed, 2 insertions(+), 1 deletion(-)</p>
 
-그림 12-12 커밋된 실습 환경  
-![](./img/12-12.jpg)
+<p>그림 12-12 커밋된 실습 환경<br />
+<img src="./img/12-12.jpg" alt="" /></p>
 
-ea57d7f 72c9f62
+<p>ea57d7f 72c9f62
 HEAD
 실습을 위해 커밋을 2개 생성했습니다.
 12.6.3 객체 삭제
@@ -736,43 +821,43 @@ prune 명령어는 고립된 객체를 정리하는 기능입니다. 따라서 �
 먼저 log 명령어로 커밋 기록을 확인합니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git log 커밋 기록
-commit 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 (HEAD -> master)
-Author: hojin <infohojin@gmail.com>
+commit 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 (HEAD -&gt; master)
+Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 Date: Tue Feb 19 16:28:38 2019 +0900
 second
 commit ea57d7fdd9be86740511c9ca81aba0c004302d5d
-Author: hojin <infohojin@gmail.com>
+Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 Date: Tue Feb 19 16:25:43 2019 +0900
 first
 reset 명령어를 사용하여 마지막 커밋을 강제로 제거합니다.
 깃교과서_06.indd 411 2020-03-05 오후 1:51:53
 412
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git reset --hard ea57d7f 하드 리셋으로 삭제
+$ git reset –hard ea57d7f 하드 리셋으로 삭제
 HEAD is now at ea57d7f first
-첫 번째 커밋을 --hard 옵션을 사용하여 리셋했습니다. --hard 옵션을 사용한 리셋은 워킹 디렉터
+첫 번째 커밋을 –hard 옵션을 사용하여 리셋했습니다. –hard 옵션을 사용한 리셋은 워킹 디렉터
 리와 스테이지를 삭제하며, 지정한 커밋으로 저장소를 되돌립니다. HEAD 포인터도 같이 이동됩
-니다.
+니다.</p>
 
-그림 12-13 - -hard 옵션을 사용한 리셋  
-![](./img/12-13.jpg)
+<p>그림 12-13 - -hard 옵션을 사용한 리셋<br />
+<img src="./img/12-13.jpg" alt="" /></p>
 
-ea57d7f 72c9f62
+<p>ea57d7f 72c9f62
 HEAD
 로그를 확인합니다. 리셋 후 두 번째 커밋은 log에 출력되지 않습니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git log 커밋 기록
-commit ea57d7fdd9be86740511c9ca81aba0c004302d5d (HEAD -> master)
-Author: hojin <infohojin@gmail.com>
+commit ea57d7fdd9be86740511c9ca81aba0c004302d5d (HEAD -&gt; master)
+Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 Date: Tue Feb 19 16:25:43 2019 +0900
 first
-사실 커밋을 --hard 옵션을 사용하여 리셋하더라도 내부적으로 생성한 객체를 물리적으로 삭제하
+사실 커밋을 –hard 옵션을 사용하여 리셋하더라도 내부적으로 생성한 객체를 물리적으로 삭제하
 지 않습니다. 삭제한 후에도 이전의 커밋으로 직접 체크아웃할 수 있습니다. 제거된 커밋 해시로
 체크아웃하겠습니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git checkout 72c9f62 삭제된 커밋
-Note: checking out '72c9f62'.
-You are in 'detached HEAD' state. You can look around, make experimental
+Note: checking out ‘72c9f62’.
+You are in ‘detached HEAD’ state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
 state without impacting any branches by performing another checkout.
 If you want to create a new branch to retain commits you create, you may
@@ -812,31 +897,31 @@ prune 명령어는 실행 후의 작업 결과를 출력합니다. 하지만 어
 아웃할 수 있다는 것은 아직 객체에 접근이 허용된다는 의미입니다.
 깃은 참조된 모든 객체의 연결 고리를 reflog에 이중으로 기록합니다. reflog는 깃에서 참조된 모든
 객체의 기록을 일정 기간 유지하는 역할을 합니다. 리셋 명령만으로는 객체와 연결한 모든 고리를
-완벽하게 제거할 수 없다는 것입니다.
+완벽하게 제거할 수 없다는 것입니다.</new-branch-name></p>
 
-그림 12-14 reflog 기록  
-![](./img/12-14.jpg)
+<p>그림 12-14 reflog 기록<br />
+<img src="./img/12-14.jpg" alt="" /></p>
 
-ea57d7f 72c9f62
+<p>ea57d7f 72c9f62
 HEAD
 reflog
 prune 명령어를 실행하려면 완벽하게 고립된 객체여야 합니다. 따라서 reflog에 기록된 연결 고
 리 링크도 같이 제거해야 합니다. reflog는 일정 기간이 지나면 자동으로 없어지지만, 실습을 위
 해 연결 고리를 직접 제거해 보겠습니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git reflog expire --expire=now --expire-unreachable=now --all reflog 삭제
+$ git reflog expire –expire=now –expire-unreachable=now –all reflog 삭제
 현재를 기준으로 그보다 오래된 모든 reflog는 만료합니다. 이제 리셋된 객체를 참조하는 어떤 링
-크도 없습니다. 완벽히 고립된 객체가 되었습니다.
+크도 없습니다. 완벽히 고립된 객체가 되었습니다.</p>
 
-그림 12-15 고립된 객체  
-![](./img/12-15.jpg)
+<p>그림 12-15 고립된 객체<br />
+<img src="./img/12-15.jpg" alt="" /></p>
 
-ea57d7f 72c9f62
+<p>ea57d7f 72c9f62
 HEAD
 reflog
 prune 명령어를 다시 실행합니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git prune --dry-run --verbose 객체 삭제
+$ git prune –dry-run –verbose 객체 삭제
 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 commit
 7b8892419d5b2dee26a1da84a01bf87788629931 tree
 9544667cca54b0546ceabb2e544761548be455d0 blob
@@ -844,11 +929,11 @@ $ git prune --dry-run --verbose 객체 삭제
 415
 12
 고급 기능
-이전과 달리 작업 내역이 출력됩니다. 하지만 --dry-run 옵션을 사용했기 때문에 정리 작업은 실
+이전과 달리 작업 내역이 출력됩니다. 하지만 –dry-run 옵션을 사용했기 때문에 정리 작업은 실
 제로 진행하지 않고, 예상되는 작업 결과만 미리 보여 줍니다.
-정말로 완전히 삭제하려면 --expire 옵션을 사용합니다.
+정말로 완전히 삭제하려면 –expire 옵션을 사용합니다.
 infoh@DESKTOP MINGW64 /e/git-prune (master)
-$ git prune --expire now -v 객체 삭제 실행
+$ git prune –expire now -v 객체 삭제 실행
 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 commit
 7b8892419d5b2dee26a1da84a01bf87788629931 tree
 9544667cca54b0546ceabb2e544761548be455d0 blob
@@ -861,8 +946,8 @@ $ git prune --expire now -v 객체 삭제 실행
 $ git remote prune
 원격 저장소의 브랜치를 병합한 후 삭제합니다. 삭제된 원격 저장소 브랜치는 더 이상 참조할 수
 없습니다.
-$ git fetch --prune
-fetch --prune 명령어는 오래된 브랜치를 정리합니다. 원격 저장소에 연결한 후 제거하기 전에
+$ git fetch –prune
+fetch –prune 명령어는 오래된 브랜치를 정리합니다. 원격 저장소에 연결한 후 제거하기 전에
 최신 상태를 먼저 가져옵니다.
 깃교과서_06.indd 415 2020-03-05 오후 1:51:54
 416
@@ -881,7 +966,7 @@ rerere 기능을 활성화하면, 깃은 충돌을 해결할 때마다 해결한
 기본적으로 rerere 기능은 활성화되어 있지 않습니다. 이 기능을 사용하려면 다음 명령어로 활성
 화해야 합니다.
 $ git config rerere.enabled true
-로컬의 전체 저장소에 모두 적용하고자 한다면 --global 옵션을 같이 사용합니다. 단일 저장소에
+로컬의 전체 저장소에 모두 적용하고자 한다면 –global 옵션을 같이 사용합니다. 단일 저장소에
 서만 rerere 기능을 활성화할 때는 글로벌 옵션을 제외합니다. 환경 설정으로 활성화하면 저장소
 에서 rerere 기능을 사용할 수 있습니다.
 깃교과서_06.indd 416 2020-03-05 오후 1:51:54
@@ -915,36 +1000,36 @@ enabled = true
 rerere 기능을 학습하기 위해 hello.htm 파일을 작성하고 저장한 후 커밋합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
 $ code hello.htm VS Code 실행
-hello.htm
+hello.htm</p>
 <h1>hello world</h1>
-깃교과서_06.indd 417 2020-03-05 오후 1:51:54
+<p>깃교과서_06.indd 417 2020-03-05 오후 1:51:54
 418
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
 $ git add hello.htm 등록
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
-$ git commit -m "first" 커밋
+$ git commit -m “first” 커밋
 [master (root-commit) adf93df] first
 1 file changed, 1 insertion(+)
 create mode 100644 hello.htm
 충돌 문제를 발생하려고 새로운 브랜치를 생성합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
 $ git checkout -b feature 브랜치 생성
-Switched to a new branch 'feature'
+Switched to a new branch ‘feature’
 infoh@DESKTOP MINGW64 /e/git-rerere (feature)
 생성한 브랜치에서 hello.htm 파일을 수정하여 인위적으로 충돌을 발생시킬 것입니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (feature)
 $ code hello.htm VS Code 실행
-hello.htm
+hello.htm</p>
 <h1>git world</h1>
-feature 브랜치에 커밋합니다.
+<p>feature 브랜치에 커밋합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (feature)
-$ git commit -am "hello->git" 등록 및 커밋
-[feature c0f2810] hello->git
+$ git commit -am “hello-&gt;git” 등록 및 커밋
+[feature c0f2810] hello-&gt;git
 1 file changed, 1 insertion(+), 1 deletion(-)
 이제 다시 원본 master 브랜치로 이동합니다.
 infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/git-rerere (feature)
 $ git checkout master 브랜치 이동
-Switched to branch 'master'
+Switched to branch ‘master’
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
 깃교과서_06.indd 418 2020-03-05 오후 1:51:54
 419
@@ -953,19 +1038,19 @@ infoh@DESKTOP MINGW64 /e/git-rerere (master)
 충돌을 위해 hello.htm 파일에서 같은 위치의 코드를 수정합니다.
 infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/git-rerere (feature)
 $ code hello.htm VS Code 실행
-hello.htm
+hello.htm</p>
 <h1>hello study</h1>
-infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/git-rerere (master)
-$ git commit -am "world->study" 등록 및 커밋
-[master 9b9ac61] world->study
+<p>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/git-rerere (master)
+$ git commit -am “world-&gt;study” 등록 및 커밋
+[master 9b9ac61] world-&gt;study
 1 file changed, 1 insertion(+), 1 deletion(-)
 12.7.4 충돌 및 기록
-브랜치를 생성하고 동일한 위치의 코드를 수정했습니다.
+브랜치를 생성하고 동일한 위치의 코드를 수정했습니다.</p>
 
-그림 12-16 충돌이 예상되는 저장소  
-![](./img/12-16.jpg)
+<p>그림 12-16 충돌이 예상되는 저장소<br />
+<img src="./img/12-16.jpg" alt="" /></p>
 
-adf93df
+<p>adf93df
 c0f2810
 9b9ac61
 master
@@ -976,7 +1061,7 @@ infoh@DESKTOP MINGW64 /e/git-rerere (master)
 $ git merge feature 병합
 Auto-merging hello.htm
 CONFLICT (content): Merge conflict in hello.htm
-Recorded preimage for 'hello.htm' 충돌
+Recorded preimage for ‘hello.htm’ 충돌
 Automatic merge failed; fix conflicts and then commit the result.
 깃교과서_06.indd 419 2020-03-05 오후 1:51:54
 420
@@ -993,42 +1078,42 @@ hello.htm
 력합니다. diff 명령어로도 충돌 차이점을 확인할 수 있습니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master|MERGING)
 $ git rerere diff 커밋 비교
---- a/hello.htm
+— a/hello.htm
 +++ b/hello.htm
 @@ -1,5 +1,5 @@
--<<<<<<<
--<h1>git world</h1>
+-«««&lt;
+-&lt;h1&gt;git world&lt;/h1&gt;
 -=======
-+<<<<<<< HEAD
++«««&lt; HEAD</p>
 <h1>hello study</h1>
-->>>>>>>
+<p>-»»»&gt;
 +=======
-+<h1>git world</h1>
-+>>>>>>> feature
++&lt;h1&gt;git world&lt;/h1&gt;
++»»»&gt; feature
 hello.htm 파일에서 충돌한 부분을 확인합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master|MERGING)
 $ code hello.htm VS Code 실행
 깃교과서_06.indd 420 2020-03-05 오후 1:51:54
 421
 12
-고급 기능
+고급 기능</p>
 
-그림 12-17 hello.htm  
-![](./img/12-17.jpg)
+<p>그림 12-17 hello.htm<br />
+<img src="./img/12-17.jpg" alt="" /></p>
 
-코드에 충돌 메시지를 표시했습니다. 다음과 같이 코드를 수정하여 충돌 문제를 해결합니다.
-hello.htm
+<p>코드에 충돌 메시지를 표시했습니다. 다음과 같이 코드를 수정하여 충돌 문제를 해결합니다.
+hello.htm</p>
 <h1>git study</h1>
-충돌을 해결한 후에는 커밋으로 병합을 완료합니다.
+<p>충돌을 해결한 후에는 커밋으로 병합을 완료합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master|MERGING)
-$ git commit -am "solve comflict" 등록 및 커밋
+$ git commit -am “solve comflict” 등록 및 커밋
 [master 6827ff0] solve comflict
-infoh@DESKTOP MINGW64 /e/git-rerere (master) 충돌 해결
+infoh@DESKTOP MINGW64 /e/git-rerere (master) 충돌 해결</p>
 
-그림 12-18 충돌 해결 및 병합  
-![](./img/12-18.jpg)
+<p>그림 12-18 충돌 해결 및 병합<br />
+<img src="./img/12-18.jpg" alt="" /></p>
 
-adf93df
+<p>adf93df
 c0f2810 6827ff0
 9b9ac61
 master
@@ -1044,35 +1129,36 @@ feature
 으로 나타난다면, 깃은 기존에 기록한 rerere 정보를 참조하여 코드를 자동으로 수정할 것입니다.
 충돌을 해결한 로그 기록을 확인합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
-$ git log --graph 커밋 기록
-* commit eb528657153e566fd126d8ed2c02c82d47685093 (HEAD -> master)
+$ git log –graph 커밋 기록</p>
+<ul>
+  <li>commit eb528657153e566fd126d8ed2c02c82d47685093 (HEAD -&gt; master)
 |\ Merge: 240deb0 9a5faec
-| | Author: hojin <infohojin@gmail.com>
+| | Author: hojin <a href="mailto:infohojin@gmail.com">infohojin@gmail.com</a>
 | | Date: Wed Feb 20 16:16:35 2019 +0900
 | | solve comflict
 | |
-...
+…
 rerere 기능을 실행하려고 이전의 병합 커밋을 강제로 삭제합니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (master)
-$ git reset --hard HEAD^ 커밋 삭제
-HEAD is now at 9b9ac61 world->study
+$ git reset –hard HEAD^ 커밋 삭제
+HEAD is now at 9b9ac61 world-&gt;study
 병합을 삭제했습니다. 이번에는 3-way 병합이 아닌 리베이스 방식으로 두 브랜치를 병합하겠습
 니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (feature)
 $ git rebase master 병합
-First, rewinding head to replay your work on top of it...
-Applying: hello->git
-Using index info to reconstruct a base tree...
+First, rewinding head to replay your work on top of it…
+Applying: hello-&gt;git
+Using index info to reconstruct a base tree…
 M hello.htm
-Falling back to patching base and 3-way merge...
+Falling back to patching base and 3-way merge…
 Auto-merging hello.htm
 CONFLICT (content): Merge conflict in hello.htm
-Resolved 'hello.htm' using previous resolution.
+Resolved ‘hello.htm’ using previous resolution.
 error: Failed to merge in the changes.
-hint: Use 'git am --show-current-patch' to see the failed patch
-Patch failed at 0001 hello->git
+hint: Use ‘git am –show-current-patch’ to see the failed patch
+Patch failed at 0001 hello-&gt;git
 Resolve all conflicts manually, mark them as resolved with
-"git add/rm <conflicted_files>", then run "git rebase --continue".
+“git add/rm <conflicted_files>", then run "git rebase --continue".
 깃교과서_06.indd 422 2020-03-05 오후 1:51:55
 423
 12
@@ -1088,16 +1174,17 @@ Resolved 'hello.htm' using previous resolution.
 코드와 같은 상태가 되었습니다.
 infoh@DESKTOP MINGW64 /e/git-rerere (feature)
 $ code hello.htm VS Code 실행
-hello.htm
+hello.htm</conflicted_files></li>
+</ul>
 <h1>git study</h1>
-rerere 기능은 이전 충돌 해결 작업들을 기억하고 있다가 유사한 문제가 발생하면 이를 다시 적용
+<p>rerere 기능은 이전 충돌 해결 작업들을 기억하고 있다가 유사한 문제가 발생하면 이를 다시 적용
 합니다.
 이제 리베이스 처리를 완료합시다.
 infoh@DESKTOP MINGW64 /e/git-rerere (feature|REBASE 1/1)
 $ git add hello.htm 등록
 infoh@DESKTOP MINGW64 /e/git-rerere (feature|REBASE 1/1)
-$ git rebase --continue 계속 처리
-Applying: hello->git
+$ git rebase –continue 계속 처리
+Applying: hello-&gt;git
 infoh@DESKTOP MINGW64 /e/git-rerere (feature) 리베이스 완료
 rerere 기능은 병합과 리베이스로 잦은 충돌이 발생하여 이를 좀 더 손쉽게 해결하고 싶을 때 매
 우 유용합니다.
@@ -1106,4 +1193,67 @@ rerere 기능은 병합과 리베이스로 잦은 충돌이 발생하여 이를 
 정리 12.8 git
 일반적인 사용자는 깃의 고급 기능까지 알 필요가 없습니다. 하지만 자신이 프로젝트에서 중요한
 자리를 맡았거나 저장소를 운영한다면 좀 더 많은 기능을 알고 있는 것이 좋습니다. 깃의 고급 기
-능을 이용하면 협업할 때 발생하는 저장소 문제들을 복구하고 해결할 수 있습니다.
+능을 이용하면 협업할 때 발생하는 저장소 문제들을 복구하고 해결할 수 있습니다.</p>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

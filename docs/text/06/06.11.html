@@ -75,7 +75,7 @@
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="611-브랜치-삭제">6.11 브랜치 삭제</h2>
+            <h2 id="브랜치-삭제">브랜치 삭제</h2>
 <p>생성된 브랜치를 삭제하는 것은 생각보다 간단합니다. 하지만 브랜치를 삭제하는 것은 해당 브랜치 내용과 커밋을 모두 삭제하는 것입니다. 따라서 삭제 명령을 실행할 때는 주의해야 합니다. 브랜치 삭제는 크게 스테이지 상태에 따라 달라집니다.</p>
 
 <p>가장 먼저 주의할 점은 현재 자신이 있는 브랜치는 삭제할 수 없다는 것입니다. 브랜치를 삭제하려면 master 브랜치나 다른 브랜치로 잠시 이동해야 합니다. 예를 들어 앞에서 만든 로컬 저장소의 bug 브랜치를 삭제한다고 합시다.</p>
@@ -87,7 +87,10 @@ error: Cannot delete branch 'aaa' checked out at 'E:/gitstudy06'
 
 <p>현재 자신의 브랜치에서 삭제 명령어를 실행하면 오류 메시지가 출력됩니다. 어느 브랜치로 체크아웃될지 모르기 때문입니다. 그래서 삭제하고자 할 때는 다른 브랜치로 이동해서 삭제해야 합니다.</p>
 
-<h3 id="6111-일반적인-삭제-방법">6.11.1 일반적인 삭제 방법</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="일반적인-삭제-방법">일반적인 삭제 방법</h3>
 <p>일반적으로 브랜치를 삭제할 때는 -d 옵션을 사용합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -d 브랜치이름
@@ -104,7 +107,10 @@ Deleted branch footer (was cc66812).
 
 <p>잘 삭제되었습니다.</p>
 
-<h3 id="6112-강제로-삭제하는-방법">6.11.2 강제로 삭제하는 방법</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="강제로-삭제하는-방법">강제로 삭제하는 방법</h3>
 <p>워킹 디렉터리 또는 스테이지에 추가 커밋 작업이 남아 있다면 일반적인 방법으로는 브랜치를 삭제할 수 없습니다. 이때는 강제로 삭제해야 합니다.</p>
 
 <p>실습을 위해 hotfix 브랜치로 이동한 후 branch.htm 파일을 수정하고 저장합니다.</p>
@@ -115,7 +121,6 @@ Switched to branch 'hotfix'
 
 infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ code branch.htm
-
 </code></pre></div></div>
 
 <p>branch.htm</p>
@@ -130,7 +135,6 @@ $ code branch.htm
 $ git commit -am "hotfix working"
 [hotfix 0225e85] hotfix working
  1 file changed, 2 insertions(+), 1 deletion(-)
-
 </code></pre></div></div>
 
 <p>hotfix 브랜치에 커밋이 하나 추가되었습니다. master 브랜치로 체크아웃하여 hotfix 브랜치를 삭제해 보겠습니다.</p>
@@ -139,7 +143,6 @@ $ git commit -am "hotfix working"
 $ git branch -d hotfix
 error: The branch 'hotfix' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D hotfix'.
-
 </code></pre></div></div>
 
 <p>그림 6-31] 커밋이 있는 브랜치 삭제<br />
@@ -150,18 +153,20 @@ If you are sure you want to delete it, run 'git branch -D hotfix'.
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git branch -D hotfix
 Deleted branch hotfix (was 8026ed6).
-
 </code></pre></div></div>
 
 <p>-D 옵션으로 잘 삭제된 것을 확인할 수 있습니다.</p>
 
-<h3 id="6113-소스트리에서-삭제하는-방법">6.11.3 소스트리에서 삭제하는 방법</h3>
+<p><br /></p>
+<hr />
+
+<h3 id="소스트리에서-삭제하는-방법">소스트리에서 삭제하는 방법</h3>
 <p>소스트리에서도 브랜치를 삭제할 수 있습니다. 먼저 소스트리의 왼쪽에서 브랜치 목록 중 삭제하고 싶은 것을 하나 선택합니다. 브랜치를 선택한 상태에서 마우스 오른쪽 버튼을 누릅니다. 예를 들어 다음과 같이 브랜치를 삭제할 수 있는 메뉴가 나오면 feature 삭제를 선택합니다.</p>
 
 <p>그림 6-32] 소스트리에서 브랜치 삭제<br />
 <img src="./img/06-32.jpg" alt="" /></p>
 
-<h3 id="6114-리모트-브랜치를-삭제하는-방법">6.11.4 리모트 브랜치를 삭제하는 방법</h3>
+<h3 id="리모트-브랜치를-삭제하는-방법">리모트 브랜치를 삭제하는 방법</h3>
 <p>지금까지는 로컬에 생성된 브랜치를 삭제하는 방법을 알아보았습니다. 그렇다면 원격 저장소의 브랜치는 어떻게 삭제해야 할까요? 원격 브랜치를 삭제하려면 먼저 삭제 명령을 푸시해야 합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push origin --delete 리모트브랜치이름
