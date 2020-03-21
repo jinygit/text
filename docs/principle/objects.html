@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Git TextBook</title>
+        <!--SEO--><meta name="title" content="Git 교과서" /><meta name="description" content="버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지 깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div><!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <h1 id="객체">객체</h1>
+<p>깃은 컨덴츠를 객체 형태로 저장을 합니다. 깃의 컨덴츠를 담고 있는 객체에 대해서 알아봅니다.</p>
+
+<h2 id="객체폴더">객체폴더</h2>
+<p>객체들은 .git/objects 디렉토리에 저장이 됩니다. 저장소의 내용을 한번 살펴 봅니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy19 (master)
+$ ls .git/objects/
+info/  pack/
+</code></pre></div></div>
+
+<p>objects 폴더안에는 두개의 서브 폴더가 존재합니다. 이 폴더는 깃 초기화(init)과 같은 작업시 자동으로 Info와 pack 를 생성합니다.</p>
+
+<h2 id="hash-object">hash-object</h2>
+<p>저수준 hash-object 명령은 입력된 컨덴츠의 SHA1 해쉬값을 출력합니다. 파일을 하나 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello.md
+Hello world!
+</code></pre></div></div>
+
+<p>Hash-object 명령을 통하여 hello.md 파일의 컨덴츠를 SHA1 값으로 확인해 봅니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ git hash-object hello.md -w
+6769dd60bdf536a83c9353272157893043e9f7d0
+</code></pre></div></div>
+
+<p>SHA1의 값은 40자리 입니다. -w 옵션을 같이 사용하면 해시를 객체로 같이 저장을 하게 됩니다.</p>
+
+<p>저장된 객체를 확인해 봅니다. 리눅스 find 명령어를 이용하여 객체 폴더안에 파일만 검사를 해봅니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ find .git/objects/ -type f
+.git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
+</code></pre></div></div>
+
+<p>앞에서 생성된 SHA1 해쉬값 으로 객체파일 하나가 생성된 것을 확인할 수 있습니다. SHA1 해쉬값의 2자리는 디렉토리로 사용을 합니다. 나머지 값은 파일명으로 사용을 합니다.</p>
+
+<p>즉, 깃은 컨덴츠를 이용하여 해쉬값을 생성하고, 해쉬값을 이용하여 파일을 생성합니다.</p>
+
+<h2 id="cat-file">cat-file</h2>
+<p>이번에는 hash-object로 생성된 객체의 내용을 확인해 봅니다. 셀 명령어 cat은 파일의 내용을 출력합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ cat .git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
+xK▒▒OR04b▒H▒▒▒W(▒/▒IQB▒▒
+</code></pre></div></div>
+
+<p>하지만 생성된 깃의 객체는 일반적인 cat 명령으로 확인을 할 수 없습니다. 이를 위해서 깃은 별도의 저수준 명령어 cat-file을 제공합니다.</p>
+
+<p>깃 cat-file 명령을 사용하여 앞에서 생성된 객체의 내용을 다시 한번 확인해 보도록 하겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ git cat-file -p 6769dd60bdf536a83c9353272157893043e9f7d0
+Hello world!
+</code></pre></div></div>
+
+<p>우리가 알아볼 수 형태의 텍스트로 출력이 되었습니다. 앞에서 생성한 hello.md 파일의 내용과 동일한 것을 확인할 수 있습니다.</p>
+
+<ul>
+  <li>-p 옵션: 컨덴츠 내용을 출력합니다.</li>
+  <li>-t 옵션: 타입을 출력합니다.</li>
+</ul>
+
+<p>옵션과 해시값을 입력하면 됩니다.</p>
+
+<h2 id="blob">Blob</h2>
+<p>깃은 Content addressable 기반으로 입력된, 파일의 내용을 기반으로 해시 주소를 생성합니다. 만일 파일의 내용(컨덴츠)이 달라지면 해쉬값도 변경이 됩니다. 그리고 해쉬값을 파일명으로 사용을 합니다.</p>
+
+<p>파일의 내용을 수정해 봅니다.</p>
+
+<p>hello.md</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world!
+만나서 반갑습니다.
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ git hash-object hello.md -w
+2dedc914313613dba23eefd923674adee9fe559c
+</code></pre></div></div>
+
+<p>해쉬값이 기존과 달라진 것을 확인할 수 있습니다. 내용이 변경이 되면 새로운 객체가 추가로 생성이 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ find .git/objects/ -type f
+.git/objects/2d/edc914313613dba23eefd923674adee9fe559c
+.git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
+</code></pre></div></div>
+
+<p>현재 객체가 2개로 증가된 것을 확인할 수 있습니다. 새로운 객체의 내용을 확인해 보면 수정된 파일의 내용과 동일한 것을 보실 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ git cat-file -p 2dedc914313613dba23eefd923674adee9fe559c
+Hello world!
+만나서 반갑습니다.
+</code></pre></div></div>
+
+<p>이처럼 깃은 컨덴츠의 변경마다 객체를 생성하고 이를 구분하기 위해서 해시값을 파일명으로 사용합니다. 이러한 방식의 파일은 이력 관리를 위해서 장점이긴 하나 단점으로는 파일명을 알기 어렵다는 것입니다.</p>
+
+<p>깃은 이러한 객체를 blob 이라고 표현을 합니다. cat-file -t 옵션을 이용하여 객체 파일이 어떠한 타입인지를 알려 줍니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+$ git cat-file -t 6769dd60bdf536a83c9353272157893043e9f7d0
+blob
+</code></pre></div></div>
+
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3"><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark">Site Menu</li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container --> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+			
+    	</div>
+      
+    </div>
+    <!-- /.container -->
+</footer><!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>
