@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,13 +69,16 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="병합">병합</h2>
+            <section>
+                <h2 id="병합">병합</h2>
 <p>브랜치를 생성하는 목적은 원본 코드에 영향을 주지 않고 분리하여 개발하기 위해서입니다. 독립된 브랜치에서 개발 작업이 끝나면 다시 원본 브랜치에 작업한 결과를 반영해야 합니다. 분리된 브랜치를 한 브랜치로 합치는 작업을 병합(합치기)이라고 합니다. 두 코드를 하나씩 직접 비교해 가며 수동으로 병합하거나 깃 같은 도구를 사용하여 자동으로 병합할 수 있습니다.</p>
 
 <p><br /></p>
@@ -179,10 +182,12 @@ $ git commit -m "first"
 <p>앞에서 병합하려면 모든 브랜치가 단일 저장소에 있어야 한다고 했습니다. 같은 저장소의 브랜치를 병합할 수 있다는 점을 잊지 마세요!</p>
 
 
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -210,12 +215,15 @@ $ git commit -m "first"
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -227,7 +235,9 @@ $ git commit -m "first"
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

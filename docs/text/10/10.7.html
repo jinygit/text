@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,13 +69,16 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="특정-커밋-태그">특정 커밋 태그</h2>
+            <section>
+                <h2 id="특정-커밋-태그">특정 커밋 태그</h2>
 <p>tag 명령어는 기본적으로 현재 HEAD가 가리키는 커밋을 기준으로 태그를 생성합니다. 현재 HEAD 포인터가 가리키는 커밋이 아닌 특정 커밋을 직접 지정하여 태그를 생성할 수 있습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -a 태그버전 커밋ID
@@ -134,10 +137,12 @@ da8d211 (tag: 1.1.0) test 1.1.0
 
 <p><br /><br /></p>
 
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -165,12 +170,15 @@ da8d211 (tag: 1.1.0) test 1.1.0
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -182,7 +190,9 @@ da8d211 (tag: 1.1.0) test 1.1.0
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

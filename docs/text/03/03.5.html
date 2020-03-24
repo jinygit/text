@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,13 +69,16 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="파일-관리-목록에서-제외-gitignore">파일 관리 목록에서 제외: .gitignore</h2>
+            <section>
+                <h2 id="파일-관리-목록에서-제외-gitignore">파일 관리 목록에서 제외: .gitignore</h2>
 <p>깃은 tracked 상태인 모든 것을 추적 관리합니다. 파일뿐만 아니라 서브 폴더와 그 안의 파일들도 포함합니다. 즉, 디렉터리 전체가 모두 관리 대상입니다. 하지만 프로젝트를 하다 보면 모든 파일을 추적하지 않아야 하는 경우도 있습니다.</p>
 
 <p>실제 작업하다 보면, 워킹 디렉터리에 불필요한 파일이 생성되거나 보안에 민감한 파일들이 있을 수 있습니다. 로컬 저장소를 혼자만 사용한다면 이러한 파일들은 신경 쓰지 않아도 됩니다. 하지만 자신의 저장소를 다른 사람들과 공유한다면 이 파일들은 분리해서 관리해야 합니다.</p>
@@ -130,10 +133,12 @@ doc/**/*.txt
 
 <p><br /><br /></p>
 
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -161,12 +166,15 @@ doc/**/*.txt
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -178,7 +186,9 @@ doc/**/*.txt
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

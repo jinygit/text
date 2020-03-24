@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,16 +69,25 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h1 id="실습준비">실습준비</h1>
+            <section>
+                <h1 id="실습준비">실습준비</h1>
+<hr />
+
 <p>깃 플로우는 로컬 저장소와 원격 저장소를 동기화하면서 실습을 같이 하도록 합니다.</p>
 
+<p><br /></p>
+
 <h2 id="실습폴더">실습폴더</h2>
+<hr />
+
 <p>실습을 위해서 새로운 저장소를 생성합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
@@ -111,7 +120,11 @@ $ git commit -m "first" ☜ 커밋을 합니다.
 
 <p>로컬저장소를 초기화 하고 한 개의 커밋을 작성하였습니다.</p>
 
+<p><br /></p>
+
 <h2 id="원격저장소">원격저장소</h2>
+<hr />
+
 <p>로컬 저장소와 연동할 원격 저장소를 생성합니다. 원격 저장소는 깃허브를 사용하도록 합니다. 자신의 깃허브 계정으로 접속하여 새로운 저장소를 생성합니다.</p>
 
 <p><img src="./img/gitflow_05.png" alt="깃플로우" /></p>
@@ -142,12 +155,20 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 <p>실습환경이 준비 되었습니다.</p>
 
+<p><br /></p>
+
 <h3 id="깃-플로우-도구">깃 플로우 도구</h3>
+<hr />
+
 <p>깃 플로우는 단순히 브랜치를 생성하고 사용하는 전략일 뿐입니다. 깃 브랜치 사용법에 익숙한 사용자는 별도의 도움 없이도 깃 플로우 전략을 사용할 수 있습니다. 하지만 깃 사용이 아직 서툰 사용자라면 도구의 도움을 얻어 깃 플로우를 사용할 수 있습니다.</p>
 
 <p>깃 플로우 전략을 사용하기 위해 깃은 별도의 도구를 제공합니다. 구형의 깃 버전을 사용하고 있다면 추가로 깃 플로우 확장 프로그램을 설치해야 합니다. 최신의 깃 버전을 사용하고 있다면, 내장된 깃 플로우 명령어를 사용할 수 있습니다. 이처럼 도구를 이용하면 자동으로 깃 플로우에 맞는 브랜치 전략을 생성하고 관리할 수 있습니다.</p>
 
+<p><br /></p>
+
 <h3 id="내장-기능">내장 기능</h3>
+<hr />
+
 <p>깃 플로우 전략의 인기로 최신 깃 버전은 추가 명령어를 제공합니다. 별도의 확장 프로그램을 설치하지 않아도 기본적으로 내장된 깃 플로우 명령어를 사용할 수 있습니다.</p>
 
 <p>만일 최신의 버전을 사용하고 있지 않다면, 자신의 깃 버전을 업그레이드하는 것을 권장합니다.</p>
@@ -173,10 +194,14 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ apt-get install git-flow
 </code></pre></div></div>
 
+<p><br /><br /></p>
+
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -204,12 +229,15 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -221,7 +249,9 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

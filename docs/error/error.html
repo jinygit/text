@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,14 +69,21 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="오류-메시지-처리">오류 메시지 처리</h2>
+            <section>
+                <h2 id="오류-메시지-처리">오류 메시지 처리</h2>
+<hr />
+
 <h2 id="refusing-to-merge-unrelated-histories">refusing to merge unrelated histories</h2>
+<hr />
+
 <p>만일 서로다른 두개의 프로젝트를 병합하고자 할때, 공통된 커밋이 존재하지 않는다. 따라서, 두개의 프로젝트는 기본적으로 병합을 할 수 없습니다.</p>
 
 <p>하지만, <code class="highlighter-rouge">--allow-unrelated-histories</code> 은 이질적인 두개의 저장소의 history를 병합을 허용해주는 특수한 옵션입니다.</p>
@@ -89,11 +96,14 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge 20192/master --allow-unrelated-histories -X theirs
 </code></pre></div></div>
 
+<p><br /><br /></p>
 
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -121,12 +131,15 @@
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -138,7 +151,9 @@
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

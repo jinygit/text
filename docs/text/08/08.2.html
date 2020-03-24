@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,13 +69,16 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h2 id="fast-forward-병합">Fast-Forward 병합</h2>
+            <section>
+                <h2 id="fast-forward-병합">Fast-Forward 병합</h2>
 <p>깃의 가장 간단한 브랜치 병합은 Fast-Forward 방식입니다. 영어 표현을 풀어 쓰면 빨리 감기라고 할 수 있습니다. 일반적으로 Fast-Forward 병합 방식은 혼자 개발할 때 사용합니다.</p>
 
 <p>혼자 개발할 때는 브랜치가 생성된 커밋에 따라 순차적으로 분기됩니다. 또 코드 수정도 순차적으로 할 때가 많습니다. 즉, 브랜치가 분기되지만 전체 커밋 그림으로 보면 모든 변경 사항은 순차적으로 진행됩니다. 이러한 순차적 커밋에 맞추어 병합을 처리하는 방법이 Fast-Forward 병합입니다.</p>
@@ -368,10 +371,12 @@ $ code index.htm
 <p>master 브랜치의 index.htm 파일을 확인해 보니 잘 병합했네요. Fast-Forward 병합은 병합할 하나의 브랜치 파일을 기준 브랜치로 복사하여 수정된 파일을 원본에 그대로 적용한 것과 같습니다. 즉, 원본에 추가된 내용이 없다는 가정하에 변경한 파일을 대체하는 것입니다.</p>
 
 
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -399,12 +404,15 @@ $ code index.htm
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -416,7 +424,9 @@ $ code index.htm
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

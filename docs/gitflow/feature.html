@@ -46,7 +46,7 @@
         </ul>
       </div>
     </div>
-  </nav><!-- Main jumbotron for a primary marketing message or call to action -->
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -69,16 +69,25 @@
             </div>
         </div>
     </div>
-</div><!-- Page Content -->
+</div></header>
+
+<!-- Page Content -->
 <div class="container">
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <h1 id="featuer">Featuer</h1>
+            <section>
+                <h1 id="featuer">Featuer</h1>
+<hr />
+
 <p>Feature 브랜치는 새로운 기능을 추가하기 위한 작업 브랜치 입니다. 실제의 코드작업들은 Feature 브랜치에서 이루어 집니다. 코드를 수정하고 커밋을 합니다.</p>
 
+<p><br /></p>
+
 <h2 id="브랜치-의미">브랜치 의미</h2>
+<hr />
+
 <p>Feature 브랜치는 플로우 초기화 명령어로 자동 생성되는 브랜치는 아닙니다. 깃 플로우 전략에서 새로운 기능을 추가하기 위해서 생성되는 브랜치 전략입니다.</p>
 
 <p>기능(feature) 브랜치는 하나의 개별 기능별로 브랜치를 생성하는 것이 좋습니다. 슬래시(/)를 구분하여 브랜치 이름을 사용할 수 있습니다.</p>
@@ -87,7 +96,11 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch freature/기능
 </code></pre></div></div>
 
+<p><br /></p>
+
 <h2 id="브랜치-생성">브랜치 생성</h2>
+<hr />
+
 <p>기능(feature) 브랜치의 생성은 develop 브랜치에서 파생됩니다.</p>
 
 <p><img src="./img/gitflow_feature_01.png" alt="feature" /></p>
@@ -155,7 +168,11 @@ develop       29990c7 first
 
 <p><img src="./img/gitflow_feature_03.png" alt="feature" /></p>
 
+<p><br /></p>
+
 <h2 id="feature-배포">feature 배포</h2>
+<hr />
+
 <p>로컬 저장소에서 새로운 기능(feature) 브랜치를 생성하여 추가 작업을 하였습니다.</p>
 
 <p>개발된 새로운 기능은 작업 후 develop 브랜치로 병합합니다. 하지만 develop 브랜치 병합 전 다른 개발자와 완성된 기능을 공유할 수 있습니다. 공유를 통하여 코드 리뷰와 버그를 발견할 수도 있습니다.</p>
@@ -205,7 +222,11 @@ branch
 
 <p>왼쪽의 브랜치 선택 메뉴를 클릭해봅니다. 새로운 Feature/func1 브랜치가 추가된 것이 확인됩니다. 해당 브랜치를 선택하면 선택된 원격 브랜치로 이동합니다.</p>
 
+<p><br /></p>
+
 <h2 id="feature-배포-1">feature 배포</h2>
+<hr />
+
 <p>새로운 기능이 개발 완료되면 feature 브랜치는 develop 브랜치로 병합됩니다.</p>
 
 <p><img src="./img/gitflow_feature_05.png" alt="feature" /></p>
@@ -214,7 +235,11 @@ branch
 
 <p>병합이 완료된 feature 브랜치는 삭제합니다. 향후 개발된 코드에 버그가 발견된 경우, hotfix와 같은 브랜치를 생성하여 수정하도록 합니다.</p>
 
+<p><br /></p>
+
 <h2 id="브랜치-닫기">브랜치 닫기</h2>
+<hr />
+
 <p>개발이 완료된 feature 브랜치는 develop브랜치로 병합됩니다. 병합은 직접 명령어를 통하여 작업할 수 있으며, 플로우 명령어로 처리할 수도 있습니다.</p>
 
 <p>깃 플로우 명령어를 사용하면 좀 더 편리하게 feature 작업을 마무리할 수 있습니다. finish 옵션은 브랜치의 병합과 병합 후 브렌치의 삭제까지의 동작을 한 번에 수행합니다.</p>
@@ -285,10 +310,14 @@ To https://github.com/jinygit/gitstudy13.git
 
 <p>원격 저장소로 더 이상 푸시할 내용이 없는 것을 확인할 수 있습니다.</p>
 
+<p><br /><br /></p>
+
+            </section>
         </div>
 
         <!-- Sidebar Column -->
-        <div class="col-md-3"><!--사이드메뉴1-->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
 <ul class="list-group">
     <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
@@ -316,12 +345,15 @@ To https://github.com/jinygit/gitstudy13.git
 <br>
 
 <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<br></div>
+<br></aside>            
+        </div>
 
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container --> <!-- Footer -->
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
 <footer class="py-3 bg-dark">
     <div class="container">
     	<div class="row">
@@ -333,7 +365,9 @@ To https://github.com/jinygit/gitstudy13.git
       
     </div>
     <!-- /.container -->
-</footer><!--부트스트랩4-->
+</footer></footer>        
+
+        <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
