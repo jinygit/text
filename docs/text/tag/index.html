@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 배포 관리와 태그</title>
+            <meta name="title" content="배포 관리와 태그" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, tag, 테그" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,39 +81,74 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="임시-처리">임시 처리</h1>
+                <h1 id="배포-관리와-태그">배포 관리와 태그</h1>
 <hr />
-<p>지금까지 커밋과 브랜치를 이용하여 변경된 코드를 기록하는 방법을 학습했습니다. 코드를 생성하고 수정하는 모든 작업은 워킹 디렉터리에서 수행합니다. 워킹 디렉터리는 스테이지 영역을 통해 커밋합니다. 안정적으로 깃을 활용하려면 워킹 디렉터리와 스테이지 영역을 관리해야 합니다. 이와 관련 있는 몇 가지 기능을 알아보겠습니다.</p>
+<p>이 장에서는 완성된 코드의 관리와 배포 방법을 알아보겠습니다. 깃은 코드를 안정된 상태로 유지하며 완성된 코드를 사용자에게 배포합니다.</p>
 
 <p><br /></p>
 
-<h2 id="스태시">스태시</h2>
+<h2 id="학습내용">학습내용</h2>
 <hr />
 <ul>
-  <li><a href="stash#1">기존 작업 도중에 새로운 변경 요청</a></li>
-  <li><a href="stash#2">새 코드 작성 중 기존 코드를 수정</a></li>
-  <li><a href="stash#3">스태시의 임시 스택 영역에 작업 중인 코드 저장</a></li>
-  <li><a href="stash#4">임시 저장 영역의 스택 목록</a></li>
-  <li><a href="stash#5">임시 저장한 스태시 불러오기</a></li>
-  <li><a href="stash#6">스태시 복원으로 충돌</a></li>
-  <li><a href="stash#7">스태시 복사</a></li>
-  <li><a href="stash#8">스태시 삭제</a></li>
-  <li><a href="stash#9">소스트리에서 스태시 사용</a></li>
-</ul>
-
-<h2 id="clean">clean</h2>
-<hr />
-<ul>
-  <li><a href="clean">워킹 디렉터리 청소</a></li>
+  <li>
+    <p><a href="10.1">배포</a></p>
+  </li>
+  <li>
+    <p><a href="10.2">버전</a></p>
+  </li>
+  <li>
+    <p><a href="10.3">태그</a></p>
+  </li>
+  <li>
+    <p><a href="10.4">태그 목록</a></p>
+  </li>
+  <li>Annotated 태그
+    <ul>
+      <li><a href="10.5#1">태그 생성</a></li>
+      <li><a href="10.5#2">간단한 메시지</a></li>
+      <li><a href="10.5#3">소스트리에서 태그 생성</a></li>
+      <li><a href="10.5#4">태그는 중복해서 생성할 수 없다</a></li>
+      <li><a href="10.5#5">태그 삭제</a></li>
+      <li><a href="10.5#6">태그의 상세 정보 확인: show 명령어</a></li>
+    </ul>
+  </li>
+  <li>Lightweight 태그
+    <ul>
+      <li><a href="10.6#1">체크섬</a></li>
+      <li><a href="10.6#2">태그의 상세 정보 확인</a></li>
+    </ul>
+  </li>
+  <li>특정 커밋 태그
+    <ul>
+      <li><a href="10.7#1">소스트리에서 특정 커밋 지정</a></li>
+    </ul>
+  </li>
+  <li>태그를 사용한 체크아웃
+    <ul>
+      <li><a href="10.8#1">태그 브랜치</a></li>
+    </ul>
+  </li>
+  <li>태그 공유
+    <ul>
+      <li><a href="10.9#1">원격 저장소 생성</a></li>
+      <li><a href="10.9#2">태그 동기화</a></li>
+      <li><a href="10.9#3">전체 태그 동기화</a></li>
+      <li><a href="10.9#4">원격 저장소의 태그 수정과 삭제</a></li>
+      <li><a href="10.9#5">원격 저장소에 로컬과 다른 이름으로 태그 전송</a></li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="정리">정리</h2>
 <hr />
-<p>깃을 안정적으로 잘 사용하려면 워킹 디렉터리를 항상 깨끗하게 유지 관리해야 합니다. 워킹 디렉터리는 코드를 생성하고 수정하는 모든 작업 공간입니다. 워킹 디렉터리가 정리되어 있지 않으면, 브랜치를 변경하여 다른 작업을 할 수 없습니다.</p>
+<p>태그는 완성된 코드를 배포하고 관리하는 데 매우 유용합니다. 또 최종 사용자는 태그를 확인하여
+어떤 커밋이 완성된 코드인지 쉽게 확인할 수 있습니다.</p>
 
-<p>워킹 디렉터리를 정리하는 방법은 수정된 코드를 스테이지하고, 최종 스냅샷을 생성하여 커밋하는 것입니다. 커밋하지 못할 때는 이 장에서 배운 스태시를 적용하여 작업 내용을 임시로 저장한 후 사용해야 합니다.</p>
+<p>태그 버전은 패키지들이 배포하고 업데이트하는 기준이기 때문에 PHP의 컴포저나 Node.js의 패키지 등을 개발할 때도 유용하게 사용할 수 있습니다.</p>
+
+<p>실제 현장에서는 코드를 개발하는 과정도 중요하지만, 태그를 사용하여 버전을 유지 관리하는 것도 매우 중요합니다. 아무리 잘 만든 제품이라도 배포와 태그를 잘 관리하지 않는다면 최종 사용자들은 혼돈에 빠지게 됩니다.</p>
 
 <p><br /><br /></p>
 

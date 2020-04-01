@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 부모저장소 복제</title>
+            <meta name="title" content="부모저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 부모저장소 복제" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,39 +81,111 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="임시-처리">임시 처리</h1>
+                <h1 id="부모저장소-복제">부모저장소 복제</h1>
 <hr />
-<p>지금까지 커밋과 브랜치를 이용하여 변경된 코드를 기록하는 방법을 학습했습니다. 코드를 생성하고 수정하는 모든 작업은 워킹 디렉터리에서 수행합니다. 워킹 디렉터리는 스테이지 영역을 통해 커밋합니다. 안정적으로 깃을 활용하려면 워킹 디렉터리와 스테이지 영역을 관리해야 합니다. 이와 관련 있는 몇 가지 기능을 알아보겠습니다.</p>
+<p>서브모듈로 구성된 저장소는 부모/자식 관계를 맺습니다. 서브모듈의 저장소를 복제하거나 배포
+할 때는 부모/자식 관계도 같이 복제해야 합니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h2 id="스태시">스태시</h2>
+<h2 id="부모-저장소-복제">부모 저장소 복제</h2>
 <hr />
-<ul>
-  <li><a href="stash#1">기존 작업 도중에 새로운 변경 요청</a></li>
-  <li><a href="stash#2">새 코드 작성 중 기존 코드를 수정</a></li>
-  <li><a href="stash#3">스태시의 임시 스택 영역에 작업 중인 코드 저장</a></li>
-  <li><a href="stash#4">임시 저장 영역의 스택 목록</a></li>
-  <li><a href="stash#5">임시 저장한 스태시 불러오기</a></li>
-  <li><a href="stash#6">스태시 복원으로 충돌</a></li>
-  <li><a href="stash#7">스태시 복사</a></li>
-  <li><a href="stash#8">스태시 삭제</a></li>
-  <li><a href="stash#9">소스트리에서 스태시 사용</a></li>
-</ul>
+<p>새로운 실습을 위해 clone 명령어를 실행하여 메인 저장소를 복제합니다.</p>
 
-<h2 id="clean">clean</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+
+$ git clone https://github.com/jinygit/gitstudy11_parent.git gitstudy11 
+Cloning into 'gitstudy11'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0
+Unpacking objects: 100% (8/8), done.
+</code></pre></div></div>
+
+<p>gitstudy11은 부모/자식 관계인 서브모듈 형태로 되어 있습니다. 현재는 메인 저장소만 복제했으
+며, 그림으로 나타내면 다음과 같습니다.</p>
+
+<p>그림 11-14 서브모듈 복제<br />
+<img src="./img/11-14.jpg" alt="서브모듈 복제" /></p>
+
+<p>메인 저장소를 잘 복제했는지 내용을 확인합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd gitstudy11
+
+infoh@DESKTOP MINGW64 /e/gitstudy11 (master)
+$ ls -all 
+total 50
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:07 ./
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:06 ../
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:09 .git/
+-rw-r--r-- 1 infoh 197609 92 1월 24 19:07 .gitmodules
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:07 child/
+-rw-r--r-- 1 infoh 197609 25 1월 24 19:07 parent.htm
+</code></pre></div></div>
+
+<p>서브모듈에 대한 .gitmodules 설정 파일을 확인할 수 있습니다. 그리고 서브모듈인 child 폴더로
+이동합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11 (master)
+$ cd child 
+
+infoh@DESKTOP MINGW64 /e/gitstudy11/child (master)
+$ ls -all 
+total 4
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:07 ./
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:07 ../
+</code></pre></div></div>
+
+<p>서브모듈의 폴더 안에는 아무 내용도 없습니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="모듈-업데이트">모듈 업데이트</h2>
 <hr />
-<ul>
-  <li><a href="clean">워킹 디렉터리 청소</a></li>
-</ul>
+<p>메인 저장소를 복제할 때는 서브모듈 정보만 같이 복제할 뿐, 실제 하위 저장소는 같이 복제하지
+않습니다. 서브모듈의 하위 저장소는 직접 명령어를 실행하여 가져와야 합니다. 하위 저장소의 내
+용을 가져오려면 먼저 초기화와 갱신 작업을 해야 합니다.</p>
 
-<p><br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11/child (master)
+$ cd .. 
 
-<h2 id="정리">정리</h2>
-<hr />
-<p>깃을 안정적으로 잘 사용하려면 워킹 디렉터리를 항상 깨끗하게 유지 관리해야 합니다. 워킹 디렉터리는 코드를 생성하고 수정하는 모든 작업 공간입니다. 워킹 디렉터리가 정리되어 있지 않으면, 브랜치를 변경하여 다른 작업을 할 수 없습니다.</p>
+infoh@DESKTOP MINGW64 /e/gitstudy11 (master)
+$ git submodule init 
+Submodule 'child' (https://github.com/jinygit/gitstudy11_child.git) registered for path
+'child'
 
-<p>워킹 디렉터리를 정리하는 방법은 수정된 코드를 스테이지하고, 최종 스냅샷을 생성하여 커밋하는 것입니다. 커밋하지 못할 때는 이 장에서 배운 스태시를 적용하여 작업 내용을 임시로 저장한 후 사용해야 합니다.</p>
+infoh@DESKTOP MINGW64 /e/gitstudy11 (master)
+$ git submodule update 
+Cloning into 'E:/gitstudy11/child'...
+Submodule path 'child': checked out 'a7709f53d836b2abf6eb5c3d8e8064b5465458a8'
+</code></pre></div></div>
+
+<p>서브모듈 update 옵션으로 관련 하위 저장소를 복제합니다.</p>
+
+<p>그림 11-15 서브모듈 초기화 및 업데이트<br />
+<img src="./img/11-15.jpg" alt="서브모듈 초기화 및 업데이트" /></p>
+
+<p>서브모듈 초기화와 업데이트를 진행했습니다. 다시 폴더 내용을 확인해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11 (master)
+$ cd child 
+
+infoh@DESKTOP MINGW64 /e/gitstudy11/child ((a7709f5...))
+$ ls -all 
+total 6
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:13 ./
+drwxr-xr-x 1 infoh 197609 0 1월 24 19:07 ../
+-rw-r--r-- 1 infoh 197609 30 1월 24 19:13 .git
+-rw-r--r-- 1 infoh 197609 68 1월 24 19:13 child.htm
+</code></pre></div></div>
+
+<p>서브모듈 child 폴더에 복제한 하위 저장소 내용이 추가되었습니다.
+깃 배시에서 서브 저장소의 브랜치 이름을 주의 깊게 살펴보세요. 브랜치 이름이 master가 아닌
+a7709f5…로 되어 있습니다. 서브모듈을 업데이트할 때는 메인 저장소의 비어 있는 서브모듈 커
+밋 위치를 리모트 체크아웃합니다.</p>
 
 <p><br /><br /></p>
 

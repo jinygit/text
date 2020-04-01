@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | Lightweight</title>
+            <meta name="title" content="Lightweight" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, Lightweight, 태그" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,39 +81,89 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="임시-처리">임시 처리</h1>
+                <h1 id="lightweight-태그">Lightweight 태그</h1>
 <hr />
-<p>지금까지 커밋과 브랜치를 이용하여 변경된 코드를 기록하는 방법을 학습했습니다. 코드를 생성하고 수정하는 모든 작업은 워킹 디렉터리에서 수행합니다. 워킹 디렉터리는 스테이지 영역을 통해 커밋합니다. 안정적으로 깃을 활용하려면 워킹 디렉터리와 스테이지 영역을 관리해야 합니다. 이와 관련 있는 몇 가지 기능을 알아보겠습니다.</p>
+<p>Lightweight 태그는 가장 기본적인 태그입니다. Annotated 태그와 달리 버전 이름만 있습니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h2 id="스태시">스태시</h2>
+<h2 id="체크섬">체크섬</h2>
 <hr />
-<ul>
-  <li><a href="stash#1">기존 작업 도중에 새로운 변경 요청</a></li>
-  <li><a href="stash#2">새 코드 작성 중 기존 코드를 수정</a></li>
-  <li><a href="stash#3">스태시의 임시 스택 영역에 작업 중인 코드 저장</a></li>
-  <li><a href="stash#4">임시 저장 영역의 스택 목록</a></li>
-  <li><a href="stash#5">임시 저장한 스태시 불러오기</a></li>
-  <li><a href="stash#6">스태시 복원으로 충돌</a></li>
-  <li><a href="stash#7">스태시 복사</a></li>
-  <li><a href="stash#8">스태시 삭제</a></li>
-  <li><a href="stash#9">소스트리에서 스태시 사용</a></li>
-</ul>
+<p>Annotated 태그에는 커밋 해시 값과 부가적인 정보가 같이 있습니다. 반면 Lightweight 태그 방식은 커밋의 체크섬만 가지고 있습니다. 또 Annotated 태그에서 사용했던 -a, -m 같은 옵션은 사용할 수 없습니다.</p>
 
-<h2 id="clean">clean</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag 태그이름
+</code></pre></div></div>
+
+<p>Lightweight 태그의 사용법은 간단합니다. 명령어 뒤에 태그 이름만 작성하면 됩니다. Lightweight 태그를 생성해 보겠습니다. 실습을 위해 version.htm 파일을 수정하고 저장한 후 커밋합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ code version.htm
+</code></pre></div></div>
+
+<p>version.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>태그 버전 실습 파일입니다.<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 1.0.0 실습<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 1.1.0 실습
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>수정 작업 1.1.1<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>수정 버전 1.1.2<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>버전 2.0.0 lightweight 실습<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git commit -am "test 2.0.0"
+[master 3ba46c0] test 2.0.0
+ 1 file changed, 1 insertion(+)
+</code></pre></div></div>
+
+<p>새로 생성된 커밋에 Lightweight 태그를 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git tag 2.0.0 ☜ 태그명만 작성
+</code></pre></div></div>
+
+<p>생성한 태그 목록을 확인합니다. 2.0.0 태그가 새로 추가되었습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git tag
+1.0.0
+1.1.0
+2.0.0 ☜ lightweight 태그
+</code></pre></div></div>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="태그의-상세-정보-확인">태그의 상세 정보 확인</h2>
 <hr />
-<ul>
-  <li><a href="clean">워킹 디렉터리 청소</a></li>
-</ul>
+<p>생성된 Lightweight 태그의 상세 정보를 확인해 보겠습니다. Annotated 태그와 동일하게 show 명령어를 사용합니다.</p>
 
-<p><br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+</span><span class="err">$</span> git show 2.0.0
+<span class="p">commit 3ba46c0a20a9812341e057818ef155f6801d0760 (HEAD -&gt; master, tag: 2.0.0) ☜ lightweight 태그는 이 위치에 정보가 없습니다.
+</span>
+Author: hojin &lt;infohojin@gmail.com&gt;
+<span class="p">Date:   Thu May 23 19:14:41 2019 +0900
+</span>    test 2.0.0
+<span class="gh">diff --git a/version.htm b/version.htm
+index 78de597..c9c61dc 100644
+</span><span class="gd">--- a/version.htm
+</span><span class="gi">+++ b/version.htm
+</span><span class="p">@@ -7,4 +7,5 @@</span>
+             &lt;li&gt;수정 버전 1.1.2&lt;/li&gt;
+         &lt;/ul&gt;
+     &lt;/li&gt;
+<span class="gi">+    &lt;li&gt;버전 2.0.0 lightweight 실습&lt;/li&gt;
+</span> &lt;/ul&gt;
+<span class="err">\</span> No newline at end of file
+</code></pre></div></div>
 
-<h2 id="정리">정리</h2>
-<hr />
-<p>깃을 안정적으로 잘 사용하려면 워킹 디렉터리를 항상 깨끗하게 유지 관리해야 합니다. 워킹 디렉터리는 코드를 생성하고 수정하는 모든 작업 공간입니다. 워킹 디렉터리가 정리되어 있지 않으면, 브랜치를 변경하여 다른 작업을 할 수 없습니다.</p>
-
-<p>워킹 디렉터리를 정리하는 방법은 수정된 코드를 스테이지하고, 최종 스냅샷을 생성하여 커밋하는 것입니다. 커밋하지 못할 때는 이 장에서 배운 스태시를 적용하여 작업 내용을 임시로 저장한 후 사용해야 합니다.</p>
+<p>Annotated 태그와 달리 별도의 정보가 없는 것을 확인할 수 있습니다.</p>
 
 <p><br /><br /></p>
 

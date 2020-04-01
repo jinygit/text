@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 복귀</title>
+            <meta name="title" content="복귀" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복귀, reset, revert" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -84,44 +84,46 @@
                 <h2 id="복귀">복귀</h2>
 <p>깃은 소스 코드의 시간에 따른 변화 흐름을 기록합니다. 이렇게 저장된 변화 흐름 단계를 커밋(commit)이라고 합니다. 이 장에서는 커밋을 기준으로 특정 시점의 상태로 되돌리는 방법을 알아보겠습니다.</p>
 
-<h2><br /></h2>
+<p><br /></p>
 
-<h3 id="학습내용">학습내용</h3>
+<h2 id="학습내용">학습내용</h2>
+<hr />
 <ul>
-  <li><a href="09.1">되돌리기</a>
+  <li>되돌리기
     <ul>
-      <li>다시 시작</li>
+      <li><a href="09.1">다시 시작</a></li>
     </ul>
   </li>
-  <li><a href="09.2">리셋</a>
+  <li>리셋
     <ul>
-      <li>복귀 시점</li>
-      <li>reset 명령어</li>
-      <li>soft 옵션</li>
-      <li>mixed 옵션</li>
-      <li>hard 옵션</li>
-      <li>소스트리</li>
-      <li>커밋 합치기</li>
-      <li>스테이지 리셋</li>
-      <li>작업 취소</li>
-      <li>병합 취소</li>
-      <li>주의할 점</li>
+      <li><a href="resert#1">복귀 시점</a></li>
+      <li><a href="resert#2">reset 명령어</a></li>
+      <li><a href="resert#3">soft 옵션</a></li>
+      <li><a href="resert#4">mixed 옵션</a></li>
+      <li><a href="resert#5">hard 옵션</a></li>
+      <li><a href="resert#6">소스트리</a></li>
+      <li><a href="resert#7">커밋 합치기</a></li>
+      <li><a href="resert#8">스테이지 리셋</a></li>
+      <li><a href="resert#9">작업 취소</a></li>
+      <li><a href="resert#10">병합 취소</a></li>
+      <li><a href="resert#11">주의할 점</a></li>
     </ul>
   </li>
-  <li><a href="09.3">리버트</a>
+  <li>리버트
     <ul>
-      <li>취소 커밋</li>
-      <li>리버트 지정</li>
-      <li>소스트리에서 리버트</li>
-      <li>병합 취소</li>
-      <li>리버트 히스토리</li>
+      <li><a href="revert#1">취소 커밋</a></li>
+      <li><a href="revert#2">리버트 지정</a></li>
+      <li><a href="revert#3">소스트리에서 리버트</a></li>
+      <li><a href="revert#4">병합 취소</a></li>
+      <li><a href="revert#5">리버트 히스토리</a></li>
     </ul>
   </li>
 </ul>
 
-<h2 id="-1"><br /></h2>
+<p><br /></p>
 
-<h3 id="정리">정리</h3>
+<h2 id="정리">정리</h2>
+<hr />
 <p>리셋과 리버트는 버전 관리의 특성을 그대로 보여 주는 기능입니다. 리셋과 리버트는 동작을 취소하고 과거로 돌아간다는 면에서는 유사합니다. 코드 변경 이력을 저장하고 필요한 시점에 해당 코드 상태로 쉽게 이동할 수 있습니다.</p>
 
 <p>하지만 이렇게 두 명령어로 분리하여 사용하는 것은 저장소를 원격 저장소로 공유했는지 여부와 관련이 있습니다. 자신의 저장소를 외부로 공유했다면 특정 커밋을 삭제하는 것은 위험합니다. 다수의 사용자와 공유하는 저장소의 커밋 기록이 깨질 수 있기 때문입니다. 외부로 공개한 저장소라면 리버트를 사용하는 것이 좋습니다. 자신의 저장소가 컴퓨터에만 있다면 리셋을 사용해도 됩니다.</p>
