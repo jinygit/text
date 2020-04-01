@@ -43,22 +43,41 @@ keyword: "기초탄탄 Git, 깃 학습하기"
 * [커밋 로그](/commit/04.9)
 * [diff 명령어](/commit/04.10)
 
-
 <br>
 
 <h2>서버
-    <small style="font-size: 0.5em;">>><a href="05">학습하기</a></small>
+    <small style="font-size: 0.5em;">>><a href="server">학습하기</a></small>
 </h2>
 <hr>
 분산형 버전 관리 깃은 다양한 유형의 저장소를 지원합니다. 저장소는 크게 로컬 저장소와 서버 저장소로 구분할 수 있습니다. 이 장에서는 서버 저장소를 알아보겠습니다. 
 
+* [서버 저장소](server/05.1)
+* [깃허브 서버 준비](server/05.2)
+* [깃허브 연동 및 원격 등록](server/05.3)
+* [서버 전송](server/05.4)
+* [자동으로 내려받기](server/05.5)
+* [수동으로 내려받기](server/05.6)
+* [순서](server/05.7)
+
 <br>
 
 <h2>브랜치
-    <small style="font-size: 0.5em;">>><a href="06">학습하기</a></small>
+    <small style="font-size: 0.5em;">>><a href="branch">학습하기</a></small>
 </h2>
 <hr>
 소스 코드 이력을 관리하는 버전 외에 깃과 같은 VCS 도구를 사용하는 또 다른 이유는 브랜치 작업 때문입니다. 이 장에서는 브랜치를 자세히 알아봅니다. 
+
+* [새로운 작업](branch/06.1)
+* [실습 준비](branch/06.2)
+* [브랜치 생성](branch/06.3)
+* [브랜치 확인](branch/06.4)
+* [브랜치 이동](branch/06.5)
+* [브랜치 공간](branch/06.6)
+* [HEAD 포인터](branch/06.7)
+* [생성과 이동](branch/06.8)
+* [원격 브랜치](branch/06.9)
+* [브랜치 전송](branch/06.10)
+* [브랜치 삭제](branch/06.11)
 
 <br>
 
@@ -71,10 +90,20 @@ keyword: "기초탄탄 Git, 깃 학습하기"
 <br>
 
 <h2>병합과 충돌
-    <small style="font-size: 0.5em;">>><a href="08">학습하기</a></small>
+    <small style="font-size: 0.5em;">>><a href="merge">학습하기</a></small>
 </h2>
 <hr>
 깃은 언제든지 새로운 작업을 할 수 있는 브랜치를 만들 수 있습니다. 브랜치는 원본을 유지한 채로 새로운 기능을 개발하거나 버그를 수정하는 작업을 할 수 있는 기능입니다. 브랜치로 분기하여 코드를 수정했다면 언젠가는 원본에 다시 변경된 코드를 적용해야 합니다. 이 장에서는 파생된 브랜치 2개를 하나로 합치는 방법을 알아보겠습니다. 
+
+* [병합](merge/08.1)
+* [Fast-Forward 병합](merge/08.2)
+* [3-way 병합](merge/08.3)
+* [브랜치 삭제](merge/08.4) 
+* [충돌](merge/08.5) 
+* [브랜치 병합 여부 확인](merge/08.6) 
+* [리베이스](merge/rebase) 
+
+
 
 <br>
 

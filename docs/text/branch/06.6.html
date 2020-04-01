@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 브랜치 공간</title>
+            <meta name="title" content="브랜치 공간" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 브랜치 공간" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="브랜치-공간">브랜치 공간</h1>
+<hr />
+<p>브랜치에서 다른 브랜치로 이동하면 워킹 디렉터리는 변경됩니다. 이 절에서는 브랜치와 워킹 디렉터리가 어떤 관계가 있는지 자세히 알아보겠습니다.</p>
+
+<p><br />
+<a name="1"></a></p>
+
+<h2 id="브랜치-로그">브랜치 로그</h2>
+<hr />
+<p>현재까지 작업한 로그 기록을 확인해 봅시다. 로그를 출력할 때 브랜치 흐름도 같이 보려면 –graph 옵션을 함께 사용합니다. –graph –all 옵션을 사용하면 모든 로그를 출력합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (footer)
+$ git log --graph --all
+$ git log --graph --all
+* commit dcdb1c1fa4ef78bedd8dc13bc267e99391cc9782 (master)
+| Author: hojin &lt;infohojin@gmail.com&gt;
+| Date:   Sat May 11 18:45:35 2019 +0900
+|     master working...
+|
+* commit d84766c7f87b1d9d234050949c48681ba4e35da8 (HEAD -&gt; footer, feature)
+  Author: hojin &lt;infohojin@gmail.com&gt;
+  Date:   Sat May 11 17:10:02 2019 +0900
+      First
+</code></pre></div></div>
+
+<p>지금까지 로그 내역을 참고하여 커밋 과정을 나타내면 다음과 같습니다.</p>
+
+<p>그림 6-10] 지금까지의 브랜치 작업<br />
+<img src="./img/06-10.jpg" alt="지금까지의 브랜치 작업" /></p>
+
+<p>로그 출력 왼쪽 부분에 브랜치 경로와 작업들이 텍스트 그래프로 같이 출력됩니다.</p>
+
+<blockquote>
+  <p>Note: –more 옵션으로 출력될 커밋 개수를 제한할 수 있습니다. 제한된 출력으로 브랜치 정보를 간략하게 확인할 수 있습니다.</p>
+</blockquote>
+
+<p>[예시]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show-branch --more=10
+</code></pre></div></div>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="브랜치-소스-확인">브랜치 소스 확인</h2>
+<hr />
+<p>지금까지는 브랜치를 생성한 후 master 브랜치에서만 코드를 수정하고 커밋했습니다. master 브랜치는 dcdb1c1 커밋을 가리킵니다.</p>
+
+<p>footer 브랜치의 소스 코드 내용을 확인해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (footer)
+$ cat branch.htm ☜ footer의 내용
+&lt;h1&gt;브랜치 실습을 합니다.&lt;/h1&gt;
+</code></pre></div></div>
+
+<p>이번에는 master 브랜치로 체크아웃하여 소스 코드를 확인해 보겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (footer)
+$ git checkout master
+Switched to branch 'master'
+
+infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ cat branch.htm ☜ master의 내용
+&lt;h1&gt;브랜치 실습을 합니다.&lt;/h1&gt;
+&lt;h2&gt;마스터 워킹 디렉터리 작업 중&lt;/h2&gt;
+</code></pre></div></div>
+
+<p>두 소스 코드에 차이가 있습니다. 브랜치를 이동하면 변경된 각자 브랜치의 마지막 워킹 디렉터리 상태로 빠르게 변경됩니다. footer는 아직 한 줄짜리 정보를 워킹 디렉터리에 가지고 있는 상태고, master는 두 줄짜리 정보를 워킹 디렉터리에 가지고 있는 상태입니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

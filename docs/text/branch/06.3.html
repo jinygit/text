@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 브랜치 생성</title>
+            <meta name="title" content="브랜치 생성" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 브랜치 생성" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="브랜치-생성">브랜치 생성</h1>
+<hr />
+<p>브랜치는 가상의 작업 폴더입니다. 처음 깃을 초기화할 때 워킹 디렉터리는 master 브랜치를 생성합니다. 브랜치를 생성하려면 기준이 되는 브랜치 또는 커밋이 하나 있어야 합니다. 그리고 깃은 master 브랜치를 기준으로 새로운 브랜치를 생성합니다.</p>
+
+<p>브랜치는 공통된 커밋을 가리키는 지점입니다. 그리고 브랜치는 커밋처럼 SHA1 해시키를 가리킵니다. 하지만 커밋의 SHA1 해시키는 기억하기가 어렵기 때문에 특정 커밋을 가리키는 별칭을 만드는 것입니다. 이렇게 만든 별칭이 브랜치입니다. 즉, 브랜치를 생성한다는 의미는 기존 브랜치 또는 커밋에 새로운 연결 고리를 하나 더 만드는 것과 같습니다.</p>
+
+<p>그림 6-2] 브랜치는 공통된 커밋을 가리키는 지점<br />
+<img src="./img/06-2.jpg" alt="브랜치는 공통된 커밋을 가리키는 지점 " /></p>
+
+<p>새 브랜치를 생성하면 포인터만 있는 브랜치가 생성됩니다. 일반적으로 브랜치 생성 명령을 실행하면 현재 커밋을 가리키는 HEAD를 기준으로 생성됩니다. HEAD는 현재 마지막 커밋을 가리킵니다.</p>
+
+<blockquote>
+  <p>Note: 브랜치는 마지막 커밋 위치를 가리키는 역할만 할 뿐 실제 브랜치는 아닙니다. 그렇다면 실제 브랜치는 언제 만들까요? 일반적으로 실제 커밋이 추가될 때 만듭니다.</p>
+</blockquote>
+
+<p>예를 들어 브랜치를 생성한 후 생성된 브랜치로 이동합니다. 이동한 브랜치에서 파일을 수정하고 커밋합니다. 그리고 새로운 브랜치에 추가 커밋이 발생할 때, 브랜치는 새로운 커밋으로 브랜치의 포인터를 이동합니다. 즉, 브랜치는 실제 커밋이 추가될 때 만듭니다.</p>
+
+<p>새롭게 브랜치가 생성되면 독립된 공간을 할당합니다. 기존 작업 영역에는 영향을 주지 않는 새로운 가상 공간입니다. 이것으로 기존 브랜치의 소스 코드에 영향을 주지 않고 새로운 작업을 할 수 있습니다.</p>
+
+<p><br />
+<a name="1"></a></p>
+
+<h2 id="브랜치-생성-1">브랜치 생성</h2>
+<hr />
+<p>처음 생성되는 기본 master 브랜치 외의 브랜치는 사용자가 직접 branch 명령어를 입력하여 생성해야 합니다. 브랜치를 생성한다는 것은 기본적으로 제공되는 master 브랜치 이외에 사용자가 직접 정의한 사용자 브랜치를 이야기하는 것입니다.</p>
+
+<p>브랜치는 깃에서 또 하나의 개발 분기점을 의미합니다. 새로운 개발 분기점이 필요할 때는 브랜치를 추가로 생성할 수 있습니다. 브랜치 생성 개수에는 제한이 없습니다. 필요한 만큼 여러 브랜치를 생성할 수 있으며, 각 브랜치를 구분하려면 브랜치별로 이름을 지정해야 합니다.</p>
+
+<p>브랜치를 생성할 때는 branch 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch 브랜치이름 커밋ID
+</code></pre></div></div>
+
+<p>branch 명령어 뒤에 브랜치 이름을 인자 값으로 추가합니다. 브랜치 이름만 입력하면 현재 HEAD 포인터를 기준으로 새로운 브랜치를 생성합니다. 직접 커밋 ID 인자 값을 지정하면, 지정한 커밋 ID를 기준으로 브랜치를 생성합니다.</p>
+
+<p>그림 6-3] 브랜치 생성<br />
+<img src="./img/06-3.jpg" alt="브랜치 생성" /></p>
+
+<p>실습 환경을 만들어 봅시다. 저장소에 새로운 파일을 하나 생성한 후 저장합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ code branch.htm ☜ VS Code로 파일을 작성합니다
+</code></pre></div></div>
+
+<p>branch.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>브랜치 실습을 합니다.<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git add branch.htm ☜ 추적 등록
+
+infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git commit -m "first" ☜ 커밋 작성
+[master (root-commit) cc66812] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch.htm
+</code></pre></div></div>
+
+<p>코드를 저장하고 커밋을 하나 추가했습니다. 커밋이 있는 상태에서 새로운 브랜치를 생성합니다. 마지막 커밋ID(100644)를 기준으로 브랜치를 생성 및 추가합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git branch footer
+
+$ git branch
+  footer
+* master
+</code></pre></div></div>
+
+<p>브랜치를 생성할 때는 결과 메시지를 별도로 표시하지 않습니다. 메시지가 없어도 정상적으로 브랜치가 생성된 것입니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="브랜치-이름">브랜치 이름</h2>
+<hr />
+<p>브랜치 이름을 지을 때 사전 예약된 명칭은 따로 없습니다. 다만 해당 브랜치 작업은 알기 쉬운 이름으로 짓는 것이 좋습니다. 또 깃 플로(git flow)에서 정의한 브랜치 이름을 적용하는 것도 좋은 방법입니다.</p>
+
+<blockquote>
+  <p>Note: 깃 플로는 유지 보수를 하려고 다수의 브랜치를 생성하여 관리하는 방법입니다. 자세한 내용은 이 책의 학습 사이트(https://git.jiny.dev)를 참고하세요.</p>
+</blockquote>
+
+<p>브랜치 이름은 슬래시(/)를 사용하여 계층적인 구조로 만들어서 사용할 수 있습니다. 작성 규칙은 다음과 같습니다.</p>
+
+<ul>
+  <li>기호(-)로 시작할 수 없습니다.</li>
+  <li>마침표(.)로 시작할 수 없습니다.</li>
+  <li>연속적인 마침표(..)를 포함할 수 없습니다.</li>
+  <li>빈칸, 공백 문자, 물결(~), 캐럿(^), 물음표(?), 별표(*), 대괄호([ ]) 등은 포함할 수 없습니다.</li>
+  <li>아스키 제어 문자는 포함할 수 없습니다.
+주의할 점은 브랜치 이름은 중복해서 사용하지 않아야 한다는 것입니다. 이미 생성된 브랜치 이름과 동일한 이름으로 생성한다면 오류가 발생합니다.</li>
+</ul>
+
+<p>[예시]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git branch footer
+fatal: A branch named 'footer' already exists.
+</code></pre></div></div>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="소스트리-브랜치">소스트리 브랜치</h2>
+<hr />
+<p>이번에는 소스트리로 새로운 브랜치를 하나 생성해 보겠습니다. 소스트리의 새 탭에서 Add 버튼을 클릭합니다. 탐색을 눌러 앞에서 만든 gitstudy06 폴더를 찾아 선택한 후 추가를 누릅니다. 그러면 gitstudy06 저장소와 연결됩니다.</p>
+
+<p>소스트리의 왼쪽에서 브랜치 탭을 확인할 수 있습니다. 브랜치에 모든 브랜치 목록이 같이 출력됩니다.</p>
+
+<p>그림 6-4] 소스트리에서 브랜치 확인<br />
+<img src="./img/06-4.jpg" alt="소스트리에서 브랜치 확인 " /></p>
+
+<p>소스트리에서 브랜치를 하나 추가하겠습니다. master 브랜치를 선택합니다. 커밋 목록에서 커밋을 하나 선택합니다. 마우스 오른쪽 버튼을 눌러 브랜치… 메뉴를 선택합니다. 또는 위쪽 브랜치 생성 6-a.jpg 버튼을 클릭합니다.</p>
+
+<p>그림 6-5] 브랜치 메뉴 선택<br />
+<img src="./img/06-5.jpg" alt="브랜치 메뉴 선택" /></p>
+
+<p>브랜치 생성 창이 열립니다. 소스트리에서 커밋을 선택하여 브랜치를 생성하는 것은 지정한 커밋을 기준으로 브랜치를 생성한다는 의미입니다. 커밋 목록에서 브랜치를 생성하면 명시된 커밋 부분에 브랜치가 체크되어 있는 것을 볼 수 있습니다. master의 최종 커밋(HEAD)을 기준으로 브랜치를 생성할 때는 작업 사본 부모1 항목을 선택합니다.</p>
+
+<p>그림 6-6] feature 브랜치 생성<br />
+<img src="./img/06-6.jpg" alt="feature 브랜치 생성" /></p>
+
+<p>새로운 feature 브랜치를 하나 추가했습니다. 소스트리의 왼쪽에 추가한 브랜치가 있습니다.</p>
+
+<p>그림 6-7] 추가한 브랜치 확인<br />
+<img src="./img/06-7.jpg" alt="추가한 브랜치 확인" /></p>
+
+<p>브랜치가 생성되고, 생성된 브랜치 이름으로 ○ 마크가 이동한 것을 확인할 수 있습니다.<br />
+브랜치가 총 3개 있습니다. 현재의 브랜치는 feature입니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

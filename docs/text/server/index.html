@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 서버</title>
+            <meta name="title" content="서버" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 서버, 소셜코딩" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="서버">서버</h1>
+<hr />
+<p>분산형 버전 관리 깃은 다양한 유형의 저장소를 지원합니다. 저장소는 크게 로컬 저장소와 서버 저장소로 구분할 수 있습니다. 이 장에서는 서버 저장소를 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h2 id="서버-저장소">서버 저장소</h2>
+<hr />
+<p>서버 저장소는 다른 말로 원격(remote) 저장소라고도 합니다. 서버 저장소는 로컬 저장소의 코드를 복제한 복사본이라고 할 수 있습니다. 서버를 이용하면 코드를 안전하게 보관할 수 있습니다. 또 서버에 있는 소스 코드는 다른 사람들과 공유하고 협업하여 개발을 진행할 수도 있습니다.</p>
+
+<ul>
+  <li><a href="05.1#1">협업 저장소</a></li>
+  <li><a href="05.1#2">연속된 작업</a></li>
+  <li><a href="05.1#3">새 멤버</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="깃허브-서버-준비">깃허브 서버 준비</h2>
+<hr />
+<p>독립적인 깃 서버를 직접 운영하여 사용할 수 있습니다. 하지만 365일 안정적인 서버를 운영하는 것은 쉽지 않습니다. 직접 서버를 운영하지 않아도 전문적인 깃 호스팅으로 서버를 대체할 수 있습니다. 호스팅을 받으면 직접 서버를 관리하지 않아도 쉽게 원격 저장소를 운영할 수 있습니다.</p>
+
+<ul>
+  <li><a href="05.2#1">깃허브</a></li>
+  <li><a href="05.2#2">저장소 생성</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="깃허브-연동-및-원격-등록">깃허브 연동 및 원격 등록</h2>
+<hr />
+<p>깃허브에 새 저장소를 생성했다면 이제 로컬 저장소와 연결해야 합니다. 
+기존 로컬 저장소와 연결하거나 새 로컬 저장소를 생성하여 연결할 수도 있습니다.</p>
+
+<ul>
+  <li><a href="05.3#1">로컬 저장소</a></li>
+  <li><a href="05.3#2">프로토콜</a></li>
+  <li><a href="05.3#3">원격 저장소의 리모트 목록 관리</a></li>
+  <li><a href="05.3#4">주소와 별칭</a></li>
+  <li><a href="05.3#5">원격 저장소에 연결</a></li>
+  <li><a href="05.3#6">소스트리에서 원격 브랜치</a></li>
+  <li><a href="05.3#7">별칭 이름 변경과 정보</a></li>
+  <li><a href="05.3#8">원격 서버 삭제</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="서버-전송">서버 전송</h2>
+<hr />
+<p>로컬 저장소의 커밋을 원격 저장소로 전송하는 방법을 알아보았습니다. 
+원격 저장소가 연결되면 로컬 저장소의 커밋들을 업로드할 수 있습니다.</p>
+
+<ul>
+  <li><a href="05.4">push</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="자동으로-내려받기">자동으로 내려받기</h2>
+<hr />
+<p>원격 저장소에서 커밋된 코드를 내려받는 방법을 알아보겠습니다.</p>
+<ul>
+  <li><a href="05.5#1">clone</a>: 복제</li>
+  <li><a href="05.5#2">pull</a>: 서버에서 내려받기</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="수동으로-내려받기">수동으로 내려받기</h2>
+<hr />
+<p>원격 저장소 내용을 내려받는 방법은 크게 두 가지입니다. pull(풀)과 fetch(페치)입니다. 이 두 방법의 차이는 병합을 자동 처리하는지 여부입니다. 병합은 8장에서 자세히 설명합니다. 이 장에서는 페치 병합 방법만 알고 넘어갑니다.</p>
+
+<ul>
+  <li><a href="05.6#1">자동 병합</a></li>
+  <li><a href="05.6#2">fetch</a>: 가져오기</li>
+  <li><a href="05.6#3">merge</a> 명령어로 수동 병합</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="순서">순서</h2>
+<hr />
+<p>원격 저장소에는 다수의 개발자가 동시에 커밋을 푸시할 수 없습니다. 
+여러 명이 협력해서 개발할 때는 순차적으로 푸시해야 합니다.</p>
+
+<ul>
+  <li><a href="05.7#1">최신 상태</a></li>
+  <li><a href="05.7#2">충돌 방지</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정리">정리</h2>
+<hr />
+<p>깃은 코드 이력을 관리해 줄 뿐만 아니라 다른 개발자와 협업 도구로도 많이 사용합니다. 
+다른 개발자와 협업하려면 공유 매개체의 역할을 수행할 서버가 필요합니다. 
+깃은 다양한 종류의 서버를 지원합니다. 
+깃 서버를 직접 만들 수도 있고, 인기 있는 깃 호스팅 서비스를 이용할 수도 있습니다.</p>
+
+<p>깃은 서버 역할을 수행하는 원격 저장소와 커밋 정보들을 주고받습니다. 로컬 컴퓨터는 원격 저장소에 커밋 코드를 전송하거나 추가된 커밋들을 내려받을 수 있습니다. 이러한 원격 저장소 기능은 좀 더 많은 사람이 깃을 사용하게 하는 촉매제가 되었습니다. 원격 저장소를 불특정 다수를 대상으로 공유할 수도 있습니다. 오픈 소스는 깃과 공개된 원격 저장소를 사용하여 활발하게 수많은 사람과 협업할 수 있는 장점들을 제공합니다. 그래서 깃은 오픈 소스를 활성화하는 데 가장 많은 기여를 하는 협업 툴이 되었습니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

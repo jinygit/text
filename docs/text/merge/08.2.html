@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | Fast-Forward</title>
+            <meta name="title" content="Fast-Forward" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, Fast-Forward" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="fast-forward-병합">Fast-Forward 병합</h1>
+<hr />
+<p>깃의 가장 간단한 브랜치 병합은 Fast-Forward 방식입니다. 영어 표현을 풀어 쓰면 빨리 감기라고 할 수 있습니다. 일반적으로 Fast-Forward 병합 방식은 혼자 개발할 때 사용합니다.</p>
+
+<p>혼자 개발할 때는 브랜치가 생성된 커밋에 따라 순차적으로 분기됩니다. 또 코드 수정도 순차적으로 할 때가 많습니다. 즉, 브랜치가 분기되지만 전체 커밋 그림으로 보면 모든 변경 사항은 순차적으로 진행됩니다. 이러한 순차적 커밋에 맞추어 병합을 처리하는 방법이 Fast-Forward 병합입니다.</p>
+
+<p><br />
+<a name="1"></a></p>
+
+<h2 id="브랜치-생성과-수정-작업">브랜치 생성과 수정 작업</h2>
+<hr />
+<p>실습을 위해 새로운 feature 브랜치를 생성하겠습니다. 그리고 feature 브랜치로 체크아웃합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ git branch feature ☜ 브랜치 생성
+
+infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ git checkout feature ☜ 브랜치 이동
+Switched to branch 'feature'
+
+infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+</code></pre></div></div>
+
+<p>브랜치를 생성할 때 분기 기준은 master의 최종 커밋 포인터입니다. 포인터를 확인할 수 있는 rev-parse 명령어로 확인해 봅시다. 첫 번째 커밋 f123d5c와 값이 동일합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git rev-parse feature
+f123d5c9fd0c1f8a2f4ec86f63451a179371ae09
+</code></pre></div></div>
+
+<p>이 내용은 다음과 같이 나타낼 수 있습니다.</p>
+
+<p>그림 8-3] 브랜치 생성<br />
+<img src="./img/08-3.jpg" alt="브랜치 생성" /></p>
+
+<p>소스트리에서 생성된 브랜치를 확인할 수 있습니다. 이 장에서는 깃 배시와 소스트리를 번갈아 가며 실습을 합니다. 먼저 소스트리의 새 탭에서 Add 버튼을 클릭합니다. 탐색을 눌러 앞에서 만든 gitstudy08 폴더를 찾아 선택한 후 추가를 누릅니다. 그러면 gitstudy08 저장소와 연결됩니다.</p>
+
+<p>생성한 feature 브랜치를 클릭하면 feature 브랜치와 master 브랜치의 시작 위치가 동일한 것을 확인할 수 있습니다.</p>
+
+<p>그림 8-4] 소스트리에서 브랜치 위치 확인<br />
+<img src="./img/08-4.jpg" alt="소스트리에서 브랜치 위치 확인" /></p>
+
+<p>생성한 feature 브랜치 안에 있는 index.htm 파일을 수정하겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ code index.htm ☜ VS Code 실행
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</code></pre></div></div>
+
+<p>코드에 <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> 태그를 삽입하고 저장합니다. 기존 코드를 수정했기 때문에 파일 상태는 modified로 변경됩니다. 다음과 같이 수정한 파일을 커밋합니다. -a 옵션과 같이 사용하면 스테이지 영역을 추가하면서 동시에 커밋을 할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git commit -am "add header"
+[feature 3f7799f] add header
+ 1 file changed, 2 insertions(+)
+</code></pre></div></div>
+
+<p>소스트리에서 커밋 로그를 확인해 보겠습니다. feature 브랜치가 master 브랜치보다 커밋이 하나 더 있는 것을 볼 수 있습니다.</p>
+
+<p>그림 8-6] 소스트리에서 커밋 위치 확인<br />
+<img src="./img/08-6.jpg" alt="소스트리에서 커밋 위치 확인" /></p>
+
+<p>실습을 위해 수정과 커밋을 몇 번 더 합시다. 이번에는 <code class="highlighter-rouge">&lt;header&gt;</code> 코드 안에 <code class="highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code> 태그를 추가하여 두 번 커밋할 것입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ code index.htm
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;header&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>깃소개<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span> 
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>hello GIT world!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git commit -am "add menu1"
+[feature e762475] add menu1
+ 1 file changed, 3 insertions(+)
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span> 
+    <span class="nt">&lt;header&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>깃소개<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>깃설치<span class="nt">&lt;/li&gt;</span> 
+        <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/header&gt;</span> 
+    <span class="nt">&lt;h1&gt;</span>hello GIT world!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git commit -am "add menu2"
+[feature 7caf5f0] add menu2
+ 1 file changed, 1 insertion(+)
+</code></pre></div></div>
+
+<p>지금까지 과정을 그림으로 나타내면 다음과 같습니다.</p>
+
+<p>그림 8-7] 브랜치 생성 후 추가 커밋 진행 상태<br />
+<img src="./img/08-7.jpg" alt="브랜치 생성 후 추가 커밋 진행 상태 " /></p>
+
+<p>feature 브랜치에 추가된 커밋 로그를 확인해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git log
+commit 7caf5f028ba013f1eb74e2f6c8cc400c02b0eb9c (HEAD -&gt; feature)
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Thu May 16 16:54:30 2019 +0900
+    add menu2
+
+commit e76247541b07357220b042450aaf4a8aae037342
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Thu May 16 16:53:55 2019 +0900
+    add menu1
+
+commit 3f7799fb86b2b9abd980c26b1b2f33791e6708cf
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Thu May 16 16:45:42 2019 +0900
+    add header
+
+commit f123d5c9fd0c1f8a2f4ec86f63451a179371ae09 (master)
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Thu May 16 16:14:38 2019 +0900
+    first
+</code></pre></div></div>
+
+<p>소스트리에서 브랜치의 커밋 로그를 확인해 보면, feature 브랜치가 master 브랜치에서 분리되어 header, menu1, menu2 커밋 작업을 세 번 수행한 것을 확인할 수 있습니다.</p>
+
+<p>그림 8-8] feature 브랜치에 세 번 커밋됨<br />
+<img src="./img/08-8.jpg" alt="feature 브랜치에 세 번 커밋됨" /></p>
+
+<p>우리는 브랜치를 만들어 feature 브랜치에 기능을 추가했습니다. 하지만 소스트리에서 브랜치를 확인하면 브랜치 경로가 일직선으로 1개만 있습니다. 서로 다른 브랜치이지만 순차적으로 커밋을 했기 때문에 일직선으로 보이는 것입니다. 이러한 모양의 브랜치에서 병합 작업을 할 때는 Fast-Forward 방식의 알고리즘이 적용됩니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="병합-위치">병합 위치</h2>
+<hr />
+<p>깃의 merge 명령어는 브랜치를 병합합니다. merge 명령어는 현재 브랜치를 기준으로 다른 브랜치의 모든 커밋을 병합합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge 브랜치이름
+</code></pre></div></div>
+
+<p>브랜치를 병합하려면 기준과 대상이 있어야 합니다. 기준은 체크아웃된 현재 브랜치입니다. 따라서 병합하려면 먼저 기준이 되는 브랜치로 이동해야 합니다. 우리는 master 브랜치에서 feature 브랜치로 분기하여 작업했습니다. 작업한 feature 브랜치를 다시 master 브랜치로 병합할 것입니다. 병합을 하려면 먼저 master 브랜치로 체크아웃해야 합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+$ git checkout master ☜ 기준 브랜치로 이동
+Switched to branch 'master'
+
+infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+</code></pre></div></div>
+
+<p>병합을 할 수 있게 기준 브랜치(master 브랜치)로 이동했습니다.</p>
+
+<p>그림 8-9] 병합을 할 수 있게 기준 브랜치로 이동<br />
+<img src="./img/08-9.jpg" alt="병합을 할 수 있게 기준 브랜치로 이동" /></p>
+
+<p>master 브랜치로 체크아웃한 상태에서 파일(코드)을 확인해 봅시다. feature 브랜치에서 작업한 내용이 사라졌습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ code index.htm
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>hello GIT world!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+
+</code></pre></div></div>
+
+<p>원본의 master 브랜치에서 작업한 내용만 출력됩니다. 이처럼 브랜치는 기존 원본을 유지한 상태에서 서로 간섭하지 않고 feature 브랜치에서 코드를 수정할 수 있습니다. 이제 feature 브랜치에서 작업한 내용을 병합해 보겠습니다.</p>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="fast-forward-병합-적용">Fast-Forward 병합 적용</h2>
+<hr />
+<p>커밋 작업은 분기된 feature 브랜치에서 모두 수행했습니다. 아직 master 브랜치에는 추가된 커밋이 없습니다. 이러한 상태에서 두 브랜치를 병합합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ git merge feature ☜ feature 브랜치를 병함
+Updating f123d5c..7caf5f0
+Fast-forward ☜ 병합 방식 표시 
+ index.htm | 6 ++++++
+ 1 file changed, 6 insertions(+)
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">feature</code> 브랜치의 커밋을 <code class="highlighter-rouge">master</code> 브랜치에 병합했습니다. 병합 메시지를 확인해 볼까요? 메시지에 Fast-Forward 방식을 사용하여 병합했다고 출력됩니다.</p>
+
+<p>이 과정을 그림으로 나타내면 다음과 같습니다.</p>
+
+<p>그림 8-10] 병합한 후 커밋 구조<br />
+<img src="./img/08-10.jpg" alt="병합한 후 커밋 구조" /></p>
+
+<p>이 그림처럼 feature 브랜치의 커밋들이 하나씩 master 브랜치로 병합합니다. master 브랜치에는 커밋이 하나도 없기 때문에 feature 브랜치가 master 브랜치로 이동한 것처럼 보입니다. 소스트리에서 병합 결과를 확인합니다.</p>
+
+<p>그림 8-11] 소스트리에서 병합 결과 확인<br />
+<img src="./img/08-11.jpg" alt="소스트리에서 병합 결과 확인" /></p>
+
+<p>이처럼 병합한 후에는 master 브랜치의 마지막 커밋 위치와 feature 브랜치의 마지막 커밋 위치가 같습니다. 동일한 HEAD 포인터를 가지게 됩니다.</p>
+
+<p>log 명령어로 커밋 기록을 확인합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ git log -1
+commit 7caf5f028ba013f1eb74e2f6c8cc400c02b0eb9c (HEAD -&gt; master, feature)
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Thu May 16 16:54:30 2019 +0900
+    add menu2
+</code></pre></div></div>
+
+<p>Fast-Forward 병합은 작업한 브랜치를 원본 브랜치에 병합할 때 작업한 브랜치의 시작 커밋을 원본 브랜치 이후의 커밋으로 가리킵니다. 이는 단순히 커밋 위치를 최신으로 옮기는 것과 비슷합니다.</p>
+
+<p>Fast-Forward 병합을 잘했는지 결과를 확인해 봅시다. master 브랜치의 원본 파일에 feature 브랜치에서 수정한 내용이 반영되어 있으면 잘 병합한 것입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+$ code index.htm
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;header&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;</span>깃소개<span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;</span>깃설치<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>        
+    <span class="nt">&lt;h1&gt;</span>hello GIT world!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>master 브랜치의 index.htm 파일을 확인해 보니 잘 병합했네요. Fast-Forward 병합은 병합할 하나의 브랜치 파일을 기준 브랜치로 복사하여 수정된 파일을 원본에 그대로 적용한 것과 같습니다. 즉, 원본에 추가된 내용이 없다는 가정하에 변경한 파일을 대체하는 것입니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>
