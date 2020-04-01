@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 새 파일 등록</title>
+            <meta name="title" content="새 파일 등록" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 새 파일 등록" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,20 +81,22 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="깃에-새-파일-등록">깃에 새 파일 등록</h2>
+                <h1 id="깃에-새-파일-등록">깃에 새 파일 등록</h1>
+<hr />
 <p>깃의 워킹 디렉터리에 새 파일이 생성되었습니다. 워킹 디렉터리에 있는 파일은 깃이 자동으로 추적 관리하지 않습니다. 커밋을 하려면 파일의 상태가 추적 가능해야 합니다.</p>
 
 <p>워킹 디렉터리에 새로 추가된 untracked 상태의 파일을 추적 가능 상태로 변경하는 것을 등록이라고 합니다. 또 파일을 등록하면 워킹 디렉터리의 파일이 스테이지 영역에 추가됩니다. 스테이지 영역의 관리 목록에 추가된 파일만 깃에서 이력을 추적할 수 있습니다.</p>
 
 <p>그림 4-6] 새 파일 등록<br />
-<img src="./img/04-6.jpg" alt="" /></p>
+<img src="./img/04-6.jpg" alt="새_파일_등록" /></p>
 
 <p>워킹 디렉터리는 작업을 위한 일종의 샌드박스(서로 분리되어 있는 영역)와 같습니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="스테이지에-등록">스테이지에 등록</h3>
+<h2 id="스테이지에-등록">스테이지에 등록</h2>
+<hr />
 <p>깃에서 등록이란 정확히 무엇을 의미할까요? 등록이란 워킹 디렉터리에 있는 파일을 스테이지(stage) 영역으로 복사하는 것을 의미합니다. 여기서 ‘복사’는 실제 파일을 복사하는 것을 의미하지는 않습니다. 깃 내부에서 논리적인 기록을 변경하는 과정일 뿐입니다. 복사라고 표현한 것은 이해하기 쉽게 풀어 쓴 것입니다.</p>
 
 <p>워킹 디렉터리에 추가된 모든 파일을 커밋할 때는 반드시 이 과정을 거쳐야 합니다. 그래야 깃에서 버전 이력을 관리할 수 있습니다. 스테이지에 등록되지 않은 unstage 상태의 파일들은 커밋할 수 없습니다. 깃은 커밋하기 전에 파일들이 stage 상태인지 unstage 상태인지를 판단합니다. 스테이지 영역으로 등록된 파일들은 tracked 상태로 자동 변경됩니다.</p>
@@ -118,7 +120,7 @@ $ git add index.htm ☜ 스테이지 등록
 <p>index.htm 파일을 등록하는 과정은 다음과 같이 표현할 수 있습니다.</p>
 
 <p>그림 4-7] 스테이지 영역에 등록
-<img src="./img/04-7.jpg" alt="" /></p>
+<img src="./img/04-7.jpg" alt="스테이지_영역에_등록" /></p>
 
 <p>add 명령어를 실행하면 지정한 파일은 스테이지 영역으로 등록됩니다. 스테이지 영역에 파일이 등록되면 파일은 tracked 상태로 변경됩니다.</p>
 
@@ -139,21 +141,22 @@ $ git add index.htm ☜ 스테이지 등록
 <p>소스트리는 추적 상태와 추적하지 않음을 쉽게 구별할 수 있도록 파일 이름 앞에 아이콘을 함께 표시합니다. 보라색 아이콘 4-a.jpg은 untracked 상태의 파일입니다. 또는 새로 생성된 파일을 의미하기도 합니다.</p>
 
 <p>그림 4-8] 스테이지에 올라가지 않은 파일<br />
-<img src="./img/04-8.jpg" alt="" /></p>
+<img src="./img/04-8.jpg" alt="스테이지에_올라가지_않은_파일" /></p>
 
 <p>untracked 상태의 파일 여러 개를 4-b.jpg로 한 번에 등록할 수 있습니다. 전체 파일을 스테이지 영역에 등록할 때는 모두 스테이지에 올리기를 누릅니다.</p>
 
 <p>스테이지 영역에 등록된 파일은 스테이지에 올라간 파일 목록에서 확인할 수 있습니다. 스테이지에 등록되면 파일 이름 앞에 녹색 아이콘 4-c.jpg을 표시합니다.</p>
 
 <p>그림 4-9] 스테이지에 파일이 등록됨<br />
-<img src="./img/04-9.jpg" alt="" /></p>
+<img src="./img/04-9.jpg" alt="스테이지에_파일이_등록됨" /></p>
 
-<p>4-d.jpg를 사용하면 한 번에 하나씩 파일을 등록할 수 있습니다. 등록할 파일 이름을 목록에서 선택한 후 선택 내용 스테이지에 올리기를 누릅니다.</p>
+<p><code class="highlighter-rouge">선택내용 스테이지에 올리기</code>를 사용하면 한 번에 하나씩 파일을 등록할 수 있습니다. 등록할 파일 이름을 목록에서 선택한 후 선택 내용 스테이지에 올리기를 누릅니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="파일의-추적-상태-확인">파일의 추적 상태 확인</h2>
 <hr />
-
-<h3 id="파일의-추적-상태-확인">파일의 추적 상태 확인</h3>
 <p>워킹 디렉터리에 있는 새로운 파일이 스테이지 영역에 등록되었습니다. 콘솔창에서 status 명령어를 사용하여 등록 상태를 다시 한 번 확인해 보겠습니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
@@ -169,16 +172,17 @@ Changes to be committed:
 
 <p>앞으로 좀 더 학습해야 하지만, 스테이지 영역에 등록되었다고 커밋이 된 것은 아닙니다. 아직 커밋 명령어를 학습하지 않았습니다. 등록은 커밋을 하기 전 선행 작업일 뿐입니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="3"></a></p>
 
-<h3 id="파일-등록-취소">파일 등록 취소</h3>
+<h2 id="파일-등록-취소">파일 등록 취소</h2>
+<hr />
 <p>이번에는 tracked 상태의 파일을 untracked 상태로 변경해 보겠습니다. 스테이지에 등록하는 것과 반대 과정입니다. 등록 취소는 워킹 디렉터리와 스테이지 영역을 서로 왔다 갔다 할 수 있는 방법입니다.</p>
 
 <p>unstage 상태로 변경하려면 삭제(rm)나 리셋(reset) 명령어를 사용합니다.</p>
 
 <p>그림 4-10] 스테이지 영역의 파일 등록 취소
-<img src="./img/04-10.jpg" alt="" /></p>
+<img src="./img/04-10.jpg" alt="스테이지_영역의_파일_등록_취소" /></p>
 
 <p>rm 명령어로 삭제해 보겠습니다. 스테이지 영역에서만 등록된 파일을 삭제하려고 <code class="highlighter-rouge">--cached</code> 옵션을 함께 사용합니다.</p>
 
@@ -204,7 +208,6 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git add index.htm ☜ 스테이지 다시등록
-
 </code></pre></div></div>
 
 <p>파일을 등록한 후 커밋하지 않고 바로 삭제하려면 rm –cached 명령어를 사용합니다. 하지만 한 번이라도 커밋을 했다면 reset 명령어를 사용해야 합니다. 리셋 방법은 9장에서 자세히 설명합니다.</p>
@@ -214,7 +217,6 @@ $ git add index.htm ☜ 스테이지 다시등록
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git rm --cached index.htm
 rm 'index.htm'
-
 </code></pre></div></div>
 
 <p>삭제한 후 status 명령어를 실행하면 다음과 같이 이전과 다른 결과가 나옵니다.</p>
@@ -228,7 +230,6 @@ Changes to be committed:
 Untracked files:
   (use "git add &lt;file&gt;..." to include in what will be committed)
         index.htm ☜ 스테이지 삭제
-
 </code></pre></div></div>
 
 <p>파일이 untracked 상태가 되고, 스테이지 영역에서 파일이 삭제 처리됩니다. 커밋 후 삭제는 파일이 삭제 또는 변화된 것으로 간주합니다. 따라서 커밋된 파일은 리셋으로 삭제한 후 정리해 주어야 합니다. 다음은 간단한 리셋 후 정리하는 명령어를 사용한 예입니다.</p>
@@ -243,15 +244,15 @@ $ git reset HEAD index.htm ☜ 리셋을 시도합니다.
 $ git status ☜ 상태 확인
 On branch master
 nothing to commit, working tree clean
-
 </code></pre></div></div>
 
 <p>이처럼 터미널에서 unstage 상태 및 untracked 상태로 변경하는 것은 복잡합니다. 소스트리를 이용하면 스테이지 영역에 등록된 파일을 좀 더 쉽게 등록 취소할 수 있습니다. 모두 스테이지에서 내리기와 선택 내용 스테이지에서 내리기를 사용하면 untracked 상태로 쉽게 변경할 수 있습니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="4"></a></p>
 
-<h3 id="등록된-파일-이름이-변경되었을-때">등록된 파일 이름이 변경되었을 때</h3>
+<h2 id="등록된-파일-이름이-변경되었을-때">등록된 파일 이름이 변경되었을 때</h2>
+<hr />
 <p>작업 도중 파일 이름도 변경할 수 있습니다. 하지만 파일 이름을 변경했다고 별도로 깃에 통보할 필요는 없습니다. 깃은 똑똑해서 변경된 파일 이름을 자동으로 알고 있습니다.</p>
 
 <p>리눅스나 macOS에서는 mv 명령어로 파일 이름을 변경할 수 있습니다. 깃에서도 파일 이름을 변경할 때 mv 명령어를 사용합니다.</p>

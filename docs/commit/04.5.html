@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 커밋 확인</title>
+            <meta name="title" content="커밋 확인" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 커밋 확인" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,13 +81,15 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="커밋-확인">커밋 확인</h2>
+                <h1 id="커밋-확인">커밋 확인</h1>
+<hr />
 <p>터미널과 소스트리에서 커밋하는 방법을 알아보았습니다. 성공적으로 커밋을 했다면 이를 확인해 보아야 합니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="스테이지-초기화">스테이지 초기화</h3>
+<h2 id="스테이지-초기화">스테이지 초기화</h2>
+<hr />
 <p>먼저 터미널에서 status 명령어를 실행해서 상태를 확인합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
@@ -100,14 +102,15 @@ nothing to commit, working tree clean ☜ 워킹 트리 정리됨
 <p>이전과 달리 working tree clean 메시지를 볼 수 있습니다. 커밋을 하면 스테이지 영역은 초기화됩니다. 더 이상 추가된 새로운 파일과 수정된 파일이 없다는 의미입니다.</p>
 
 <p>그림 4-16] 스테이지 초기화<br />
-<img src="./img/04-16.jpg" alt="" /></p>
+<img src="./img/04-16.jpg" alt="스테이지 초기화" /></p>
 
 <p>항상 커밋 전후에 status 명령어로 상태를 확인하는 것이 좋습니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="2"></a></p>
 
-<h3 id="로그-기록-확인">로그 기록 확인</h3>
+<h2 id="로그-기록-확인">로그 기록 확인</h2>
+<hr />
 <p>커밋한 후 커밋 기록은 어떻게 확인할까요? 깃은 커밋 목록을 확인할 수 있는 log 명령어를 별도로 제공합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
@@ -121,7 +124,6 @@ commit e2bce41380691b0a34aeab7db889a6c30fed8287 (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt;
 Date:   Sat Jan 5 18:24:50 2019 +0900
     인덱스 페이지 레이아웃
-
 </code></pre></div></div>
 
 <p>커밋한 후에는 습관적으로 한 번씩 log 명령어를 실행하여 기록을 확인하는 것이 좋습니다. 또 log 명령어는 다양한 커밋 기록을 확인할 수 있도록 여러 옵션을 제공합니다. -help 옵션으로 확인할 수 있습니다.</p>
@@ -130,21 +132,22 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
   <p>Note: 커밋 시간을 맹목적으로 믿을 수는 없습니다. 깃은 분산형 저장소로 각자의 PC에 설정한 시간 정보를 바탕으로 커밋 기록을 작성합니다. 작업 중인 컴퓨터가 다른 지역의 시간이나 잘못된 시간으로 설정되어 있을 수도 있습니다.</p>
 </blockquote>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="3"></a></p>
 
-<h3 id="소스트리에서-로그-기록-확인">소스트리에서 로그 기록 확인</h3>
+<h2 id="소스트리에서-로그-기록-확인">소스트리에서 로그 기록 확인</h2>
+<hr />
 <p>터미널로 로그 기록을 확인하는 것은 가독성이 좋지 않습니다. 커밋 횟수가 많을수록 보기도 어렵습니다. 이때는 소스트리를 이용하면 좀 더 직관적으로 커밋 기록을 확인할 수 있습니다. 소스트리 같은 GUI 도구를 사용하도록 추천하는 이유이기도 합니다. 소스트리에서 왼쪽의 브랜치 탭을 선택합니다.</p>
 
 <p>그림 4-17] 소스트리에서의 브랜치<br />
-<img src="./img/04-17.jpg" alt="" /></p>
+<img src="./img/04-17.jpg" alt="소스트리에서의 브랜치" /></p>
 
 <p>앞에서 status 명령어를 실행했을 때 <code class="highlighter-rouge">On branch master</code> 메시지를 본 적이 있을 것입니다. 또 log 명령어를 실행한 결과에서 (HEAD -&gt; master) 부분도 보았습니다.</p>
 
 <p>브랜치는 나중에 다시 설명하겠지만, 깃을 처음 생성하면 자동으로 master 브랜치 1개를 생성합니다. 또 커밋은 master 브랜치 안에 기록됩니다. 소스트리의 master 브랜치를 선택하면 다음 화면을 볼 수 있습니다. 오른쪽 화면에 커밋의 로그 기록이 순차적으로 나열되는 것을 확인하세요.</p>
 
 <p>그림 4-18] 소스트리에서 브랜치 확인<br />
-<img src="./img/04-18.jpg" alt="" /></p>
+![소스트리에서 브랜치 확인(./img/04-18.jpg)</p>
 
 <p>이렇게 직관적인 뷰 때문에 터미널(깃 배시)과 소스트리를 같이 이용하길 권장합니다.</p>
 

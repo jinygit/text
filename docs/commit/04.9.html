@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 커밋 로그</title>
+            <meta name="title" content="커밋 로그" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 커밋 로그" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,13 +81,15 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="커밋-로그">커밋 로그</h2>
+                <h1 id="커밋-로그">커밋 로그</h1>
+<hr />
 <p>깃은 터미널 기반의 응용 프로그램입니다. 앞서 커밋 목록을 나열하는 로그를 간단하게 살펴보았습니다. 깃의 로그는 저장소 커밋 기록들을 확인할 수 있습니다. 또 커밋 메시지, 아이디도 확인할 수 있고, 브랜치 경로 등을 분석할 수 있는 옵션들도 제공합니다.</p>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="간략-로그">간략 로그</h3>
+<h2 id="간략-로그">간략 로그</h2>
+<hr />
 <p>커밋 메시지를 여러 줄 작성했다면 일반적인 로그 정보를 복잡하게 느낄 수 있습니다. 로그 옵션 중에서 –pretty=short를 사용하면 로그를 출력할 때 첫 번째 줄의 커밋 메시지만 출력합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
@@ -110,10 +112,11 @@ Author: hojin &lt;infohojin@gmail.com&gt;
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 커밋ID
 </code></pre></div></div>
 
-<p><br /></p>
-<hr />
+<p><br />
+<a name="2"></a></p>
 
-<h3 id="특정-파일의-로그">특정 파일의 로그</h3>
+<h2 id="특정-파일의-로그">특정 파일의 로그</h2>
+<hr />
 <p>전체 커밋과 달리 특정 파일의 로그 기록만 볼 수도 있습니다. 이때는 log 명령어 뒤에 파일 이름을 적어 주면 됩니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
