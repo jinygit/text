@@ -1,12 +1,12 @@
 ---
 layout: home
-title: "Git 교과서"
-
-keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+title: "깃플로우>Featuer"
+keyword: "깃플로우, Featuer"
 ---
+
 # Featuer
 <hr>
-Feature 브랜치는 새로운 기능을 추가하기 위한 작업 브랜치 입니다. 실제의 코드작업들은 Feature 브랜치에서 이루어 집니다. 코드를 수정하고 커밋을 합니다.
+Feature 브랜치는 새로운 기능을 추가하기 위한 작업 브랜치 입니다. 실제의 코드작업들은 Feature 브랜치에서 이루어 집니다. 코드를 수정하고 커밋을 합니다.  
 
 <br>
 
@@ -91,7 +91,6 @@ $ git commit -am "new feature func1"
 수정 후 커밋도 같이 합니다. 소스트리에서 커밋 로그를 확인해봅니다.
 
 ![feature](./img/gitflow_feature_02.png)
-
 
 `feature/func1` 브랜치가 develop 브랜치보다 한 단계 더 전진한 것을 확인할 수 있습니다. 
 

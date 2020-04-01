@@ -4,18 +4,22 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Git TextBook</title>
         <!--SEO-->
         {%- if page.title -%}
-        <meta name="title" content="{{ page.title }}" />
+            <title>Git TextBook | {{ page.title }}</title>
+            <meta name="title" content="{{ page.title }}" />
+        {%- else -%}
+            <title>Git TextBook</title>
         {%- endif -%}
 
         {%- if page.description -%}
-        <meta name="description" content="{{ page.description }}" />
+            <meta name="description" content="{{ page.description }}" />
         {%- endif -%}
 
         {%- if page.keyword -%}
-        <meta name="keyword" content="{{ page.keyword }}" />
+            <meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, {{ page.keyword }}" />
+        {%- else -%}
+            <meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" />
         {%- endif -%}
 
 
@@ -30,6 +34,9 @@
                 max-width:100%;
             }
         </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
         
 
     </head>
@@ -37,8 +44,6 @@
         <!--네비게이션-->
         {%- include navigation.html -%}
         
-        
-
         {{ content }}
         
         <footer>

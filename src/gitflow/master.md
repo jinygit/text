@@ -1,9 +1,9 @@
 ---
 layout: home
-title: "Git 교과서"
-
-keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+title: "깃플로우>Master"
+keyword: "깃플로우, Master"
 ---
+
 # Master 브랜치
 <hr>
 Master 브랜치는 처음으로 생성되는 기본 브랜치입니다. 깃 저장소를 초기화한 후, 처음 커밋할 때 자동으로 생성되는 브랜치입니다. 

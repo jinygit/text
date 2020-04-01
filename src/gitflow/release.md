@@ -1,9 +1,9 @@
 ---
 layout: home
-title: "Git 교과서"
-
-keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+title: "깃플로우>Release"
+keyword: "깃플로우, Release"
 ---
+
 # Release
 <hr>
 Release 브랜치는 개발 완료된 코드 버전을 배포하기 위한 전략입니다. 현재의 코드 상태가 최신으로 최종 사용자에게 배포할 수 있는 상태라면 release 브랜치를 생성합니다.

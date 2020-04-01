@@ -1,10 +1,10 @@
 ---
 layout: home
-title: "Git 교과서"
-
-keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+title: "깃플로우>Hotfix"
+keyword: "깃플로우, Hotfix"
 ---
-# Hotfix
+
+# 핫픽스(Hotfix)
 <hr>
 Hotfix는 배포된 버전에 문제가 생기면 해결하기 위한 전략입니다. 별도로 브랜치를 생성하고 버그를 수정합니다. Hotfix는 짧은 호흡의 브랜치로 한 가지 작업만을 위해서 생성되고 삭제됩니다.
 

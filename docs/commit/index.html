@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Git TextBook</title>
-        <!--SEO--><meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | Git 교과서: 커밋하기</title>
+            <meta name="title" content="Git 교과서: 커밋하기" /><meta name="description" content="깃은 코드의 이력을 커밋 로그를 활용하여 관리를 합니다. 커밋 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃 사용법, commit, 커밋" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -16,6 +16,9 @@
                 max-width:100%;
             }
         </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
         
 
     </head>
@@ -78,20 +81,107 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="커밋">커밋</h2>
+                <h1 id="커밋">커밋</h1>
 <hr />
 
-<p>코드이 변경이력을 작성합니다.</p>
+<p>깃은 개발 중인 소스 코드의 이력을 관리 합니다. 모든 코드의 변경 이력은 <code class="highlighter-rouge">커밋</code>이라는 행동을 통하여 기록이 됩니다. 커밋이란 무엇이고, 어떻게 실행하는지에 대해서 학습해 보겠습니다.</p>
+
+<blockquote>
+  <p>커밋은 깃에서 <code class="highlighter-rouge">코드의 변화를 기록하는 것</code>을 의미합니다.</p>
+</blockquote>
 
 <p><br /></p>
 
-<h2 id="빈-커밋작성">빈 커밋작성</h2>
-<p>커밋은 변경된 내용을 깃 저장소에 알려주는 명령어 입니다. 파일의 변경사항이 있어야만 커밋할 내용이 생기게 됩니다.</p>
+<h2>코드의 변화</h2>
+<p>우선적으로 전형적인 파일의 이력을 관리하는 방법에 대해서 살펴 봅니다. 기존의 파일관리에서 문제점은 무엇이고 어떻게 해결이 가능한지에 대해서 학습해 봅니다.</p>
 
-<p>하지만, 파일의 변경내용이 없이도 비어있는 커밋 기록을 할 수 있습니다. 이때 사용하는 명령어는 <code class="highlighter-rouge">--allow-emplty</code> 입니다.</p>
+<ul>
+  <li><a href="history">코드의 변화</a></li>
+  <li><a href="history">파일 관리 방법</a></li>
+</ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --allow-empty -m "empty commit"
-</code></pre></div></div>
+<h2 id="학습내용">학습내용</h2>
+<hr />
+
+<ul>
+  <li><a href="04.2">새 파일 생성 및 감지</a>
+    <ul>
+      <li>새 파일 생성</li>
+      <li>깃에서 새 파일 생성 확인</li>
+      <li>소스트리에서 새 파일 감지</li>
+    </ul>
+  </li>
+  <li><a href="04.3">깃에 새 파일 등록</a>
+    <ul>
+      <li>스테이지에 등록</li>
+      <li>파일의 추적 상태 확인</li>
+      <li>파일 등록 취소</li>
+      <li>등록된 파일 이름이 변경되었을 때</li>
+    </ul>
+  </li>
+  <li><a href="04.4">첫 번째 커밋</a>
+    <ul>
+      <li>HEAD</li>
+      <li>스냅샷</li>
+      <li>파일 상태와 커밋</li>
+    </ul>
+  </li>
+  <li><a href="04.5">커밋 확인</a>
+    <ul>
+      <li>스테이지 초기화</li>
+      <li>로그 기록 확인</li>
+      <li>소스트리에서 로그 기록 확인</li>
+    </ul>
+  </li>
+  <li><a href="04.6">두 번째 커밋</a>
+    <ul>
+      <li>파일 수정</li>
+      <li>파일 변경 사항 확인</li>
+      <li>수정된 파일 되돌리기</li>
+      <li>스테이지에 등록</li>
+      <li>두 번째 커밋</li>
+      <li>두 번째 커밋 확인</li>
+      <li>깃허브에서 확인</li>
+    </ul>
+  </li>
+  <li><a href="04.7">메시지가 없는 빈 커밋</a>
+    <ul>
+      <li>세 번째 커밋</li>
+      <li>소스트리에서 빈 커밋</li>
+      <li>빈 커밋 확인</li>
+    </ul>
+  </li>
+  <li><a href="04.8">커밋 아이디</a>
+    <ul>
+      <li>SHA1</li>
+      <li>단축키</li>
+    </ul>
+  </li>
+  <li><a href="04.9">커밋 로그</a>
+    <ul>
+      <li>간략 로그</li>
+      <li>특정 파일의 로그</li>
+    </ul>
+  </li>
+  <li><a href="04.10">diff 명령어</a>
+    <ul>
+      <li>파일 간 차이</li>
+      <li>워킹 디렉터리 vs 스테이지 영역</li>
+      <li>커밋 간 차이</li>
+      <li>소스트리에서 간단하게 변경 이력 확인</li>
+      <li>diff 내용을 추가하여 커밋</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="학습정리">학습정리</h2>
+<hr />
+
+<p>커밋 작업은 깃에서 소스 코드를 관리하는 첫 단추입니다.<br />
+너무 많은 코드를 수정한 후 커밋하는 것보다는 작은 단위로 코드를 수정한 후 커밋하는 것을 추천합니다.<br />
+커밋의 수정 부분이 적을수록 검토하기 쉽고, 오류도 쉽게 찾을 수 있습니다.</p>
 
 <p><br /><br /></p>
 
@@ -102,7 +192,6 @@
         <div class="col-md-3">
             <aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/text">기초 탄탄 깃</a>
@@ -143,9 +232,7 @@
         	<div class="col-lg-12">
 				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
-			
     	</div>
-      
     </div>
     <!-- /.container -->
 </footer></footer>        

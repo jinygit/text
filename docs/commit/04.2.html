@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | Git 교과서</title>
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h2 id="새-파일-생성-및-감지">새 파일 생성 및 감지</h2>
+<hr />
+
+<p>커밋을 직접 실습해 봅시다. 워킹 디렉터리에 새로운 파일을 하나 생성하여 커밋 과정을 따라가 보겠습니다.</p>
+
+<p><br /></p>
+
+<h3 id="새-파일-생성">새 파일 생성</h3>
+<hr />
+
+<p>실습을 위해 간단한 HTML 파일을 하나 작성합니다. 에디터를 이용하여 코드를 작성하면 됩니다. 필자는 VS Code를 이용하겠습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mdkir gitstudy04 ☜ 새로운 실습 폴더를 생성합니다.
+<span class="nv">$ </span>code index.htm ☜ VS Code를 사용해 파일을 작성합니다.
+<span class="nv">$ </span>git init ☜ 저장소를 깃으로 초기화합니다.
+Initialized empty Git repository <span class="k">in </span>E:/gitstudy04/.git/
+</code></pre></div></div>
+
+<p>VS Code를 사용하여 파일 작성</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>code index.htm ☜ VS Code 실행
+</code></pre></div></div>
+
+<p>index.htm은 다음과 같이 작성합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>작성한 예제 파일은 기본이 되는 HTML의 뼈대 페이지입니다. 파일 생성 과정을 그림으로 표현하면 다음과 같습니다.</p>
+
+<p>그림 4-3] 파일 생성 과정<br />
+<img src="./img/04-3.png" alt="파일 생성 과정" /></p>
+
+<p>이렇게 파일을 생성하면 워킹 디렉터리에 <code class="highlighter-rouge">index.htm</code> 이름으로 저장됩니다. 모든 작업은 워킹 디렉터리 안에서 진행됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="깃에서-새-파일-생성-확인">깃에서 새 파일 생성 확인</h3>
+<hr />
+
+<p>워킹 디렉터리에 새 파일이 생성되었습니다. 워킹 디렉터리에 새 파일이 추가되면 깃은 변화된 상태를 자동으로 감지합니다. 이때 깃 상태를 확인할 수 있는 명령어가 <code class="highlighter-rouge">status</code>입니다.</p>
+
+<p>status 명령어를 입력하면 메시지가 출력되는 것을 볼 수 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git status ☜ 명령을 입력합니다.
+On branch master
+No commits yet
+
+Untracked files: 
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+        index.htm ☜ 새로운 파일이 등록된 것을 확인
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
+
+</code></pre></div></div>
+
+<p>깃의 상태 메시지에서 Untracked files 표시 부분을 확인합니다. 깃 배시 터미널로 실행하면 추적되지 않은 파일은 빨간색으로 표시합니다. <code class="highlighter-rouge">Untracked files</code> 메시지는 워킹 디렉터리에 새로운 파일이 등록되었다고 알려 주는 것입니다.</p>
+
+<p>이렇게 깃은 워킹 디렉터리에 새 파일이 추가되면 상태를 감지하고 향후 이력을 추적할지 여부를 결정합니다.</p>
+
+<blockquote>
+  <p>Note: 모든 실습은 깃의 계정 및 환경 설정이 된 상태에서 진행합니다. 혹시 앞 장들을 읽지 않고 바로 4장을 시작했다면 앞 장들로 이동하여 계정과 환경 설정을 하세요.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="소스트리에서-새-파일-감지">소스트리에서 새 파일 감지</h3>
+<hr />
+
+<p>소스트리를 사용하여 깃의 status 명령어와 동일한 상태를 확인할 수 있습니다. 소스트리를 실행합니다. 아직 gitstudy04 폴더와 소스트리를 연동하지 않았습니다. 새 탭에서 Add 버튼을 클릭합니다. 탐색을 눌러 깃 배시에서 만든 gitstudy04 폴더를 찾아 선택한 후 추가를 누릅니다.</p>
+
+<p>그림 4-4] 소스트리에 저장소 추가<br />
+<img src="./img/04-4.jpg" alt="소스트리에 저장소 추가" /></p>
+
+<p>gitstudy04 저장소를 추가했다면 소스트리에서 왼쪽의 파일 상태 탭을 선택합니다.</p>
+
+<p>그림 4-5] 소스트리에서 새 파일 감지<br />
+<img src="./img/04-5.jpg" alt="소스트리에서 새 파일 감지" /></p>
+
+<p>새로 작성한 index.htm 파일이 소스트리의 스테이지에 올라가지 않은 파일 목록에 추가된 것을 확인할 수 있습니다.</p>
+
+<p>소스트리는 GUI로 상태를 직관적으로 표시해 줍니다. 사실 내부적으로는 소스트리가 status 명령어를 대신 깃에 입력하는 것입니다. 따라서 직접 status 명령어를 실행하지 않아도 쉽게 확인할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

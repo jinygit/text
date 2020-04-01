@@ -1,9 +1,9 @@
 ---
 layout: home
-title: "Git 교과서"
-
-keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+title: "깃플로우>Develop"
+keyword: "깃플로우, Develop"
 ---
+
 # Develop
 <hr>
 깃 플로우를 초기화하면 자동으로 develop 브랜치를 생성합니다. develop 브랜치는 깃 플로우의 첫 번째 전략입니다.

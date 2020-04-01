@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Git TextBook</title>
-        <!--SEO--><meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | Git 교과서</title>
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 깃플로우, 훅" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -16,6 +16,9 @@
                 max-width:100%;
             }
         </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
         
 
     </head>
@@ -79,27 +82,30 @@
         <div class="col-lg-9">
             <section>
                 <h2 id="공유와-협업">공유와 협업</h2>
+<hr />
+
 <p>교재(깃 교과서)와 1부는 깃의 동작과 원리에 대해서 학습을 하였습니다. 
 깃의 기본 기능을 익혔다면 이제는 협업을 위한 방법에 대해서 알아보겠습니다.
 협업을 위한 공유 저장소와 커뮤니케이션 방법에 대해서 학습합니다.</p>
 
 <p><br /></p>
-<hr />
 
 <h3 id="원격-저장소">원격 저장소</h3>
+<hr />
+
 <p>원격 저장소는 공유를 위한 서버의 깃 저장소를 의미합니다.</p>
 
 <ul>
-  <li>
-    <p><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</p>
-  </li>
-  <li>
-    <p><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</p>
-  </li>
+  <li><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</li>
+  <li><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</li>
 </ul>
 
-<h4 id="호스팅">호스팅</h4>
-<p>외부의 깃 서버 저장소를 사용합니다. <a href="hosting">»호스팅</a></p>
+<p><br /></p>
+
+<h2>호스팅
+    <small style="font-size: 0.5em;">&gt;&gt;<a href="hosting">학습하기</a></small>
+</h2>
+<hr />
 
 <ul>
   <li>
@@ -117,10 +123,13 @@
 </ul>
 
 <p><br /></p>
+
+<h2>풀 리퀘스트(pull-Request) 
+    <small style="font-size: 0.5em;">&gt;&gt;<a href="pull-request">학습하기</a></small>
+</h2>
 <hr />
 
-<h3 id="풀-리퀘스트pull-request">풀 리퀘스트(pull-Request)</h3>
-<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다. <a href="pull-request">»풀 리퀘스트</a></p>
+<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다.</p>
 
 <ul>
   <li><a href="pullrequest/collaboration">협업</a></li>
@@ -137,13 +146,17 @@
       <li><a href="pullrequest/receive">수신</a></li>
     </ul>
   </li>
-  <li><a href="pullrequest/관리">관리</a>
-<br /></li>
+  <li><a href="pullrequest/관리">관리</a></li>
 </ul>
+
+<p><br /></p>
+
+<h2>브랜치 전략 
+    <small style="font-size: 0.5em;">&gt;&gt;<a href="gitflow">학습하기</a></small>
+</h2>
 <hr />
 
-<h3 id="브랜치-전략">브랜치 전략</h3>
-<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다. <a href="gitflow">»학습하기</a></p>
+<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다.</p>
 
 <ul>
   <li><a href="gitflow/branch">브랜치 전략</a></li>
@@ -159,10 +172,11 @@
 </ul>
 
 <p><br /></p>
-<hr />
 
-<h3 id="저장소-연동">저장소 연동</h3>
-<p>깃은 연동 설정을 위한 훅(Hooks) 기능을 지원합니다. <a href="hook">»훅 연동</a></p>
+<h2>저장소 연동 
+    <small style="font-size: 0.5em;">&gt;&gt;<a href="hook">학습하기</a></small>
+</h2>
+<hr />
 
 <ul>
   <li><a href="hook/훅동작">훅 동작</a></li>
@@ -175,27 +189,29 @@
 </ul>
 
 <p><br /></p>
+
+<h2>오픈 소스 
+    <small style="font-size: 0.5em;">&gt;&gt;<a href="opensource">학습하기</a></small>
+</h2>
 <hr />
 
-<h3 id="오픈-소스">오픈 소스</h3>
-<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다. <a href="opensource">»오픈 소스</a></p>
+<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
 
 <ul>
-  <li><a href="copyright">저작권</a></li>
-  <li><a href="copyleft">상용과 오픈 소스</a></li>
-  <li><a href="license">라이선스</a></li>
-  <li><a href="freesoft">자유소프트</a></li>
-  <li><a href="opensource">오픈 소스</a></li>
-  <li><a href="openlicense">오픈 소스 라이선스</a></li>
-  <li><a href="apply">라이선스 적용</a></li>
-  <li><a href="comunity">커뮤니티</a></li>
-  <li><a href="governance">거버넌스</a></li>
-  <li><a href="develop">개발 방식</a></li>
-  <li><a href="contributor">참여</a></li>
+  <li><a href="opensource/copyright">저작권</a></li>
+  <li><a href="opensource/copyleft">상용과 오픈 소스</a> : 코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</li>
+  <li><a href="opensource/license">라이선스</a></li>
+  <li><a href="opensource/freesoft">자유소프트</a></li>
+  <li><a href="opensource/opensource">오픈 소스</a></li>
+  <li><a href="opensource/openlicense">오픈 소스 라이선스</a></li>
+  <li><a href="opensource/apply">라이선스 적용</a> : 오픈 소스의 라이선스는 매우 다양합니다.</li>
+  <li><a href="opensource/comunity">커뮤니티</a> : 오픈 소스가 성공하기 위해서는 커뮤니티의 역할이 매우 중요합니다.</li>
+  <li><a href="opensource/governance">거버넌스</a></li>
+  <li><a href="opensource/develop">개발 방식</a></li>
+  <li><a href="opensource/contributor">참여</a> : 기존 프로젝트에 새로운 구성원으로 참여합니다.</li>
 </ul>
 
-<p><br /><br /><br /></p>
-
+<p><br /><br /></p>
 
             </section>
         </div>
@@ -204,7 +220,6 @@
         <div class="col-md-3">
             <aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/text">기초 탄탄 깃</a>
@@ -245,9 +260,7 @@
         	<div class="col-lg-12">
 				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
-			
     	</div>
-      
     </div>
     <!-- /.container -->
 </footer></footer>        

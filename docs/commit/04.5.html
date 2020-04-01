@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Git TextBook</title>
-        <!--SEO--><meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | Git 교과서</title>
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -16,6 +16,9 @@
                 max-width:100%;
             }
         </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
         
 
     </head>
@@ -78,93 +81,74 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="새-파일-생성-및-감지">새 파일 생성 및 감지</h2>
-<p>커밋을 직접 실습해 봅시다. 워킹 디렉터리에 새로운 파일을 하나 생성하여 커밋 과정을 따라가 보겠습니다.</p>
+                <h2 id="커밋-확인">커밋 확인</h2>
+<p>터미널과 소스트리에서 커밋하는 방법을 알아보았습니다. 성공적으로 커밋을 했다면 이를 확인해 보아야 합니다.</p>
 
 <p><br /></p>
 <hr />
 
-<h3 id="새-파일-생성">새 파일 생성</h3>
-<p>실습을 위해 간단한 HTML 파일을 하나 작성합니다. 에디터를 이용하여 코드를 작성하면 됩니다. 필자는 VS Code를 이용하겠습니다.</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mdkir gitstudy04 ☜ 새로운 실습 폴더를 생성합니다.
-$ code index.htm ☜ VS Code를 사용해 파일을 작성합니다.
-$ git init ☜ 저장소를 깃으로 초기화합니다.
-Initialized empty Git repository in E:/gitstudy04/.git/
-</code></pre></div></div>
-
-<p>VS Code를 사용하여 파일 작성</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ code index.htm ☜ VS Code 실행
-
-</code></pre></div></div>
-
-<p>index.htm은 다음과 같이 작성합니다.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
-    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-    
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<p>작성한 예제 파일은 기본이 되는 HTML의 뼈대 페이지입니다. 파일 생성 과정을 그림으로 표현하면 다음과 같습니다.</p>
-
-<p>그림 4-3] 파일 생성 과정<br />
-<img src="./img/04-3.jpg" alt="" /></p>
-
-<p>이렇게 파일을 생성하면 워킹 디렉터리에 index.htm 이름으로 저장됩니다. 모든 작업은 워킹 디렉터리 안에서 진행됩니다.</p>
-
-<p><br /></p>
-<hr />
-
-<h3 id="깃에서-새-파일-생성-확인">깃에서 새 파일 생성 확인</h3>
-<p>워킹 디렉터리에 새 파일이 생성되었습니다. 워킹 디렉터리에 새 파일이 추가되면 깃은 변화된 상태를 자동으로 감지합니다. 이때 깃 상태를 확인할 수 있는 명령어가 <code class="highlighter-rouge">status</code>입니다.</p>
-
-<p>status 명령어를 입력하면 메시지가 출력되는 것을 볼 수 있습니다.</p>
+<h3 id="스테이지-초기화">스테이지 초기화</h3>
+<p>먼저 터미널에서 status 명령어를 실행해서 상태를 확인합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git status ☜ 명령을 입력합니다.
+$ git status ☜ 상태 확인
 On branch master
-No commits yet
-
-Untracked files: 
-  (use "git add &lt;file&gt;..." to include in what will be committed)
-        index.htm ☜ 새로운 파일이 등록된 것을 확인
-nothing added to commit but untracked files present (use "git add" to track)
+nothing to commit, working tree clean ☜ 워킹 트리 정리됨
 
 </code></pre></div></div>
 
-<p>깃의 상태 메시지에서 Untracked files 표시 부분을 확인합니다. 깃 배시 터미널로 실행하면 추적되지 않은 파일은 빨간색으로 표시합니다. “Untracked files” 메시지는 워킹 디렉터리에 새로운 파일이 등록되었다고 알려 주는 것입니다.</p>
+<p>이전과 달리 working tree clean 메시지를 볼 수 있습니다. 커밋을 하면 스테이지 영역은 초기화됩니다. 더 이상 추가된 새로운 파일과 수정된 파일이 없다는 의미입니다.</p>
 
-<p>이렇게 깃은 워킹 디렉터리에 새 파일이 추가되면 상태를 감지하고 향후 이력을 추적할지 여부를 결정합니다.</p>
+<p>그림 4-16] 스테이지 초기화<br />
+<img src="./img/04-16.jpg" alt="" /></p>
+
+<p>항상 커밋 전후에 status 명령어로 상태를 확인하는 것이 좋습니다.</p>
+
+<p><br /></p>
+<hr />
+
+<h3 id="로그-기록-확인">로그 기록 확인</h3>
+<p>커밋한 후 커밋 기록은 어떻게 확인할까요? 깃은 커밋 목록을 확인할 수 있는 log 명령어를 별도로 제공합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
+</code></pre></div></div>
+
+<p>log 명령어는 시간 순으로 커밋 기록을 출력하는데, 최신 커밋 기록부터 내림차순으로 나열합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git log
+commit e2bce41380691b0a34aeab7db889a6c30fed8287 (HEAD -&gt; master)
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Sat Jan 5 18:24:50 2019 +0900
+    인덱스 페이지 레이아웃
+
+</code></pre></div></div>
+
+<p>커밋한 후에는 습관적으로 한 번씩 log 명령어를 실행하여 기록을 확인하는 것이 좋습니다. 또 log 명령어는 다양한 커밋 기록을 확인할 수 있도록 여러 옵션을 제공합니다. -help 옵션으로 확인할 수 있습니다.</p>
 
 <blockquote>
-  <p>Note: 모든 실습은 깃의 계정 및 환경 설정이 된 상태에서 진행합니다. 혹시 앞 장들을 읽지 않고 바로 4장을 시작했다면 앞 장들로 이동하여 계정과 환경 설정을 하세요.</p>
+  <p>Note: 커밋 시간을 맹목적으로 믿을 수는 없습니다. 깃은 분산형 저장소로 각자의 PC에 설정한 시간 정보를 바탕으로 커밋 기록을 작성합니다. 작업 중인 컴퓨터가 다른 지역의 시간이나 잘못된 시간으로 설정되어 있을 수도 있습니다.</p>
 </blockquote>
 
 <p><br /></p>
 <hr />
 
-<h3 id="소스트리에서-새-파일-감지">소스트리에서 새 파일 감지</h3>
-<p>소스트리를 사용하여 깃의 status 명령어와 동일한 상태를 확인할 수 있습니다. 소스트리를 실행합니다. 아직 gitstudy04 폴더와 소스트리를 연동하지 않았습니다. 새 탭에서 Add 버튼을 클릭합니다. 탐색을 눌러 깃 배시에서 만든 gitstudy04 폴더를 찾아 선택한 후 추가를 누릅니다.</p>
+<h3 id="소스트리에서-로그-기록-확인">소스트리에서 로그 기록 확인</h3>
+<p>터미널로 로그 기록을 확인하는 것은 가독성이 좋지 않습니다. 커밋 횟수가 많을수록 보기도 어렵습니다. 이때는 소스트리를 이용하면 좀 더 직관적으로 커밋 기록을 확인할 수 있습니다. 소스트리 같은 GUI 도구를 사용하도록 추천하는 이유이기도 합니다. 소스트리에서 왼쪽의 브랜치 탭을 선택합니다.</p>
 
-<p>그림 4-4] 소스트리에 저장소 추가<br />
-<img src="./img/04-4.jpg" alt="" /></p>
+<p>그림 4-17] 소스트리에서의 브랜치<br />
+<img src="./img/04-17.jpg" alt="" /></p>
 
-<p>gitstudy04 저장소를 추가했다면 소스트리에서 왼쪽의 파일 상태 탭을 선택합니다.</p>
+<p>앞에서 status 명령어를 실행했을 때 <code class="highlighter-rouge">On branch master</code> 메시지를 본 적이 있을 것입니다. 또 log 명령어를 실행한 결과에서 (HEAD -&gt; master) 부분도 보았습니다.</p>
 
-<p>그림 4-5] 소스트리에서 새 파일 감지<br />
-<img src="./img/04-5.jpg" alt="" /></p>
+<p>브랜치는 나중에 다시 설명하겠지만, 깃을 처음 생성하면 자동으로 master 브랜치 1개를 생성합니다. 또 커밋은 master 브랜치 안에 기록됩니다. 소스트리의 master 브랜치를 선택하면 다음 화면을 볼 수 있습니다. 오른쪽 화면에 커밋의 로그 기록이 순차적으로 나열되는 것을 확인하세요.</p>
 
-<p>새로 작성한 index.htm 파일이 소스트리의 스테이지에 올라가지 않은 파일 목록에 추가된 것을 확인할 수 있습니다.</p>
+<p>그림 4-18] 소스트리에서 브랜치 확인<br />
+<img src="./img/04-18.jpg" alt="" /></p>
 
-<p>소스트리는 GUI로 상태를 직관적으로 표시해 줍니다. 사실 내부적으로는 소스트리가 status 명령어를 대신 깃에 입력하는 것입니다. 따라서 직접 status 명령어를 실행하지 않아도 쉽게 확인할 수 있습니다.</p>
+<p>이렇게 직관적인 뷰 때문에 터미널(깃 배시)과 소스트리를 같이 이용하길 권장합니다.</p>
+
+<p>소스트리 목록은 크게 <code class="highlighter-rouge">그래프, 커밋 메시지(설명), 작성자, 날짜, 커밋 아이디</code> 다섯 가지로 구분합니다. 이와 관련된 내용은 실습하면서 계속 설명해 나갈 것입니다.</p>
 
 <p><br /><br /></p>
 
@@ -175,7 +159,6 @@ nothing added to commit but untracked files present (use "git add" to track)
         <div class="col-md-3">
             <aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item list-group-item-dark">Site Menu</li>
     <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <a href="/text">기초 탄탄 깃</a>
@@ -216,9 +199,7 @@ nothing added to commit but untracked files present (use "git add" to track)
         	<div class="col-lg-12">
 				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
 			</div>
-			
     	</div>
-      
     </div>
     <!-- /.container -->
 </footer></footer>        
