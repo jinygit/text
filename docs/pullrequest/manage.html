@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 깃플로우, 훅" /><!--부트스트랩4-->
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,135 +81,132 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="공유와-협업">공유와 협업</h2>
+                <h1 id="관리">관리</h1>
 <hr />
 
-<p>교재(깃 교과서)와 1부는 깃의 동작과 원리에 대해서 학습을 하였습니다. 
-깃의 기본 기능을 익혔다면 이제는 협업을 위한 방법에 대해서 알아보겠습니다.
-협업을 위한 공유 저장소와 커뮤니케이션 방법에 대해서 학습합니다.</p>
+<p>지속적인 작업을 위해서는 포크 저장소의 관리가 필요합니다. 프로젝트 저장소와 포크 저장소는 서로 다른 원격 저장소입니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="원격-저장소">원격 저장소</h3>
+<h2 id="포크-갱신">포크 갱신</h2>
 <hr />
 
-<p>원격 저장소는 공유를 위한 서버의 깃 저장소를 의미합니다.</p>
+<p>원래의 저장소를 포크하는 것은 새로운 저장소를 원격으로 복제하는 것입니다. 시간이 지나고, 코드가 추가되면서 두 저장소는 서로 다른 내용으로 채워질 것입니다.</p>
 
-<ul>
-  <li><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</li>
-  <li><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</li>
-</ul>
+<p>다른 기여자의 코드가 풀-리퀘스트로 처리되거나, 자신의 요청이 수동으로 병합승인이 되었을 수도 있습니다. 이런 경우, 포크된 저장소는 최신으로 유지해주는 작업이 필요합니다.</p>
 
-<p><br /></p>
+<p>원래의 저장소로 로컬 저장소를 갱신하고, 이를 다시 포크된 원격 저장소로 업로드하는 방식을 사용합니다.</p>
 
-<h2>호스팅
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hosting">학습하기</a></small>
-</h2>
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="원본-저장소-추가">원본 저장소 추가</h2>
 <hr />
 
-<ul>
-  <li>
-    <p><a href="github">깃허브</a>(GitHub)<br />
-개발 입문자 중에서 <code class="highlighter-rouge">깃</code>을 몰라도 <code class="highlighter-rouge">깃허브</code>에 대해서 들어본 사람들이 많을 것입니다. 깃허브는 대표적인 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="bitbucket">비트버킷</a>(BitBucket)
-비트버킷은 <code class="highlighter-rouge">아틀라시안</code>에서 운영하는 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="gitlab">깃랩</a>(GitLab)
-깃랩(gitlab) 또한 깃허브나 비트버킷과 같은 깃 호스팅입니다.</p>
-  </li>
-</ul>
+<p>포크 저장소에 메인 프로젝트 저장소를 등록합니다.</p>
 
-<p><br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add 별칭 주소
 
-<h2>풀 리퀘스트(pull-Request) 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="pullrequest">학습하기</a></small>
-</h2>
+infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+$ git remote add main https://github.com/jinygit/hello.git
+
+infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+$ git remote -vv
+main    https://github.com/jinygit/hello.git (fetch)
+main    https://github.com/jinygit/hello.git (push)
+origin  git@github.com-2:hojin74/hello.git (fetch)
+origin  git@github.com-2:hojin74/hello.git (push)
+</code></pre></div></div>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="페치-병합">페치, 병합</h2>
 <hr />
 
-<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다.</p>
+<p>메인 프로젝트 저장소에서 최신의 데이터를 페치합니다.</p>
 
-<ul>
-  <li><a href="pullrequest/collaboration">협업</a></li>
-  <li><a href="pullrequest/project">프로젝트</a></li>
-  <li>실습 및 절차
-    <ul>
-      <li><a href="pullrequest/fork">포크</a></li>
-      <li><a href="pullrequest/clone">복제</a></li>
-      <li><a href="pullrequest/code">코드수정</a></li>
-      <li><a href="pullrequest/request">리퀘스트</a></li>
-      <li><a href="pullrequest/discuss">토론</a></li>
-      <li><a href="pullrequest/review">코드리뷰</a></li>
-      <li><a href="pullrequest/test">테스트</a></li>
-      <li><a href="pullrequest/receive">수신</a></li>
-    </ul>
-  </li>
-  <li><a href="pullrequest/manage">관리</a></li>
-</ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+$ git fetch main
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 8 (delta 3), reused 6 (delta 3), pack-reused 0
+Unpacking objects: 100% (8/8), done.
+From https://github.com/jinygit/hello
+ * [new branch]      master     -&gt; main/master
+</code></pre></div></div>
 
-<p><br /></p>
+<p>페치한 후에는 로컬 저장소와 머지합니다.</p>
 
-<h2>브랜치 전략 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="gitflow">학습하기</a></small>
-</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+$ git merge main/master
+Updating 2c4b5ec..7fd4685
+Fast-forward
+ README.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+</code></pre></div></div>
+
+<p>메인 저장소로부터 최신의 코드로 갱신하였습니다.</p>
+
+<p><br />
+<a name="4"></a></p>
+
+<h2 id="포크-푸시">포크 푸시</h2>
 <hr />
 
-<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다.</p>
+<p>최신의 메인 원격 저장소의 데이터를 로컬의 포크 저장소에 업데이트 페치를 한 것입니다. 아직 자신의 원격 포크 저장소에는 갱신된 정보가 올라가 있지 않습니다.</p>
 
-<ul>
-  <li><a href="gitflow/branch">브랜치 전략</a></li>
-  <li><a href="gitflow/practice">실습 준비</a></li>
-  <li>
-    <p><a href="gitflow/init">초기화</a></p>
-  </li>
-  <li><a href="gitflow/master">Master</a> 브랜치</li>
-  <li><a href="gitflow/develop">Develop</a> 브랜치</li>
-  <li><a href="gitflow/feature">Featuer</a> 브랜치</li>
-  <li><a href="gitflow/release">Release</a> 브랜치</li>
-  <li><a href="gitflow/hotfix">Hotfix</a> 브랜치</li>
-</ul>
+<p>푸시하여 자신의 원격 포크 저장소도 동기화해줍니다. 추가 코드 작업을 한 후에 푸시해도 무관합니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="5"></a></p>
 
-<h2>저장소 연동 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hook">학습하기</a></small>
-</h2>
+<h2 id="풀-리퀘스트-리버트">풀-리퀘스트 리버트</h2>
 <hr />
 
-<ul>
-  <li><a href="hook/훅동작">훅 동작</a></li>
-  <li><a href="hook/디렉터리">디렉터리</a></li>
-  <li><a href="hook/커밋훅">커밋 훅</a></li>
-  <li><a href="hook/이메일훅">이메일 훅</a></li>
-  <li><a href="hook/서버훅">서버 훅</a></li>
-  <li><a href="hook/기타">기타</a></li>
-  <li><a href="hook/github">깃허브 훅</a></li>
-</ul>
+<p>깃에서는 이전의 커밋의 상태로 되돌리는 리버트(revert) 기능을 제공합니다. 풀-리퀘스트 또한 리버트하여 이전 상태로 되돌릴 수 있습니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="6"></a></p>
 
-<h2>오픈 소스 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="opensource">학습하기</a></small>
-</h2>
+<h2 id="되돌리기">되돌리기</h2>
 <hr />
 
-<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
+<p>풀-리퀘스트는 원격 저장소 간의 병합을 도와주는 깃허브의 서비스입니다. 기본적으로 깃은 이전의 상태를 되돌리는 방법으로 리셋과 리버트가 있습니다.</p>
 
-<ul>
-  <li><a href="opensource/copyright">저작권</a></li>
-  <li><a href="opensource/copyleft">상용과 오픈 소스</a> : 코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</li>
-  <li><a href="opensource/license">라이선스</a></li>
-  <li><a href="opensource/freesoft">자유소프트</a></li>
-  <li><a href="opensource/opensource">오픈 소스</a></li>
-  <li><a href="opensource/openlicense">오픈 소스 라이선스</a></li>
-  <li><a href="opensource/apply">라이선스 적용</a> : 오픈 소스의 라이선스는 매우 다양합니다.</li>
-  <li><a href="opensource/comunity">커뮤니티</a> : 오픈 소스가 성공하기 위해서는 커뮤니티의 역할이 매우 중요합니다.</li>
-  <li><a href="opensource/governance">거버넌스</a></li>
-  <li><a href="opensource/develop">개발 방식</a></li>
-  <li><a href="opensource/contributor">참여</a> : 기존 프로젝트에 새로운 구성원으로 참여합니다.</li>
-</ul>
+<p>하지만 원격 저장소의 경우 불특정 다수에게 공개되기 때문에 커밋 정보를 삭제하는 리셋 명령은 사용할 수 없습니다. 대신 리버트는 기존의 커밋을 유지하면서 이전의 상태로 되돌릴 수 있습니다.</p>
+
+<p><br />
+<a name="7"></a></p>
+
+<h2 id="리버트">리버트</h2>
+<hr />
+
+<p>정상적으로 풀-리퀘스트가 승인된 병합을 리버트할 수 있습니다. 메인 저장소의 pull-request 탭으로 이동합니다. Close 부분을 체크하여 승인된 목록을 확인합니다.</p>
+
+<p>승인된 풀-리퀘스트를 선택합니다. 커밋 내역에서 다음과 같이 최종 병합 결과 옆에 <code class="highlighter-rouge">Revert</code> 버튼이 생성된 것을 확인할 수 있습니다.</p>
+
+<p><img src="./img/image045.png" alt="풀리퀘스트" /></p>
+
+<p><br />
+<a name="8"></a></p>
+
+<h2 id="리버트-풀-리퀘스트">리버트 풀-리퀘스트</h2>
+<hr />
+
+<p>깃허브의 리버트는 새로운 풀-리퀘스트를 생성하게 됩니다. 리버트 또한 원본의 저장소에 새로운 리버트 커밋을 생성하고, 코드 상태를 변경하기 때문입니다.</p>
+
+<p>리버트 버튼을 클릭합니다. 다음과 같이 새로운 풀-리퀘스트 생성 화면으로 이동합니다.</p>
+
+<p><img src="./img/image046.png" alt="풀리퀘스트" /></p>
+
+<p>리버트 요청에 대한 풀-리퀘스트 메시지를 작성합니다. 새롭게 요청된 리버트 풀-리퀘스트 또한 담당자의 승인을 얻어야 완료가 됩니다.</p>
+
+<p><img src="./img/image047.png" alt="풀리퀘스트" /></p>
+
+<p>요청한 리버트를 <code class="highlighter-rouge">Confirm merge</code>를 클릭하여 반영합니다.</p>
 
 <p><br /><br /></p>
 

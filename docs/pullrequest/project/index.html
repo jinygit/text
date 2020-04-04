@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | Git 교과서</title>
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="/img/gittext.png">
+            </div>
+            <div class="col-lg-9">
+                <h1 class="display-3">Git 교과서</h1>
+                <h2>코드 이력, 하나도 놓치지 마라!</h2>
+                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+                </p>
+                <p>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
+                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
+                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div></header>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="프로젝트">프로젝트</h1>
+<hr />
+
+<p>깃허브에는 수많은 오픈 소스 프로젝트들이 있습니다. 
+<code class="highlighter-rouge">풀-리퀘스트</code>를 실습하기 위해서는 대상이 되는 오픈 소스 프로젝트가 필요합니다.</p>
+
+<p><br />
+<a name="1"></a></p>
+
+<h2 id="제약-사항">제약 사항</h2>
+<hr />
+
+<p>깃과 깃허브를 학습한 후에 풀-리퀘스트를 실제로 경험해본 개발자는 제한적입니다. 
+풀-리퀘스트는 권한이 없는 저장소에 자신의 개인 저장소를 병합하는 요청이기 때문입니다.</p>
+
+<p>많은 개발자가 풀-리퀘스트의 경험이 없는 이유는 풀-리퀘스트 요청을 하여도 대부분의 요청을 거절하기 때문입니다.</p>
+
+<p>풀-리퀘스트가 반영되기 위해서는 코드의 버그를 수정하거나, 공감대가 있는 문제점을 개선하는 적합한 코드여야 합니다. 
+또한, 코드를 반영하는 과정에서 수많은 코드 리뷰와 토론이 이루어집니다.</p>
+
+<p>또는 오픈 소스의 그룹이 개발 멤버가 아니기 때문입니다. 
+검증되지 않은 개발자로부터 외부 코드를 병합할 때 발생할 수 있는 문제점들을 미연에 방지하기 위해서입니다.</p>
+
+<p>이처럼 풀-리퀘스트를 경험해보기 위해서는 여러 제약 사항들이 있습니다. 이는 바로 프로젝트 참여로 이어지게 됩니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="실습-환경">실습 환경</h2>
+<hr />
+
+<p>풀-리퀘스트를 실습해보는 방법은 2가지입니다.</p>
+
+<p>첫 번째로, 자신의 코드를 무난하게 받아들여줄 메인 프로젝트를 선정하는 것입니다. 하지만 이는 쉽지 않습니다. 
+자신의 실력과 코드를 상대방에게 검증을 받아 통과한다는 것은 꽤 난이도가 있는 작업입니다.</p>
+
+<p>둘째로, 직접 자신이 메인 프로젝트를 만드는 것입니다. 이를 위해서는 2개의 계정이 필요합니다. 
+또한, 각 계정은 서로 접속 권한을 가지고 있지 않습니다. 하나는 메인 프로젝트용과 하나는 포크용 계정입니다. 
+깃허브는 이메일 주소를 기반으로 회원 가입을 할 수 있습니다.</p>
+
+<p>2개 이상의 이메일을 가지고 있다면 쉽게 2개의 계정을 생성하여 실습할 수 있을 것입니다. 
+또는 같이 학습할 친구 한 명을 두어 서로 연습해보는 것도 좋습니다.</p>
+
+<p>세 번째로 필자가 운영하는 메인 프로젝트에 참여해보는 것도 방법입니다. 
+다음 절에서 생성한 코드를 깃 저장소에 운영하고 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/jinygit/hello.git
+</code></pre></div></div>
+
+<p>이 저장소의 주소를 포크하여 실습할 수도 있습니다. 
+만일 PHP 언어가 익숙한 개발자라면 필자의 오픈 소스 프로젝트 참여해도 괜찮은 방법입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://github.com/jinyphp
+</code></pre></div></div>
+
+<p>지니PHP는 깃허브와 연계하여 PHP 기반의 정적 웹 사이트를 구축할 수 있는 도구입니다.</p>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="메인-저장소">메인 저장소</h2>
+<hr />
+
+<p>실습을 위한 메인 프로젝트 저장소를 하나 생성해봅니다. 필자의 저장소를 이용하는 경우 이 과정은 넘어가도 됩니다.<br />
+저장소를 하나 생성합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init hello
+
+Initialized empty Git repository in E:/jinygit/hello/.git/
+$ cd hello/
+</code></pre></div></div>
+
+<p>새로운 예제 파일 하나를 생성합니다. 코드 생성과 커밋합니다.</p>
+
+<p>README.md</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># pull-request 인사를 하세요.</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello (master)
+$ git add README.md
+
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello (master)
+$ git commit -m "first"
+[master (root-commit) b93e6ed] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+</code></pre></div></div>
+
+<p>깃허브에서 새로운 메인 저장소로 사용할 저장소를 하나 생성합니다. 
+원격 저장소를 등록한 후에 푸시합니다.</p>
+
+<p><img src="./img/image001.png" alt="풀리퀘스트" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit_hello (master)
+$ git remote add origin https://github.com/jinygit/hello.git
+
+infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit_hello (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 263 bytes | 263.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jinygit/hello.git
+ * [new branch]      master -&gt; master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+</code></pre></div></div>
+
+<p>깃허브 저장소를 확인해봅니다. 
+푸시한 README.md 파일을 메인 화면에 출력합니다.</p>
+
+<p><img src="./img/image002.png" alt="풀리퀘스트" /></p>
+
+<p>필자가 생성한 메인 저장소의 주소는 <code class="highlighter-rouge">https://github.com/jinygit/hello.git</code>입니다.</p>
+
+<p><br /><br /></p>
+
+            </section>
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">기초 탄탄 깃</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴2-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+
+<br>
+
+<script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<br></aside>            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+        <footer> <!-- Footer -->
+<footer class="py-3 bg-dark">
+    <div class="container">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
+			</div>
+    	</div>
+    </div>
+    <!-- /.container -->
+</footer></footer>        
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

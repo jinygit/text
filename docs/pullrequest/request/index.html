@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 깃플로우, 훅" /><!--부트스트랩4-->
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,135 +81,103 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="공유와-협업">공유와 협업</h2>
+                <h1 id="pull-request">Pull Request</h1>
 <hr />
 
-<p>교재(깃 교과서)와 1부는 깃의 동작과 원리에 대해서 학습을 하였습니다. 
-깃의 기본 기능을 익혔다면 이제는 협업을 위한 방법에 대해서 알아보겠습니다.
-협업을 위한 공유 저장소와 커뮤니케이션 방법에 대해서 학습합니다.</p>
+<p>포크된 저장소를 메인 프로젝트에 병합을 요청하는 깃허브의 내부 기능입니다. 풀-리퀘스트는 깃허브를 이용한 대부분의 사람들에게 익숙하지 않은 기능입니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="원격-저장소">원격 저장소</h3>
+<h2 id="풀-리퀘스트">풀-리퀘스트</h2>
 <hr />
 
-<p>원격 저장소는 공유를 위한 서버의 깃 저장소를 의미합니다.</p>
+<p>풀-리퀘스트는 깃허브의 고유 기능입니다. 깃은 권한이 있는 구성원만 저장소의 접속 권한을 가지게 됩니다. 저장소의 안정적인 이유로 접속 권한을 모두에게 부여할 수는 없습니다.</p>
 
-<ul>
-  <li><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</li>
-  <li><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</li>
-</ul>
+<p>특히 오픈 소스와 같이 불특정 다수의 사람에게 오픈되어 있는 경우에는 권한을 관리하는 데 매우 어려움을 겪습니다. 안정적인 운영과 누구나 코드에 접근 및 수정을 허용해야 하기 때문입니다.</p>
 
-<p><br /></p>
+<p>깃허브는 이러한 오픈 소스 운영의 제약점을 해결하기 위해서 포크 &lt;-&gt; 풀-리퀘스트 작업 흐름을 제공합니다. 메인 저장소는 누구나 접근을 허용합니다. 하지만 수정은 원본 저장소를 포크하여 수정하도록 제시합니다. 이는 깃이 분산 환경의 특징을 활용하는 것입니다.</p>
 
-<h2>호스팅
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hosting">학습하기</a></small>
-</h2>
+<p><img src="./img/image015.png" alt="풀리퀘스트" /></p>
+
+<p>포크, 수정된 저장소를 원본 저장소에 병합을 요청합니다. 이를 풀-리퀘스트라고 부릅니다. 즉, 풀-리퀘스트는 포크된 저장소를 메인 프로젝트 저장소에 병합을 요청하는 기능입니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="요청">요청</h2>
 <hr />
 
-<ul>
-  <li>
-    <p><a href="github">깃허브</a>(GitHub)<br />
-개발 입문자 중에서 <code class="highlighter-rouge">깃</code>을 몰라도 <code class="highlighter-rouge">깃허브</code>에 대해서 들어본 사람들이 많을 것입니다. 깃허브는 대표적인 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="bitbucket">비트버킷</a>(BitBucket)
-비트버킷은 <code class="highlighter-rouge">아틀라시안</code>에서 운영하는 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="gitlab">깃랩</a>(GitLab)
-깃랩(gitlab) 또한 깃허브나 비트버킷과 같은 깃 호스팅입니다.</p>
-  </li>
-</ul>
+<p>포크 저장소를 원래의 저장소로 풀-리퀘스트를 요청합니다. 포크 저장소 페이지로 이동합니다. 좌측 중간 부분에 다음과 같이 full-request 버튼을 확인할 수 있습니다.</p>
 
-<p><br /></p>
+<p><img src="./img/image016.png" alt="풀리퀘스트" /></p>
 
-<h2>풀 리퀘스트(pull-Request) 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="pullrequest">학습하기</a></small>
-</h2>
+<p>클릭합니다. 풀-리퀘스트 작성 페이지로 이동합니다. 화면은 크게 3개로 구분해볼 수 있습니다.</p>
+
+<p><img src="./img/image017.png" alt="풀리퀘스트" /></p>
+
+<p>원본 프로젝트 저장소와 포크 저장소의 대응 브랜치를 선택할 수 있습니다. [Create pull request]를 클릭하면 리퀘스트 메시지를 작성할 수 있습니다.</p>
+
+<p>2번째 단락에는 풀-리퀘스트 요청 하단에는 포그 저장소의 커밋 내역들을 확인할 수 있습니다.</p>
+
+<p><img src="./img/image018.png" alt="풀리퀘스트" /></p>
+
+<p>3번째 단락에는 커밋한 내역을 diff 형태로 확인이 가능합니다.</p>
+
+<p><img src="./img/image019.png" alt="풀리퀘스트" /></p>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="메시지-작성">메시지 작성</h2>
 <hr />
 
-<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다.</p>
+<p>풀-리퀘스트 요청 버튼을 클릭하면 메시지를 작성해야 합니다. 제목과 내용을 작성합니다.</p>
 
-<ul>
-  <li><a href="pullrequest/collaboration">협업</a></li>
-  <li><a href="pullrequest/project">프로젝트</a></li>
-  <li>실습 및 절차
-    <ul>
-      <li><a href="pullrequest/fork">포크</a></li>
-      <li><a href="pullrequest/clone">복제</a></li>
-      <li><a href="pullrequest/code">코드수정</a></li>
-      <li><a href="pullrequest/request">리퀘스트</a></li>
-      <li><a href="pullrequest/discuss">토론</a></li>
-      <li><a href="pullrequest/review">코드리뷰</a></li>
-      <li><a href="pullrequest/test">테스트</a></li>
-      <li><a href="pullrequest/receive">수신</a></li>
-    </ul>
-  </li>
-  <li><a href="pullrequest/manage">관리</a></li>
-</ul>
+<p>내용은 코드 검수자가 이를 쉽게 확인할 수 있는 설명을 추가합니다. 상대방이 나의 변경 내역을 쉽게 이해하고, 검수가 용이할수록 수락될 확률이 높아집니다.</p>
 
-<p><br /></p>
+<p><img src="./img/image020.png" alt="풀리퀘스트" /></p>
 
-<h2>브랜치 전략 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="gitflow">학습하기</a></small>
-</h2>
+<p>내용은 마크다운 양식을 이용하여 작성할 수 있습니다. 작성 후 [Create pull request] 요청 버튼을 클릭합니다.</p>
+
+<p><br />
+<a name="4"></a></p>
+
+<h2 id="확인">확인</h2>
 <hr />
 
-<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다.</p>
+<p>전송한 풀-리퀘스트를 확인합니다. 풀-리퀘스트를 요청하면 메인 프로젝트 저장소의 [pull-request] 탭으로 이동합니다. 나의 요청한 풀-리퀘스트가 화면에 출력됩니다.</p>
 
-<ul>
-  <li><a href="gitflow/branch">브랜치 전략</a></li>
-  <li><a href="gitflow/practice">실습 준비</a></li>
-  <li>
-    <p><a href="gitflow/init">초기화</a></p>
-  </li>
-  <li><a href="gitflow/master">Master</a> 브랜치</li>
-  <li><a href="gitflow/develop">Develop</a> 브랜치</li>
-  <li><a href="gitflow/feature">Featuer</a> 브랜치</li>
-  <li><a href="gitflow/release">Release</a> 브랜치</li>
-  <li><a href="gitflow/hotfix">Hotfix</a> 브랜치</li>
-</ul>
+<p><img src="./img/image021.png" alt="풀리퀘스트" /></p>
 
-<p><br /></p>
+<p>요청된 풀-리퀘스트는 여러 사람들이 확인할 수 있습니다. 또한, 이곳에서 의견을 추가로 작성할 수 있습니다.</p>
 
-<h2>저장소 연동 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hook">학습하기</a></small>
-</h2>
+<p><img src="./img/image022.png" alt="풀리퀘스트" /></p>
+
+<p><br />
+<a name="5"></a></p>
+
+<h2 id="통보">통보</h2>
 <hr />
 
-<ul>
-  <li><a href="hook/훅동작">훅 동작</a></li>
-  <li><a href="hook/디렉터리">디렉터리</a></li>
-  <li><a href="hook/커밋훅">커밋 훅</a></li>
-  <li><a href="hook/이메일훅">이메일 훅</a></li>
-  <li><a href="hook/서버훅">서버 훅</a></li>
-  <li><a href="hook/기타">기타</a></li>
-  <li><a href="hook/github">깃허브 훅</a></li>
-</ul>
+<p>기여자(contributor)가 풀-리퀘스트를 작성하여 요청하면 깃허브는 메인 프로젝트의 관리자에게 이메일로 이를 통보합니다.</p>
 
-<p><br /></p>
+<p>또한, 이슈도 자동으로 생성됩니다. 풀-리퀘스트 화면 제목 부분에 새로운 이슈 번호(#번호)를 확인할 수 있습니다.</p>
 
-<h2>오픈 소스 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="opensource">학습하기</a></small>
-</h2>
+<p><img src="./img/image023.png" alt="풀리퀘스트" /></p>
+
+<p>풀-리퀘스트를 요청하였다고 해서 원래의 메인 프로젝트 저장소에 자동으로 코드가 반영되지는 않습니다. 담당자가 이를 확인하고 승인을 해주어야만 합니다.</p>
+
+<p><br />
+<a name="6"></a></p>
+
+<h2 id="쓰기-권한">쓰기 권한</h2>
 <hr />
 
-<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
+<p>포크는 원래의 저장소에 쓰기 권한이 없는 경우 협업할 수 있는 방법입니다.
+만일 저장소를 공동으로 관리하고 쓰기 권한이 있다면 직접 풀-리퀘스트를 전송할 수 있습니다.</p>
 
-<ul>
-  <li><a href="opensource/copyright">저작권</a></li>
-  <li><a href="opensource/copyleft">상용과 오픈 소스</a> : 코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</li>
-  <li><a href="opensource/license">라이선스</a></li>
-  <li><a href="opensource/freesoft">자유소프트</a></li>
-  <li><a href="opensource/opensource">오픈 소스</a></li>
-  <li><a href="opensource/openlicense">오픈 소스 라이선스</a></li>
-  <li><a href="opensource/apply">라이선스 적용</a> : 오픈 소스의 라이선스는 매우 다양합니다.</li>
-  <li><a href="opensource/comunity">커뮤니티</a> : 오픈 소스가 성공하기 위해서는 커뮤니티의 역할이 매우 중요합니다.</li>
-  <li><a href="opensource/governance">거버넌스</a></li>
-  <li><a href="opensource/develop">개발 방식</a></li>
-  <li><a href="opensource/contributor">참여</a> : 기존 프로젝트에 새로운 구성원으로 참여합니다.</li>
-</ul>
+<p>쓰기 권한은 깃허브에서 설정하거나 추가할 수 있습니다.</p>
 
 <p><br /><br /></p>
 

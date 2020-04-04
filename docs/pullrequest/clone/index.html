@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 깃플로우, 훅" /><!--부트스트랩4-->
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,135 +81,60 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="공유와-협업">공유와 협업</h2>
+                <h1 id="복제clone">복제(clone)</h1>
 <hr />
 
-<p>교재(깃 교과서)와 1부는 깃의 동작과 원리에 대해서 학습을 하였습니다. 
-깃의 기본 기능을 익혔다면 이제는 협업을 위한 방법에 대해서 알아보겠습니다.
-협업을 위한 공유 저장소와 커뮤니케이션 방법에 대해서 학습합니다.</p>
+<p>포크된 저장소의 코드를 자신의 로컬 컴퓨터로 복제합니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="원격-저장소">원격 저장소</h3>
+<h2 id="포크-저장소">포크 저장소</h2>
 <hr />
 
-<p>원격 저장소는 공유를 위한 서버의 깃 저장소를 의미합니다.</p>
+<p>포크는 본인 계정에 원격으로 복제합니다. 포크된 저장소는 원격 저장소이며 깃허브 서버에 존재하게 됩니다. 자신의 계정으로 복사했기 때문에 자동으로 새로운 저장소가 생성되고, 소유권도 본인에게 있습니다.</p>
 
-<ul>
-  <li><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</li>
-  <li><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</li>
-</ul>
+<p>이제 포크된 저장소는 마음껏 수정할 수 있게 됩니다. 그리고 포크한 저장소를 자신의 로컬 저장소로 복제합니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="2"></a></p>
 
-<h2>호스팅
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hosting">학습하기</a></small>
-</h2>
+<h2 id="포크-내려받기">포크 내려받기</h2>
 <hr />
 
-<ul>
-  <li>
-    <p><a href="github">깃허브</a>(GitHub)<br />
-개발 입문자 중에서 <code class="highlighter-rouge">깃</code>을 몰라도 <code class="highlighter-rouge">깃허브</code>에 대해서 들어본 사람들이 많을 것입니다. 깃허브는 대표적인 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="bitbucket">비트버킷</a>(BitBucket)
-비트버킷은 <code class="highlighter-rouge">아틀라시안</code>에서 운영하는 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="gitlab">깃랩</a>(GitLab)
-깃랩(gitlab) 또한 깃허브나 비트버킷과 같은 깃 호스팅입니다.</p>
-  </li>
-</ul>
+<p>코드를 수정하기 위해 먼저 포크 저장소를 자신의 로컬 저장소로 복제해야 합니다. 깃허브 포크 저장소에 접속하여 URL을 확인합니다.</p>
 
-<p><br /></p>
+<p><img src="./img/image010.png" alt="풀리퀘스트" /></p>
 
-<h2>풀 리퀘스트(pull-Request) 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="pullrequest">학습하기</a></small>
-</h2>
-<hr />
+<p>포크된 저장소에서 <code class="highlighter-rouge">Clone or download</code>를 선택합니다. 포크된 저장소의 깃허브 주소를 알 수 있습니다.</p>
 
-<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다.</p>
+<p>깃 clone 명령어를 사용하여 자신의 로컬 저장소로 복제합니다.</p>
 
-<ul>
-  <li><a href="pullrequest/collaboration">협업</a></li>
-  <li><a href="pullrequest/project">프로젝트</a></li>
-  <li>실습 및 절차
-    <ul>
-      <li><a href="pullrequest/fork">포크</a></li>
-      <li><a href="pullrequest/clone">복제</a></li>
-      <li><a href="pullrequest/code">코드수정</a></li>
-      <li><a href="pullrequest/request">리퀘스트</a></li>
-      <li><a href="pullrequest/discuss">토론</a></li>
-      <li><a href="pullrequest/review">코드리뷰</a></li>
-      <li><a href="pullrequest/test">테스트</a></li>
-      <li><a href="pullrequest/receive">수신</a></li>
-    </ul>
-  </li>
-  <li><a href="pullrequest/manage">관리</a></li>
-</ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit
+$ git clone https://github.com/hojin74/hello.git hello_fork
+Cloning into 'hello_fork'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+</code></pre></div></div>
 
-<p><br /></p>
+<p>포크된 저장소를 로컬 컴퓨터로 clone 하였습니다.</p>
 
-<h2>브랜치 전략 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="gitflow">학습하기</a></small>
-</h2>
-<hr />
+<p><img src="./img/image011.png" alt="풀리퀘스트" /></p>
 
-<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다.</p>
+<p>저장소의 파일 목록을 확인해봅니다.</p>
 
-<ul>
-  <li><a href="gitflow/branch">브랜치 전략</a></li>
-  <li><a href="gitflow/practice">실습 준비</a></li>
-  <li>
-    <p><a href="gitflow/init">초기화</a></p>
-  </li>
-  <li><a href="gitflow/master">Master</a> 브랜치</li>
-  <li><a href="gitflow/develop">Develop</a> 브랜치</li>
-  <li><a href="gitflow/feature">Featuer</a> 브랜치</li>
-  <li><a href="gitflow/release">Release</a> 브랜치</li>
-  <li><a href="gitflow/hotfix">Hotfix</a> 브랜치</li>
-</ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit_hello_fork (master)
+$ ls
+README.md
+</code></pre></div></div>
 
-<p><br /></p>
+<p>README.md</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># pull-request 인사를 하세요.</span>
+</code></pre></div></div>
 
-<h2>저장소 연동 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hook">학습하기</a></small>
-</h2>
-<hr />
-
-<ul>
-  <li><a href="hook/훅동작">훅 동작</a></li>
-  <li><a href="hook/디렉터리">디렉터리</a></li>
-  <li><a href="hook/커밋훅">커밋 훅</a></li>
-  <li><a href="hook/이메일훅">이메일 훅</a></li>
-  <li><a href="hook/서버훅">서버 훅</a></li>
-  <li><a href="hook/기타">기타</a></li>
-  <li><a href="hook/github">깃허브 훅</a></li>
-</ul>
-
-<p><br /></p>
-
-<h2>오픈 소스 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="opensource">학습하기</a></small>
-</h2>
-<hr />
-
-<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
-
-<ul>
-  <li><a href="opensource/copyright">저작권</a></li>
-  <li><a href="opensource/copyleft">상용과 오픈 소스</a> : 코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</li>
-  <li><a href="opensource/license">라이선스</a></li>
-  <li><a href="opensource/freesoft">자유소프트</a></li>
-  <li><a href="opensource/opensource">오픈 소스</a></li>
-  <li><a href="opensource/openlicense">오픈 소스 라이선스</a></li>
-  <li><a href="opensource/apply">라이선스 적용</a> : 오픈 소스의 라이선스는 매우 다양합니다.</li>
-  <li><a href="opensource/comunity">커뮤니티</a> : 오픈 소스가 성공하기 위해서는 커뮤니티의 역할이 매우 중요합니다.</li>
-  <li><a href="opensource/governance">거버넌스</a></li>
-  <li><a href="opensource/develop">개발 방식</a></li>
-  <li><a href="opensource/contributor">참여</a> : 기존 프로젝트에 새로운 구성원으로 참여합니다.</li>
-</ul>
+<p>이제 코드를 수정할 수 있습니다.</p>
 
 <p><br /><br /></p>
 

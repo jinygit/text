@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | Git 교과서</title>
-            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 깃플로우, 훅" /><!--부트스트랩4-->
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,135 +81,77 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h2 id="공유와-협업">공유와 협업</h2>
+                <h1 id="포크">포크</h1>
 <hr />
 
-<p>교재(깃 교과서)와 1부는 깃의 동작과 원리에 대해서 학습을 하였습니다. 
-깃의 기본 기능을 익혔다면 이제는 협업을 위한 방법에 대해서 알아보겠습니다.
-협업을 위한 공유 저장소와 커뮤니케이션 방법에 대해서 학습합니다.</p>
+<p>포크는 타인의 저장소를 수정 접근할 수 있도록 저장소를 복제하는 기능입니다.</p>
 
-<p><br /></p>
+<p><br />
+<a name="1"></a></p>
 
-<h3 id="원격-저장소">원격 저장소</h3>
+<h2 id="코드-공유">코드 공유</h2>
 <hr />
 
-<p>원격 저장소는 공유를 위한 서버의 깃 저장소를 의미합니다.</p>
+<p>자신의 작업하던 소스를 다른 사람에게 전달하려고 할 때 어떻게 해야 할까요? 예전에는 자신의 컴퓨터에서 직접 파일을 복사하여 주었습니다. 인터넷 환경이 활성화되지 않을 때 많이 사용하던 방법입니다.</p>
 
-<ul>
-  <li><a href="server/bare">베어 서버</a> : 깃 서버를 직접 운영하여 사용할 수 있습니다.</li>
-  <li><a href="hosting/repo">공개 저장소</a> : 공개 저장소를 이용하여 불특정 다수의 개발자와 협업할 수 있습니다.</li>
-</ul>
+<p>또한, 작업하는 코드의 버전이 여러 개가 있을 경우 어떻게 해야 할까요? 깃은 자신의 프로젝트를 원격 저장소에 저장하고, 원격 저장소에 있는 파일을 다른 사람이 쉽게 복제/다운로드할 수 있습니다.</p>
 
-<p><br /></p>
+<p>하지만 여러 공동 작업자들이 협업하여 개발할 때 이러한 코드를 주고받은 일들은 매우 빈번히 일어납니다. 포크는 협업을 위해서 상대방의 코드를 가지고 오는 공유 방법 중의 하나입니다.</p>
 
-<h2>호스팅
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hosting">학습하기</a></small>
-</h2>
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="접근-권한">접근 권한</h2>
 <hr />
 
-<ul>
-  <li>
-    <p><a href="github">깃허브</a>(GitHub)<br />
-개발 입문자 중에서 <code class="highlighter-rouge">깃</code>을 몰라도 <code class="highlighter-rouge">깃허브</code>에 대해서 들어본 사람들이 많을 것입니다. 깃허브는 대표적인 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="bitbucket">비트버킷</a>(BitBucket)
-비트버킷은 <code class="highlighter-rouge">아틀라시안</code>에서 운영하는 깃 호스팅 서비스입니다.</p>
-  </li>
-  <li>
-    <p><a href="gitlab">깃랩</a>(GitLab)
-깃랩(gitlab) 또한 깃허브나 비트버킷과 같은 깃 호스팅입니다.</p>
-  </li>
-</ul>
+<p>자신이 소유자이거나 구성원인 경우에는 접근 권한을 이미 가지고 있습니다. 하지만 타인의 저장소에서 코드를 수정하기 위해서는 접근 권한이 필요합니다.</p>
 
-<p><br /></p>
+<p>깃은 저장소를 쉽게 복제할 수 있는 clone 명령어를 제공합니다. clone은 원격 저장소에서 로컬 저장소로 복제를 하기 위한 명령어입니다. 이와 유사하게 포크는 원격 저장소에서 다른 원격 저장소로 복제하는 기능입니다.</p>
 
-<h2>풀 리퀘스트(pull-Request) 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="pullrequest">학습하기</a></small>
-</h2>
+<p><img src="./img/image004.png" alt="풀리퀘스트" /></p>
+
+<p>원격 저장소를 자신의 계정의 저장공간으로 복제하면 복제된 저장소에는 수정과 접근 권한을 얻을 수 있습니다.</p>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="포크-동작">포크 동작</h2>
 <hr />
 
-<p>깃은 분산형 버전 관리 시스템입니다. 분산되어 있는 저장소는 원격 저장소를 통하여 협업하는 통합 작업에 대해서 알아봅니다.</p>
+<p>깃허브는 모든 저장소를 쉽게 복제할 수 있도록 포크 기능을 제공합니다. 깃허브 저장소 페이지의 우측 상단에는 포크 버튼이 활성화되어 있습니다.</p>
 
-<ul>
-  <li><a href="pullrequest/collaboration">협업</a></li>
-  <li><a href="pullrequest/project">프로젝트</a></li>
-  <li>실습 및 절차
-    <ul>
-      <li><a href="pullrequest/fork">포크</a></li>
-      <li><a href="pullrequest/clone">복제</a></li>
-      <li><a href="pullrequest/code">코드수정</a></li>
-      <li><a href="pullrequest/request">리퀘스트</a></li>
-      <li><a href="pullrequest/discuss">토론</a></li>
-      <li><a href="pullrequest/review">코드리뷰</a></li>
-      <li><a href="pullrequest/test">테스트</a></li>
-      <li><a href="pullrequest/receive">수신</a></li>
-    </ul>
-  </li>
-  <li><a href="pullrequest/manage">관리</a></li>
-</ul>
+<p>예) https://github.com/jinygit/hello
+<img src="./img/image005.png" alt="풀리퀘스트" /></p>
 
-<p><br /></p>
+<p>포크 버튼 옆에는 숫자가 같이 표시됩니다. 숫자는 포크한 횟수를 의미합니다. 포크의 숫자가 많다는 것은 해당 프로젝트 저장소의 개발 참여자가 많이 있다는 것을 활동지수로 생각할 수 있습니다.</p>
 
-<h2>브랜치 전략 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="gitflow">학습하기</a></small>
-</h2>
+<p>포크를 클릭합니다. 포크하면 깃허브는 원격 저장소 간의 복제를 시작합니다. 이는 저장소의 크기에 따라서 약간의 시간이 필요합니다. 저장소를 복제하고 있는 도중에는 다음과 같은 화면이 출력됩니다.</p>
+
+<p><img src="./img/image006.png" alt="풀리퀘스트" /></p>
+
+<p>포크는 원격 저장소 간에 이루어지는 복제입니다. 상대방의 계정의 저장소가 자신의 계정의 저장소로 복제됩니다. 또는 계정 대신 조직(organization) 계정으로 대체할 수도 있습니다.</p>
+
+<p><img src="./img/image007.png" alt="풀리퀘스트" /></p>
+
+<p>만일 계정 저장소 외에 추가로 다른 조직에 속해 있다면 포크할 대상의 계정을 선택할 수 있습니다.</p>
+
+<p><br />
+<a name="4"></a></p>
+
+<h2 id="포크-확인">포크 확인</h2>
 <hr />
 
-<p>지금까지 커밋, 브랜치, 병합, 태그 등 깃의 기본 동작들에 대해 학습하였습니다. 이번에는 깃을 이용한 개발 방법론에 대해 알아봅니다.</p>
+<p>정상적으로 메인 프로젝트의 저장소를 포크하였다면 포크된 계정에서 복제된 저장소를 확인할 수 있습니다.</p>
 
-<ul>
-  <li><a href="gitflow/branch">브랜치 전략</a></li>
-  <li><a href="gitflow/practice">실습 준비</a></li>
-  <li>
-    <p><a href="gitflow/init">초기화</a></p>
-  </li>
-  <li><a href="gitflow/master">Master</a> 브랜치</li>
-  <li><a href="gitflow/develop">Develop</a> 브랜치</li>
-  <li><a href="gitflow/feature">Featuer</a> 브랜치</li>
-  <li><a href="gitflow/release">Release</a> 브랜치</li>
-  <li><a href="gitflow/hotfix">Hotfix</a> 브랜치</li>
-</ul>
+<p><img src="./img/image008.png" alt="풀리퀘스트" /></p>
 
-<p><br /></p>
+<p>보통 아이디/저장소 형태로 생성됩니다. 포크된 저장소는 메인 저장소와 몇 개의 차이점이 있습니다.</p>
 
-<h2>저장소 연동 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="hook">학습하기</a></small>
-</h2>
-<hr />
+<p>먼저 저장소 우측 상단에 위치한 포크 버튼이 비활성화됩니다. 또한, 저장소의 로고가 포크 모양으로 변경됩니다. 저장소 이름 하단에는 포크된 원본 저장소의 주소도 같이 표시됩니다.</p>
 
-<ul>
-  <li><a href="hook/훅동작">훅 동작</a></li>
-  <li><a href="hook/디렉터리">디렉터리</a></li>
-  <li><a href="hook/커밋훅">커밋 훅</a></li>
-  <li><a href="hook/이메일훅">이메일 훅</a></li>
-  <li><a href="hook/서버훅">서버 훅</a></li>
-  <li><a href="hook/기타">기타</a></li>
-  <li><a href="hook/github">깃허브 훅</a></li>
-</ul>
+<p><img src="./img/image009.png" alt="풀리퀘스트" /></p>
 
-<p><br /></p>
-
-<h2>오픈 소스 
-    <small style="font-size: 0.5em;">&gt;&gt;<a href="opensource">학습하기</a></small>
-</h2>
-<hr />
-
-<p>깃은 소스 코드를 관리하고 여러 개발자와 협업할 수 있는 환경을 구축합니다. 개인 또는 기업의 개발 프로젝트에 깃이 매우 유용하지만, 이처럼 깃이 많은 인기를 얻게 된 이유는 바로 오픈 소스입니다.</p>
-
-<ul>
-  <li><a href="opensource/copyright">저작권</a></li>
-  <li><a href="opensource/copyleft">상용과 오픈 소스</a> : 코드를 작성하고 새로운 소프트웨어를 개발할 때 우리는 자연적으로 저작권을 부여받게 됩니다.</li>
-  <li><a href="opensource/license">라이선스</a></li>
-  <li><a href="opensource/freesoft">자유소프트</a></li>
-  <li><a href="opensource/opensource">오픈 소스</a></li>
-  <li><a href="opensource/openlicense">오픈 소스 라이선스</a></li>
-  <li><a href="opensource/apply">라이선스 적용</a> : 오픈 소스의 라이선스는 매우 다양합니다.</li>
-  <li><a href="opensource/comunity">커뮤니티</a> : 오픈 소스가 성공하기 위해서는 커뮤니티의 역할이 매우 중요합니다.</li>
-  <li><a href="opensource/governance">거버넌스</a></li>
-  <li><a href="opensource/develop">개발 방식</a></li>
-  <li><a href="opensource/contributor">참여</a> : 기존 프로젝트에 새로운 구성원으로 참여합니다.</li>
-</ul>
+<p>메인 프로젝트의 저장소를 포크하면 원본과 동일한 저장소를 자신의 계정에서 확인할 수 있습니다.</p>
 
 <p><br /><br /></p>
 
