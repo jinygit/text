@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Git 교과서"
+title: "마크다운"
 
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 ---

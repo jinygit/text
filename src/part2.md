@@ -38,7 +38,7 @@ keyword: "git, 깃사용법, 깃허브, 깃플로우, 훅"
 <br>
 
 
-<h2>풀 리퀘스트(pull-Request) 
+<h2>풀 리퀘스트
     <small style="font-size: 0.5em;">>><a href="pullrequest">학습하기</a></small>
 </h2>
 <hr>
