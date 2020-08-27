@@ -1,8 +1,9 @@
 ---
-layout: home
+layout: git
 title: "Git 교과서"
-
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
+breadcrumb:
+- "commit"
 ---
 
 <a name="1"></a>

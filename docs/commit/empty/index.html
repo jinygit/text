@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 메시지가 없는 빈 커밋</title>
+            <meta name="title" content="메시지가 없는 빈 커밋" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 메시지가 없는 빈 커밋" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="메시지가-없는-빈-커밋">메시지가 없는 빈 커밋</h1>
+<hr />
+<p>커밋을 할 때는 반드시 커밋 메시지를 같이 작성해야 합니다.<br />
+하지만 의미가 없는 커밋이라 커밋 메시지를 생략하고 싶을 때도 있습니다. 이러한 특별한 상황에 대비하여 깃은 메시지가 없는 커밋 작성도 허용합니다.</p>
+
+<p>이를 간단히 <code class="highlighter-rouge">빈 커밋</code>이라고 합니다.<br />
+빈 커밋 작성 방법은 지금까지 살펴본 메시지 작성 방법과 약간 다릅니다.</p>
+
+<p><br />
+<a name="1"></a></p>
+
+<h2 id="세-번째-커밋">세 번째 커밋</h2>
+<hr />
+<p>실습을 위해 index.htm 파일 내용을 좀 더 수정하여 세 번째 커밋을 하겠습니다.<br />
+간략하게 <code class="highlighter-rouge">&lt;title&gt;~&lt;/title&gt;</code> 사이의 내용을 JINYGIT으로 수정한 후 저장합니다.</p>
+
+<p>VS Code 실행</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ code index.htm ☜ VS Code 실행
+</code></pre></div></div>
+
+<p>index.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>JINYGIT<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>hello GIT world!<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>파일을 수정한 후에는 반드시 다음과 같이 다시 수정된 파일을 스테이지 영역에 <code class="highlighter-rouge">재등록</code>합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git add index.htm ☜ 스테이지 등록
+</code></pre></div></div>
+
+<ul>
+  <li>–allow-empty-message 옵션</li>
+</ul>
+
+<p>터미널에서 메시지가 없는 빈 커밋을 작성하려면 <code class="highlighter-rouge">--allow-empty-message</code> 옵션을 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git commit --allow-empty-message -m "" ☜ 커밋 메시지를 작성하지 않음
+[master 42250c6] ☜ 빈 커밋
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+</code></pre></div></div>
+
+<p>메시지가 없는 빈 커밋이 정상적으로 실행된 것을 확인할 수 있습니다.</p>
+
+<p><br />
+<a name="2"></a></p>
+
+<h2 id="소스트리에서-빈-커밋">소스트리에서 빈 커밋</h2>
+<hr />
+<p>소스트리에서는 메시지가 없는 빈 커밋을 하기가 더 쉽습니다.<br />
+예를 들어 파일 상태 탭을 선택한 후 아래쪽의 커밋 메시지 입력란을 비워 두고 커밋을 누르면 됩니다.<br />
+그러면 다음과 같은 확인 메시지가 표시됩니다. 확인을 누르세요.<br />
+이렇게 경고문을 알리는 것은 커밋 작업이 반드시 메시지를 작성하는 것을 원칙으로 하고 있기 때문입니다.</p>
+
+<p>그림 4-24] 빈 커밋 알림창<br />
+<img src="./img/04-24.jpg" alt="빈 커밋 알림창" /></p>
+
+<p><br />
+<a name="3"></a></p>
+
+<h2 id="473-빈-커밋-확인">4.7.3 빈 커밋 확인</h2>
+<hr />
+<p>빈 커밋 메시지를 확인해 봅시다. 터미널에서 <code class="highlighter-rouge">log</code> 명령어를 입력합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git log ☜ 로그 확인
+commit aa92947d350db27b604d1351930d4f809f96886e (HEAD -&gt; master)
+Author: hojin &lt;infohojin@gmail.com&gt; ☜ 빈 커밋
+Date:   Sat Jan 5 20:09:48 2019 +0900
+
+commit aa1dd51a8883b2ea9a54209a00f434a2da01ee85
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Sat Jan 5 19:31:46 2019 +0900
+    hello git world 추가
+
+commit e2bce41380691b0a34aeab7db889a6c30fed8287
+Author: hojin &lt;infohojin@gmail.com&gt;
+Date:   Sat Jan 5 18:24:50 2019 +0900
+    인덱스 페이지 레이아웃
+
+</code></pre></div></div>
+
+<p>최신 커밋 로그를 보면 메시지 내용이 없는 것을 확인할 수 있습니다.</p>
+
+<p>소스트리에서도 로그를 확인해 보면 다음과 같이 추가된 로그가 없습니다.</p>
+
+<p>그림 4-25] 소스트리에서 빈 커밋 확인<br />
+<img src="./img/04-25.jpg" alt="소스트리에서 빈 커밋 확인" /></p>
+
+<p>이처럼 메시지가 없는 빈 커밋을 실행할 수 있습니다.</p>
+
+<blockquote>
+  <p>Note: 메시지 수정
+간혹 커밋 메시지를 입력할 때 오타가 발생할 수 있습니다. 이때는 방금 전에 작성한 커밋 메시지를 수정해야 할 것입니다.<br />
+깃은 마지막 커밋을 수정할 수 있는 <code class="highlighter-rouge">--amend</code> 옵션을 제공합니다.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --amend
+</code></pre></div></div>
+
+<p>이 명령어를 실행하면 직전 커밋 메시지를 에디터 창에 표시합니다.<br />
+내용을 수정하여 저장하면 변경된 커밋을 확인할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

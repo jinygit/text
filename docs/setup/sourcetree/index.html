@@ -49,51 +49,39 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">setup</a></li><li class="breadcrumb-item active">sorcetree</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h2 id="소스트리">소스트리</h2>
+			<main role="main">
+                <section>
+                    <h1 id="소스트리">소스트리</h1>
+<hr />
 <p>기본적으로 깃은 콘솔 터미널 모드에서 동작하는 프로그램 입니다. 터미널 환경이 익숙한 전문 개발자들과 달리 처음으로 개발에 입문을 하거나, 깃의 초보자의 경우 명령어를 이용하여 깃을 사용하는 것은 쉽지 않습니다.</p>
 
 <p>깃을 GUI환경에서 좀더 쉽게 사용할 수 있는 전용툴이 있어 같이 소개를 합니다.
-소스트리는 깃의 동작과 명령을 GUI환경으로 제공을 합니다.
-<br /></p>
+소스트리는 깃의 동작과 명령을 GUI환경으로 제공을 합니다.</p>
+
+<p><br /></p>
 
 <h2 id="다운로드-사이트">다운로드 사이트</h2>
+<hr />
 <p>소스트리는 https://www.sourcetreeapp.com/ 에서 접속하여 다운로드 받을 수 있습니다.</p>
 
 <p><img src="./img/tree_01.png" alt="소스트리" /></p>
 
 <p><br /></p>
+
 <h2 id="설치">설치</h2>
 <hr />
 <p>다운로드 받은 설치 파일을 실행합니다.</p>
@@ -124,22 +112,25 @@
 <p><img src="./img/tree_07.png" alt="소스트리" /></p>
 
 <p><br /></p>
-<h2 id="소스트리-실행">소스트리 실행</h2>
 
+<h2 id="소스트리-실행">소스트리 실행</h2>
+<hr />
 <p>소스트리가 정상적으로 잘 설치가 되었다면 바탕화면에 다음과 같은 아이콘이 설치되어 있습니다.</p>
 
 <p><img src="./img/tree_08.png" alt="소스트리" /></p>
 
-<p>아이콘을 클릭하시면 소스트리가 실행이 됩니다.
-<br /></p>
+<p>아이콘을 클릭하시면 소스트리가 실행이 됩니다.</p>
+
+<p><br /></p>
 
 <h2 id="로컬-저장소">로컬 저장소</h2>
-
-<p>새로운 로컬 저장소를 생성해 봅니다. 상단 탭의 아이콘 중에서 “create” 를 선택합니다.</p>
+<hr />
+<p>새로운 로컬 저장소를 생성해 봅니다. 상단 탭의 아이콘 중에서 <code class="highlighter-rouge">create</code> 를 선택합니다.</p>
 
 <p><img src="./img/tree_09.png" alt="소스트리" /></p>
 
-<p>탐색 버튼을 클릭하여 저장소로 사용할 폴더를 선택하시면 됩니다. 만일 생성한 폴더가 없으시다면 탐색 버튼 실행화면에서 마우스 오른쪽 클릭을 통하여 “새로운 폴더”를 생성을 할 수도 있습니다.</p>
+<p>탐색 버튼을 클릭하여 저장소로 사용할 폴더를 선택하시면 됩니다.<br />
+만일 생성한 폴더가 없으시다면 탐색 버튼 실행화면에서 마우스 오른쪽 클릭을 통하여 “새로운 폴더”를 생성을 할 수도 있습니다.</p>
 
 <p>다음 저장소의 이름을 지정합니다. 기본적으로 폴더이름과 같이 자동으로 삽입이 됩니다.</p>
 
@@ -147,8 +138,10 @@
 
 <p>정상적으로 저장소가 생성이 되었다면 다음과 같은 화면으로 전환이 됩니다.</p>
 
-<h3 id="터미널-실행">터미널 실행</h3>
+<p><br /></p>
 
+<h2 id="터미널-실행">터미널 실행</h2>
+<hr />
 <p>소스트리 우측상단에 보면 터미널 버튼이 있습니다.</p>
 
 <p><img src="./img/tree_11.png" alt="소스트리" /></p>
@@ -157,20 +150,26 @@
 
 <p><img src="./img/tree_12.png" alt="소스트리" /></p>
 
-<h3 id="로컬저장소-추가">로컬저장소 추가</h3>
+<p><br /></p>
+
+<h2 id="로컬저장소-추가">로컬저장소 추가</h2>
+<hr />
 <p>폴더 추가 또는 기존의 저장소 폴더를 마우스로 드래그드롭 형태로 끌어 오시면 됩니다.</p>
 
 <p><img src="./img/tree_13.png" alt="소스트리" /></p>
 
-<p>“폴더 추가” 버튼을 클릭해서 새로운 폴더를 생성해 봅니다. 마우스 오른쪽 키를 눌러서 “이름변경” 을 해봅니다.</p>
+<p><code class="highlighter-rouge">폴더 추가</code> 버튼을 클릭해서 새로운 폴더를 생성해 봅니다. 마우스 오른쪽 키를 눌러서 <code class="highlighter-rouge">이름변경</code> 을 해봅니다.</p>
 
-<h3 id="로컬저장소-clone">로컬저장소 Clone</h3>
+<p><br /></p>
 
+<h2 id="로컬저장소-clone">로컬저장소 Clone</h2>
+<hr />
 <p><img src="./img/tree_14.png" alt="소스트리" /></p>
 
 <p><br /></p>
 
 <h2 id="원격-저장소">원격 저장소</h2>
+<hr />
 
 <p><img src="./img/tree_15.png" alt="소스트리" /></p>
 
@@ -178,15 +177,20 @@
 
 <p><img src="./img/tree_17.png" alt="소스트리" /></p>
 
+<p><br /></p>
+
 <h2 id="환경설정">환경설정</h2>
+<hr />
 <p>상단 메뉴의 <code class="highlighter-rouge">도구</code> &gt; <code class="highlighter-rouge">옵션</code>을 선택하시면 소스트리의 환경설정을 하실 수 있습니다.</p>
 
 <p><img src="./img/tree_18.png" alt="소스트리" /></p>
 
+<p><br /></p>
 
-            </section>
-
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -197,31 +201,45 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -238,9 +256,9 @@
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -251,6 +269,7 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -258,17 +277,7 @@
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

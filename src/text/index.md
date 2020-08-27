@@ -46,18 +46,11 @@ keyword: "기초탄탄 Git, 깃 학습하기"
 <br>
 
 <h2>서버
-    <small style="font-size: 0.5em;">>><a href="server">학습하기</a></small>
+    <small style="font-size: 0.5em;">>><a href="/server">학습하기</a></small>
 </h2>
 <hr>
 분산형 버전 관리 깃은 다양한 유형의 저장소를 지원합니다. 저장소는 크게 로컬 저장소와 서버 저장소로 구분할 수 있습니다. 이 장에서는 서버 저장소를 알아보겠습니다. 
 
-* [서버 저장소](server/05.1)
-* [깃허브 서버 준비](server/05.2)
-* [깃허브 연동 및 원격 등록](server/05.3)
-* [서버 전송](server/05.4)
-* [자동으로 내려받기](server/05.5)
-* [수동으로 내려받기](server/05.6)
-* [순서](server/05.7)
 
 <br>
 

@@ -49,43 +49,31 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">github</a></li><li class="breadcrumb-item active">setting</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h1 id="저장소-관리">저장소 관리</h1>
+			<main role="main">
+                <section>
+                    <h1 id="저장소-관리">저장소 관리</h1>
+<hr />
 <p>깃허브는 각각의 모든 저장소별로 설정(setting) 기능을 제공합니다. 설정을 통하여 각 저장소의 동작을 다르게 할 수 있습니다. 
 생성된 저장소의 이름을 변경, 삭제 등의 민감한 작업들도 할 수 있습니다. 크게 6개의 기능으로 구분됩니다.</p>
 
+<p><br /></p>
+
 <h2 id="이름-변경">이름 변경</h2>
+<hr />
 <p>생성된 저장소의 이름을 변경할 수 있습니다. 처음 저장소의 이름을 잘못 지었다고 해도 변경이 쉽습니다.</p>
 
 <p><img src="./img/setting_01.png" alt="github" /></p>
@@ -99,7 +87,10 @@
 
 <p>저장소의 이름은 중복할 수 없습니다. 만일 동일한 이름의 저장소가 있는 경우에는 해당 이름으로 변경할 수 없습니다.</p>
 
+<p><br /></p>
+
 <h3 id="위키">위키</h3>
+<hr />
 <p>깃허브는 모든 저장소에 대해 각각의 독립된 위키(wiki) 저장소를 제공합니다. 기본적으로 위키 기능이 활성화되어 생성됩니다.</p>
 
 <p><img src="./img/setting_02.png" alt="github" /></p>
@@ -110,7 +101,10 @@
 
 <p><img src="./img/setting_03.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="이슈">이슈</h3>
+<hr />
 <p>깃허브는 모든 저장소에 대해 각각의 독립된 이슈(issue) 저장소를 제공합니다. 기본적으로 이슈 기능이 활성화되어 생성됩니다.</p>
 
 <p>이슈는 버그 또는 기능 개선 등의 버그 추적 시스템(BTS)적인 부분 외에도 자신의 의견 등을 서로 교류할 수 있습니다. 프로젝트 운영자는 약간의 템플릿 이슈작성 양식을 제공하여 보다 일관적인 형식의 보고를 요청할 수 있습니다.</p>
@@ -129,7 +123,10 @@
 
 <p><img src="./img/setting_07.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="프로젝트">프로젝트</h3>
+<hr />
 <p>깃허브 저장소의 탭 중에는 프로젝트 항목이 있습니다. 프로젝트 항목의 활성/비활성 상태를 변경할 수 있습니다.</p>
 
 <p><img src="./img/setting_08.png" alt="github" /></p>
@@ -138,30 +135,44 @@
 
 <p><img src="./img/setting_09.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="취약점-경고">취약점 경고</h3>
+<hr />
 <p>보안 취약점에 대한 경고를 수신합니다.</p>
 
 <p><img src="./img/setting_10.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="병합-조건">병합 조건</h3>
+<hr />
 <p>풀-리퀘스트를 이용하여 병합 조건을 허용합니다. 일반적인 병합, 스쿼시 병합, 리버스 병합 등이 허용되는 타입을 설정합니다. 최소한 한 개 이상의 병합 조건은 허용해야 합니다.</p>
 
 <p><img src="./img/setting_11.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="깃허브-페이지">깃허브 페이지</h3>
+<hr />
 <p>깃허브 페이지 운영과 관련하여 설정할 수 있습니다.</p>
 
 <p><img src="./img/setting_11.png" alt="github" /></p>
 
+<p><br /></p>
+
 <h3 id="비공개-전환">비공개 전환</h3>
+<hr />
 <p>공개로 생성된 저장소를 비공개로 전환할 수 있습니다.</p>
 
 <p><img src="./img/setting_13.png" alt="github" /></p>
 
 <p>저장소를 비공개로 전환하면, 공개 저장소만의 몇 가지 설정들이 같이 삭제됩니다.</p>
 
-<p>	모든 Star와 Watch 기록
-	저장소를 이용하여 배포한 페이지</p>
+<ul>
+  <li>모든 Star와 Watch 기록</li>
+  <li>저장소를 이용하여 배포한 페이지</li>
+</ul>
 
 <p>몇 가지 기능들은 유료 회원으로 전환할 때 유지할 수도 있습니다.</p>
 
@@ -169,7 +180,10 @@
 
 <p>중요한 사항을 변경할 때에는 확인을 요청합니다. 계정/저장소 이름을 입력하여 줍니다.</p>
 
+<p><br /></p>
+
 <h3 id="소유권-이전">소유권 이전</h3>
+<hr />
 <p>저장소의 소유권을 이전할 수 있습니다.</p>
 
 <p><img src="./img/setting_15.png" alt="github" /></p>
@@ -178,7 +192,10 @@
 
 <p>중요한 사항을 변경할 때에는 확인을 요청합니다. 계정/저장소 이름을 입력하여 줍니다.</p>
 
+<p><br /></p>
+
 <h3 id="저장소-비활성화">저장소 비활성화</h3>
+<hr />
 <p>저장소를 비활성화하여 읽기 전용으로 보관합니다.</p>
 
 <p><img src="./img/setting_17.png" alt="github" /><br />
@@ -186,7 +203,10 @@
 
 <p>중요한 사항을 변경할 때에는 확인을 요청합니다. 계정/저장소 이름을 입력하여 줍니다.</p>
 
+<p><br /></p>
+
 <h3 id="저장소-삭제">저장소 삭제</h3>
+<hr />
 <p>저장소를 삭제할 수 있습니다. 작업 시 매우 주의해야 합니다.</p>
 
 <p><img src="./img/setting_19.png" alt="github" />
@@ -194,9 +214,12 @@
 
 <p>중요한 사항을 변경할 때는 확인을 요청합니다. 계정/저장소 이름을 입력하여 줍니다.</p>
 
-            </section>
+<p><br /></p>
 
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -207,31 +230,45 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -248,9 +285,9 @@
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -261,6 +298,7 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -268,17 +306,7 @@
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

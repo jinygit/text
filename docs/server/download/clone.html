@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | Git 서버에서 코드 내려받기</title>
+            <meta name="title" content="Git 서버에서 코드 내려받기" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">server</a></li><li class="breadcrumb-item "><a href="../">downlaod</a></li><li class="breadcrumb-item active">clone</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="저장소-복제하기clone">저장소 복제하기(clone)</h1>
+<hr />
+<p><code class="highlighter-rouge">복제</code>는 기존 저장소를 이용하여 새로운 저장소를 생성하는 방법 중 하나입니다.<br />
+하지만 일반적인 복제와 원격 저장소를 복제하는 방법은 조금 차이가 있습니다. 몇 가지 추가 정보를 같이 설정해야 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="clone-명령">clone 명령</h2>
+<hr />
+<p>저장소를 복제할 때는 <code class="highlighter-rouge">clone</code> 명령어를 사용합니다.<br />
+clone 명령어는 초기화 <code class="highlighter-rouge">init</code> 명령어 외에 원격 서버 접속에 필요한 추가 <code class="highlighter-rouge">설정을 자동으로 수행</code>합니다.<br />
+서버의 연결 설정을 마친 후 서버 안에 있는 <code class="highlighter-rouge">모든 커밋된 코드 이력</code>들을 한 번에 내려받습니다.</p>
+
+<p>원격 저장소와 로컬 저장소 연결<br />
+<img src="../img/05-9.jpg" alt="원격 저장소와 로컬 저장소 연결" /></p>
+
+<p><br /></p>
+
+<h3 id="clone-명령-실습">clone 명령 실습</h3>
+<hr />
+<p>원격 저장소를 다른 이름의 로컬 저장소로 <code class="highlighter-rouge">복제</code>해 보겠습니다.</p>
+
+<p><br /></p>
+
+<h4 id="실습-폴더-생성">실습 폴더 생성</h4>
+<p>실습을 위해서 새로운 폴더를 생성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 메인폴더
+$ mkdir gitstudy05_clone
+$ cd gitstudy05_clone/
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h4 id="clone-명령-실행">clone 명령 실행</h4>
+<p>원격저장소를 복제하기 위해서 clone 명령을 입력합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone
+$ git clone https://github.com/jinygit/gitstudy05.git .
+Cloning into '.'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+</code></pre></div></div>
+<p>정상적으로 잘 복제가 된것 같습니다.</p>
+
+<p><br /></p>
+
+<h4 id="복제된-저장소-확인">복제된 저장소 확인</h4>
+<p>원격 저장소가 로컬 저장소로 잘 복제가 되었는지 내용을 확인해 봅니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
+$ ls -all
+total 13
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 .
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 ..
+drwxr-xr-x 1 infoh 197609  0 12월 12 17:23 .git
+-rw-r--r-- 1 infoh 197609 14 12월 12 17:23 README.md
+</code></pre></div></div>
+
+<p>원격저장소와 동일하 내용으로 복제가 된것을 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="서버접속-설정">서버접속 설정</h2>
+<hr />
+<p>원격 저장소를 활용하여 저장소를 동기화 하기 위해서는, 로컬저장소와 원격저장소간의 연결 정보를 설정해 주어야 합니다.<br />
+하지만, 복제를 하게 되면 이러한 정보설정이 자동으로 이루어 집니다.</p>
+
+<p><br /></p>
+
+<h3 id="자동설정">자동설정</h3>
+<hr />
+<p>복제란? 서버의 저장소를 로컬로 복사를 하는 동작입니다. 즉, 서버에 접속을 해야 되기 때문에 서버 정보가 필요로 합니다.<br />
+clone 명령어 뒤에 서버의 url을 입력하게 되면, 깃은 원격 저장소를 복제한 후에 정보를 로컬에 자동 설정을 하게 됩니다.</p>
+
+<p><br /></p>
+
+<h3 id="remote-확인">remote 확인</h3>
+<hr />
+<p>복제 후 자동으로 설정된 서버 연결 정보를 확인해 보도록 합니다.
+<code class="highlighter-rouge">remote</code> 명령어를 사용하여 원격 저장소 정보를 확인합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@gitstudy MINGW64 /e/gitstudy05_clone (master)
+$ git remote -v
+origin  https://github.com/jinygit/gitstudy05.git (fetch)
+origin  https://github.com/jinygit/gitstudy05.git (push)
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">remote</code>로 확인하면 연결된 서버 설정들이 표시됩니다.</p>
+
+<p>로컬 저장소를 생성한 후, 처음으로 서버에서 코드를 내려받을 때는 clone 명령어를 사용하면 좀 더 편리합니다.</p>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

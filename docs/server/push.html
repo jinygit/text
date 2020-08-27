@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 서버 전송</title>
+            <meta name="title" content="서버 전송" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 서버 전송, push" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">server</a></li><li class="breadcrumb-item active">push</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="서버-전송">서버 전송</h1>
+<hr />
+<p>로컬 저장소의 커밋을 원격 저장소로 전송하는 방법을 알아보았습니다.<br />
+원격 저장소가 연결되면 로컬 저장소의 커밋들을 <code class="highlighter-rouge">업로드</code>할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="서버에-전송">서버에 전송</h2>
+<hr />
+<p>푸시(push)는 원격 저장소로 커밋된 파일들을 <code class="highlighter-rouge">업로드</code>하는 동작입니다.<br />
+원격 저장소와 연결된 서버 <code class="highlighter-rouge">목록</code>을 확인해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
+$ git remote -v
+origin  https://github.com/jinygit/gitstudy05.git (fetch)
+origin  https://github.com/jinygit/gitstudy05.git (push)
+</code></pre></div></div>
+
+<p>업로드가 가능한 원격 저장소가 등록된 것을 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="push-명령어">push 명령어</h2>
+<hr />
+<p>원격 저장소로 로컬 깃 저장소의 내용을 전송할 때는 <code class="highlighter-rouge">push</code> 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push 원격저장소별칭 브랜치이름
+</code></pre></div></div>
+
+<p>별칭 이름을 가지는 서버의 master 브랜치에 현재 브랜치를 업로드합니다. 브랜치(branch)는 다음 장에서 상세하게 설명합니다.</p>
+
+<p>푸시 동작<br />
+<img src="./img/05-7.jpg" alt="푸시 동작" /></p>
+
+<p><br /></p>
+
+<h2 id="실제-push로-전송해-보기">실제 push로 전송해 보기</h2>
+<hr />
+<p>실제로 push 명령어를 사용하여 현재 master 브랜치를 origin 서버로 전송해 보겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
+$ git push origin master ☜ 서버로 전송합니다
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/jinygit/gitstudy05.git
+ * [new branch]      master -&gt; master
+</code></pre></div></div>
+
+<p>준비한 깃허브 저장소를 확인합니다.</p>
+
+<p><br /></p>
+
+<h2 id="master-브랜치">master 브랜치</h2>
+<hr />
+<p>처음 <code class="highlighter-rouge">푸시</code>하면 서버에 새로운 <code class="highlighter-rouge">master</code> 브랜치를 생성합니다.<br />
+그리고 로컬의 master 브랜치 안에 있는 소스 코드를 서버의 master 브랜치로 업로드합니다.<br />
+다음과 같이 깃허브에서 확인할 수 있습니다.</p>
+
+<p>원격 저장소에 푸시<br />
+<img src="./img/05-8.jpg" alt="원격 저장소에 푸시" /></p>
+
+<p><br /></p>
+
+<h2 id="note-원격-저장소에-푸시하면-master-저장소가-총-2개-생성됩니다">Note: 원격 저장소에 푸시하면 master 저장소가 총 2개 생성됩니다.</h2>
+<hr />
+<p>로컬 저장소의 master 브랜치와 서버의 master 브랜치입니다. 전송은 두 브랜치 간에 <code class="highlighter-rouge">전송</code>과 <code class="highlighter-rouge">수신</code>을 동기화합니다.</p>
+
+<p>자신의 로컬 저장소를 백업하는 용도로 원격 저장소를 사용할 수 있습니다.<br />
+꼭 다른 사람들과 협업하려고 깃의 원격 저장소를 사용하는 것은 아닙니다.<br />
+혼자 개발할 때도 백업을 위해 원격 저장소를 같이 사용하면 좋습니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

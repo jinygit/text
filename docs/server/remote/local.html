@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 연동 및 원격 등록</title>
+            <meta name="title" content="연동 및 원격 등록" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 연동 및 원격 등록" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">server</a></li><li class="breadcrumb-item "><a href="../">remote</a></li><li class="breadcrumb-item active">local</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="로컬-저장소">로컬 저장소</h1>
+<hr />
+<p>깃허브에 새 저장소를 생성하면 다음과 같은 화면이 나옵니다.</p>
+
+<p><br /></p>
+
+<h2 id="깃허브-저장소-페이지">깃허브 저장소 페이지</h2>
+<hr />
+<p>이 화면은 저장소를 생성할 때 README 체크 여부에 따라 달라집니다.<br />
+README를 체크하지 않으면 다음과 같이 초기화 및 복제 방법을 안내합니다.</p>
+
+<p>깃허브에서 새 저장소 생성<br />
+<img src="../img/05-5.jpg" alt="깃허브에서 새 저장소 생성" /></p>
+
+<p><br /></p>
+
+<h2 id="원격-저장소를-연결하는-방법">원격 저장소를 연결하는 방법</h2>
+<hr />
+<p>원격 저장소에 <code class="highlighter-rouge">연결</code>하려면 먼저 로컬 저장소가 있어야 합니다.<br />
+로컬 저장소를 원격 저장소에 연결하는 방법은 크게 두 가지입니다.</p>
+
+<ul>
+  <li>1) 새로운 로컬 저장소를 생성하고 원격 저장소를 연결하는 방법</li>
+  <li>2) 기존 저장소를 연결하는 방법</li>
+</ul>
+
+<p>책에서는 1 방법으로 원격 저장소에 연결해 보겠습니다.</p>
+
+<p><br /></p>
+
+<h2 id="실습-저장소-생성">실습 저장소 생성</h2>
+<hr />
+<p>먼저 새 로컬 저장소를 생성하고 초기화합니다.</p>
+
+<ul>
+  <li>새로운 실습 폴더를 생성합니다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mdkir gitstudy05
+</code></pre></div>    </div>
+  </li>
+  <li>저장소를 깃으로 초기화합니다.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init 
+Initialized empty Git repository in E:/gitstudy05/.git/
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="readmd-파일-생성">readmd 파일 생성</h2>
+<hr />
+<p>생성된 저장소에 소개 페이지 파일을 하나 생성합니다.</p>
+
+<p><code class="highlighter-rouge">echo</code> 명령어로 문자열을 파일로 리다이렉션하여 소개 페이지를 만듭니다.<br />
+또는 직접 편집기를 이용하여 만들어도 됩니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "# gitstudy05" &gt;&gt; README.md ☜ 파일 생성
+</code></pre></div></div>
+
+<p>만든 README.md 파일을 추적 <code class="highlighter-rouge">등록</code>하고 <code class="highlighter-rouge">커밋</code>합니다.</p>
+
+<ul>
+  <li>스테이지 등록
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add README.md 
+</code></pre></div>    </div>
+  </li>
+  <li>커밋
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -m "first commit" 
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>안내에 따라 새 로컬 저장소를 생성한 후 README.md 파일을 만들어 추적 등록, 커밋했습니다.<br />
+몇 가지 개념을 좀 더 알아본 후 로컬 저장소와 원격 저장소를 연결해 보겠습니다.</p>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

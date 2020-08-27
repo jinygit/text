@@ -49,41 +49,26 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h1 id="커밋-확인">커밋 확인</h1>
+			<main role="main">
+                <section>
+                    <h1 id="커밋-확인">커밋 확인</h1>
 <hr />
-<p>터미널과 소스트리에서 커밋하는 방법을 알아보았습니다. 성공적으로 커밋을 했다면 이를 확인해 보아야 합니다.</p>
+<p>터미널과 소스트리에서 커밋하는 방법을 알아보았습니다.<br />
+성공적으로 커밋을 했다면 이를 확인해 보아야 합니다.</p>
 
 <p><br />
 <a name="1"></a></p>
@@ -99,7 +84,8 @@ nothing to commit, working tree clean ☜ 워킹 트리 정리됨
 
 </code></pre></div></div>
 
-<p>이전과 달리 working tree clean 메시지를 볼 수 있습니다. 커밋을 하면 스테이지 영역은 초기화됩니다. 더 이상 추가된 새로운 파일과 수정된 파일이 없다는 의미입니다.</p>
+<p>이전과 달리 working tree clean 메시지를 볼 수 있습니다. 커밋을 하면 스테이지 영역은 초기화됩니다.<br />
+더 이상 추가된 새로운 파일과 수정된 파일이 없다는 의미입니다.</p>
 
 <p>그림 4-16] 스테이지 초기화<br />
 <img src="./img/04-16.jpg" alt="스테이지 초기화" /></p>
@@ -111,7 +97,7 @@ nothing to commit, working tree clean ☜ 워킹 트리 정리됨
 
 <h2 id="로그-기록-확인">로그 기록 확인</h2>
 <hr />
-<p>커밋한 후 커밋 기록은 어떻게 확인할까요? 깃은 커밋 목록을 확인할 수 있는 log 명령어를 별도로 제공합니다.</p>
+<p>커밋한 후 커밋 기록은 어떻게 확인할까요? 깃은 커밋 목록을 확인할 수 있는 <code class="highlighter-rouge">log</code> 명령어를 별도로 제공합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log
 </code></pre></div></div>
@@ -126,7 +112,8 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
     인덱스 페이지 레이아웃
 </code></pre></div></div>
 
-<p>커밋한 후에는 습관적으로 한 번씩 log 명령어를 실행하여 기록을 확인하는 것이 좋습니다. 또 log 명령어는 다양한 커밋 기록을 확인할 수 있도록 여러 옵션을 제공합니다. -help 옵션으로 확인할 수 있습니다.</p>
+<p>커밋한 후에는 습관적으로 한 번씩 log 명령어를 실행하여 기록을 확인하는 것이 좋습니다.<br />
+또 log 명령어는 다양한 커밋 기록을 확인할 수 있도록 여러 옵션을 제공합니다. <code class="highlighter-rouge">-help</code> 옵션으로 확인할 수 있습니다.</p>
 
 <blockquote>
   <p>Note: 커밋 시간을 맹목적으로 믿을 수는 없습니다. 깃은 분산형 저장소로 각자의 PC에 설정한 시간 정보를 바탕으로 커밋 기록을 작성합니다. 작업 중인 컴퓨터가 다른 지역의 시간이나 잘못된 시간으로 설정되어 있을 수도 있습니다.</p>
@@ -137,27 +124,35 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
 
 <h2 id="소스트리에서-로그-기록-확인">소스트리에서 로그 기록 확인</h2>
 <hr />
-<p>터미널로 로그 기록을 확인하는 것은 가독성이 좋지 않습니다. 커밋 횟수가 많을수록 보기도 어렵습니다. 이때는 소스트리를 이용하면 좀 더 직관적으로 커밋 기록을 확인할 수 있습니다. 소스트리 같은 GUI 도구를 사용하도록 추천하는 이유이기도 합니다. 소스트리에서 왼쪽의 브랜치 탭을 선택합니다.</p>
+<p>터미널로 로그 기록을 확인하는 것은 가독성이 좋지 않습니다. 커밋 횟수가 많을수록 보기도 어렵습니다.<br />
+이때는 소스트리를 이용하면 좀 더 직관적으로 커밋 기록을 확인할 수 있습니다.<br />
+소스트리 같은 GUI 도구를 사용하도록 추천하는 이유이기도 합니다.<br />
+소스트리에서 왼쪽의 브랜치 탭을 선택합니다.</p>
 
 <p>그림 4-17] 소스트리에서의 브랜치<br />
 <img src="./img/04-17.jpg" alt="소스트리에서의 브랜치" /></p>
 
-<p>앞에서 status 명령어를 실행했을 때 <code class="highlighter-rouge">On branch master</code> 메시지를 본 적이 있을 것입니다. 또 log 명령어를 실행한 결과에서 (HEAD -&gt; master) 부분도 보았습니다.</p>
+<p>앞에서 status 명령어를 실행했을 때 <code class="highlighter-rouge">On branch master</code> 메시지를 본 적이 있을 것입니다.<br />
+또 log 명령어를 실행한 결과에서 (HEAD -&gt; master) 부분도 보았습니다.</p>
 
-<p>브랜치는 나중에 다시 설명하겠지만, 깃을 처음 생성하면 자동으로 master 브랜치 1개를 생성합니다. 또 커밋은 master 브랜치 안에 기록됩니다. 소스트리의 master 브랜치를 선택하면 다음 화면을 볼 수 있습니다. 오른쪽 화면에 커밋의 로그 기록이 순차적으로 나열되는 것을 확인하세요.</p>
+<p>브랜치는 나중에 다시 설명하겠지만, 깃을 처음 생성하면 자동으로 master 브랜치 1개를 생성합니다.<br />
+또 커밋은 master 브랜치 안에 기록됩니다. 소스트리의 master 브랜치를 선택하면 다음 화면을 볼 수 있습니다.<br />
+오른쪽 화면에 커밋의 로그 기록이 순차적으로 나열되는 것을 확인하세요.</p>
 
 <p>그림 4-18] 소스트리에서 브랜치 확인<br />
 ![소스트리에서 브랜치 확인(./img/04-18.jpg)</p>
 
 <p>이렇게 직관적인 뷰 때문에 터미널(깃 배시)과 소스트리를 같이 이용하길 권장합니다.</p>
 
-<p>소스트리 목록은 크게 <code class="highlighter-rouge">그래프, 커밋 메시지(설명), 작성자, 날짜, 커밋 아이디</code> 다섯 가지로 구분합니다. 이와 관련된 내용은 실습하면서 계속 설명해 나갈 것입니다.</p>
+<p>소스트리 목록은 크게 <code class="highlighter-rouge">그래프, 커밋 메시지(설명), 작성자, 날짜, 커밋 아이디</code> 다섯 가지로 구분합니다.<br />
+이와 관련된 내용은 실습하면서 계속 설명해 나갈 것입니다.</p>
 
 <p><br /><br /></p>
 
-            </section>
-
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -168,31 +163,45 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -209,9 +218,9 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -222,6 +231,7 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -229,17 +239,7 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -10,35 +10,49 @@ keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 
 <br>
 
-## 학습내용
+## 깃 저장소 생성
 ---
-* 깃 저장소 생성
-    + [폴더와 깃 저장소](init#1)
-    + [초기화](init#2)
-    + [숨겨진 폴더 = .git 폴더](init#3)
-    + [소스트리와 연결](init#4)
++ [폴더와 깃 저장소](init#1)
++ [초기화](init#2)
++ [숨겨진 폴더 = .git 폴더](init#3)
++ [소스트리와 연결](init#4)
 
-* 워킹 디렉터리
-    + [워킹 디렉터리란?](working#1)
-    + [파일의 untracked 상태와 tracked 상태](working#2)
+<br>
 
-* 스테이지
-    + [스테이지 = 임시 영역](stage#1)
-    + [파일의 stage 상태와 unstage 상태](stage#2)
-    + [파일의 modified 상태와 unmodified 상태](stage#3)
+## 워킹 디렉터리
+---
++ [워킹 디렉터리란?](working#1)
++ [파일의 untracked 상태와 tracked 상태](working#2)
 
-* 파일의 상태 확인
-    + [status 명령어로 깃 상태 확인](status#1)
-    + [소스트리에서 깃 상태 확인](status#2)
+<br>
 
-* 파일 관리 목록에서 제외: .gitignore
-    + [.gitignore 파일](gitignore#1)
-    + [.gitignore 파일 표기법](gitignore#2)
+## 스테이지
+---
++ [스테이지 = 임시 영역](stage#1)
++ [파일의 stage 상태와 unstage 상태](stage#2)
++ [파일의 modified 상태와 unmodified 상태](stage#3)
 
-* 깃 저장소 복제
-    + [공개 저장소](clone#1)
-    + [다운로드 vs 복제](clone#2)
-    + [복제 명령어](clone#3)
+<br>
+
+## 파일의 상태 확인
+---
++ [status 명령어로 깃 상태 확인](status#1)
++ [소스트리에서 깃 상태 확인](status#2)
+
+<br>
+
+## 파일 관리 목록에서 제외: .gitignore
+---
++ [.gitignore 파일](gitignore#1)
++ [.gitignore 파일 표기법](gitignore#2)
+
+<br>
+
+## 깃 저장소 복제
+---
++ [공개 저장소](clone#1)
++ [다운로드 vs 복제](clone#2)
++ [복제 명령어](clone#3)
 
 <br>
 

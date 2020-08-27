@@ -49,45 +49,30 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">setup</a></li><li class="breadcrumb-item active">linux</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h2 id="리눅스용-깃">리눅스용 깃</h2>
+			<main role="main">
+                <section>
+                    <h1 id="리눅스용-깃">리눅스용 깃</h1>
+<hr />
 <p>리눅스는 유닉스에서 파생된 운영체제 입니다. 또한, 리눅스는 전세계에서 가장 많은 서버로 운영되는 환경입니다. 클라우드, 서버용 환경을 같이 개발하는 경우에는 리눅스용 깃 환경이 필요할 것입니다.</p>
 
 <p><br /></p>
-<hr />
 
-<h3 id="리눅스-설치">리눅스 설치</h3>
+<h2 id="리눅스-설치">리눅스 설치</h2>
+<hr />
 <p>리눅스 운영체제는 독립된 컴퓨터 환경입니다. 실습을 위해서는 별도의 서버용 컴퓨터 환경이 필요합니다.</p>
 
 <p>하지만, 최근들어 마이크로소프트는 윈도우 사용자들도 리눅스를 사용해 볼 수 있도록 별도의 프로그램을 제공합니다.</p>
@@ -114,9 +99,9 @@
 <p>윈도우에서 우분투 리눅스 환경이 구축되었습니다.</p>
 
 <p><br /></p>
-<hr />
 
-<h3 id="깃-설치">깃 설치</h3>
+<h2 id="깃-설치">깃 설치</h2>
+<hr />
 <p>리눅스 운영체제에서 깃을 설치하는 방법은 간단합니다. 직접 깃의 공식사이트에서 설치파일을 다운로드 받지 않아도 됩니다.</p>
 
 <p>대부분의 리눅스 배포판은 관련된 응용프로그램을 패키지 형태로 제공을 합니다.직접 소스코드를 다운로드 받아 복잡한 컴파일 작업을 하지 않아도 됩니다. 패키지는 리누스 배포본마다 약간의 차이가 발생합니다.</p>
@@ -143,9 +128,9 @@ Ubuntu 18.04.2 LTS \n \l
 git version 2.17.1
 </code></pre></div></div>
 <p><br /></p>
-<hr />
 
-<h3 id="재설치">재설치</h3>
+<h2 id="재설치">재설치</h2>
+<hr />
 <p>기존의 설치되어 있던 깃 패키지를 삭제하고 다시 설치를 해보도록 합니다. <code class="highlighter-rouge">remove</code> 옵션을 사용하여 설치되어 있는 <code class="highlighter-rouge">git</code>을 제거합니다.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# apt remove git
@@ -173,11 +158,12 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
 
 <p>그 이외의 버전의 리눅스 배포판은 깃 공식사이트에 접속을 하여 설치 파일 또는 소스를 다운로드 받아 컴파일 하여 설치를 할 수 있습니다.</p>
 
-<p><br /><br /><br /></p>
+<p><br /></p>
 
-            </section>
-
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -188,31 +174,45 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -229,9 +229,9 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -242,6 +242,7 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -249,17 +250,7 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

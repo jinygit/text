@@ -49,49 +49,40 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">setup</a></li><li class="breadcrumb-item active">windows</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h2 id="깃-윈도우-설치">깃 윈도우 설치</h2>
+			<main role="main">
+                <section>
+                    <h1 id="깃-윈도우-설치">깃 윈도우 설치</h1>
+<hr />
 <p>많은 사람들이 기본 운영체제로 사용하고 있는 윈도우 환경을 먼저 알아 보도록 하겠습니다. 윈도우 환경에서 깃을 설치하는 방법은 매우 간단합니다.</p>
 
+<p><br /></p>
+
 <h2 id="다운로드">다운로드</h2>
+<hr />
 <p>설치파일을 다운로드 받아 실행만 하시면 됩니다.</p>
 
 <p><img src="./img/git_01.png" alt="git_01" /></p>
 
 <p>깃은 누구나 무료로 사용을 할 수 있는 대표적인 오픈소스 프로젝트 입니다.</p>
 
+<p><br /></p>
+
 <h2 id="설치-진행">설치 진행</h2>
+<hr />
 <p>처음 설치화면에서 볼 수 있듯이 GNU 라이센스를 적용받습니다.</p>
 
 <p><img src="./img/git_02.png" alt="git_02" /></p>
@@ -139,9 +130,12 @@
 <p>설치가 완료가 되면 위와 같은 화면을 출력합니다.<br />
 이제 깃을 사용하시면 됩니다.</p>
 
-            </section>
+<p><br /></p>
 
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -152,31 +146,45 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -193,9 +201,9 @@
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -206,6 +214,7 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -213,17 +222,7 @@
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 커밋하기</title>
-            <meta name="title" content="커밋하기" /><meta name="description" content="깃은 코드의 이력을 커밋 로그를 활용하여 관리를 합니다. 커밋 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃 사용법, commit, 커밋" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | Git 커밋하기</title>
+            <meta name="title" content="Git 커밋하기" /><meta name="description" content="깃은 코드의 이력을 커밋 로그를 활용하여 관리를 합니다. 커밋 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃 사용법, commit, 커밋" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -49,39 +49,23 @@
         </ul>
       </div>
     </div>
-  </nav><header><!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <img src="/img/gittext.png">
-            </div>
-            <div class="col-lg-9">
-                <h1 class="display-3">Git 교과서</h1>
-                <h2>코드 이력, 하나도 놓치지 마라!</h2>
-                <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
-                깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
-                </p>
-                <p>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TP6bKB" role="button">Yes24</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2Qb1JDD" role="button">교보문고</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/3cOAqc1" role="button">알라딘</a>
-                    <a class="btn btn-secondary btn-sm" href="http://bit.ly/2TMAeT9" role="button">인터파크</a>
-                    <a class="btn btn-secondary btn-sm" href="https://thebook.io/080212/" role="button">길벗</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div></header>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li></ol>    
+</nav></div>
+</div>
+
 
 <!-- Page Content -->
 <div class="container">
     <div class="row">
-
         <!-- Post Content Column -->
         <div class="col-lg-9">
-            <section>
-                <h1 id="커밋">커밋</h1>
+			<main role="main">
+                <section>
+                    <h1 id="커밋">커밋</h1>
 <hr />
 <p>깃은 개발 중인 소스 코드의 이력을 관리 합니다. 모든 코드의 변경 이력은 <code class="highlighter-rouge">커밋</code>이라는 행동을 통하여 기록이 됩니다. 커밋이란 무엇이고, 어떻게 실행하는지에 대해서 학습해 보겠습니다.</p>
 
@@ -102,78 +86,99 @@
 
 <p><br /></p>
 
-<h2 id="학습내용">학습내용</h2>
+<h2 id="새-파일-생성-및-감지">새 파일 생성 및 감지</h2>
 <hr />
+<ul>
+  <li><a href="status#1">새 파일 생성</a></li>
+  <li><a href="status#2">깃에서 새 파일 생성 확인</a></li>
+  <li><a href="status#3">소스트리에서 새 파일 감지</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="깃에-새-파일-등록">깃에 새 파일 등록</h2>
+<hr />
+<ul>
+  <li><a href="stage#1">스테이지에 등록</a></li>
+  <li><a href="stage#2">파일의 추적 상태 확인</a></li>
+  <li><a href="stage#3">파일 등록 취소</a></li>
+  <li><a href="stage#4">등록된 파일 이름이 변경되었을 때</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="첫-번째-커밋">첫 번째 커밋</h2>
+<hr />
+<ul>
+  <li><a href="snap#1">HEAD</a></li>
+  <li><a href="snap#2">스냅샷</a></li>
+  <li><a href="snap#3">파일 상태와 커밋</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="커밋-확인">커밋 확인</h2>
+<hr />
+<ul>
+  <li><a href="04.5#1">스테이지 초기화</a></li>
+  <li><a href="04.5#2">로그 기록 확인</a></li>
+  <li><a href="04.5#3">소스트리에서 로그 기록 확인</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="두-번째-커밋">두 번째 커밋</h2>
+<hr />
+<ul>
+  <li><a href="04.6#1">파일 수정</a></li>
+  <li><a href="04.6#2">파일 변경 사항 확인</a></li>
+  <li><a href="04.6#3">수정된 파일 되돌리기</a></li>
+  <li><a href="04.6#4">스테이지에 등록</a></li>
+  <li><a href="04.6#5">두 번째 커밋</a></li>
+  <li><a href="04.6#6">두 번째 커밋 확인</a></li>
+  <li><a href="04.6#7">깃허브에서 확인</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="메시지가-없는-빈-커밋">메시지가 없는 빈 커밋</h2>
+<hr />
+<ul>
+  <li><a href="empty#1">세 번째 커밋</a></li>
+  <li><a href="empty#2">소스트리에서 빈 커밋</a></li>
+  <li><a href="empty#3">빈 커밋 확인</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="커밋-아이디"><a href="id">커밋 아이디</a></h2>
+<hr />
+<ul>
+  <li><a href="id/sha1">SHA1</a></li>
+  <li><a href="id/short">단축키</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="커밋-로그">커밋 로그</h2>
+<hr />
+<p>깃은 터미널 기반의 응용 프로그램입니다. 앞서 커밋 목록을 나열하는 로그를 간단하게 살펴보았습니다. 깃의 로그는 저장소 커밋 기록들을 확인할 수 있습니다. 또 커밋 메시지, 아이디도 확인할 수 있고, 브랜치 경로 등을 분석할 수 있는 옵션들도 제공합니다.</p>
 
 <ul>
-  <li>새 파일 생성 및 감지
-    <ul>
-      <li><a href="04.2#1">새 파일 생성</a></li>
-      <li><a href="04.2#2">깃에서 새 파일 생성 확인</a></li>
-      <li><a href="04.2#3">소스트리에서 새 파일 감지</a></li>
-    </ul>
-  </li>
-  <li>깃에 새 파일 등록
-    <ul>
-      <li><a href="04.3#1">스테이지에 등록</a></li>
-      <li><a href="04.3#2">파일의 추적 상태 확인</a></li>
-      <li><a href="04.3#3">파일 등록 취소</a></li>
-      <li><a href="04.3#4">등록된 파일 이름이 변경되었을 때</a></li>
-    </ul>
-  </li>
-  <li>첫 번째 커밋
-    <ul>
-      <li><a href="04.4#1">HEAD</a></li>
-      <li><a href="04.4#2">스냅샷</a></li>
-      <li><a href="04.4#3">파일 상태와 커밋</a></li>
-    </ul>
-  </li>
-  <li>커밋 확인
-    <ul>
-      <li><a href="04.5#1">스테이지 초기화</a></li>
-      <li><a href="04.5#2">로그 기록 확인</a></li>
-      <li><a href="04.5#3">소스트리에서 로그 기록 확인</a></li>
-    </ul>
-  </li>
-  <li>두 번째 커밋
-    <ul>
-      <li><a href="04.6#1">파일 수정</a></li>
-      <li><a href="04.6#2">파일 변경 사항 확인</a></li>
-      <li><a href="04.6#3">수정된 파일 되돌리기</a></li>
-      <li><a href="04.6#4">스테이지에 등록</a></li>
-      <li><a href="04.6#5">두 번째 커밋</a></li>
-      <li><a href="04.6#6">두 번째 커밋 확인</a></li>
-      <li><a href="04.6#7">깃허브에서 확인</a></li>
-    </ul>
-  </li>
-  <li>메시지가 없는 빈 커밋
-    <ul>
-      <li><a href="04.7#1">세 번째 커밋</a></li>
-      <li><a href="04.7#2">소스트리에서 빈 커밋</a></li>
-      <li><a href="04.7#3">빈 커밋 확인</a></li>
-    </ul>
-  </li>
-  <li>커밋 아이디
-    <ul>
-      <li><a href="04.8#1">SHA1</a></li>
-      <li><a href="04.8#2">단축키</a></li>
-    </ul>
-  </li>
-  <li>커밋 로그
-    <ul>
-      <li><a href="04.9#1">간략 로그</a></li>
-      <li><a href="04.9#1">특정 파일의 로그</a></li>
-    </ul>
-  </li>
-  <li>diff 명령어
-    <ul>
-      <li><a href="04.10#1">파일 간 차이</a></li>
-      <li><a href="04.10#2">워킹 디렉터리 vs 스테이지 영역</a></li>
-      <li><a href="04.10#3">커밋 간 차이</a></li>
-      <li><a href="04.10#4">소스트리에서 간단하게 변경 이력 확인</a></li>
-      <li><a href="04.10#5">diff 내용을 추가하여 커밋</a></li>
-    </ul>
-  </li>
+  <li><a href="log/list">간략 로그</a></li>
+  <li><a href="log/file">특정 파일의 로그</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="diff-명령어">diff 명령어</h2>
+<hr />
+<ul>
+  <li><a href="diff/file">파일 간 차이</a></li>
+  <li><a href="diff/stage">워킹 디렉터리 vs 스테이지 영역</a></li>
+  <li><a href="diff/difference">커밋 간 차이</a></li>
+  <li><a href="diff/history">소스트리에서 간단하게 변경 이력 확인</a></li>
+  <li><a href="diff/commit">diff 내용을 추가하여 커밋</a></li>
 </ul>
 
 <p><br /></p>
@@ -186,9 +191,10 @@
 
 <p><br /><br /></p>
 
-            </section>
-
-            <!--구글 애드센스-->
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -199,31 +205,45 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-
+            
         </div>
 
         <!-- Sidebar Column -->
         <div class="col-md-3">
-            <aside><!--사이드메뉴1-->
+			<aside><!--사이드메뉴1-->
 <ul class="list-group">
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">기초 탄탄 깃</a>
+        <a href="/text">깃사용법</a>
         <span class="badge badge-primary badge-pill">10</span>
     </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/text/branch/">브랜치</a></li>
 </ul>
 <br>
 
 <!--사이드메뉴3-->
 <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/github">깃허브</a>
     </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
     <li class="list-group-item  d-flex justify-content-between align-items-center">
         <a href="/gitpage">깃페이지</a>
     </li>
@@ -240,9 +260,9 @@
 </ul>
 <br>
 
-</aside>
-            
-            <!--구글 애드센스2-->
+</aside>			
+			
+			<!--구글 애드센스2-->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <ins class="adsbygoogle"
                 style="display:block"
@@ -253,6 +273,7 @@
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            
         </div>
 
     </div>
@@ -260,17 +281,7 @@
 </div>
 <!-- /.container -->
         
-        <footer> <!-- Footer -->
-<footer class="py-3 bg-dark">
-    <div class="container">
-    	<div class="row">
-        	<div class="col-lg-12">
-				<p class="m-0 text-center text-white">Copyright &copy; jinygit 2020, (주)도서출판 길벗</p>
-			</div>
-    	</div>
-    </div>
-    <!-- /.container -->
-</footer></footer>        
+       
 
         <!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
