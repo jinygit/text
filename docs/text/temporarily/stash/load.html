@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 스태시</title>
+            <meta name="title" content="스태시" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스태시, stash" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h2 id="임시-저장한-스태시-불러오기">임시 저장한 스태시 불러오기</h2>
+<hr />
+<p>스태시를 사용하는 목적은 현재 워킹 디렉터리를 커밋하지 않고 임시로 저장하기 위해서입니다. 임시 저장된 내용은 다른 수정 작업을 완료한 후에 다시 불러와 사용할 수 있습니다. 앞에서 임시 저장한 스태시를 불러와 실습을 계속 진행하겠습니다. 먼저 master 브랜치의 파일 버그를 수정한 후 커밋하겠습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (master)
+$ code stash.htm
+</code></pre></div></div>
+
+<p>stash.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>stash를 실습합니다.<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p>한글 <code class="highlighter-rouge">스태시</code>를 영문 <code class="highlighter-rouge">stash</code>로 변경했습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (master)
+$ git commit -am "bug fix master"
+[master 535d22c] bug fix master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+</code></pre></div></div>
+
+<p>버그를 수정했습니다. 다시 원래 브랜치(feature)로 이동합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (master)
+$ git checkout feature
+Switched to branch 'feature'
+</code></pre></div></div>
+
+<p>버그를 수정한 후 다시 원래의 작업 브랜치로 돌아왔습니다. 이전에 수정한 내역들이 남아 있지 않습니다. 스태시에 임시 저장한 작업 내용들을 읽어 다시 적용할 수 있습니다. 스태시 명령어 뒤에 pop 옵션을 추가합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash pop
+</code></pre></div></div>
+
+<p>스태시는 저장 공간이 스택 구조라고 했습니다. 따라서 스택에서 저장된 작업 내용을 읽어 올 때는 제일 마지막에 저장된 내용을 읽어 옵니다. 이러한 데이터의 순차적 특징은 스택의 원리 때문입니다.</p>
+
+<p>그럼 스태시에서 임시 저장된 작업 내용을 읽어 다시 적용합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+$ git stash pop
+On branch feature
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+        modified:   stash.htm
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (2a9eb4f25e601230f9e5d9feeca72facdf96cd8c)
+
+</code></pre></div></div>
+
+<p>스태시의 스택에 저장된 작업 내용이 다시 적용되었습니다. 스태시는 스택에서 내용을 읽어 올 때 현재 브랜치의 워킹 디렉터리와 자동으로 병합합니다. 자동 병합이 성공하면 읽어 온 내용을 스택에서 제거합니다.</p>
+
+<p>스태시에서 임시 저장된 작업 내용을 복원한 후 다시 스태시 목록을 확인합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+$ git stash list
+
+</code></pre></div></div>
+
+<p>스태시 스택 목록에 내용이 없습니다. pop 옵션을 사용하면 스태시 저장 스택에서 항목을 가져오는 동시에 저장된 항목을 삭제하기 때문입니다.</p>
+
+<blockquote>
+  <p>Note: 스태시와 스테이지 영역
+스태시는 스택에 저장할 때 워킹 디렉터리와 스테이지 영역의 파일까지 모두 보관합니다. 스태시로 복원할 때는 워킹 디렉터리만 되돌려 놓습니다. 스테이지에 등록된 스테이지 상태까지 복구하길 원한다면 –index 옵션을 사용해야 합니다.</p>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash apply --index
+</code></pre></div>  </div>
+</blockquote>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/branch">브랜치</a></li>
+    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
+    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
+    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
+    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
+    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
+    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
+    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
+    <li class="list-group-item"><a href="/hook/">Hook</a></li>
+    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | Git 교과서</title>
+            <meta name="title" content="Git 교과서" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="임시-처리">임시 처리</h1>
+<hr />
+<p>지금까지 커밋과 브랜치를 이용하여 변경된 코드를 기록하는 방법을 학습했습니다. 코드를 생성하고 수정하는 모든 작업은 워킹 디렉터리에서 수행합니다. 워킹 디렉터리는 스테이지 영역을 통해 커밋합니다. 안정적으로 깃을 활용하려면 워킹 디렉터리와 스테이지 영역을 관리해야 합니다. 이와 관련 있는 몇 가지 기능을 알아보겠습니다.</p>
+
+<p><br /></p>
+
+<h2 id="스태시">스태시</h2>
+<hr />
+<ul>
+  <li><a href="stash/work">기존 작업 도중에 새로운 변경 요청</a></li>
+  <li><a href="stash/edit">새 코드 작성 중 기존 코드를 수정</a></li>
+  <li><a href="stash/save">스태시의 임시 스택 영역에 작업 중인 코드 저장</a></li>
+  <li><a href="stash/list">임시 저장 영역의 스택 목록</a></li>
+  <li><a href="stash/load">임시 저장한 스태시 불러오기</a></li>
+  <li><a href="stash/conflict">스태시 복원으로 충돌</a></li>
+  <li><a href="stash/copy">스태시 복사</a></li>
+  <li><a href="stash/delete">스태시 삭제</a></li>
+  <li><a href="stash/sourcetree">소스트리에서 스태시 사용</a></li>
+</ul>
+
+<h2 id="clean">clean</h2>
+<hr />
+<ul>
+  <li><a href="clean">워킹 디렉터리 청소</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="정리">정리</h2>
+<hr />
+<p>깃을 안정적으로 잘 사용하려면 워킹 디렉터리를 항상 깨끗하게 유지 관리해야 합니다. 워킹 디렉터리는 코드를 생성하고 수정하는 모든 작업 공간입니다. 워킹 디렉터리가 정리되어 있지 않으면, 브랜치를 변경하여 다른 작업을 할 수 없습니다.</p>
+
+<p>워킹 디렉터리를 정리하는 방법은 수정된 코드를 스테이지하고, 최종 스냅샷을 생성하여 커밋하는 것입니다. 커밋하지 못할 때는 이 장에서 배운 스태시를 적용하여 작업 내용을 임시로 저장한 후 사용해야 합니다.</p>
+
+<p><br /><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/branch">브랜치</a></li>
+    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
+    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
+    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
+    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
+    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
+    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
+    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
+    <li class="list-group-item"><a href="/hook/">Hook</a></li>
+    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

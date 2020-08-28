@@ -10,52 +10,69 @@ keyword: "고급 기능"
 
 <br>
 
-## 학습내용
+## refs
 ---
-* refs
-    + [실습 환경 준비](refs#1)
-    + [해시](refs#2)
-    + [역조회](refs#3)
-    + [참조 목록](refs#4)
++ [실습 환경 준비](refs#1)
++ [해시](refs#2)
++ [역조회](refs#3)
++ [참조 목록](refs#4)
 
-* reflog
-    + [참조 기록](reflog#1)
-    + [기록 확인](reflog#2)
-    + [기간 확인](reflog#3)
-    + [기록 유지](reflog#4)
+<br>
 
-* 파일 애너테이션
-    + [blame](blame#1)
-    + [실습 환경 준비](blame#2)
-    + [blame 명령어](blame#3)
-    + [옵션 활용](blame#4)
+## reflog
+---
++ [참조 기록](reflog#1)
++ [기록 확인](reflog#2)
++ [기간 확인](reflog#3)
++ [기록 유지](reflog#4)
 
-* replace
-    + [실습 환경 준비](replace)
-    + [저장소 분리](replace)
-    + [저장소 분리](replace)
-    + [저장소 연결](replace)
+<br>
 
-* 가비지 콜렉트
-    + [가비지](gc)
-    + [압축 관리](gc)
-    + [실행](gc)
-    + [refs 압축](gc)
-    + [환경 설정](gc)
+## 파일 애너테이션
+---
++ [blame](blame#1)
++ [실습 환경 준비](blame#2)
++ [blame 명령어](blame#3)
++ [옵션 활용](blame#4)
 
-* prune
-    + [고립된 객체](prune)
-    + [실습 환경 준비](prune)
-    + [객체 삭제](prune)
-    + [객체 정리](prune)
-    + [원격 작업](prune)
+<br>
 
-* rerere
-    + [동일한 충돌](rerere)
-    + [활성화](rerere)
-    + [실습 준비](rerere)
-    + [충돌 및 기록](rerere)
-    + [자동 해결](rerere)
+## replace
+---
++ [실습 환경 준비](replace)
++ [저장소 분리](replace)
++ [저장소 분리](replace)
++ [저장소 연결](replace)
+
+<br>
+
+## 가비지 콜렉트
+---
++ [가비지](gc)
++ [압축 관리](gc)
++ [실행](gc)
++ [refs 압축](gc)
++ [환경 설정](gc)
+
+<br>
+
+## prune
+---
++ [고립된 객체](prune)
++ [실습 환경 준비](prune)
++ [객체 삭제](prune)
++ [객체 정리](prune)
++ [원격 작업](prune)
+
+<br>
+
+## rerere
+---
++ [동일한 충돌](rerere)
++ [활성화](rerere)
++ [실습 준비](rerere)
++ [충돌 및 기록](rerere)
++ [자동 해결](rerere)
 
 <br>
 

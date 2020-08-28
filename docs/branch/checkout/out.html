@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 브랜치 이동</title>
+            <meta name="title" content="브랜치 이동" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 브랜치 이동" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">branch</a></li><li class="breadcrumb-item "><a href="../">checkout</a></li><li class="breadcrumb-item active">out</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="체크아웃">체크아웃</h1>
+<hr />
+<p>호텔에서 퇴실할 때 체크아웃이라는 말을 합니다. 체크아웃은 객실을 비우고 떠나는 것을 의미합니다.<br />
+즉, 현재 브랜치를 떠나 새로운 브랜치로 들어간다는 의미입니다.</p>
+
+<p><br /></p>
+
+<h2 id="브랜치-이동">브랜치 이동</h2>
+<hr />
+<p>깃에서 브랜치 간 이동할 때는 checkout 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout 브랜치이름
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="워킹디렉토리">워킹디렉토리</h2>
+<hr />
+<p>checkout 명령어로 브랜치 간 이동하면서 실습해 보겠습니다.<br />
+주의할 점은 깃은 하나의 워킹 디렉터리만 가지고 있다는 것입니다. 워킹 디렉터리는 선택한 브랜치 하나만 연결되어 있습니다.<br />
+즉, 한 브랜치에서만 <code class="highlighter-rouge">작업</code>과 <code class="highlighter-rouge">커밋</code>을 할 수 있습니다.</p>
+
+<p>따라서 다른 브랜치에서 작업하려면 반드시 브랜치를 변경하여 워킹 디렉터리를 <code class="highlighter-rouge">재설정</code>해야 합니다.</p>
+
+<blockquote>
+  <p>Note: 워킹 디렉터리에 커밋하지 않은 내용이 있다면 브랜치를 변경할 수 없습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="체크아웃-실습">체크아웃 실습</h2>
+<hr />
+<p>checkout 명령어를 사용하여 footer 브랜치로 변경해 봅시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-MINGW64 /e/gitstudy06 (feature)
+$ git checkout footer
+Switched to branch 'footer'
+infoh@DESKTOP MINGW64 /e/gitstudy06 (footer)
+</code></pre></div></div>
+
+<p>현재 브랜치는 feature입니다.</p>
+
+<p>체크아웃하면 <code class="highlighter-rouge">Switched to branch ‘footer’</code> 메시지가 출력됩니다.<br />
+footer 브랜치로 변경했다는 의미입니다.<br />
+그리고 깃 배시에서도 변경된 브랜치 이름(footer)을 출력합니다.</p>
+
+<p><br /></p>
+
+<h2 id="브랜치-이동처리">브랜치 이동처리</h2>
+<hr />
+<p>깃의 체크아웃은 거의 순간적으로 실행됩니다.<br />
+깃은 빠르게 포인터를 이용하여 <code class="highlighter-rouge">빠르게 브랜치를 이동</code>할 수 있는 것이 <code class="highlighter-rouge">장점</code>입니다.</p>
+
+<p>다시 브랜치 <code class="highlighter-rouge">목록</code>을 확인합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (footer)
+$ git branch -v
+  feature d84766c first
+* footer  d84766c first
+  master  d84766c first
+</code></pre></div></div>
+
+<p>별표(<code class="highlighter-rouge">*</code>)가 footer 브랜치 이름 앞으로 변경된 것을 확인할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="커밋-파일로-체크아웃">커밋, 파일로 체크아웃</h2>
+<hr />
+<p>체크아웃은 브랜치 외에 특정 <code class="highlighter-rouge">커밋</code>이나 <code class="highlighter-rouge">파일</code>로도 할 수 있습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout 브랜치 ☜ 브랜치로 체크아웃
+$ git checkout -- 파일명 ☜ 파일로 체크아웃
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: 이중 대시(<code class="highlighter-rouge">--</code>)를 사용하면 파일 이름을 정확히 지정하여 브랜치를 변경할 수 있습니다.<br />
+이렇게 하면 깃의 다른 옵션 명령어와 혼동하지 않습니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/branch">브랜치</a></li>
+    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
+    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
+    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
+    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
+    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
+    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
+    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
+    <li class="list-group-item"><a href="/hook/">Hook</a></li>
+    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

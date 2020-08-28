@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 브랜치 생성</title>
+            <meta name="title" content="브랜치 생성" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 브랜치 생성" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">branch</a></li><li class="breadcrumb-item active">create</li><li class="breadcrumb-item active">create</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="브랜치-생성">브랜치 생성</h1>
+<hr />
+<p>처음 생성되는 기본 master 브랜치 외의 브랜치는 사용자가 직접 branch 명령어를 입력하여 생성해야 합니다.<br />
+브랜치를 생성한다는 것은 기본적으로 제공되는 master 브랜치 이외에 사용자가 직접 정의한 사용자 브랜치를 이야기하는 것입니다.</p>
+
+<p><br /></p>
+
+<h2 id="분기점">분기점</h2>
+<hr />
+<p>브랜치는 깃에서 또 하나의 개발 <code class="highlighter-rouge">분기점</code>을 의미합니다. 새로운 개발 분기점이 필요할 때는 브랜치를 <code class="highlighter-rouge">추가</code>로 생성할 수 있습니다. 
+브랜치 생성 개수에는 제한이 없습니다.<br />
+필요한 만큼 여러 브랜치를 생성할 수 있으며, 각 브랜치를 구분하려면 브랜치별로 <code class="highlighter-rouge">이름</code>을 지정해야 합니다.</p>
+
+<p><br /></p>
+
+<h2 id="브랜치-명령어">브랜치 명령어</h2>
+<hr />
+<p>브랜치를 생성할 때는 branch 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch 브랜치이름 커밋ID
+</code></pre></div></div>
+
+<p>branch 명령어 뒤에 브랜치 이름을 <code class="highlighter-rouge">인자 값</code>으로 추가합니다.</p>
+
+<p><br /></p>
+
+<h2 id="브랜치의-생성기준">브랜치의 생성기준</h2>
+<hr />
+<p>브랜치 이름만 입력하면 <code class="highlighter-rouge">현재 HEAD 포인터</code>를 기준으로 새로운 브랜치를 생성합니다. 
+직접 <code class="highlighter-rouge">커밋 ID</code> 인자 값을 지정하면, 지정한 커밋 ID를 기준으로 브랜치를 생성합니다.</p>
+
+<p>브랜치 생성<br />
+<img src="../img/06-3.jpg" alt="브랜치 생성" /></p>
+
+<p><br /></p>
+
+<h2 id="실습-따라하기">실습 따라하기</h2>
+<hr />
+<p>실습 환경을 만들어 봅시다.</p>
+
+<p><br /></p>
+
+<h3 id="브랜치를-확인할-실습파일을-하나-생성합니다">브랜치를 확인할 실습파일을 하나 생성합니다.</h3>
+<p>저장소에 새로운 파일을 하나 생성한 후 저장합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ code branch.htm ☜ VS Code로 파일을 작성합니다
+</code></pre></div></div>
+
+<p>다음과 같이 내용을 작성합니다.<br />
+branch.htm</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>브랜치 실습을 합니다.<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+
+<p>작성한 파일을 스테이지에 등록하고, 커밋을 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git add branch.htm ☜ 추적 등록
+
+infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git commit -m "first" ☜ 커밋 작성
+[master (root-commit) cc66812] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 branch.htm
+</code></pre></div></div>
+
+<p>코드를 저장하고 커밋을 하나 추가했습니다.</p>
+
+<p><br /></p>
+
+<h3 id="새로운-브랜치-생성">새로운 브랜치 생성</h3>
+<p>커밋이 있는 상태에서 새로운 브랜치를 생성합니다. 
+마지막 <code class="highlighter-rouge">커밋ID(100644)</code>를 기준으로 브랜치를 생성 및 추가합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+$ git branch footer
+
+$ git branch
+  footer
+* master
+</code></pre></div></div>
+
+<p>새로운 <code class="highlighter-rouge">footer</code> 브랜치가 생성된 것을 확인할 수 있습니다.</p>
+
+<p>브랜치를 생성할 때는 결과 <code class="highlighter-rouge">메시지를 별도로 표시하지 않습니다</code>. 
+메시지가 없어도 <code class="highlighter-rouge">정상적</code>으로 브랜치가 생성된 것입니다.</p>
+
+<p><br /></p>
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/branch">브랜치</a></li>
+    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
+    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
+    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
+    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
+    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
+    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
+    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
+    <li class="list-group-item"><a href="/hook/">Hook</a></li>
+    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

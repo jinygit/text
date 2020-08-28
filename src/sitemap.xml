@@ -9,763 +9,1043 @@
 
 <url>
   <loc>https://git.jiny.dev/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/setup/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/part2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/part3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/concept/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/hosting/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/BetaReview/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/copyright</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/setup/windows/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/setup/linux/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/setup/sourcetree/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/setup/kraken/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <loc>https://git.jiny.dev/setup/CRLF</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/init/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/working/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/stage/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/status/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/gitignore/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/concept/clone/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/commit/history</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/commit/04.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/commit/04.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.7</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.8</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.9</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/commit/04.10</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/server/05.7</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/branch/06.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.7</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.8</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.9</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.10</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/text/branch/06.11</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/07/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/07/stash</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/07/clean</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/08.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/merge/rebase</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/09/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/09/09.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/09/revert</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.7</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.8</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/tag/10.9</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.1</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.2</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.3</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.4</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.5</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.6</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/submodule/11.7</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/refs</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/reflog</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/blame</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/replace</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/gc</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/prune</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/text/12/rerere</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/server/bare</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/hosting/repo</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/hosting/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/bitbucket/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitlab/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/collaboration/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/project/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/fork/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/clone/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/code/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/request/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/discuss/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/review/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/test/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/receive/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/pullrequest/manage</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/branch</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/practice</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/init</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/master</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/develop</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/feature</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/release</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitflow/hotfix</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/hook/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/hook/github</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/copyright</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/copyleft</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/license</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/freesoft</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/opensource</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/openlicense</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/apply</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/comunity</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/governance</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/develop</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/opensource/contributor</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <loc>https://git.jiny.dev/gitpage/static</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/setting</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/jekyll/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/composer</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/npm</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/pip</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/gem</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/packages/nuget</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/about</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/commit/status/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/stage/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/snap/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/empty/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/id/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/id/sha1</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/id/short</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/log/list</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/log/file</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/diff/file</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/diff/stage</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/diff/difference</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/diff/history</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/commit/diff/commit</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/repository/collaboration</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/repository/continuous</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/repository/member</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/local</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/protocal</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/list</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/origin</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/add</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/branch</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/rename</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/show</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/remote/delete</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/push</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/clone</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/pull/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/fetch</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/step/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/step/last</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/step/complit</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/working/new</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/working/feature</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/create/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/create/create</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/create/name</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/create/sourcetree</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/list/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/checkout/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/log/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/head/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/change/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/remote/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/trans/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/text/branch/delete/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/hosting/open</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/hosting/service</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/about/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/about/social</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/github/regist/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/create/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/regist/dash</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/ssh/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/regist/shotcut</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/remote/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/regist/account/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repository/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/create/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/code/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/ssh/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/branch/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/release/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/account/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/organization/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/collaborators/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/team/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/contributor</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/insights/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/bts</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/wiki/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/gist/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/label/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://git.jiny.dev/github/milestones/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/remote/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/github/setting/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/static</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/markdown</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/download/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/setting</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.51</priority>
+  <loc>https://git.jiny.dev/github/repo/clone/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/star</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/watch</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/fork</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/description</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/code/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/branch/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/component/release/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/collaborate/collaborators/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/collaborate/team/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/collaborate/contributor</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/collaborate/insights/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/bts</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/wiki/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/gist/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/label/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/milestones/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/markdown/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://git.jiny.dev/gitpage/domain</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/jekyll/install</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/theme</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <loc>https://git.jiny.dev/gitpage/jekyll/create</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
+  <loc>https://git.jiny.dev/gitpage/jekyll/build</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/issue/</loc>
-  <lastmod>2020-04-01T18:30:36+00:00</lastmod>
-  <priority>0.41</priority>
+  <loc>https://git.jiny.dev/gitpage/jekyll/config</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/jekyll/liquid</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/gitpage/jekyll/structure</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/pull/exercise</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/server/download/pull/unrelated</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://git.jiny.dev/github/tools/issue/</loc>
+  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 
 
