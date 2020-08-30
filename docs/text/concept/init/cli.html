@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 소스트리로 깃 저장소 생성하기</title>
+            <meta name="title" content="소스트리로 깃 저장소 생성하기" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 깃 저장소 생성" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,102 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="초기화-cli">초기화: CLI</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p>그럼 깃 저장소의 숨겨진 영역을 살펴보면서 저장소를 좀 더 알아봅시다.<br />
+저장소를 생성하려면 먼저 <code class="highlighter-rouge">초기화 작업</code>이 필요합니다.<br />
+깃에서 초기화란 이미 존재하는 폴더에 초기화 명령어로 <code class="highlighter-rouge">VCS</code> 관리를 위한 숨겨진 영역을 생성하는 작업을 의미합니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="깃-베시">깃 베시</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>깃 초기화를 해 봅시다. 먼저 터미널(깃 배시)을 실행합니다.</p>
+
+<p><img src="./img/03-1.jpg" alt="깃초기화" /></p>
+
+<blockquote>
+  <p>Nodte: 터미널은 텍스트로 명령어를 입력할 수 있는 대화창입니다.<br />
+깃 배시 터미널 프로그램 외에도 윈도에 기본 내장된 CMD, powerShell 등을 사용해도 됩니다.<br />
+책에서는 깃 배시를 기준으로 합니다. 윈도 메뉴 말고 바탕화면의 깃 배시 아이콘으로 실행해도 됩니다.</p>
+</blockquote>
+
+<p>실습에 필요한 새 폴더를 하나 만들겠습니다.<br />
+또는 기존에 있던 폴더에서 시작해도 괜찮습니다.<br />
+먼저 실습 폴더를 만들고 해당 폴더로 이동합니다.</p>
+
+<p>책에서는 <code class="highlighter-rouge">jinygit03</code> 폴더를 만들고 해당 폴더로 이동했습니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir jinygit03  ☜ 폴더를 만듭니다.
+$ cd jinygit03     ☜ 만든 폴더로 이동합니다.
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: mkdir 명령어와 cd 명령어<br />
+mkdir 명령어는 make directory의 약어로 셸(터미널)에서 폴더를 만드는 명령입니다.<br />
+<code class="highlighter-rouge">cd 명령어</code>는 change directory의 약어로 디렉터리를 이동하는 명령입니다.<br />
+명령 프롬프트를 사용하는 것이 익숙하지 않다면, 윈도 탐색기에서 마우스 오른쪽 버튼을 누른 후 <code class="highlighter-rouge">새로 만들기</code> &gt; <code class="highlighter-rouge">폴더 메뉴</code>를 선택하여 만들어도 좋습니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>Note:지정된 폴더에서 깃 배시 열기<br />
+명령 프롬프트에서 원하는 경로로 이동하기 불편하다면, 윈도 탐색기를 사용하여 원하는 폴더로 이동한 후 해당 폴더에서 터미널을 열 수 있습니다. 원하는 폴더에서 마우스 오른쪽 버튼을 누른 후 Git Bash Here 메뉴를 선택합니다.</p>
+</blockquote>
+
+<p><img src="./img/03-2.jpg" alt="" /></p>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="명령어-입력">명령어 입력</h2>
 <hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
+<p>이제 <code class="highlighter-rouge">터미널</code>에서 다음 <code class="highlighter-rouge">초기화 명령어</code>를 입력합니다.<br />
+깃 명령어는 보통 <code class="highlighter-rouge">git</code> 키워드와 명령어를 함께 입력합니다.<br />
+<code class="highlighter-rouge">옵션</code>을 추가할 수도 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init 경로명
+</code></pre></div></div>
+
+<p>앞에서 설명했듯이 git init 명령어는 기존 폴더에 숨겨진 영역(숨겨진 폴더)을 <code class="highlighter-rouge">추가</code>합니다.<br />
+숨겨진 영역을 추가함으로써 <code class="highlighter-rouge">깃 저장소로 변경</code>되는 것입니다.</p>
 
 <p><br /></p>
 
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
+<h2 id="현재-폴더-초기화-하기">현재 폴더 초기화 하기</h2>
 <hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
+<p>초기화 명령어를 입력할 때 경로명을 입력하지 않으면, 현재 폴더에서 초기화됩니다.<br />
+우리는 원하는 폴더로 이동한 상태이므로 경로명을 입력하지 않고 실행할 것입니다.<br />
+정상적으로 초기화되었다면 <code class="highlighter-rouge">Initialized empty~</code> 같은 메시지를 출력합니다.</p>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init ☜ 저장소 초기화 명령
+Initialized empty Git repository in E:/jinygit03/.git/
+</code></pre></div></div>
+
+<p>현재 폴더를 의미하는 <code class="highlighter-rouge">.</code>을 사용할 수도 있습니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git init .
+</code></pre></div></div>
+
+<p><img src="./img/03-3.jpg" alt="그림" /></p>
+
+<p>깃 초기화는 완전히 <code class="highlighter-rouge">비어</code> 있는 폴더나 <code class="highlighter-rouge">기존에 사용하던</code> 폴더에서 모두 가능합니다.</p>
+
+<p>앞에서 언급했듯이 깃 저장소는 영어로 <code class="highlighter-rouge">리포지터리</code>라고 하니, 두 용어를 혼동하지 말고 동일한 것으로 이해하면 됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="윈도우에서-숨김화면-관리하기">윈도우에서 숨김화면 관리하기</h2>
+<hr />
+<p>초기화된 저장소에서 <code class="highlighter-rouge">숨긴 항</code>’을 볼 수 있게 허용하면, 숨겨진 영역을 확인할 수 있습니다.</p>
+
+<blockquote>
+  <p>Note: 윈도 탐색기에서 숨겨진 파일을 표시하려면 설정을 변경해야 합니다. 탐색기  보기 메뉴를 선택한 후 숨긴 항목을 체크합니다.</p>
+</blockquote>
+
+<p><img src="./img/03-4.jpg" alt="그림" /></p>
+
+<p><code class="highlighter-rouge">git init</code> 명령어는 기본적으로 로컬 저장소를 생성하며, 다양한 옵션을 추가로 제공합니다.<br />
+추가 옵션을 사용하여 원격 저장소도 초기화할 수 있습니다.</p>
+
+<p><br /></p>
 
             </section>
 

@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 스테이지</title>
+            <meta name="title" content="스테이지" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스테이지" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,29 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="파일의-stage-상태와-unstage-상태">파일의 stage 상태와 unstage 상태</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p>워킹 디렉터리에 있는 tracked 상태의 파일들은 스테이지 영역과 긴밀한 상관관계를 맺습니다.<br />
+스테이지 영역으로 등록된 모든 파일은 untracked 상태에서 tracked 상태로 변경됩니다.<br />
+스테이지는 워킹 디렉터리 안에 있는 파일들의 추적 상태를 관리하는 역할을 수행합니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="상태구분">상태구분</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>스테이지 영역은 파일을 stage 상태와 unstage 상태로 구분합니다. 
+깃이 변화 이력을 기록하려면 파일들의 최종 상태가 stage 상태여야 합니다.<br />
+unstage 상태라면 파일에 변화가 있다는 것을 의미합니다.</p>
+
+<p>즉, 스테이지 영역에 있는 파일과 워킹 디렉터리 안에 있는 파일 내용에 차이가 있을 때는 unstage 상태가 됩니다.</p>
+
+<p>또 넓게 보면 아직 스테이지 영역으로 등록하지 않은 워킹 디렉터리 안의 파일도 unstage 상태라고 생각할 수 있습니다.<br />
+이때는 unstage 상태이자 동시에 untracked 상태입니다.</p>
+
+<p>unstage 상태라고 해서 실제 파일이 없어지는 것은 아닙니다. 단지 파일이 수정되어 임시적으로 스테이지 목록에서 제외된 것입니다. 
+<code class="highlighter-rouge">git add</code> 명령어를 사용하면 스테이지에 다시 추가할 수 있습니다.</p>
 
 <p><br /></p>
-
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
-<hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
-
-<p><br /></p>
-
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
-<hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
-
 
             </section>
 

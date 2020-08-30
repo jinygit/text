@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 소스트리로 깃 저장소 생성하기</title>
+            <meta name="title" content="소스트리로 깃 저장소 생성하기" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 깃 저장소 생성" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,87 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="소스트리와-연결">소스트리와 연결</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p>로컬 컴퓨터에 생성된 깃 저장소를 <code class="highlighter-rouge">소스트리</code>와 <code class="highlighter-rouge">연동</code>하여 이력을 쉽게 관리할 수 있습니다.<br />
+저장소를 소스트리와 연결해 보겠습니다.<br />
+먼저 소스트리를 실행합니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="새-로컬-저장소를-생성하여-소스트리에-연결">새 로컬 저장소를 생성하여 소스트리에 연결</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>소스트리에 새 저장소를 생성하여 로컬 저장소와 연결해 보겠습니다.<br />
+소스트리 메뉴 위쪽 <code class="highlighter-rouge">+ Create</code> 버튼을 클릭하여 새 저장소를 생성합니다.<br />
+새 저장소 생성은 폴더 <code class="highlighter-rouge">생성</code> 및 <code class="highlighter-rouge">초기화</code> 명령어인 <code class="highlighter-rouge">git init</code>를 동시에 실행하는 것과 같습니다.</p>
+
+<p>그럼 새 저장소를 생성해 봅시다.<br />
+소스트리 첫 화면에서 + <code class="highlighter-rouge">Create</code> 버튼을 클릭합니다.</p>
+
+<p><img src="./img/03-5.jpg" alt="새 저장소 생성" /></p>
+
+<p>그러면 다음 화면이 나옵니다. 목적지 경로와 이름 항목이 보입니다.</p>
+
+<p><img src="./img/03-6.jpg" alt="새 저장소 생성" /></p>
+
+<p>새 폴더를 만들 것이므로 첫 번째 입력란(목적지 경로)에 경로와 원하는 폴더 이름을 입력합니다.<br />
+필자는 D:\문서\ 경로에 gitstudy 폴더를 만든다고 입력했습니다(예: D:\문서\ gitstudy).<br />
+목적지 경로를 입력하면 <code class="highlighter-rouge">이름</code>은 자동으로 gitstudy로 지정됩니다.</p>
+
+<p>모두 입력했다면 <code class="highlighter-rouge">생성</code>을 누릅니다.</p>
+
+<p><img src="./img/03-7.jpg" alt="gitstudy 폴더 생성" /></p>
+
+<p>깃 저장소가 생성되면 깃 상태를 확인할 수 있는 화면으로 전환됩니다.</p>
+
+<p><img src="./img/03-8.jpg" alt="깃 상태 확인" /></p>
+
+<p>새로운 폴더를 만든 후 자동으로 깃 초기화 작업까지 처리했습니다.</p>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="기존-저장소와-연결">기존 저장소와 연결</h2>
 <hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
+<p>기존에 사용하던 로컬 저장소를 소스트리와 연결할 수 있습니다.<br />
+먼저 위쪽 <code class="highlighter-rouge">Add</code> 버튼을 클릭합니다.</p>
 
-<p><br /></p>
+<p><img src="./img/03-9.jpg" alt="Add 버튼 클릭" /></p>
 
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
-<hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
+<p>다음 화면이 나오면 탐색을 누릅니다.</p>
 
+<p><img src="./img/03-10.jpg" alt="탐색 누르기" /></p>
+
+<p>원하는 폴더를 선택한 후 폴더 선택을 누릅니다.</p>
+
+<p><img src="./img/03-11.jpg" alt="원하는 폴더 선택" /></p>
+
+<p>그러면 다음과 같이 ‘작업 경로’에 경로를 입력하고, <code class="highlighter-rouge">이름</code> 항목은 자동으로 채웁니다.<br />
+추가를 누릅니다.</p>
+
+<p>그림 3-12] 로컬 저장소를 선택한 상태<br />
+<img src="./img/03-12.jpg" alt="" /></p>
+
+<p>기존에 만든 저장소 폴더를 선택하면 다음 메시지가 출력될 수 있습니다. 예를 눌러 다음으로 넘어갑니다.</p>
+
+<p>그림 3-13] 기존 깃 저장소 폴더를 선택할 때 알림 화면<br />
+<img src="./img/03-13.jpg" alt="" /></p>
+
+<p>깃 저장소가 추가되면 깃 상태를 확인할 수 있는 화면으로 전환됩니다.</p>
+
+<p>그림 3-14] 깃 상태 확인<br />
+<img src="./img/03-14.jpg" alt="" /></p>
+
+<p>이제 깃 저장소를 터미널과 소스트리를 모두 사용하여 동시에 관리할 수 있습니다.<br />
+깃 명령어가 익숙하지 않다면 처음에는 소스트리를 사용하는 것이 편리합니다.<br />
+깃 명령어에 익숙하다면 터미널이 좀 더 빠릅니다. 깃 터미널로 작업한 모든 결과 역시 소스트리로 확인할 수 있습니다.</p>
+
+<p>지금까지는 자신의 컴퓨터에 있는 로컬 저장소를 알아보았습니다.<br />
+깃 저장소는 크게 로컬(local) 저장소와 원격(remote) 저장소로 구분할 수 있습니다.<br />
+로컬 컴퓨터에서는 다수의 로컬 저장소를 생성 및 관리할 수 있으며, 하나의 저장소는 다수의 원격 저장소(또는 서버 저장소)와 연결하여 사용할 수 있습니다. 이렇게 수많은 저장소가 있는 것이 분산형 버전 관리 시스템의 특징입니다.</p>
+
+<p>이 개념은 나중에 좀 더 알아보겠습니다.</p>
+
+<p><br /><br /></p>
 
             </section>
 

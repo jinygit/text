@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 스테이지</title>
+            <meta name="title" content="스테이지" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스테이지" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,42 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="파일의-modified-상태와-unmodified-상태">파일의 modified 상태와 unmodified 상태</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p>코드를 변경한다는 것은 워킹 디렉터리에서 파일을 수정하는 것을 의미합니다.<br />
+파일이 수정되면 워킹 디렉터리와 스테이지 간 내용이 일치하지 않습니다.<br />
+따라서 스테이지는 수정한 파일과 원본 파일을 구분하려고 수정함(modified) 상태와 수정하지 않음(unmodified) 상태로 표현합니다.<br />
+파일 수정 작업은 스테이지 영역과 긴밀한 상관관계를 맺습니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="modified-상태">modified 상태</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>스테이지에 등록된 파일은 깃이 추적 관리합니다. 깃이 실제로 기록한 파일이며, 사실상 버전을 의미합니다. 
+ 파일 수정은 개발 과정에서 뗄 수 없는 작업입니다. 개발 작업에서 수많은 코드가 변경되고, 깃을 사용하면 이 변경 내역은 영구적으로 기록됩니다.</p>
+
+<p>앞에서 설명했듯이 깃은 tracked 상태인 파일만 수정 여부를 관리할 수 있습니다.<br />
+tracked 상태인 파일이 수정되면 스테이지는 파일 상태를 modified 상태로 변경합니다.</p>
+
+<p>파일 수정 여부 확인<br />
+<img src="./img/03-17.jpg" alt="" /></p>
+
+<p>그러면 수정된 파일은 스테이지에서 잠시 제외됩니다.<br />
+깃은 수정 여부만 체크해 주기 때문에 modified 상태로 변경된 파일은 스테이지로 재등록해야 합니다.<br />
+수정된 파일을 스테이지 영역으로 다시 적용하려면 git add 명령어로 재등록합니다.</p>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="unmodified-상태">unmodified 상태</h2>
 <hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
+<p>unmodified 상태는 tracked 상태이면서 스테이지에서 한 번도 수정하지 않은 원본 상태를 의미합니다. 이처럼 수정하지 않은 파일들은 재등록하지 않아도 됩니다. 스테이지에 등록한 후 어떤 수정도 하지 않았다면 unmodified 상태입니다. 깃은 파일의 수정 여부를 체크하고, 스테이지 영역의 갱신 작업 여부를 작업자에게 알려 줍니다.</p>
 
-<p><br /></p>
+<p>3.2절과 3.3절에서 배운 개념을 그림 하나로 정리하면 다음과 같습니다. 워킹 디렉터리에서 등록 명령(git add 명령어)을 실행하면 스테이지에 등록됩니다. 이때 자동으로 tracked 상태가 됩니다. 파일을 수정하지 않으면 계속 stage 상태에 머무릅니다. 파일이 수정되면 modified 상태가 되고, 스테이지에서 떨어져 나와 unstage 상태가 됩니다. unstage 상태의 파일은 워킹 디렉터리에 잠시 담아 둡니다. 이때 다시 등록 명령을 실행하면 stage 상태로 변경됩니다.</p>
 
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
-<hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
+<p>워킹 디렉터리와 스테이지 상태 구분<br />
+<img src="./img/03-18.jpg" alt="" /></p>
 
+<p><br /><br /></p>
 
             </section>
 

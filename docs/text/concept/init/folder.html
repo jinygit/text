@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 숨겨진 .git 폴더</title>
+            <meta name="title" content="숨겨진 .git 폴더" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 깃 저장소 생성" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,66 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="숨겨진-폴더--git-폴더">숨겨진 폴더 = .git 폴더</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p><code class="highlighter-rouge">git init</code> 명령어를 사용하여 일반적인 폴더를 깃이 관리할 수 있는 저장소로 <code class="highlighter-rouge">변경</code>했습니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="git-폴더">.git 폴더</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>깃 저장소를 초기화한다는 것은 별도의 숨겨진 폴더를 하나 추가하고 환경 설정 파일을 생성하는 것입니다.<br />
+생성된 숨겨진 폴더를 확인해 봅시다.</p>
+
+<p>먼저 깃 배시 터미널이 실행된 상태에서 <code class="highlighter-rouge">ls 명령어</code>로 파일 목록을 출력합시다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls
+</code></pre></div></div>
+
+<p>ls 명령어는 파일 목록을 출력하는 리눅스 명령어입니다.<br />
+초기화된 폴더에서 ls 명령어를 입력하면 아무 내용도 출력되지 않습니다.</p>
+
+<p>일반적인 ls 명령어는 숨겨진 폴더까지 확인할 수 없습니다.<br />
+이번에는 <code class="highlighter-rouge">-a</code> 옵션을 추가하여 입력합니다.<br />
+<code class="highlighter-rouge">-a</code> 옵션은 폴더 안의 숨겨진 파일을 같이 출력하라는 의미입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -a
+./ 
+../ 
+.git/
+</code></pre></div></div>
+
+<p>이전 결과와 달리 목록이 화면에 출력되었습니다.<br />
+목록을 보니 <code class="highlighter-rouge">.git</code>이라는 숨겨진 폴더가 하나 있습니다.<br />
+보통 폴더 이름 앞에 점(<code class="highlighter-rouge">.</code>)이 있으면 숨겨진 폴더를 의미합니다.<br />
+<br /></p>
+
+<h2 id="깃-골격파일-생성">깃 골격파일 생성</h2>
+<hr />
+<p>숨겨진 폴더인 .git 폴더에는 깃 저장소에 필요한 모든 <code class="highlighter-rouge">뼈대 파일</code>이 담겨 있습니다.<br />
+이러한 뼈대 파일들은 깃 초기화를 통하여 <code class="highlighter-rouge">자동 생성</code>됩니다.</p>
+
+<p>깃의 숨겨진 폴더(.git)는 매우 중요합니다.<br />
+이 폴더에는 깃으로 관리되는 모든 파일 및 브랜치 등 이력을 기록합니다.</p>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="깃-저장소-복제-또는-이동">깃 저장소 복제 또는 이동</h2>
 <hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
+<p>컴퓨터에서 깃 저장소를 통째로 복사하고자 할 때는 숨겨진 <code class="highlighter-rouge">.git</code> 폴더까지 같이 복사해야 합니다.<br />
+로컬 컴퓨터에서 <code class="highlighter-rouge">.git</code> 폴더를 삭제하거나 함께 복제하지 않으면 <code class="highlighter-rouge">깃의 모든 이력은 없어집니다</code>.</p>
+
+<p>즉, 일반적인 폴더 파일과 동일합니다.</p>
+
+<blockquote>
+  <p>Note: 숨겨진 폴더까지 같이 복사하려면 일반적인 <code class="highlighter-rouge">cp</code> 명령어로는 할 수 없습니다.<br />
+<code class="highlighter-rouge">-r</code> 옵션을 사용해야 숨겨진 폴더도 함께 복사됩니다.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cp -r 원본폴더 복사폴더
+</code></pre></div></div>
 
 <p><br /></p>
-
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
-<hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
-
 
             </section>
 

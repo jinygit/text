@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 깃 저장소 복제</title>
-            <meta name="title" content="깃 저장소 복제" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 복제, clone" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃 저장소 생성</title>
+            <meta name="title" content="깃 저장소 생성" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 깃 저장소 생성" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,44 +81,31 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="폴더와-깃-저장소">폴더와 깃 저장소</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
-
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
-
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p>컴퓨터의 파일과 폴더는 운영 체제의 <code class="highlighter-rouge">파일 시스템</code>에 의존하여 동작합니다.</p>
 
 <p><br /></p>
 
-<h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
+<h2 id="파일시스템">파일시스템</h2>
 <hr />
-<ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
-</ul>
+<p>파일 시스템은 하드디스크 같은 장치에 <code class="highlighter-rouge">데이터를 저장</code>하고 <code class="highlighter-rouge">관리</code>합니다.<br />
+그중 폴더는 파일 여러 개를 하나로 관리할 수 있는 <code class="highlighter-rouge">논리적 개념</code>입니다.<br />
+마치 파일을 그룹으로 묶어 놓은 것과 같습니다.</p>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="깃의-파일관리">깃의 파일관리</h2>
 <hr />
-<ul>
-  <li>내려받기</li>
-  <li>복제</li>
-</ul>
+<p>그렇다면 깃은 파일의 변경 내역을 어떻게 저장하고 관리할 수 있을까요? 깃 저장소는 외형적으로 폴더와 유사합니다.<br />
+사용자 입장에서는 일반 폴더와 깃 저장소를 구별 없이 모두 동일하게 사용할 수 있습니다. 하지만 깃 저장소는 내부적으로 구조가 다릅니다.<br />
+깃 저장소에는 별도의 숨겨진 영역(숨겨진 폴더)이 있는데, 여기에 버전 관리 시스템(VCS, Version Control System)에 필요한 파일 변경 이력을 기록합니다.</p>
+
+<p>저장소는 프로젝트의 모든 리비전(revision)(개정)과 히스토리를 가진 데이터베이스와 같습니다.</p>
+
+<p>즉, 일반적인 폴더와 깃 저장소 차이점은 숨겨진 영역이 있는지 여부입니다.</p>
 
 <p><br /></p>
-
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
-<hr />
-<ul>
-  <li>저장소 URL</li>
-  <li>복제 실습</li>
-  <li>저장소 이름 변경</li>
-</ul>
-
 
             </section>
 
