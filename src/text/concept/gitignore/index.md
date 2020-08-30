@@ -24,5 +24,19 @@ breadcrumb:
 
 <br>
 
-+ [.gitignore 파일](file)
-+ [.gitignore 파일 표기법](rule)
+## [.gitignore 파일](file)
+---
+* 생성위치
+* 제외목록
+* 작성방법
+
+<br>
+
+## [.gitignore 파일 표기법](rule)
+---
+* 파일명
+* 제외파일 경로설정
+* 전체기호
+* 포함하기
+
+<br>

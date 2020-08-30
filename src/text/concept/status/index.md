@@ -17,5 +17,17 @@ breadcrumb:
 
 <br>
 
-+ [status 명령어로 깃 상태 확인](status)
-+ [소스트리에서 깃 상태 확인](sourcetree)
+## [status 명령어로 깃 상태 확인](status)
+---
+* 변화를 감지
+* 명령어 실습
+
+<br>
+
+## [소스트리에서 깃 상태 확인](sourcetree)
+---
+* 파일상태
+* 상태표시 영역
+* 새파일 추가
+
+<br>

@@ -15,5 +15,5 @@ breadcrumb:
 <br>
 
 + [스테이지 = 임시 영역](stage)
-+ [파일의 stage 상태와 unstage 상태](unstae)
++ [파일의 stage 상태와 unstage 상태](unstage)
 + [파일의 modified 상태와 unmodified 상태](modified)

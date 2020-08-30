@@ -15,5 +15,16 @@ breadcrumb:
 
 <br>
 
-+ [워킹 디렉터리란?](mean)
-+ [파일의 untracked 상태와 tracked 상태](untracked)
+## [워킹 디렉터리란?](mean)
+---
+* 저장공간
+* 작업을 하는 공간
+
+<br>
+
+## [파일의 untracked 상태와 tracked 상태](untracked)
+---
+* untracked 상태
+* tracked 상태
+
+<br>
