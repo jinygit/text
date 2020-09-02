@@ -34,7 +34,7 @@ breadcrumb:
 ## [스테이지](stage)
 ---
 + [스테이지 = 임시 영역](stage/stage)
-+ [파일의 stage 상태와 unstage 상태](stage/unstae)
++ [파일의 stage 상태와 unstage 상태](stage/unstage)
 + [파일의 modified 상태와 unmodified 상태](stage/modified)
 
 <br>
