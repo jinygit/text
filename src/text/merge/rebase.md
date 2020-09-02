@@ -2,6 +2,9 @@
 layout: home
 title: "리베이스"
 keyword: "리베이스, rebase"
+breadcrumb:
+- "text"
+- "merge"
 ---
 
 # 리베이스

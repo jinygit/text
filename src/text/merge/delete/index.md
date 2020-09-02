@@ -2,6 +2,9 @@
 layout: home
 title: "브랜치 삭제"
 keyword: "브랜치 삭제"
+breadcrumb:
+- "text"
+- "merge"
 ---
 
 # 브랜치 삭제

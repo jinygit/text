@@ -2,6 +2,9 @@
 layout: home
 title: "병합"
 keyword: "병합"
+breadcrumb:
+- "text"
+- "merge"
 ---
 
 # 병합

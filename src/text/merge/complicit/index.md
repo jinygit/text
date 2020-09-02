@@ -2,6 +2,9 @@
 layout: home
 title: "충돌"
 keyword: "충돌"
+breadcrumb:
+- "text"
+- "merge"
 ---
 
 # 충돌
