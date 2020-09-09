@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | Git 커밋하기</title>
-            <meta name="title" content="Git 커밋하기" /><meta name="description" content="깃은 코드의 이력을 커밋 로그를 활용하여 관리를 합니다. 커밋 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃 사용법, commit, 커밋" /><!--부트스트랩4-->
+            <meta name="title" content="Git 커밋하기" /><meta name="description" content="깃을 통하여 코드를 기록하고 관리하는 방법에 대해서 알아봅니다. 직접 커밋 명령을 입력하여 동작방법을 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, commit, 커밋, 코드기록" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -67,42 +67,47 @@
                 <section>
                     <h1 id="커밋">커밋</h1>
 <hr />
-<p>깃은 개발 중인 소스 코드의 이력을 관리 합니다. 모든 코드의 변경 이력은 <code class="highlighter-rouge">커밋</code>이라는 행동을 통하여 기록이 됩니다. 커밋이란 무엇이고, 어떻게 실행하는지에 대해서 학습해 보겠습니다.</p>
+<p>깃은 개발 중인 소스 코드의 <code class="highlighter-rouge">이력</code>을 관리 합니다. 
+<code class="highlighter-rouge">커밋</code>은 깃에서 <code class="highlighter-rouge">코드의 변화를 기록하는 것</code>을 의미합니다. 모든 코드의 <code class="highlighter-rouge">변경 이력</code>은 커밋이라는 행동을 통하여 <code class="highlighter-rouge">기록</code>이 됩니다.</p>
 
-<blockquote>
-  <p>커밋은 깃에서 <code class="highlighter-rouge">코드의 변화를 기록하는 것</code>을 의미합니다.</p>
-</blockquote>
+<p>커밋이란 무엇이고, <code class="highlighter-rouge">어떻게 실행</code>하는지에 대해서 <code class="highlighter-rouge">학습</code>해 보겠습니다.</p>
 
 <p><br /></p>
 
-<h2 id="코드의-변화">코드의 변화</h2>
+<h2 id="코드의-변화"><a href="history">코드의 변화</a></h2>
 <hr />
-<p>우선적으로 전형적인 파일의 이력을 관리하는 방법에 대해서 살펴 봅니다. 기존의 파일관리에서 문제점은 무엇이고 어떻게 해결이 가능한지에 대해서 학습해 봅니다.</p>
+<p>우선적으로 <code class="highlighter-rouge">전형적인 파일의 이력을 관리하는 방법</code>에 대해서 살펴 봅니다.<br />
+기존의 파일관리에서 <code class="highlighter-rouge">문제점</code>은 무엇이고 어떻게 <code class="highlighter-rouge">해결</code>이 가능한지에 대해서 학습해 봅니다.</p>
 
 <ul>
-  <li><a href="history#1">코드의 변화</a></li>
-  <li><a href="history#2">파일 관리 방법</a></li>
+  <li><a href="history/change">코드의 변화</a></li>
+  <li><a href="history/file">파일 관리 방법</a></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="새-파일-생성-및-감지">새 파일 생성 및 감지</h2>
+<h2 id="새-파일-생성-및-감지"><a href="status">새 파일 생성 및 감지</a></h2>
 <hr />
+<p>커밋을 실습하기 전에 새로운 파일을 하나 생성하고, 생성한 파일이 깃과 어떻게 동작하는지에 대해서 알아 봅니다.</p>
+
 <ul>
-  <li><a href="status#1">새 파일 생성</a></li>
-  <li><a href="status#2">깃에서 새 파일 생성 확인</a></li>
-  <li><a href="status#3">소스트리에서 새 파일 감지</a></li>
+  <li><a href="status/newfile">새 파일 생성</a></li>
+  <li><a href="status/check">깃에서 새 파일 생성 확인</a></li>
+  <li><a href="status/sourcetree">소스트리에서 새 파일 감지</a></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="깃에-새-파일-등록">깃에 새 파일 등록</h2>
+<h2 id="깃에-새-파일-등록"><a href="stage">깃에 새 파일 등록</a></h2>
 <hr />
+<p>커밋을 하려면 파일의 상태가 추적 가능해야 합니다. 
+워킹 디렉터리에 새로 추가된 untracked 상태의 파일을 추적 가능 상태로 변경하는 것을 등록이라고 합니다.</p>
+
 <ul>
-  <li><a href="stage#1">스테이지에 등록</a></li>
-  <li><a href="stage#2">파일의 추적 상태 확인</a></li>
-  <li><a href="stage#3">파일 등록 취소</a></li>
-  <li><a href="stage#4">등록된 파일 이름이 변경되었을 때</a></li>
+  <li><a href="stage/stage">스테이지에 등록</a></li>
+  <li><a href="stage/status">파일의 추적 상태 확인</a></li>
+  <li><a href="stage/remove">파일 등록 취소</a></li>
+  <li><a href="stage/rename">등록된 파일 이름이 변경되었을 때</a></li>
 </ul>
 
 <p><br /></p>
@@ -120,9 +125,9 @@
 <h2 id="커밋-확인">커밋 확인</h2>
 <hr />
 <ul>
-  <li><a href="04.5#1">스테이지 초기화</a></li>
-  <li><a href="04.5#2">로그 기록 확인</a></li>
-  <li><a href="04.5#3">소스트리에서 로그 기록 확인</a></li>
+  <li><a href="check#1">스테이지 초기화</a></li>
+  <li><a href="check#2">로그 기록 확인</a></li>
+  <li><a href="check#3">소스트리에서 로그 기록 확인</a></li>
 </ul>
 
 <p><br /></p>
@@ -130,13 +135,13 @@
 <h2 id="두-번째-커밋">두 번째 커밋</h2>
 <hr />
 <ul>
-  <li><a href="04.6#1">파일 수정</a></li>
-  <li><a href="04.6#2">파일 변경 사항 확인</a></li>
-  <li><a href="04.6#3">수정된 파일 되돌리기</a></li>
-  <li><a href="04.6#4">스테이지에 등록</a></li>
-  <li><a href="04.6#5">두 번째 커밋</a></li>
-  <li><a href="04.6#6">두 번째 커밋 확인</a></li>
-  <li><a href="04.6#7">깃허브에서 확인</a></li>
+  <li><a href="second#1">파일 수정</a></li>
+  <li><a href="second#2">파일 변경 사항 확인</a></li>
+  <li><a href="second#3">수정된 파일 되돌리기</a></li>
+  <li><a href="second#4">스테이지에 등록</a></li>
+  <li><a href="second#5">두 번째 커밋</a></li>
+  <li><a href="second#6">두 번째 커밋 확인</a></li>
+  <li><a href="second#7">깃허브에서 확인</a></li>
 </ul>
 
 <p><br /></p>
@@ -189,7 +194,7 @@
 너무 많은 코드를 수정한 후 커밋하는 것보다는 작은 단위로 코드를 수정한 후 커밋하는 것을 추천합니다.<br />
 커밋의 수정 부분이 적을수록 검토하기 쉽고, 오류도 쉽게 찾을 수 있습니다.</p>
 
-<p><br /><br /></p>
+<p><br /></p>
 
                 </section>
 			</main>

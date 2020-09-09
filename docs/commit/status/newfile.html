@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃의 파일 생성 감지</title>
+            <meta name="title" content="깃의 파일 생성 감지" /><meta name="description" content="워킹디렉토리에 깃이 감지할 수 있는 새로운 파일을 하나 생성합니다. 그리고 상태를 확인해 보는 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, status, 워킹디렉터리" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">status</a></li><li class="breadcrumb-item active">newfile</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,80 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="새-파일-생성">새 파일 생성</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p>실습을 위해 간단한 <code class="highlighter-rouge">HTML 파일</code>을 하나 작성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
+<p><br /></p>
+
+<h2 id="실습-저장소-준비">실습 저장소 준비</h2>
+<hr />
+<p>커밋을 학습하기 위한 실습 저장소를 하나 생성합니다.</p>
+
+<p>☜ 새로운 실습 폴더를 생성합니다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mdkir gitstudy04 
 </code></pre></div></div>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<p><br /></p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<h2 id="저장소-초기화">저장소 초기화</h2>
+<hr />
+<p>준비한 폴더를 깃 저장소로 <code class="highlighter-rouge">초기화</code>합니다.</p>
 
-<p><br /><br /></p>
+<p>깃 초기화 명령을 입력합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git init 
+Initialized empty Git repository <span class="k">in </span>E:/gitstudy04/.git/
+</code></pre></div></div>
+
+<blockquote>
+  <p>여기서 실습한 깃 저장소는 깃허브를 통하여 확인할 수 있습니다. https://github.com/jinygit/gitstudy04</p>
+</blockquote>
+
+<p><br /></p>
+
+<h2 id="html-파일-생성">html 파일 생성</h2>
+<hr />
+<p>실습을 위한 html 코드를 하나 작성합니다.<br />
+에디터를 이용하여 코드를 작성하면 됩니다. 필자는 <code class="highlighter-rouge">VSCode</code>를 이용하겠습니다.</p>
+
+<p>☜ VS Code를 사용해 파일을 작성합니다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ code index.htm 
+</code></pre></div></div>
+
+<p>콘솔에서 <code class="highlighter-rouge">code</code>명령을 입력하면, vscode를 실행할 수 있습니다.</p>
+
+<p>index.htm은 다음과 같이 작성합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>    
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;title&gt;</span>Page Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>작성한 예제 파일은 기본이 되는 HTML의 뼈대 페이지입니다.</p>
+
+<p><br /></p>
+
+<h2 id="저장소와-파일-생성">저장소와 파일 생성</h2>
+<hr />
+<p>파일 생성 과정을 그림으로 표현하면 다음과 같습니다.</p>
+
+<p>파일 생성 과정<br />
+<img src="./img/04-3.png" alt="파일 생성 과정" /></p>
+
+<p>이렇게 파일을 생성하면 <code class="highlighter-rouge">워킹 디렉터리</code>에 <code class="highlighter-rouge">index.htm</code> 이름으로 저장됩니다.</p>
+
+<p>모든 작업은 <code class="highlighter-rouge">워킹 디렉터리</code> 안에서 진행됩니다.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>

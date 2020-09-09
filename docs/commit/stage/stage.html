@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃 스테이지 파일 등록하기</title>
+            <meta name="title" content="깃 스테이지 파일 등록하기" /><meta name="description" content="add 명령어를 이용하여 스테이지에 파일을 등록하여 추적 가능한 상태로 전환합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스테이지, 추적, untracted" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">stage</a></li><li class="breadcrumb-item active">add</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,92 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="스테이지에-등록">스테이지에 등록</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p>깃에서 <code class="highlighter-rouge">등록</code>이란 정확히 무엇을 의미할까요?<br />
+등록이란 워킹 디렉터리에 있는 파일을 <code class="highlighter-rouge">스테이지(stage) 영역</code>으로 <code class="highlighter-rouge">복사</code>하는 것을 의미합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
+<p><br /></p>
+
+<h2 id="기록변경">기록변경</h2>
+<hr />
+<p>스테이지 등록에서 <code class="highlighter-rouge">복사</code>는 실제 파일을 복사하는 것을 의미하지는 않습니다. 깃 내부에서 논리적인 <code class="highlighter-rouge">기록을 변경</code>하는 과정일 뿐입니다.<br />
+복사라고 표현한 것은 이해하기 쉽게 풀어 쓴 것입니다.</p>
+
+<p>워킹 디렉터리에 추가된 모든 파일을 커밋할 때는 반드시 이 과정을 거쳐야 합니다.<br />
+그래야 깃에서 버전 이력을 관리할 수 있습니다. 스테이지에 등록되지 않은 <code class="highlighter-rouge">unstage 상태</code>의 파일들은 커밋할 수 없습니다.</p>
+
+<p>깃은 커밋하기 전에 파일들이 <code class="highlighter-rouge">stage</code> 상태인지 <code class="highlighter-rouge">unstage</code> 상태인지를 판단합니다.<br />
+스테이지 영역으로 등록된 파일들은 <code class="highlighter-rouge">tracked</code> 상태로 <code class="highlighter-rouge">자동 변경</code>됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="명령어로-등록-add-명령어">명령어로 등록: add 명령어</h2>
+<hr />
+<p>지금까지의 실습은 커밋 명령어를 실행하기 이전의 <code class="highlighter-rouge">중간 단계</code>입니다.<br />
+깃의 <code class="highlighter-rouge">add</code> 명령어는 워킹 디렉터리의 파일을 스테이지 영역으로 <code class="highlighter-rouge">등록</code>합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add 파일이름
 </code></pre></div></div>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<p>깃은 안정적인 커밋을 할 수 있도록 add 명령어를 기준으로 <code class="highlighter-rouge">이전</code>과 <code class="highlighter-rouge">이후</code> 단계를 <code class="highlighter-rouge">구별</code>합니다.</p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<p><br /></p>
 
-<p><br /><br /></p>
+<h2 id="스테이지-등록-실습">스테이지 등록 실습</h2>
+<hr />
+<p>터미널에서는 다음 형태의 명령어를 입력합니다.<br />
+index.htm 파일을 등록합시다.</p>
+
+<p>☜ 스테이지 등록</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git add index.htm 
+</code></pre></div></div>
+
+<p>index.htm 파일을 등록하는 과정은 다음과 같이 표현할 수 있습니다.</p>
+
+<p>스테이지 영역에 등록
+<img src="./img/04-7.jpg" alt="스테이지_영역에_등록" /></p>
+
+<p><br /></p>
+
+<h2 id="스테이지-상태">스테이지 상태</h2>
+<hr />
+<p>add 명령어를 실행하면 지정한 파일은 스테이지 영역으로 <code class="highlighter-rouge">등록</code>됩니다.<br />
+스테이지 영역에 파일이 등록되면 파일은 <code class="highlighter-rouge">tracked 상태</code>로 변경됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="전체파일-등록하기">전체파일 등록하기</h2>
+<hr />
+<p>add 명령어 뒤에 파일명을 지정하면, 지정된 파일만 등록됩니다. 만일 등록해야 하는 파일이 많다면, 스테이지 등록작업이 매우 귀찬을 것입니다.</p>
+
+<p>파일 이름 대신 점(.)을 이용하면 전체 파일과 폴더를 <code class="highlighter-rouge">모두 등록</code>할 수 있습니다.<br />
+점(.)은 리눅스와 같은 운영 체제에서 현재 디렉터리를 의미하는 기호입니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add .
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="선택한-파일만-커밋으로-등록하기">선택한 파일만 커밋으로 등록하기</h2>
+<hr />
+<p>워킹 디렉터리에 생성된 모든 파일을 스테이지 영역에 추가할 필요는 없습니다.<br />
+<code class="highlighter-rouge">필요한 파일만</code> 스테이지 영역에 등록하여 이력을 추적하면 됩니다.</p>
+
+<p>스테이지 영역에 등록하지 않은 파일은 커밋 작업에 포함되지 않습니다. 
+등록 명령으로 파일들의 이력을 커밋 기록에 포함할지 여부를 <code class="highlighter-rouge">결정</code>할 수 있습니다.</p>
+
+<p>정보 이력을 추적하고 싶은 파일만 스테이지 영역에 추가합니다.</p>
+
+<p><br /></p>
+
+<h2 id="빈폴더">빈폴더</h2>
+<hr />
+<p><code class="highlighter-rouge">빈 폴더</code>는 스테이지 영역에 등록할 수 없습니다.<br />
+폴더 안에 파일이 하나 이상 있어야 등록이 가능합니다.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>

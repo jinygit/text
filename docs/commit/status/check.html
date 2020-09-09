@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃 Untracked 파일 확인하기</title>
+            <meta name="title" content="깃 Untracked 파일 확인하기" /><meta name="description" content="깃은 새로운 파일이 워킹디렉터리 저장소에 생성되면, 자동으로 감지됩니다. 또한 Untracked 파일의 추적여부를 결정해 주어야 합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, status, 워킹디렉터리, Untracked" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">status</a></li><li class="breadcrumb-item active">check</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,61 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="깃에서-새-파일-생성-확인">깃에서 새 파일 생성 확인</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p><code class="highlighter-rouge">워킹 디렉터리</code>에 새 파일이 <code class="highlighter-rouge">생성</code>되었습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
+<p><br /></p>
+
+<h2 id="파일감지">파일감지</h2>
+<hr />
+<p>워킹 디렉터리에 새 파일이 추가되면 깃은 변화된 상태를 <code class="highlighter-rouge">자동으로 감지</code>합니다.<br />
+이때 깃 상태를 확인할 수 있는 명령어가 <code class="highlighter-rouge">status</code>입니다.</p>
+
+<p><br /></p>
+
+<h2 id="status-명령">status 명령</h2>
+<hr />
+<p><code class="highlighter-rouge">status</code> 명령어를 입력하면 <code class="highlighter-rouge">메시지가 출력</code>되는 것을 볼 수 있습니다.</p>
+
+<p>☜ 명령을 입력합니다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 <span class="o">(</span>master<span class="o">)</span>
+<span class="nv">$ </span>git status
+On branch master
+No commits yet
+
+Untracked files: 
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to include <span class="k">in </span>what will be committed<span class="o">)</span>
+        index.htm ☜ 새로운 파일이 등록된 것을 확인
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">"git add"</span> to track<span class="o">)</span>
 </code></pre></div></div>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<p>깃의 상태 메시지를 자세히 살펴 봅니다.
+메시지 중간에 <code class="highlighter-rouge">Untracked files</code>가 표시되는 것을 확인합니다.</p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<p>방금 생성한 새로운 파일이 지금 Untracked 상태라는 의미입니다. 그럼 Untracked란 무엇일까요?</p>
 
-<p><br /><br /></p>
+<p><br /></p>
+
+<h2 id="untracked-files">Untracked files</h2>
+<hr />
+<p>우리는 새롭게 생성된 파일을 status 명령으로 확인을 해보았습니다.</p>
+
+<p><code class="highlighter-rouge">Untracked files</code> 메시지는 워킹 디렉터리에 새로운 파일이 <code class="highlighter-rouge">등록</code>되었다고 알려 주는 것입니다.<br />
+깃 배시 터미널로 실행하면 <code class="highlighter-rouge">추적되지 않은 파일</code>은 <code class="highlighter-rouge">빨간색</code>으로 표시합니다.</p>
+
+<p><br /></p>
+
+<h2 id="감지">감지</h2>
+<hr />
+<p>깃은 워킹 디렉터리에 새 파일이 추가되면 상태를 <code class="highlighter-rouge">감지</code>하고 향후 이력을 추적할지 여부를 <code class="highlighter-rouge">결정</code>해 주어야 합니다.</p>
+
+<blockquote>
+  <p>Note: 모든 실습은 깃의 계정 및 환경 설정이 된 상태에서 진행합니다.<br />
+혹시 앞의 내용을 읽지 않고 바로 커밋을 학습한다면 이전의 내용으로 이동하여 <code class="highlighter-rouge">계정</code>과 <code class="highlighter-rouge">환경을 설정</code> 하세요.</p>
+</blockquote>
+
+<p><br /></p>
 
                 </section>
 			</main>

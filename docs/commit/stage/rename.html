@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃 파일이름 변경하여 재등록하기</title>
+            <meta name="title" content="깃 파일이름 변경하여 재등록하기" /><meta name="description" content="스테이지에 등록된 파일의 이릉을 변경하는 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스테이지, 추적, untracted, 이름변경" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">stage</a></li><li class="breadcrumb-item active">rename</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,53 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="등록된-파일-이름이-변경되었을-때">등록된 파일 이름이 변경되었을 때</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p>작업 도중 <code class="highlighter-rouge">파일 이름</code>도 변경할 수 있습니다.<br />
+하지만 파일 이름을 변경했다고 별도로 깃에 통보할 필요는 없습니다.<br />
+깃은 똑똑해서 변경된 파일 이름을 <code class="highlighter-rouge">자동</code>으로 알고 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
+<p><br /></p>
+
+<h2 id="git-mv-명령어">git mv 명령어</h2>
+<hr />
+<p>리눅스나 macOS에서는 mv 명령어로 파일 이름을 변경할 수 있습니다.<br />
+깃에서도 파일 이름을 변경할 때 <code class="highlighter-rouge">mv</code> 명령어를 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git mv 파일이름 새파일이름
 </code></pre></div></div>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<p>다음과 같이 index.htm 파일의 이름을 변경하고 상태를 확인해 보면 깃에서 변경된 파일을 계속 추적하는 것을 알 수 있습니다.</p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ git mv index,htm home.htm
+$ git status
+On branch master
+No commits yet
 
-<p><br /><br /></p>
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   home.htm ☜ 파일 이름 변경
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="git-mv의-실제동작">git mv의 실제동작</h2>
+<hr />
+<p>굳이 git mv 명령어를 사용하지 않고, 운영 체제의 mv 명령어를 사용해도 됩니다.<br />
+깃의 git mv 명령어를 여러 단계의 명령으로 풀면 다음과 같습니다.</p>
+
+<p>[예시]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+$ mv index.htm home.htm
+$ git rm index.htm
+$ git add home.htm
+</code></pre></div></div>
+
+<p>예에서 알 수 있듯이, 이름을 변경한다는 의미는 기존 파일을 삭제하고 새 파일을 <code class="highlighter-rouge">다시 스테이지 영역에 등록</code>하는 과정과 유사합니다.<br />
+풀어 쓴 명령에서 이름을 변경한 후에는 <code class="highlighter-rouge">rm</code>과 <code class="highlighter-rouge">add</code> 명령어를 실행해야 한다는 사실을 잊지 마세요.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>

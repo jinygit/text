@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | status 명령으로 스테이지의 상태를 확인하기</title>
+            <meta name="title" content="status 명령으로 스테이지의 상태를 확인하기" /><meta name="description" content="status를 이용하여 스테이지의 상태를 확인합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, status, 스테이지, 상태확인" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">stage</a></li><li class="breadcrumb-item active">status</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,39 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="파일의-추적-상태-확인">파일의 추적 상태 확인</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p>워킹 디렉터리에 있는 새로운 파일이 스테이지 영역에 <code class="highlighter-rouge">등록</code>되었습니다.</p>
 
+<p><br /></p>
+
+<h2 id="스테이지-확인하기">스테이지 확인하기</h2>
+<hr />
+<p>콘솔창에서 status 명령어를 사용하여 등록 상태를 다시 한 번 확인해 보겠습니다.</p>
+
+<p>상태를 확인합니다.</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
+$ git status 
+On branch master
+No commits yet
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+        new file:   index.htm ☜ 스테이지 등록, 새 파일 상태
 </code></pre></div></div>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<p>이전 상태와 달리 <code class="highlighter-rouge">new file</code> 메시지가 출력됩니다.<br />
+이는 스테이지 영역에 파일을 정상적으로 등록했다는 의미입니다.</p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<p><br /></p>
 
-<p><br /><br /></p>
+<h2 id="스테이지와-커밋관계">스테이지와 커밋관계</h2>
+<hr />
+<p>앞으로 좀 더 학습해야 하지만, 스테이지 영역에 <code class="highlighter-rouge">등록</code>되었다고 <code class="highlighter-rouge">커밋이 된 것은 아닙니다</code>.</p>
+
+<p>아직 커밋 명령어를 학습하지 않았습니다.<br />
+등록은 커밋을 하기 전 <code class="highlighter-rouge">선행 작업</code>일 뿐입니다.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>

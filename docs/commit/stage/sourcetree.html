@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | diff</title>
-            <meta name="title" content="diff" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, diff" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 소스트리를 이용한 스테이지 등록</title>
+            <meta name="title" content="소스트리를 이용한 스테이지 등록" /><meta name="description" content="소스트리를 이용하여 스테이지에 파일을 등록하여 추적 가능한 상태로 전환합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 스테이지, 추적, untracted, 소스트리" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -53,7 +53,7 @@
     <div class="container"><nav aria-label="breadcrumb">
     <ol class="breadcrumb  bg-light">
         <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item active">commit</li><li class="breadcrumb-item "><a href="../">diff</a></li><li class="breadcrumb-item active">commit</li></ol>    
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">commit</a></li><li class="breadcrumb-item "><a href="../">stage</a></li><li class="breadcrumb-item active">add</li></ol>    
 </nav></div>
 </div>
 
@@ -65,20 +65,47 @@
         <div class="col-lg-9">
 			<main role="main">
                 <section>
-                    <h1 id="diff-내용을-추가하여-커밋">diff 내용을 추가하여 커밋</h1>
+                    <h1 id="소스트리에서-등록">소스트리에서 등록</h1>
 <hr />
-<p>커밋 메시지를 작성할 때 <code class="highlighter-rouge">-v</code> 옵션을 같이 사용하면 vi 에디터에서 diff 내용을 추가할 수 있습니다.</p>
+<p>소스트리를 이용하여 스테이지 영역에 파일을 등록해 봅시다.<br />
+소스트리는 스테이지 영역에 등록되는 파일을 직관적으로 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
-$ git commit -v ☜ diff 내용 추가
-</code></pre></div></div>
+<p><br /></p>
 
-<p>다음과 같이 커밋 메시지를 작성하면 diff 내용이 추가됩니다.</p>
+<h2 id="올라가지-않은-파일-영역">올라가지 않은 파일 영역</h2>
+<hr />
+<p><code class="highlighter-rouge">untracked</code> 상태인 파일은 소스트리의 스테이지에 <code class="highlighter-rouge">올라가지 않은 파일 영역</code>에서 확인할 수 있습니다.<br />
+파일을 선택하여 상위 영역의 스테이지에 올라간 파일 부분으로 옮깁니다.</p>
 
-<p>그림 4-28] 커밋 메시지를 작성할 때 diff 내용 추가<br />
-<img src="./img/04-28.jpg" alt="커밋 메시지를 작성할 때 diff 내용 추가" /></p>
+<p>소스트리는 <code class="highlighter-rouge">추적 상태</code>와 <code class="highlighter-rouge">추적하지 않음</code>을 쉽게 구별할 수 있도록 파일 이름 앞에 <code class="highlighter-rouge">아이콘</code>을 함께 표시합니다.<br />
+<code class="highlighter-rouge">보라색</code> 아이콘은 untracked 상태의 파일입니다.</p>
 
-<p><br /><br /></p>
+<p>또는 <code class="highlighter-rouge">새로 생성된 파일</code>을 의미하기도 합니다.</p>
+
+<p>스테이지에 올라가지 않은 파일<br />
+<img src="./img/04-8.jpg" alt="스테이지에_올라가지_않은_파일" /></p>
+
+<p><br /></p>
+
+<h2 id="여러개-파일-등록하기">여러개 파일 등록하기</h2>
+<hr />
+<p>untracked 상태의 파일 여러 개를 한 번에 등록할 수 있습니다.<br />
+전체 파일을 스테이지 영역에 등록할 때는 <code class="highlighter-rouge">모두 스테이지에 올리기</code>를 누릅니다.</p>
+
+<p>스테이지 영역에 등록된 파일은 스테이지에 올라간 파일 목록에서 확인할 수 있습니다.<br />
+스테이지에 등록되면 파일 이름 앞에 <code class="highlighter-rouge">녹색</code> 아이콘을 표시합니다.</p>
+
+<p>스테이지에 파일이 등록됨<br />
+<img src="./img/04-9.jpg" alt="스테이지에_파일이_등록됨" /></p>
+
+<p><br /></p>
+
+<h2 id="선택한-파일만-올리기">선택한 파일만 올리기</h2>
+<hr />
+<p><code class="highlighter-rouge">선택내용 스테이지에 올리기</code>를 사용하면 한 번에 하나씩 파일을 등록할 수 있습니다.<br />
+등록할 파일 이름을 목록에서 <code class="highlighter-rouge">선택</code>한 후 선택 내용 스테이지에 올리기를 누릅니다.</p>
+
+<p><br /></p>
 
                 </section>
 			</main>
