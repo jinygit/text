@@ -108,3 +108,19 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
 그 이외의 버전의 리눅스 배포판은 깃 공식사이트에 접속을 하여 설치 파일 또는 소스를 다운로드 받아 컴파일 하여 설치를 할 수 있습니다.  
 
 <br>
+
+
+
+## 최신버전 설치
+
+---
+
+깃 최신 패키지를 제공하는 저장소를 등록한 후, 깃을 재설치 합니다.
+
+```
+sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
+sudo apt-get install git -y
+git --version
+```
+
