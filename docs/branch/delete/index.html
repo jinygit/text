@@ -71,7 +71,7 @@
 
 <p>가장 먼저 주의할 점은 현재 자신이 있는 브랜치는 삭제할 수 없다는 것입니다. 브랜치를 삭제하려면 master 브랜치나 다른 브랜치로 잠시 이동해야 합니다. 예를 들어 앞에서 만든 로컬 저장소의 bug 브랜치를 삭제한다고 합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git branch -d aaa
 error: Cannot delete branch 'aaa' checked out at 'E:/gitstudy06'
 </code></pre></div></div>
@@ -85,14 +85,14 @@ error: Cannot delete branch 'aaa' checked out at 'E:/gitstudy06'
 <hr />
 <p>일반적으로 브랜치를 삭제할 때는 -d 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -d 브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -d 브랜치이름
 </code></pre></div></div>
 
 <p>-d 옵션은 스테이지 상태가 깨끗할 때만 삭제를 허용합니다. 워킹 디렉터리에 작업한 기록이 있거나 add 명령어로 스테이지의 인덱스가 변경된 상태라면 삭제하지 않습니다. 삭제하려면 반드시 최종 상태가 커밋되어 깨끗한 스테이지 상태여야 합니다. 또 병합되지 않은 브랜치는 -d 옵션으로 삭제할 수 없습니다.</p>
 
 <p>-d 옵션을 사용하여 footer 브랜치를 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git branch -d footer
 Deleted branch footer (was cc66812).
 </code></pre></div></div>
@@ -108,7 +108,7 @@ Deleted branch footer (was cc66812).
 
 <p>실습을 위해 hotfix 브랜치로 이동한 후 branch.htm 파일을 수정하고 저장합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git checkout hotfix
 Switched to branch 'hotfix'
 
@@ -124,7 +124,7 @@ $ code branch.htm
 
 <p>수정했다면 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git commit -am "hotfix working"
 [hotfix 0225e85] hotfix working
  1 file changed, 2 insertions(+), 1 deletion(-)
@@ -132,7 +132,7 @@ $ git commit -am "hotfix working"
 
 <p>hotfix 브랜치에 커밋이 하나 추가되었습니다. master 브랜치로 체크아웃하여 hotfix 브랜치를 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git branch -d hotfix
 error: The branch 'hotfix' is not fully merged.
 If you are sure you want to delete it, run 'git branch -D hotfix'.
@@ -143,7 +143,7 @@ If you are sure you want to delete it, run 'git branch -D hotfix'.
 
 <p>브랜치를 삭제하면 해당 브랜치에서 작업했던 커밋 기록들이 같이 삭제되기 때문에 오류가 발생합니다. 이때는 브랜치를 강제로 삭제해야 합니다. 대문자 -D 옵션을 사용하면 강제로 브랜치를 삭제할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git branch -D hotfix
 Deleted branch hotfix (was 8026ed6).
 </code></pre></div></div>
@@ -167,12 +167,12 @@ Deleted branch hotfix (was 8026ed6).
 <hr />
 <p>지금까지는 로컬에 생성된 브랜치를 삭제하는 방법을 알아보았습니다. 그렇다면 원격 저장소의 브랜치는 어떻게 삭제해야 할까요? 원격 브랜치를 삭제하려면 먼저 삭제 명령을 푸시해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push origin --delete 리모트브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push origin --delete 리모트브랜치이름
 </code></pre></div></div>
 
 <p>그럼 깃허브의 aaa 브랜치를 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git push origin --delete aaa
 To https://github.com/jinygit/gitstudy06.git
  - [deleted]         aaa

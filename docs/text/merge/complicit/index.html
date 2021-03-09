@@ -101,14 +101,14 @@
 <hr />
 <p>실습을 위해 인위적인 충돌 상황을 만들어 보겠습니다. 새로운 footer 브랜치를 만들고 체크아웃합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master) ☜ 기준브랜치
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master) ☜ 기준브랜치
 $ git checkout -b footer ☜ 기준에서 새로운 브랜치 파생
 Switched to a new branch 'footer'
 </code></pre></div></div>
 
-<p>독립된 footer 브랜치에서 index.htm 파일의 <code class="highlighter-rouge">&lt;footer&gt;~&lt;/footer&gt;</code> 부분 코드를 수정하고 커밋하겠습니다.</p>
+<p>독립된 footer 브랜치에서 index.htm 파일의 <code class="language-plaintext highlighter-rouge">&lt;footer&gt;~&lt;/footer&gt;</code> 부분 코드를 수정하고 커밋하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (footer)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (footer)
 $ code index.htm
 </code></pre></div></div>
 
@@ -138,7 +138,7 @@ by hojinlee ☜ 수정
 
 <p>카피라이터 부분을 두 줄로 수정했습니다. 이어서 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (footer)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (footer)
 $ git commit -am "edit footer"
 [footer d141624] edit footer
  1 file changed, 1 insertion(+)
@@ -151,7 +151,7 @@ $ git commit -am "edit footer"
 
 <p>이번에는 다시 master 브랜치로 체크아웃하여 index.htm 파일을 수정합니다. 충돌이 발생하도록 동일한 위치의 내용을 수정하고 커밋하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git checkout master
 Switched to branch 'master'
 
@@ -170,7 +170,7 @@ $ code index.htm
 
 <p>두 줄로 만들고, hojinlee를 jinyphp로 수정했습니다. 이어서 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git commit -am "edit copyright"
  [master c6e2ed7] edit copyright
  1 file changed, 1 insertion(+)
@@ -188,7 +188,7 @@ $ git commit -am "edit copyright"
 
 <p>서로 다르게 분기된 브랜치이기 때문에 3-way 병합을 시도하겠습니다. master 브랜치인지 확인한 후 병합 명령어를 실행합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git merge footer
 Auto-merging index.htm
 CONFLICT (content): Merge conflict in index.htm
@@ -206,7 +206,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 <p>이렇게 충돌이 발생하면 담당 개발자가 직접 수동으로 해결해야 합니다. 어떤 충돌 상태인지 알아보기 위해 깃 상태를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
 $ git status
 On branch master
 You have unmerged paths. ☜ 충돌 사항
@@ -222,7 +222,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <table>
   <tbody>
     <tr>
-      <td>충돌 내용이 메시지로 출력됩니다. <code class="highlighter-rouge">Unmerged</code> 메시지를 확인할 수 있습니다. 깃 배시에도 master</td>
+      <td>충돌 내용이 메시지로 출력됩니다. <code class="language-plaintext highlighter-rouge">Unmerged</code> 메시지를 확인할 수 있습니다. 깃 배시에도 master</td>
       <td>MERGING으로 표시된 것을 확인할 수 있습니다. 현재 충돌된 병합을 해결해야 하는 상태라고 표시합니다.</td>
     </tr>
   </tbody>
@@ -234,7 +234,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
   <p>Note: 방금 실행한 병합을 취소할 때는 –abort 옵션을 실행합니다.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/gitstudy08 (master|MERGING)       
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/gitstudy08 (master|MERGING)       
 $ git merge --–abort ☜ 병합 명령을 취소
 infoh@hojin1 MINGW64 /e/gitstudy08 (master)
 </code></pre></div></div>
@@ -247,7 +247,7 @@ infoh@hojin1 MINGW64 /e/gitstudy08 (master)
 <p>병합 충돌이 발생하면 결국 수동으로 해결해야 합니다. 직접 소스 코드를 보고 충돌된 부분을 확인한 후 코드를 수정합니다.<br />
 먼저 충돌한 소스 코드를 확인합니다. 깃은 충돌이 발생하면 충돌된 코드 내용을 기호와 함께 표시합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
 $ code index.htm
 </code></pre></div></div>
 
@@ -262,7 +262,7 @@ $ code index.htm
 <p>충돌한 내용을 수정할 때는 깃에서 표시한 충돌 기호도 함께 삭제해야 합니다. 코드를 수정하고 표시된 기호도 같이 삭제하여 다음과 같이 수정한 후 저장합니다.</p>
 
 <p>index.htm</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>…
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>…
     &lt;footer&gt;
         copyright all right 2018 reserved 
         by jiny
@@ -274,12 +274,12 @@ $ code index.htm
   <p>Note: 저수준 명령어 git ls-files -u를 사용하여 충돌한 파일들의 집합을 확인할 수 있습니다.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git ls-files -u
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git ls-files -u
 </code></pre></div></div>
 
 <p>직접 코드를 수정하여 충돌을 해결했습니다. 충돌이 발생하면 병합 커밋을 자동으로 생성하지 않습니다. 충돌을 해결한 후 병합 커밋을 직접 만들어야 합니다. 직접 충돌을 해결하면 파일은 modified 상태가 됩니다. 이를 다시 스테이지 영역에 등록하고 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
 $ git add index.htm ☜ 스테이지 등록
 
 infoh@DESKTOP MINGW64 /e/gitstudy08 (master|MERGING)
@@ -289,7 +289,7 @@ $ git commit -m "resolve complict" ☜ 병합 커밋 작성
 infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 </code></pre></div></div>
 
-<p>병합 커밋을 생성하면 깃의 충돌 마크는 자동으로 없어집니다. 깃 배시에서 <code class="highlighter-rouge">master|MERGING</code>이 master로 돌아온 것을 확인합니다.</p>
+<p>병합 커밋을 생성하면 깃의 충돌 마크는 자동으로 없어집니다. 깃 배시에서 <code class="language-plaintext highlighter-rouge">master|MERGING</code>이 master로 돌아온 것을 확인합니다.</p>
 
 <p><br />
 <a name="4"></a></p>

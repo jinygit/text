@@ -105,12 +105,12 @@
 <hr />
 <p>fetch(페치)는 원격 저장소에서 코드를 수동으로 내려받는 작업을 합니다. 페치는 원격 저장소에서 커밋된 코드를 임시 브랜치로 내려받습니다. 내려받은 후 현재 브랜치와 자동 병합하지 않습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch 원격저장소URL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch 원격저장소URL
 </code></pre></div></div>
 
 <p>그럼 페치 동작을 실습해 봅시다. 먼저 실습 원본 저장소로 이동합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
 $ cd ../ gitstudy05 ☜ 폴더 이동
 
 infoh@hojin MINGW64 /e/gitstudy05 (master)
@@ -125,7 +125,7 @@ $ code server.htm ☜ VS Code 실행
 
 <p>수정된 파일을 스테이지 영역에 등록과 동시에 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
 $ git commit -am "look sky"
 [master 668b5ef] look sky
  1 file changed, 1 insertion(+)
@@ -133,7 +133,7 @@ $ git commit -am "look sky"
 
 <p>커밋된 수정 내용을 원격 저장소로 전송합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
 $ git push origin master
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -147,7 +147,7 @@ To https://github.com/jinygit/gitstudy05.git
 
 <p>원본 저장소 변경과 원격 저장소를 갱신했습니다. 이제는 다시 복제된 로컬 저장소로 이동하여 갱신된 원격 저장소 내용을 페치해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05 (master)
 $ cd ../ gitstudy05_clone
 
 infoh@hojin MINGW64 /e/gitstudy05_clone (master)
@@ -163,7 +163,7 @@ From https://github.com/jinygit/gitstudy05
 
 <p>원격 저장소의 커밋 내용을 페치한 후 커밋 로그를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
 $ git log
 commit 6a947b89517661cde95c9bec4c766302a763437e (HEAD -&gt; master)
 Author: hojinlee &lt;infohojin@gmail.com&gt;
@@ -193,12 +193,12 @@ Date:   Thu Dec 12 17:16:37 2019 +0900
 
 <p>merge 명령어는 다음과 같이 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge 원격저장소별칭/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge 원격저장소별칭/브랜치이름
 </code></pre></div></div>
 
 <p>fetch 명령어로 내려받은 커밋을 로컬 저장소에 병합하겠습니다. 다음과 같이 merge 명령어를 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
 $ git merge origin/master
 Updating 6a947b8..668b5ef
 Fast-forward
@@ -208,7 +208,7 @@ Fast-forward
 
 <p>이전과 다른 메시지들을 출력했지만, 어쨌든 잘 병합되었습니다. 다시 로컬 저장소의 로그 기록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy05_clone (master)
 $ git log
 commit 668b5efb139f47d28e77d6cb99863e3961a5db1d (HEAD -&gt; master, origin/master, origin/HEAD)
 Author: hojinlee &lt;infohojin@gmail.com&gt;
@@ -229,7 +229,7 @@ Date:   Thu Dec 12 17:16:37 2019 +0900
     first commit 
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">fetch</code> 명령어로 내려받은 커밋들이 추가된 것을 확인할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">fetch</code> 명령어로 내려받은 커밋들이 추가된 것을 확인할 수 있습니다.</p>
 
 <p><br /><br /></p>
 

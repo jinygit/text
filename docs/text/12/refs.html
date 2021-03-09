@@ -93,7 +93,7 @@
 <hr />
 <p>먼저 refs 기능을 학습할 수 있도록 실습 환경을 만들겠습니다. 저장소를 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir gitstudy12 새 폴더 만들기
 $ cd gitstudy12
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
@@ -108,7 +108,7 @@ hello world
 
 <p>간단한 인사말만 작성했습니다. 저장한 후 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git add index.htm 등록
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git commit -m "first" 커밋
@@ -131,32 +131,32 @@ create mode 100644 index.htm
 
 <p>생성된 모든 해시 값은 show 명령어로 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 해시값
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 해시값
 </code></pre></div></div>
 
 <p>저장소의 로그를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-</span><span class="err">$</span> git log 커밋 로그
-<span class="p">commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+$ git log 커밋 로그
+commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt;
 Date: Sat May 25 18:06:47 2019 +0900
 first
-</span><span class="err">커밋</span> 로그가 1개 출력됩니다. 출력된 d0943cf 해시 값의 정보를 확인해 봅시다.
-<span class="p">infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-</span><span class="err">$</span> git show d0943cf 커밋 정보
-<span class="p">commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
+커밋 로그가 1개 출력됩니다. 출력된 d0943cf 해시 값의 정보를 확인해 봅시다.
+infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+$ git show d0943cf 커밋 정보
+commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt;
 Date: Sat May 25 18:06:47 2019 +0900
 first
-</span><span class="gh">diff --git a/index.htm b/index.htm
-</span><span class="p">new file mode 100644
-</span><span class="gh">index 0000000..95d09f2
-</span><span class="gd">--- /dev/null
-</span><span class="gi">+++ b/index.htm
-</span><span class="p">@@ -0,0 +1 @@</span>
-<span class="gi">+hello world
-</span><span class="err">\</span> No newline at end of file
+diff --git a/index.htm b/index.htm
+new file mode 100644
+index 0000000..95d09f2
+--- /dev/null
++++ b/index.htm
+@@ -0,0 +1 @@
++hello world
+\ No newline at end of file
 </code></pre></div></div>
 
 <p><br />
@@ -169,7 +169,7 @@ first
 브랜치 이름을 사용하여 참조하는 해시 값을 조회할 수 있습니다. master 브랜치의 해시 값을 확
 인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git rev-parse master
 d0943cfbc5e092668be3b96e98f32e363e05feb1
 </code></pre></div></div>
@@ -186,7 +186,7 @@ d0943cfbc5e092668be3b96e98f32e363e05feb1
 폴더 안에서 생성 및 관리할 수 있습니다. 즉, refs 정보는 깃의 기능들을 구현하는 내부 메커니즘
 입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ ls .git/refs -all 저장소 refs 파일 목록
 total 4
 drwxr-xr-x 1 infoh 197609 0 5월 25 18:02 .
@@ -200,7 +200,7 @@ drwxr-xr-x 1 infoh 197609 0 5월 25 18:02 tags
 
 <p>새로운 feature 브랜치를 만들고 .git/refs 폴더를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git branch feature 브랜치 생성
 infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ ls .git/refs/heads -all 저장소 refs 정보

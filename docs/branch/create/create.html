@@ -74,9 +74,9 @@
 
 <h2 id="분기점">분기점</h2>
 <hr />
-<p>브랜치는 깃에서 또 하나의 개발 <code class="highlighter-rouge">분기점</code>을 의미합니다. 새로운 개발 분기점이 필요할 때는 브랜치를 <code class="highlighter-rouge">추가</code>로 생성할 수 있습니다. 
+<p>브랜치는 깃에서 또 하나의 개발 <code class="language-plaintext highlighter-rouge">분기점</code>을 의미합니다. 새로운 개발 분기점이 필요할 때는 브랜치를 <code class="language-plaintext highlighter-rouge">추가</code>로 생성할 수 있습니다. 
 브랜치 생성 개수에는 제한이 없습니다.<br />
-필요한 만큼 여러 브랜치를 생성할 수 있으며, 각 브랜치를 구분하려면 브랜치별로 <code class="highlighter-rouge">이름</code>을 지정해야 합니다.</p>
+필요한 만큼 여러 브랜치를 생성할 수 있으며, 각 브랜치를 구분하려면 브랜치별로 <code class="language-plaintext highlighter-rouge">이름</code>을 지정해야 합니다.</p>
 
 <p><br /></p>
 
@@ -84,17 +84,17 @@
 <hr />
 <p>브랜치를 생성할 때는 branch 명령어를 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch 브랜치이름 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch 브랜치이름 커밋ID
 </code></pre></div></div>
 
-<p>branch 명령어 뒤에 브랜치 이름을 <code class="highlighter-rouge">인자 값</code>으로 추가합니다.</p>
+<p>branch 명령어 뒤에 브랜치 이름을 <code class="language-plaintext highlighter-rouge">인자 값</code>으로 추가합니다.</p>
 
 <p><br /></p>
 
 <h2 id="브랜치의-생성기준">브랜치의 생성기준</h2>
 <hr />
-<p>브랜치 이름만 입력하면 <code class="highlighter-rouge">현재 HEAD 포인터</code>를 기준으로 새로운 브랜치를 생성합니다. 
-직접 <code class="highlighter-rouge">커밋 ID</code> 인자 값을 지정하면, 지정한 커밋 ID를 기준으로 브랜치를 생성합니다.</p>
+<p>브랜치 이름만 입력하면 <code class="language-plaintext highlighter-rouge">현재 HEAD 포인터</code>를 기준으로 새로운 브랜치를 생성합니다. 
+직접 <code class="language-plaintext highlighter-rouge">커밋 ID</code> 인자 값을 지정하면, 지정한 커밋 ID를 기준으로 브랜치를 생성합니다.</p>
 
 <p>브랜치 생성<br />
 <img src="../img/06-3.jpg" alt="브랜치 생성" /></p>
@@ -109,7 +109,7 @@
 
 <h3 id="브랜치를-확인할-실습파일을-하나-생성합니다">브랜치를 확인할 실습파일을 하나 생성합니다.</h3>
 <p>저장소에 새로운 파일을 하나 생성한 후 저장합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ code branch.htm ☜ VS Code로 파일을 작성합니다
 </code></pre></div></div>
 
@@ -119,7 +119,7 @@ branch.htm</p>
 </code></pre></div></div>
 
 <p>작성한 파일을 스테이지에 등록하고, 커밋을 작성합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git add branch.htm ☜ 추적 등록
 
 infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
@@ -135,9 +135,9 @@ $ git commit -m "first" ☜ 커밋 작성
 
 <h3 id="새로운-브랜치-생성">새로운 브랜치 생성</h3>
 <p>커밋이 있는 상태에서 새로운 브랜치를 생성합니다. 
-마지막 <code class="highlighter-rouge">커밋ID(100644)</code>를 기준으로 브랜치를 생성 및 추가합니다.</p>
+마지막 <code class="language-plaintext highlighter-rouge">커밋ID(100644)</code>를 기준으로 브랜치를 생성 및 추가합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git branch footer
 
 $ git branch
@@ -145,10 +145,10 @@ $ git branch
 * master
 </code></pre></div></div>
 
-<p>새로운 <code class="highlighter-rouge">footer</code> 브랜치가 생성된 것을 확인할 수 있습니다.</p>
+<p>새로운 <code class="language-plaintext highlighter-rouge">footer</code> 브랜치가 생성된 것을 확인할 수 있습니다.</p>
 
-<p>브랜치를 생성할 때는 결과 <code class="highlighter-rouge">메시지를 별도로 표시하지 않습니다</code>. 
-메시지가 없어도 <code class="highlighter-rouge">정상적</code>으로 브랜치가 생성된 것입니다.</p>
+<p>브랜치를 생성할 때는 결과 <code class="language-plaintext highlighter-rouge">메시지를 별도로 표시하지 않습니다</code>. 
+메시지가 없어도 <code class="language-plaintext highlighter-rouge">정상적</code>으로 브랜치가 생성된 것입니다.</p>
 
 <p><br /></p>
 

@@ -70,7 +70,7 @@
 <p>커밋을 할 때는 반드시 커밋 메시지를 같이 작성해야 합니다.<br />
 하지만 의미가 없는 커밋이라 커밋 메시지를 생략하고 싶을 때도 있습니다. 이러한 특별한 상황에 대비하여 깃은 메시지가 없는 커밋 작성도 허용합니다.</p>
 
-<p>이를 간단히 <code class="highlighter-rouge">빈 커밋</code>이라고 합니다.<br />
+<p>이를 간단히 <code class="language-plaintext highlighter-rouge">빈 커밋</code>이라고 합니다.<br />
 빈 커밋 작성 방법은 지금까지 살펴본 메시지 작성 방법과 약간 다릅니다.</p>
 
 <p><br />
@@ -79,10 +79,10 @@
 <h2 id="세-번째-커밋">세 번째 커밋</h2>
 <hr />
 <p>실습을 위해 index.htm 파일 내용을 좀 더 수정하여 세 번째 커밋을 하겠습니다.<br />
-간략하게 <code class="highlighter-rouge">&lt;title&gt;~&lt;/title&gt;</code> 사이의 내용을 JINYGIT으로 수정한 후 저장합니다.</p>
+간략하게 <code class="language-plaintext highlighter-rouge">&lt;title&gt;~&lt;/title&gt;</code> 사이의 내용을 JINYGIT으로 수정한 후 저장합니다.</p>
 
 <p>VS Code 실행</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ code index.htm ☜ VS Code 실행
 </code></pre></div></div>
 
@@ -100,9 +100,9 @@ $ code index.htm ☜ VS Code 실행
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>파일을 수정한 후에는 반드시 다음과 같이 다시 수정된 파일을 스테이지 영역에 <code class="highlighter-rouge">재등록</code>합니다.</p>
+<p>파일을 수정한 후에는 반드시 다음과 같이 다시 수정된 파일을 스테이지 영역에 <code class="language-plaintext highlighter-rouge">재등록</code>합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git add index.htm ☜ 스테이지 등록
 </code></pre></div></div>
 
@@ -110,9 +110,9 @@ $ git add index.htm ☜ 스테이지 등록
   <li>–allow-empty-message 옵션</li>
 </ul>
 
-<p>터미널에서 메시지가 없는 빈 커밋을 작성하려면 <code class="highlighter-rouge">--allow-empty-message</code> 옵션을 사용합니다.</p>
+<p>터미널에서 메시지가 없는 빈 커밋을 작성하려면 <code class="language-plaintext highlighter-rouge">--allow-empty-message</code> 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git commit --allow-empty-message -m "" ☜ 커밋 메시지를 작성하지 않음
 [master 42250c6] ☜ 빈 커밋
  1 file changed, 1 insertion(+), 1 deletion(-)
@@ -139,9 +139,9 @@ $ git commit --allow-empty-message -m "" ☜ 커밋 메시지를 작성하지 �
 
 <h2 id="473-빈-커밋-확인">4.7.3 빈 커밋 확인</h2>
 <hr />
-<p>빈 커밋 메시지를 확인해 봅시다. 터미널에서 <code class="highlighter-rouge">log</code> 명령어를 입력합니다.</p>
+<p>빈 커밋 메시지를 확인해 봅시다. 터미널에서 <code class="language-plaintext highlighter-rouge">log</code> 명령어를 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git log ☜ 로그 확인
 commit aa92947d350db27b604d1351930d4f809f96886e (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt; ☜ 빈 커밋
@@ -171,10 +171,10 @@ Date:   Sat Jan 5 18:24:50 2019 +0900
 <blockquote>
   <p>Note: 메시지 수정
 간혹 커밋 메시지를 입력할 때 오타가 발생할 수 있습니다. 이때는 방금 전에 작성한 커밋 메시지를 수정해야 할 것입니다.<br />
-깃은 마지막 커밋을 수정할 수 있는 <code class="highlighter-rouge">--amend</code> 옵션을 제공합니다.</p>
+깃은 마지막 커밋을 수정할 수 있는 <code class="language-plaintext highlighter-rouge">--amend</code> 옵션을 제공합니다.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --amend
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --amend
 </code></pre></div></div>
 
 <p>이 명령어를 실행하면 직전 커밋 메시지를 에디터 창에 표시합니다.<br />

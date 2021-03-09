@@ -130,7 +130,7 @@ drwxr-xr-x 1 infoh 197609  0 6월   1 15:10 .git ☜ 깃 저장소
 <span class="nt">-rw-r--r--</span> 1 infoh 197609 28 6월   1 14:58 hello.htm
 </code></pre></div></div>
 
-<p>폴더 안에 깃의 숨겨진 저장소 <code class="highlighter-rouge">.git</code>이 있는지 확인합니다. 다음으로 깃 플로우 전략을 초기화합니다. 깃 플로우 초기화 <code class="highlighter-rouge">git flow init</code> 명령어를 실행합니다.</p>
+<p>폴더 안에 깃의 숨겨진 저장소 <code class="language-plaintext highlighter-rouge">.git</code>이 있는지 확인합니다. 다음으로 깃 플로우 전략을 초기화합니다. 깃 플로우 초기화 <code class="language-plaintext highlighter-rouge">git flow init</code> 명령어를 실행합니다.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 <span class="o">(</span>master<span class="o">)</span>
 <span class="nv">$ </span>git flow init ☜ 플로우 초기화
@@ -154,7 +154,7 @@ Hooks and filters directory? <span class="o">[</span>E:/gitstudy13/.git/hooks]
 <p>전략 브랜치의 생성 확인을 클릭하기 귀찮다면 -d 옵션을 사용할 수 있습니다. 매번 확인 요청을 하지 않고 자동으로 기본 브랜치를 생성합니다.</p>
 
 <p>[예시]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow init -d
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git flow init -d
 </code></pre></div></div>
 
 <blockquote>
@@ -197,7 +197,7 @@ Hooks and filters directory? <span class="o">[</span>E:/gitstudy13/.git/hooks]
 
 <p>로컬 저장소의 develop 브랜치를 원격 저장소로 동기화합니다. 푸시(Push) 명령어를 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (master)
 $ git push -u origin develop
 Total 0 (delta 0), reused 0 (delta 0)
 remote:
@@ -225,7 +225,7 @@ Branch 'develop' set up to track remote branch 'develop' from 'origin'.
 
 <p>또는 show 명령어를 통하여 원격 저장소의 정보를 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy13 (master)
 $ git remote show origin
 * remote origin
   Fetch URL: https://github.com/jinygit/gitstudy13.git

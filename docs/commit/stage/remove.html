@@ -67,20 +67,20 @@
                 <section>
                     <h1 id="파일-등록-취소">파일 등록 취소</h1>
 <hr />
-<p>이번에는 tracked 상태의 파일을 <code class="highlighter-rouge">untracked 상태</code>로 변경해 보겠습니다.</p>
+<p>이번에는 tracked 상태의 파일을 <code class="language-plaintext highlighter-rouge">untracked 상태</code>로 변경해 보겠습니다.</p>
 
 <p><br /></p>
 
 <h2 id="untracked">untracked</h2>
 <hr />
-<p>스테이지에 등록하는 것과 <code class="highlighter-rouge">반대 과정</code>입니다.<br />
+<p>스테이지에 등록하는 것과 <code class="language-plaintext highlighter-rouge">반대 과정</code>입니다.<br />
 등록 취소는 워킹 디렉터리와 스테이지 영역을 서로 왔다 갔다 할 수 있는 방법입니다.</p>
 
 <p><br /></p>
 
 <h2 id="취소하기">취소하기</h2>
 <hr />
-<p>unstage 상태로 변경하려면 <code class="highlighter-rouge">삭제(rm)</code>나 <code class="highlighter-rouge">리셋(reset)</code> 명령어를 사용합니다.</p>
+<p>unstage 상태로 변경하려면 <code class="language-plaintext highlighter-rouge">삭제(rm)</code>나 <code class="language-plaintext highlighter-rouge">리셋(reset)</code> 명령어를 사용합니다.</p>
 
 <p>스테이지 영역의 파일 등록 취소
 <img src="./img/04-10.jpg" alt="스테이지_영역의_파일_등록_취소" /></p>
@@ -89,11 +89,11 @@
 
 <h2 id="rm-명령-삭제">rm 명령 삭제</h2>
 <hr />
-<p><code class="highlighter-rouge">rm 명령어</code>로 삭제해 보겠습니다.<br />
-스테이지 영역에서만 등록된 파일을 삭제하려고 <code class="highlighter-rouge">--cached</code> 옵션을 함께 사용합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">rm 명령어</code>로 삭제해 보겠습니다.<br />
+스테이지 영역에서만 등록된 파일을 삭제하려고 <code class="language-plaintext highlighter-rouge">--cached</code> 옵션을 함께 사용합니다.</p>
 
 <p>☜ 스테이지 삭제</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git rm --cached index.htm 
 rm 'index.htm'
 </code></pre></div></div>
@@ -102,7 +102,7 @@ rm 'index.htm'
 다시 status 명령어를 실행하여 확인합시다.</p>
 
 <p>☜ 상태 확인</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git status 
 On branch master
 No commits yet
@@ -116,7 +116,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 <p>등록하기 이전의 untracked 상태로 변경되었습니다.<br />
 다음 실습에 대비하여 다시 tracked 상태로 변경해 놓습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git add index.htm ☜ 스테이지 다시등록
 </code></pre></div></div>
 
@@ -124,19 +124,19 @@ $ git add index.htm ☜ 스테이지 다시등록
 
 <h2 id="reset으로-삭제">reset으로 삭제</h2>
 <hr />
-<p>파일을 등록한 후 커밋하지 않고 바로 삭제하려면 <code class="highlighter-rouge">rm --cached</code> 명령어를 사용합니다.<br />
-하지만 한 번이라도 <code class="highlighter-rouge">커밋</code>을 했다면 <code class="highlighter-rouge">reset 명령어</code>를 사용해야 합니다.</p>
+<p>파일을 등록한 후 커밋하지 않고 바로 삭제하려면 <code class="language-plaintext highlighter-rouge">rm --cached</code> 명령어를 사용합니다.<br />
+하지만 한 번이라도 <code class="language-plaintext highlighter-rouge">커밋</code>을 했다면 <code class="language-plaintext highlighter-rouge">reset 명령어</code>를 사용해야 합니다.</p>
 
-<p>예를 들어 커밋한 index.htm 파일을 <code class="highlighter-rouge">rm</code> 명령어로 삭제했다고 합시다.</p>
+<p>예를 들어 커밋한 index.htm 파일을 <code class="language-plaintext highlighter-rouge">rm</code> 명령어로 삭제했다고 합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git rm --cached index.htm
 rm 'index.htm'
 </code></pre></div></div>
 
-<p>삭제한 후 <code class="highlighter-rouge">status</code> 명령어를 실행하면 다음과 같이 이전과 <code class="highlighter-rouge">다른 결과</code>가 나옵니다.</p>
+<p>삭제한 후 <code class="language-plaintext highlighter-rouge">status</code> 명령어를 실행하면 다음과 같이 이전과 <code class="language-plaintext highlighter-rouge">다른 결과</code>가 나옵니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git status
 On branch master
 Changes to be committed:
@@ -148,26 +148,26 @@ Untracked files:
 </code></pre></div></div>
 
 <p>파일이 untracked 상태가 되고, 스테이지 영역에서 파일이 삭제 처리됩니다.<br />
-커밋 후 삭제는 파일이 삭제 또는 <code class="highlighter-rouge">변화된 것</code>으로 간주합니다.</p>
+커밋 후 삭제는 파일이 삭제 또는 <code class="language-plaintext highlighter-rouge">변화된 것</code>으로 간주합니다.</p>
 
-<p>따라서 커밋된 파일은 리셋으로 삭제한 후 <code class="highlighter-rouge">정리</code>해 주어야 합니다.</p>
+<p>따라서 커밋된 파일은 리셋으로 삭제한 후 <code class="language-plaintext highlighter-rouge">정리</code>해 주어야 합니다.</p>
 
 <p>다음은 간단한 리셋 후 정리하는 명령어를 사용한 예입니다.</p>
 
 <p>☜ 리셋을 시도합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git reset HEAD index.htm 
 </code></pre></div></div>
 
 <p>그리고 다시 status 명령어로 확인하면 정상적으로 커밋이 정리되었습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git status ☜ 상태 확인
 On branch master
 nothing to commit, working tree clean
 </code></pre></div></div>
 
-<p>이처럼 터미널에서 unstage 상태 및 untracked 상태로 변경하는 것은 <code class="highlighter-rouge">복잡</code>합니다.</p>
+<p>이처럼 터미널에서 unstage 상태 및 untracked 상태로 변경하는 것은 <code class="language-plaintext highlighter-rouge">복잡</code>합니다.</p>
 
 <p><br /></p>
 

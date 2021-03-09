@@ -97,7 +97,7 @@
 <hr />
 <p>먼저 부모 역할의 메인 저장소를 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir gitstudy11_parent 새 폴더 만들기
 $ cd gitstudy11_parent
 
@@ -108,7 +108,7 @@ Initialized empty Git repository in E:/gitstudy11_parent/.git/
 
 <p>메인 저장소( gitstudy11_parent)에 parent.htm 파일을 생성하고 저장합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ code parent.htm VS Code 실행
 </code></pre></div></div>
 
@@ -118,7 +118,7 @@ $ code parent.htm VS Code 실행
 
 <p>첫 번째 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ git add parent.htm 등록
 infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ git commit -m "parent first" 커밋
@@ -128,7 +128,7 @@ create mode 100644 parent.htm
 </code></pre></div></div>
 
 <p>메인 저장소와 동기화할 원격 저장소를 생성합시다. 먼저 깃허브에 로그인한 후 New 버튼 또는
-<code class="highlighter-rouge">+</code> &gt; New repository를 클릭합니다.</p>
+<code class="language-plaintext highlighter-rouge">+</code> &gt; New repository를 클릭합니다.</p>
 
 <p>그림 11-3 깃허브에서 새 저장소 메뉴 선택<br />
 <img src="./img/11-3.jpg" alt="깃허브에서 새 저장소 메뉴 선택" /></p>
@@ -139,12 +139,12 @@ gitstudy11_parent로 정했는데, 로컬 저장소 이름과 동일하지 않�
 <p>그림 11-4 원하는 이름으로 새 저장소 생성<br />
 !원하는 이름으로 새 저장소 생성<a href="./img/11-4.jpg"></a></p>
 
-<p>저장소가 생성되면 <code class="highlighter-rouge">https://github.com/jinygit/gitstudy11_parent.git</code> 주소가 나옵니다. 이 주
+<p>저장소가 생성되면 <code class="language-plaintext highlighter-rouge">https://github.com/jinygit/gitstudy11_parent.git</code> 주소가 나옵니다. 이 주
 소와 로컬 저장소를 연결할 것입니다. 이 주소를 복사해 둡니다.</p>
 
 <p>다시 깃 배시 화면으로 돌아갑니다. 메인 저장소에 리모트 등록을 합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ git remote add origin https://github.com/jinygit/gitstudy11_parent.git 원격 저장소 등록
 커밋 정보를 원격 저장소로 전송합니다.
 infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
@@ -169,7 +169,7 @@ To https://github.com/jinygit/gitstudy11_parent.git
 <hr />
 <p>이번에는 메인 저장소와 연결되는 자식 저장소를 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir gitstudy11_child 
 $ cd gitstudy11_child
 
@@ -179,7 +179,7 @@ Initialized empty Git repository in E:/gitstudy11_child/.git/
 </code></pre></div></div>
 
 <p>자식 저장소에 child.htm 파일을 생성하고 저장합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ code child.htm
 </code></pre></div></div>
 
@@ -189,7 +189,7 @@ $ code child.htm
 
 <p>자식 저장소에서 첫 번째 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git add child.htm 등록
 infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git commit -m "child first" 커밋
@@ -203,7 +203,7 @@ create mode 100644 child.htm
 그리고 다시 깃 배시로 돌아와 원격 저장소와 연결한 후 자식 저장소의 커밋을 원격 저장소로 전
 송합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git remote add origin https://github.com/jinygit/gitstudy11_child.git 
 infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git push -u origin master 

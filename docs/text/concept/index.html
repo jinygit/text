@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!--SEO--><title>Git TextBook | 깃 개념 잡기</title>
-            <meta name="title" content="깃 개념 잡기" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+            <meta name="title" content="깃 개념 잡기" /><meta name="description" content="깃을 사용하기 위한 사전지식과 컨셉에 대해서 학습합니다. 깃의 저장소란 무엇이고, 일반 폴더와 어떠한 차별점이 있는지 알아봅니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리,  깃교과서" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -83,38 +83,48 @@
             <section>
                 <h1 id="깃-개념-잡기">깃 개념 잡기</h1>
 <hr />
-<p>이 장에서는 깃의 저장소 개념을 알아보고, 직접 생성해 봅니다. 깃을 효과적으로 잘 사용하려면 저장소의 동작 원리를 이해하는 것이 중요합니다.</p>
+<p>이 장에서는 깃의 저장소 <code class="language-plaintext highlighter-rouge">개념</code>을 알아보고, 직접 <code class="language-plaintext highlighter-rouge">저장소</code>를 생성해 봅니다. <br />
+개발 현장에서 <code class="language-plaintext highlighter-rouge">깃</code>을 효과적으로 잘 사용하기 위해서는, 깃 저장소의 <code class="language-plaintext highlighter-rouge">동작 원리</code>를 이해하고 사용하는 것이 중요합니다. 
+마음이 급한 개발자에게는 본 내용이 다소 지루할 지 몰라도, 천리길도 한걸음인 것 처럼 먼저 기초를 닦고 시작해 보는 것으로 하겠습니다.</p>
 
 <p><br /></p>
 
-<h2 id="깃-저장소-생성"><a href="init">깃 저장소 생성</a></h2>
+<h2 id="깃-저장소"><a href="init">깃 저장소</a></h2>
 <hr />
-<p>깃은 이러한 변경 사항을 전용 저장소(repository)(리포지터리)에 저장합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">깃</code>은 폴더안에 존재하는 모든 소스코드의 이력을 <code class="language-plaintext highlighter-rouge">저장소(repository)</code>라는 특별한 영역에 기록합니다.
+저장소를 다른말로 <code class="language-plaintext highlighter-rouge">리포지터리</code>라고 표현하기도 합니다.</p>
+
+<p>일반 폴더와 깃의 저장소가 어떠한 차이점이 있고, 어떻게 만들어 지는지에 대해서 알아봅니다. <a href="init">학습하기</a></p>
 
 <ul>
-  <li><a href="init/repo">폴더와 깃 저장소</a></li>
-  <li><a href="init/cli">초기화</a></li>
-  <li><a href="init/folder">숨겨진 폴더 = .git 폴더</a></li>
-  <li><a href="init/sourcetree">소스트리와 연결</a></li>
+  <li><a href="init/repo">폴더 vs 저장소</a> 차이점을 학습합니다.</li>
+  <li>저장소를 <a href="init/cli">초기화</a> 하는 방법에 대해서 학습니다.</li>
+  <li>깃의 <a href="init/folder">숨겨진 폴더</a>란? 무엇인지 학습합니다.</li>
+  <li>그래픽 GUI 도구인 <a href="init/sourcetree">소스트리</a>를 통하여 사용하는 방법을 학습합니다.</li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="워킹-디렉터리"><a href="working">워킹 디렉터리</a></h2>
 <hr />
+<p>깃은 안정적인 코드의 수정작업과 기록을 위한 상태를 분리 관리 하기 위해서 <code class="language-plaintext highlighter-rouge">워킹 디렉터리</code>라는 개념을 도입하여 사용하고 있습니다. 
+워킹 디렉터리의 의미와 이곳에서 어떠한 작업들이 이루어 지는지에 대해서 알아보도록 하겠습니다.</p>
 <ul>
-  <li><a href="working/mean">워킹 디렉터리란?</a></li>
-  <li><a href="working/untracked">파일의 untracked 상태와 tracked 상태</a></li>
+  <li><a href="working/mean">워킹</a> 디렉터리란?</li>
+  <li>파일의 <a href="working/untracked">untracked</a> 상태와 <a href="working/untracked">tracked</a> 상태</li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="스테이지"><a href="stage">스테이지</a></h2>
 <hr />
+<p><code class="language-plaintext highlighter-rouge">스테이지</code>는 깃이 파일의 <code class="language-plaintext highlighter-rouge">이력을 관리</code>할 수 있는 <code class="language-plaintext highlighter-rouge">목록</code>을 가지며, 최종 <code class="language-plaintext highlighter-rouge">이력</code>을 기록하는 <code class="language-plaintext highlighter-rouge">커밋</code>의 <code class="language-plaintext highlighter-rouge">준비단계</code>를 가지는 영역입니다.<br />
+워킹 디렉터리와 저장소간의 <code class="language-plaintext highlighter-rouge">중간단계</code>인 스테이지 영역에 대해서 알아 보도록 하겠습니다.</p>
+
 <ul>
-  <li><a href="stage/stage">스테이지 = 임시 영역</a></li>
-  <li><a href="stage/unstage">파일의 stage 상태와 unstage 상태</a></li>
-  <li><a href="stage/modified">파일의 modified 상태와 unmodified 상태</a></li>
+  <li>스테이지 <a href="stage/stage">임시 영역</a></li>
+  <li>파일의 <a href="stage/unstage">stage</a> 상태와 <a href="stage/unstage">unstage</a> 상태</li>
+  <li>파일의 <a href="stage/modified">modified</a> 상태와 <a href="stage/modified">unmodified</a> 상태</li>
 </ul>
 
 <p><br /></p>

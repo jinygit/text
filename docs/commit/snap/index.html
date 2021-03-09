@@ -78,7 +78,7 @@
 <h2 id="head">HEAD</h2>
 <hr />
 <p>커밋을 학습하기 전에 HEAD 개념을 하나 더 알아봅시다.<br />
-깃에는 HEAD라는 포인터 개념이 있습니다. <code class="highlighter-rouge">HEAD</code>는 커밋을 가리키는 묵시적 <code class="highlighter-rouge">참조 포인터</code>입니다.</p>
+깃에는 HEAD라는 포인터 개념이 있습니다. <code class="language-plaintext highlighter-rouge">HEAD</code>는 커밋을 가리키는 묵시적 <code class="language-plaintext highlighter-rouge">참조 포인터</code>입니다.</p>
 
 <p>그림 4-11] HEAD<br />
 <img src="./img/04-11.jpg" alt="HEAD" /></p>
@@ -86,7 +86,7 @@
 <p>HEAD는 최종적인 커밋 작업의 위치를 가리킵니다. 앞에서 새로운 커밋은 이전 부모 커밋을 기반으로 새로운 커밋을 만든다고 했습니다.<br />
 HEAD는 바로 부모 커밋을 가리킵니다. 단 깃을 설치하고 처음 커밋할 때는 HEAD의 포인터가 없습니다.</p>
 
-<p>최소한 <code class="highlighter-rouge">한 번 이상 커밋</code>을 해야만 HEAD가 존재합니다.</p>
+<p>최소한 <code class="language-plaintext highlighter-rouge">한 번 이상 커밋</code>을 해야만 HEAD가 존재합니다.</p>
 
 <p>HEAD는 커밋될 때마다 한 단계씩 이동합니다. 그리고 마지막 커밋 위치를 가리킵니다.<br />
 HEAD는 커밋이 변화한 최종 시점을 의미합니다.</p>
@@ -134,13 +134,13 @@ untracked 상태의 파일은 반드시 등록 명령으로 다시 스테이지 
 이제 실제적인 커밋 작업을 해 봅시다. 수정된 파일 이력을 커밋하려면 commit 명령어를 사용합니다.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit
 </code></pre></div></div>
 
 <p>commit 명령어는 독립적으로 사용할 수 있습니다. 또는 옵션을 추가하여 여러 동작을 같이 수행할 수도 있습니다.<br />
 커밋 옵션은 -help 명령어를 입력하면 볼 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git commit -help
 usage: git commit [&lt;options&gt;] [--] &lt;pathspec&gt;...
 -q, --quiet suppress summary after successful commit
@@ -177,7 +177,7 @@ reuse and edit message from specified commit
 
 <p>커밋할 때는 commit 명령어만 사용합니다. 단독으로 명령어를 입력하면 커밋 메시지 작성을 요구하며, 메시지를 작성할 수 있는 화면이 나옵니다. 지정된 에디터가 열립니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit
 </code></pre></div></div>
 
 <p>기본적으로 커밋 메시지는 vi 에디터를 사용합니다. 여기에 수정 내역을 요약하여 작성합니다. 메시지를 저장하면 커밋이 완료됩니다.</p>
@@ -186,7 +186,7 @@ reuse and edit message from specified commit
   <p>Note: vi 에디터 이외의 에디터를 사용하고 싶다면 깃의 환경 설정을 변경합니다.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git config --global core.editor "에디터경로"
 </code></pre></div></div>
 
@@ -201,7 +201,7 @@ $ git config --global core.editor "에디터경로"
 
 <p>Esc 를 누른 후 : + q 를 누르세요. 그러면 다음 메시지가 나옵니다. 에디터에서 # 기호는 주석입니다. 커밋할 때 꼭 주석을 삭제할 필요는 없습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git commit
 Aborting commit due to empty commit message.
 </code></pre></div></div>
@@ -217,10 +217,10 @@ Aborting commit due to empty commit message.
 
 <p>이때 유용한 옵션이 있습니다. -a 옵션을 commit 명령어와 같이 사용하면 이를 한 번에 해결할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -a
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit -a
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">-a</code> 옵션은 커밋을 하기 전에 자동으로 모든 파일을 등록하는 과정을 미리 수행합니다. 따라서 파일 등록과 커밋을 동시에 실행하는 것입니다.</p>
+<p><code class="language-plaintext highlighter-rouge">-a</code> 옵션은 커밋을 하기 전에 자동으로 모든 파일을 등록하는 과정을 미리 수행합니다. 따라서 파일 등록과 커밋을 동시에 실행하는 것입니다.</p>
 
 <ul>
   <li>소스트리에서 커밋 메시지 작성

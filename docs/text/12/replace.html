@@ -96,7 +96,7 @@ replace를 사용하면 커밋이 많은 오래된 저장소를 분리할 수 �
 <hr />
 <p>replace 명령어를 사용하여 저장소를 분리해 봅시다. 실습을 위해 새로운 저장소를 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir git-replace 새 폴더 만들기
 $ cd git-replace
 infoh@DESKTOP MINGW64 /e/git-replace (master)
@@ -106,7 +106,7 @@ Initialized empty Git repository in E:/git-replace/.git/
 
 <p>실습을 위해 work.md 파일을 생성하고 저장한 후 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ code work.md VS Code 실행
 work.md
 # 작업1
@@ -122,11 +122,11 @@ create mode 100644 work.md
 <p>코드를 좀 더 수정하고, 두 번째 커밋을 합니다. 반복되는 code work.md 과정은 표시를 생략합니다.</p>
 
 <p>work.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
 # 작업2
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git commit -am "work2" 등록 및 커밋
 [master c4cb167] work2
 1 file changed, 2 insertions(+), 1 deletion(-)
@@ -135,39 +135,39 @@ $ git commit -am "work2" 등록 및 커밋
 <p>같은 방법으로 작업5까지 순차적으로 입력한 후 여러 번 커밋합니다.</p>
 
 <p>work.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
 # 작업2 c4cb167
 # 작업3
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git commit -am "work3" 등록 및 커밋
 [master 8681d97] work3
 1 file changed, 2 insertions(+), 1 deletion(-)
 </code></pre></div></div>
 
 <p>work.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
 # 작업2 c4cb167
 # 작업3 8681d97
 # 작업4
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git commit -am "work4" 등록 및 커밋
 [master e4363d5] work4
 1 file changed, 2 insertions(+), 1 deletion(-)
 </code></pre></div></div>
 
 <p>work.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 작업1 6584676
 # 작업2 c4cb167
 # 작업3 8681d97
 # 작업4 e4363d5
 # 작업5
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git commit -am "work5" 등록 및 커밋
 [master 939b41c] work5
 1 file changed, 2 insertions(+), 1 deletion(-)
@@ -180,7 +180,7 @@ $ git commit -am "work5" 등록 및 커밋
 
 <p>새 저장소의 커밋들을 확인해 봅시다. 커밋 해시 값도 같이 주의 깊게 살펴보세요.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git log --oneline --decorate 커밋 기록
 939b41c (HEAD -&gt; master) work5
 e4363d5 work4
@@ -197,7 +197,7 @@ c4cb167 work2
 1단계. 저장소를 분리할 수 있게 새로운 브랜치를 하나 생성합니다. 작업3을 기준으로 브랜치를
 만듭니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git branch worked 8681d97 work3 해시 값 입력
 </code></pre></div></div>
 
@@ -221,14 +221,14 @@ gitstudy11_parent로 정했는데, 로컬 저장소 이름과 동일하지 않�
 다시 깃 배시 화면으로 돌아갑니다. 이 원격 저장소에는 분리된 저장소를 저장할 것입니다. 원격
 저장소를 등록합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git remote add old https://github.com/jinygit/git-replace.git 원격 저장소 등록
 </code></pre></div></div>
 
 <p>2단계. 1단계에서 원격 저장소를 등록할 때 사용한 별칭을 주의 깊게 살펴봅시다. 별칭 이름을
 old로 등록했습니다. 등록된 원격 저장소의 remote 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git remote -v 원격 저장소 목록
 old https://github.com/jinygit/git-replace.git (fetch)
 old https://github.com/jinygit/git-replace.git (push)
@@ -240,7 +240,7 @@ old https://github.com/jinygit/git-replace.git (push)
 
 <p>worked 브랜치를 원격 저장소의 master 브랜치로 푸시합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git push old worked:master 커밋 전송
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
@@ -277,7 +277,7 @@ To https://github.com/jinygit/git-replace.git
 
 <p>commit-tree 명령어를 사용하여 수동으로 객체를 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ echo "devide history" | git commit-tree c4cb167^{tree} work2의 해시 값
 744e61522896c3ee222fd4f74a099964851454cf
 </code></pre></div></div>
@@ -292,7 +292,7 @@ $ echo "devide history" | git commit-tree c4cb167^{tree} work2의 해시 값
 
 <p>5단계. 생성된 임시 객체를 다른 커밋 객체와 리베이스하여 병합합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git rebase --onto 744e615 c4cb167 리베이스 병합(임시 객체)
 First, rewinding head to replay your work on top of it...
 Applying: work3
@@ -302,7 +302,7 @@ Applying: work5
 
 <p>새로 생성된 임시 객체와 리베이스되었습니다. 작업한 결과를 로그로 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git log --oneline 커밋 기록
 c282ad0 (HEAD -&gt; master) work5
 461d0a2 work4
@@ -323,7 +323,7 @@ c3502a6 work3
 git-replace2란 이름으로 생성했습니다. https://github.com/jinygit/git-replace2.git 주소를
 복사해 둡니다. 생성된 원격 저장소를 remote 명령어로 등록합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 </code></pre></div></div>
 
 <p>$ git remote add origin https://github.com/jinygit/git-replace2.git 원격 저장소 등록
@@ -331,7 +331,7 @@ git-replace2란 이름으로 생성했습니다. https://github.com/jinygit/git-
 
 <p>6단계. 분리 작업한 로컬 저장소를 origin 원격 저장소로 푸시합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace (master)
 $ git push -u origin master 커밋 전송
 Enumerating objects: 12, done.
 Counting objects: 100% (12/12), done.
@@ -362,7 +362,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 <p>7단계. 분리된 두 원격 저장소 중에서 마지막에 작업한 커밋으로 원격 저장소를 복제합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ git clone https://github.com/jinygit/git-replace2.git git-replace2 저장소 복제
 Cloning into 'git-replace2'...
 remote: Enumerating objects: 12, done.
@@ -374,7 +374,7 @@ Unpacking objects: 100% (12/12), done.
 
 <p>복제된 로컬 저장소의 로그를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 (master)
 $ cd git-replace2 복제 저장소 이동
 infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 $ git log --oneline --decorate 커밋 기록
@@ -387,14 +387,14 @@ c3502a6 work3
 <p>복제된 저장소는 분리된 커밋들만 가지고 있습니다. 이전의 커밋 정보들은 보관되어 있지 않습니
 다. 이전의 커밋 정보들이 보관된 원격 저장소를 remote 명령어로 등록합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 </code></pre></div></div>
 
 <p>$ git remote add worked https://github.com/jinygit/git-replace.git 원격 저장소 등록
 8단계. 원격 저장소를 패치하여 커밋들을 가져옵니다. 패치로 가져오는 이유는 수동으로 커밋을
 변경하여 병합하기 때문입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 $ git fetch worked 커밋 내려받기
 warning: no common commits
 remote: Enumerating objects: 9, done.
@@ -408,7 +408,7 @@ From https://github.com/jinygit/git-replace
 
 <p>패치로 가져온 worked의 로그 기록을 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 $ git log --oneline worked/master 커밋 기록
 8681d97 (worked/master) work3
 c4cb167 work2
@@ -420,7 +420,7 @@ c4cb167 work2
 <p>9단계. 이제 origin/master의 c3502a6과 worked/master의 8681d97을 replace 명령어로 연
 결합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 $ git replace c3502a6 8681d97 커밋 연결
 </code></pre></div></div>
 
@@ -429,7 +429,7 @@ $ git replace c3502a6 8681d97 커밋 연결
 
 <p>replace 명령어를 사용하여 두 커밋을 연결했습니다. 저장소의 로그를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-replace2 (master)
 $ git log --oneline 커밋 기록
 c282ad0 (HEAD -&gt; master, origin/master, origin/HEAD) work5
 461d0a2 work4

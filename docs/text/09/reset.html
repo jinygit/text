@@ -95,9 +95,9 @@
 <hr />
 <p>복귀는 어떤 시점으로 돌아가는 것을 의미합니다. 따라서 이전 코드로 복귀하려면 복귀 시점을 알려 주어야 합니다. 리셋은 이 시점을 커밋을 기준으로 정합니다. 커밋은 log 명령어로 조회할 수 있습니다. log 명령어를 실행하면 커밋의 해시 값과 메시지를 출력합니다. 따라서 복귀하고자 하는 특정 시점을 찾는 데 매우 유용합니다.</p>
 
-<p>앞에서 작업한 커밋들을 확인해 봅시다. <code class="highlighter-rouge">--oneline</code> 옵션을 같이 사용하여 로그 기록을 확인합니다. 간략한 커밋 해시 값과 메시지가 같이 출력됩니다.</p>
+<p>앞에서 작업한 커밋들을 확인해 봅시다. <code class="language-plaintext highlighter-rouge">--oneline</code> 옵션을 같이 사용하여 로그 기록을 확인합니다. 간략한 커밋 해시 값과 메시지가 같이 출력됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 7f068b6 (HEAD -&gt; master) menu5
 6619c99 menu4
@@ -120,7 +120,7 @@ b741eef menu1
 
 <p>고정된 커밋 해시 값을 사용하지 않고, HEAD 포인터를 이용하여 상대적 위치를 지정할 수도 있습니다. 다음과 같이 캐럿(^) 또는 물결(~) 기호를 사용하여 HEAD의 상대 커밋 위치를 지정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD^^^
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD^^^
 </code></pre></div></div>
 
 <p><br />
@@ -130,7 +130,7 @@ b741eef menu1
 <hr />
 <p>reset 명령어를 사용하면 지정된 커밋 코드로 되돌아갑니다. 즉, 특정 커밋의 해시 값 상태로 모든 코드를 복구합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 옵션 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 옵션 커밋ID
 </code></pre></div></div>
 
 <p>reset 명령어는 옵션을 함께 사용해야 하며, 세 가지 옵션이 있습니다.</p>
@@ -149,7 +149,7 @@ soft 옵션과 mixed 옵션 차이는 크게 스테이지 영역과 관련이 �
 <hr />
 <p>soft 옵션은 가장 낮은 단계의 리셋 동작입니다. 먼저 soft 옵션의 동작은 reset –soft 명령어를 실행해서 이해해 봅시다. 코드에서 HEAD~는 이전 커밋을 의미합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git reset --soft HEAD~ ☜ 이전 커밋으로 소프트 리셋
 </code></pre></div></div>
 
@@ -162,7 +162,7 @@ $ git reset --soft HEAD~ ☜ 이전 커밋으로 소프트 리셋
 
 <p>log 명령어로도 커밋 기록을 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 6619c99 (HEAD -&gt; master) menu4 
 b728366 menu3
@@ -173,7 +173,7 @@ b741eef menu1
 
 <p>마찬가지로 마지막의 menu5 커밋이 없어졌습니다. 리셋한 후 menu.htm 파일의 내용은 어떨까요?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -187,28 +187,28 @@ $ code menu.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<p>리셋한 후에 menu5 커밋이 없어졌는데, menu.htm 파일에는 <code class="highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code>가 있습니다. 이전 파일에서 달라진 점이 없습니다.</p>
+<p>리셋한 후에 menu5 커밋이 없어졌는데, menu.htm 파일에는 <code class="language-plaintext highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code>가 있습니다. 이전 파일에서 달라진 점이 없습니다.</p>
 
 <p>왜 이럴까요? 좀 더 확인해 보겠습니다. 먼저 diff 명령어로 비교합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
-</span><span class="err">$</span> git diff HEAD
-<span class="gh">diff --git a/menu.htm b/menu.htm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+$ git diff HEAD
+diff --git a/menu.htm b/menu.htm
 index f717854..9ae7cfc 100644
-</span><span class="gd">--- a/menu.htm
-</span><span class="gi">+++ b/menu.htm
-</span><span class="p">@@ -3,4 +3,5 @@</span>
+--- a/menu.htm
++++ b/menu.htm
+@@ -3,4 +3,5 @@
      &lt;li&gt;menu2&lt;/li&gt;
      &lt;li&gt;menu3&lt;/li&gt;
      &lt;li&gt;menu4&lt;/li&gt;
-<span class="gi">+    &lt;li&gt;menu5&lt;/li&gt; ☜ 파일이 수정 추가됨
-</span> &lt;/ul&gt;
-<span class="err">\</span> No newline at end of file
++    &lt;li&gt;menu5&lt;/li&gt; ☜ 파일이 수정 추가됨
+ &lt;/ul&gt;
+\ No newline at end of file
 </code></pre></div></div>
 
 <p>diff 명령어를 실행한 결과 menu.htm 파일에 새로운 menu5가 추가된 것으로 나옵니다. 이번에는 깃의 상태를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git status
 On branch master
 Changes to be committed:
@@ -227,7 +227,7 @@ Changes to be committed:
 
 <p>다음 실습을 위해 다시 menu5를 등록해서 커밋해 두겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -m "menu5" ☜ 다시 커밋등록
 [master 34df5c3] menu5
  1 file changed, 1 insertion(+)
@@ -242,7 +242,7 @@ $ git commit -m "menu5" ☜ 다시 커밋등록
 
 <p>해시 값이 변경되었는지 로그를 다시 살펴보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 34df5c3 (HEAD -&gt; master) menu5 ☜ 커밋 해시값이 변경되어 있음
 6619c99 menu4
@@ -254,7 +254,7 @@ b741eef menu1
 
 <p>reset –soft 명령어의 원리를 이용하면 마지막 커밋을 수정할 수 있습니다. 마치 –amend 명령어와 유사합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --amend
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git commit --amend
 </code></pre></div></div>
 
 <p><br />
@@ -264,17 +264,17 @@ b741eef menu1
 <hr />
 <p>reset 명령어의 기본값은 mixed 옵션입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --mixed 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --mixed 커밋ID
 </code></pre></div></div>
 
 <p>또는 다음과 같이 mixed 옵션을 생략할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 커밋ID
 </code></pre></div></div>
 
 <p>이번에는 mixed 옵션을 이해할 수 있도록 간단히 실습해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git reset --mixed HEAD~ ☜ mixed 리셋을 실행합니다.
 Unstaged changes after reset:
 M       menu.htm
@@ -282,7 +282,7 @@ M       menu.htm
 
 <p>이번에는 리셋 메시지가 같이 표시되었습니다. 메시지 내용은 unstaged 상태로 변경되었다는 의미입니다. mixed 옵션은 soft 옵션과 달리 리셋한 후 스테이지 상태까지 복원하지 않습니다. status 명령어로 깃의 상태를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git status
 On branch master
 Changes not staged for commit:
@@ -296,7 +296,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 <p>먼저 리셋한 후 menu.htm 파일을 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -311,21 +311,21 @@ $ code menu.htm
 
 </code></pre></div></div>
 
-<p>리셋한 후에도 <code class="highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code> 소스 코드가 남아 있습니다. 이전과 파일 내용이 동일합니다. diff 명령어로 좀 더 확인해 보겠습니다.</p>
+<p>리셋한 후에도 <code class="language-plaintext highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code> 소스 코드가 남아 있습니다. 이전과 파일 내용이 동일합니다. diff 명령어로 좀 더 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
-</span><span class="err">$</span> git diff HEAD
-<span class="gh">diff --git a/menu.htm b/menu.htm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+$ git diff HEAD
+diff --git a/menu.htm b/menu.htm
 index f717854..9ae7cfc 100644
-</span><span class="gd">--- a/menu.htm
-</span><span class="gi">+++ b/menu.htm
-</span><span class="p">@@ -3,4 +3,5 @@</span>
+--- a/menu.htm
++++ b/menu.htm
+@@ -3,4 +3,5 @@
      &lt;li&gt;menu2&lt;/li&gt;
      &lt;li&gt;menu3&lt;/li&gt;
      &lt;li&gt;menu4&lt;/li&gt;
-<span class="gi">+    &lt;li&gt;menu5&lt;/li&gt; ☜ 파일이 수정 추가됨
-</span> &lt;/ul&gt;
-<span class="err">\</span> No newline at end of file
++    &lt;li&gt;menu5&lt;/li&gt; ☜ 파일이 수정 추가됨
+ &lt;/ul&gt;
+\ No newline at end of file
 </code></pre></div></div>
 
 <p>새로운 menu5가 추가되었다고 나옵니다. 변경 파일 내용은 워킹 디렉터리에 저장되었습니다.</p>
@@ -335,7 +335,7 @@ index f717854..9ae7cfc 100644
 
 <p>다음 실습을 위해 다시 menu5를 등록하여 커밋해 두겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -m "menu5" ☜ 커밋 실패
 On branch master
 Changes not staged for commit:
@@ -348,7 +348,7 @@ no changes added to commit
 
 <p>add 명령어로 등록하고 다시 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git add menu.htm ☜ 스테이지 등록
 
 infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
@@ -373,7 +373,7 @@ $ git commit -m "menu5"
 
 <p>이번에는 hard 옵션을 사용해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git reset --hard HEAD~ ☜ 완전 삭제
 HEAD is now at 6619c99 menu4
 </code></pre></div></div>
@@ -385,7 +385,7 @@ HEAD is now at 6619c99 menu4
 
 <p>soft 옵션 리셋과 달리 ‘커밋하지 않은 변경 사항’이 없습니다. 그리고 menu4로 HEAD 포인터가 변경되었습니다. 로그 기록도 확인해 볼까요?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 6619c99 (HEAD -&gt; master) menu4
 b728366 menu3
@@ -396,7 +396,7 @@ b741eef menu1
 
 <p>menu.htm 파일도 다시 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -410,14 +410,14 @@ $ code menu.htm
 
 </code></pre></div></div>
 
-<p>이번에는 파일에서 <code class="highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code> 코드가 삭제되었습니다. soft나 mixed 옵션과 달리 이전에 커밋한 시점에서 작성한 파일 내용으로 변경되었습니다. 이처럼 실제 파일 내용이 변경되는 것은 hard 옵션을 사용하면 워킹 디렉터리 내용도 함께 삭제되기 때문입니다. 이전 커밋으로 완전히 리셋된 것을 확인할 수 있습니다.</p>
+<p>이번에는 파일에서 <code class="language-plaintext highlighter-rouge">&lt;li&gt;menu5&lt;/li&gt;</code> 코드가 삭제되었습니다. soft나 mixed 옵션과 달리 이전에 커밋한 시점에서 작성한 파일 내용으로 변경되었습니다. 이처럼 실제 파일 내용이 변경되는 것은 hard 옵션을 사용하면 워킹 디렉터리 내용도 함께 삭제되기 때문입니다. 이전 커밋으로 완전히 리셋된 것을 확인할 수 있습니다.</p>
 
 <p>그림 9-10] 완전한 리셋<br />
 <img src="./img/09-10.jpg" alt="완전한 리셋" /></p>
 
 <p>깃의 상태도 다시 한 번 확인하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -456,7 +456,7 @@ nothing to commit, working tree clean
 
 <p>실습으로 커밋을 수정해 봅시다. 수정하기 전에 먼저 로그를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 6619c99 (HEAD -&gt; master) menu4
 b728366 menu3
@@ -467,13 +467,13 @@ b741eef menu1
 
 <p>menu3과 menu4 커밋을 reset 명령어를 사용하여 하나로 합쳐 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git reset –soft HEAD~2 ☜ 2단계 전의 커밋으로 소프트 리셋
 </code></pre></div></div>
 
 <p>최신 커밋 HEAD를 기준으로 2단계 전 상태로 리셋됩니다. 즉, menu2를 가리키는 f1c704f 커밋을 의미합니다. 로그를 다시 실행합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline
 f1c704f (HEAD -&gt; master) menu2
 b741eef menu1
@@ -487,20 +487,20 @@ b741eef menu1
 
 <p>리셋한 후 내용을 diff 명령어로 확인해 볼까요?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
-</span><span class="err">$</span> git diff HEAD~
-<span class="gh">diff --git a/menu.htm b/menu.htm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+$ git diff HEAD~
+diff --git a/menu.htm b/menu.htm
 index d11d058..f717854 100644
-</span><span class="gd">--- a/menu.htm
-</span><span class="gi">+++ b/menu.htm
-</span><span class="p">@@ -1,3 +1,6 @@</span>
+--- a/menu.htm
++++ b/menu.htm
+@@ -1,3 +1,6 @@
  &lt;ul&gt;
      &lt;li&gt;menu1&lt;/li&gt;
-<span class="gi">+    &lt;li&gt;menu2&lt;/li&gt; ☜ 추가내용으로 상태가 변경됨
++    &lt;li&gt;menu2&lt;/li&gt; ☜ 추가내용으로 상태가 변경됨
 +    &lt;li&gt;menu3&lt;/li&gt;
 +    &lt;li&gt;menu4&lt;/li&gt;
-</span> &lt;/ul&gt;
-<span class="err">\</span> No newline at end of file
+ &lt;/ul&gt;
+\ No newline at end of file
 </code></pre></div></div>
 
 <p>소스 코드는 기존 menu2에 추가된 내용과 menu3, menu4가 남아 추가된 상태이며, 워킹 디렉터리와 스테이지 영역이 변경되었습니다. 소스트리에서 확인하면 다음과 같습니다.</p>
@@ -510,7 +510,7 @@ index d11d058..f717854 100644
 
 <p>이제 커밋을 합쳐 다시 메시지를 작성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -m "menu3/4"
 [master dd6d215] menu3/4
  1 file changed, 2 insertions(+)
@@ -533,22 +533,22 @@ $ git commit -m "menu3/4"
 <hr />
 <p>스테이지 영역은 커밋을 하려고 임시로 결과물을 보관해 두는 공간입니다. 커밋을 하려면 워킹 디렉터리에서 작업한 내용을 스테이지 영역에 등록해야 합니다. 앞에서 배웠듯이, 스테이지 영역에 등록할 때는 add 명령어를 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add 파일이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git add 파일이름
 </code></pre></div></div>
 
 <p>또 add 명령어로 등록된 스테이지 영역의 파일을 다시 unstage 상태가 되도록 스테이징을 취소할 수 있습니다. 스테이지 영역에서 등록된 파일을 다시 unstage 상태로 만들 때는 reset 명령어를 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 파일이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 파일이름
 </code></pre></div></div>
 
 <p>reset 명령어 다음에 커밋 ID 대신 파일 이름을 사용하면 됩니다. 파일 이름을 지정하여 리셋하면 해당 파일은 unstage 상태가 됩니다. 하지만 이 명령어는 몇 가지 옵션이 축약되어 있습니다. 내부적으로 다음과 같이 여러 단계로 처리하여 파일을 unstage 상태로 변경합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --mixed HEAD 파일이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --mixed HEAD 파일이름
 </code></pre></div></div>
 
 <p>원래는 중간에 –mixed HEAD가 생략된 형태입니다. 최신 커밋에서 지정 파일을 리셋하고 mixed 옵션으로 스테이지 영역도 같이 제거합니다. 다음과 같이 HEAD 대신 다른 커밋 ID를 사용할 수도 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 커밋ID 파일이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset 커밋ID 파일이름
 </code></pre></div></div>
 
 <p><br />
@@ -563,7 +563,7 @@ $ git commit -m "menu3/4"
 
 <p>수정 작업을 완전히 취소하려면 워킹 디렉터리와 스테이지 상태를 모두 제거하여 마지막 커밋 상태로 되돌려 놓아야 합니다. 그림을 보면 HEAD 포인터는 가장 마지막의 커밋 위치를 가리킵니다. 그리고 수정 작업들은 모두 워킹 디렉터리 안에 남아 있습니다. 리셋할 때의 시점을 현재 HEAD를 기준으로 하면 해당 시점의 수정 작업을 모두 삭제할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reset --hard HEAD
 </code></pre></div></div>
 
 <p><br />
@@ -578,14 +578,14 @@ $ git commit -m "menu3/4"
 
 <p>menu2의 커밋 해시키를 직접 지정하여 menu 브랜치를 생성할 것입니다. 그리고 menu 브랜치로 체크아웃하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git checkout -b menu f1c704f ☜ 커밋을 직접 지정
 Switched to a new branch 'menu'
 </code></pre></div></div>
 
 <p>만든 브랜치에서 menu.htm 파일을 수정하고 저장한 후 커밋합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -600,7 +600,7 @@ $ code menu.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
 $ git commit -am "menu1-1"
 [menu 7f5fad8] menu1-1
  1 file changed, 5 insertions(+), 1 deletion(-)
@@ -613,14 +613,14 @@ $ git commit -am "menu1-1"
 
 <p>이제 menu 브랜치와 master 브랜치를 병합하겠습니다. 다른 브랜치로 체크아웃되어 있다면 병합을 위해 먼저 master 브랜치로 체크아웃합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (menu)
 $ git checkout master
 Switched to branch 'master'
 </code></pre></div></div>
 
 <p>merge 명령어를 실행합니다. 두 브랜치는 3-way 방식으로 병합하는데, 병합 메시지를 작성해야 합니다. 명령어를 실행한 후 vi 에디터 창이 열리면 메시지를 작성하고 저장하여 빠져나옵니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git merge menu
 Auto-merging menu.htm
 Merge made by the 'recursive' strategy.
@@ -635,7 +635,7 @@ Merge made by the 'recursive' strategy.
 
 <p>이번에는 방금 전에 병합한 커밋을 리셋하여 취소하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git reset --merge HEAD~ ☜ 이전 커밋 리셋
 
 </code></pre></div></div>

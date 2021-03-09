@@ -92,7 +92,7 @@
 
 <p>그럼 앞에서 실습한 hotfix 브랜치를 master 브랜치에 병합해 봅시다. hotfix 브랜치를 병합하려면 먼저 기준이 되는 master 브랜치로 체크아웃해야 합니다. 다른 브랜치에 있다면 git checkout master로 체크아웃하세요.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master) ☜ 기준 브랜치
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master) ☜ 기준 브랜치
 $ git merge hotfix ☜ 기준 브랜치에 hotfix를 병합
 Auto-merging index.htm
 Merge made by the 'recursive' strategy.
@@ -107,7 +107,7 @@ Merge made by the 'recursive' strategy.
 
 <p>성공적으로 병합한 후에는 커밋 로그를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git log -1
 commit a48d563373f777f5f19a1ad9426297c5bc31d01c (HEAD -&gt; master)
 Merge: 8583edf 7277f2d

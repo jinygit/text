@@ -94,12 +94,12 @@
 
 <p>Annotated 태그를 생성하려면 tag 명령어 뒤에 -a 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -a 버전
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -a 버전
 </code></pre></div></div>
 
 <p>바로 실습해 보겠습니다. version.htm 파일을 수정하고 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ code version.htm ☜ VS Code를 실행합니다.
 </code></pre></div></div>
 
@@ -110,7 +110,7 @@ $ code version.htm ☜ VS Code를 실행합니다.
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git commit -am "test 1.0.0"
 [master 53028dc] test 1.0.0
  1 file changed, 4 insertions(+), 1 deletion(-)
@@ -118,7 +118,7 @@ $ git commit -am "test 1.0.0"
 
 <p>작성한 커밋에 Annotated 태그를 붙이겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag -a 1.0.0 ☜ 태그 추가
 </code></pre></div></div>
 
@@ -127,7 +127,7 @@ $ git tag -a 1.0.0 ☜ 태그 추가
 <p>그림 10-2] 태그 메시지 작성<br />
 <img src="./img/10-2.jpg" alt="태그 메시지 작성" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
 
 # Write a message for tag:
 
@@ -143,14 +143,14 @@ $ git tag -a 1.0.0 ☜ 태그 추가
 
 <p>앞에서 생성한 태그를 확인해 봅시다. 생성한 태그의 버전을 출력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag
 1.0.0 ☜ 태그 확인
 </code></pre></div></div>
 
 <p>이번에는 생성된 태그를 좀 더 자세히 알아봅시다. 로그 기록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git log --decorate
 commit 53028dc1486b42d23253ffd4001a758cef455372 (HEAD -&gt; master, tag: 1.0.0) ☜ 태그 확인
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -174,7 +174,7 @@ Date:   Thu May 23 17:37:53 2019 +0900
 
 <p>이어서 실습해 보겠습니다. version.htm 파일에 한 줄을 더 추가하고 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ code version.htm
 </code></pre></div></div>
 
@@ -186,7 +186,7 @@ $ code version.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git commit -am "test 1.1.0"
 [master da8d211] test 1.1.0
  1 file changed, 1 insertion(+)
@@ -194,13 +194,13 @@ $ git commit -am "test 1.1.0"
 
 <p>추가된 커밋에 새로운 태그를 만듭시다. 이번에는 간략한 태그 메시지를 작성하려고 -m 옵션을 같이 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag -a 1.1.0 -m "simple tag 1.1.0"
 </code></pre></div></div>
 
 <p>정상적으로 태그가 생성되었는지 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag
 1.0.0
 1.1.0
@@ -218,7 +218,7 @@ $ git tag
 <hr />
 <p>소스트리에서도 태그를 작성할 수 있습니다. 실습을 위해 version.htm 파일을 수정하고 저장한 후 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ code version.htm
 </code></pre></div></div>
 
@@ -234,7 +234,7 @@ $ code version.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git commit -am "test 1.1.1"
 [master f2691a0] test 1.1.1
  1 file changed, 5 insertions(+), 1 deletion(-)
@@ -269,7 +269,7 @@ $ git commit -am "test 1.1.1"
 
 <p>version.htm 파일을 수정하고 저장한 후 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ code version.htm
 </code></pre></div></div>
 
@@ -286,7 +286,7 @@ $ code version.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git commit -am "test 1.1.2"
 [master 80f8890] test 1.1.2
  1 file changed, 1 insertion(+)
@@ -294,7 +294,7 @@ $ git commit -am "test 1.1.2"
 
 <p>지금까지 생성한 태그 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag
 1.0.0
 1.1.0
@@ -303,7 +303,7 @@ $ git tag
 
 <p>이번에는 중복된 이름으로 태그를 생성해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag -a 1.1.1 -m "test 1.1.1"
 fatal: tag '1.1.1' already exists
 </code></pre></div></div>
@@ -319,13 +319,13 @@ fatal: tag '1.1.1' already exists
 
 <p>태그는 tag -d 명령어로 삭제할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -d 태그이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git tag -d 태그이름
 </code></pre></div></div>
 
 <p>태그 목록에서 삭제된 태그 이름은 이후에 다시 사용할 수 있습니다.<br />
 지금까지 진행한 실습의 로그를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git log --oneline
 80f8890 (HEAD -&gt; master) test 1.1.2
 f2691a0 (tag: 1.1.1) test 1.1.1
@@ -336,14 +336,14 @@ da8d211 (tag: 1.1.0) test 1.1.0
 
 <p>커밋 f2691a0에 태그 1.1.1이 지정되어 있습니다. 태그 1.1.1을 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag -d 1.1.1
 Deleted tag '1.1.1' (was b3ffc7d)
 </code></pre></div></div>
 
 <p>태그가 삭제되었습니다. 다시 로그를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git log --oneline
 80f8890 (HEAD -&gt; master) test 1.1.2
 f2691a0 test 1.1.1
@@ -354,7 +354,7 @@ da8d211 (tag: 1.1.0) test 1.1.0
 
 <p>추가된 태그가 커밋 로그에서도 삭제된 것을 확인할 수 있습니다. 태그 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
 $ git tag
 1.0.0
 1.1.0
@@ -369,36 +369,36 @@ $ git tag
 <hr />
 <p>Annotated 태그는 커밋의 태그 포인터와 함께 여러 정보를 포함합니다. tag 명령어는 태그의 목록만 출력할 뿐 상세 정보는 표시하지 않습니다. 태그의 상세 정보를 확인하려면 show 명령어를 사용해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 태그이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show 태그이름
 </code></pre></div></div>
 
 <p>다음과 같이 show 명령어를 실행하면 생성된 태그의 상세 정보를 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
-</span><span class="err">$</span> git show 1.0.0
-<span class="p">tag 1.0.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy10 (master)
+$ git show 1.0.0
+tag 1.0.0
 Tagger: hojin &lt;infohojin@gmail.com&gt;
 Date:   Thu May 23 18:12:16 2019 +0900
-</span>
+
 this is first tag ☜ 태그 정보
 
 commit 53028dc1486b42d23253ffd4001a758cef455372 (tag: 1.0.0)
-<span class="p">Author: hojin &lt;infohojin@gmail.com&gt; 
+Author: hojin &lt;infohojin@gmail.com&gt; 
 Date:   Thu May 23 18:07:18 2019 +0900 
-</span>    test 1.0.0 
+    test 1.0.0 
 
 diff --git a/version.htm b/version.htm
-<span class="gh">index 14f6513..eccf619 100644
-</span><span class="gd">--- a/version.htm
-</span><span class="gi">+++ b/version.htm
-</span><span class="p">@@ -1 +1,4 @@</span>
-<span class="gd">-&lt;h1&gt;태그 버전 실습 파일입니다.&lt;/h1&gt;
-</span><span class="err">\</span> No newline at end of file
-<span class="gi">+&lt;h1&gt;태그 버전 실습 파일입니다.&lt;/h1&gt;
+index 14f6513..eccf619 100644
+--- a/version.htm
++++ b/version.htm
+@@ -1 +1,4 @@
+-&lt;h1&gt;태그 버전 실습 파일입니다.&lt;/h1&gt;
+\ No newline at end of file
++&lt;h1&gt;태그 버전 실습 파일입니다.&lt;/h1&gt;
 +&lt;ul&gt;
 +    &lt;li&gt;버전 1.0.0 실습&lt;/li&gt;
 +&lt;/ul&gt;
-</span><span class="err">\</span> No newline at end of file
+\ No newline at end of file
 </code></pre></div></div>
 
 <p><br /><br /></p>

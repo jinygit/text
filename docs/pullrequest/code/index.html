@@ -111,7 +111,7 @@
 
 <p>포크 저장소를 복제한 로컬 저장소로 이동합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello_fork (master)
 $ git config user.name "hojin74"
 
 infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello_fork (master)
@@ -125,7 +125,7 @@ $ git config user.email "infohojin@naver.com"
 저장소별로 저장된 설정값은 .git/config 파일 안에 저장됩니다.</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/hello_fork (master)
 $ cat .git/config
 [core]
         repositoryformatversion = 0
@@ -146,7 +146,7 @@ $ cat .git/config
 </code></pre></div></div>
 
 <p>이제 자신의 로컬 컴퓨터에서 코드를 수정합니다. 
-이 저장소에서 생성되는 커밋은 <code class="highlighter-rouge">.git/config</code> 파일 안에 등록된 정보로 커밋이 이루어집니다.</p>
+이 저장소에서 생성되는 커밋은 <code class="language-plaintext highlighter-rouge">.git/config</code> 파일 안에 등록된 정보로 커밋이 이루어집니다.</p>
 
 <p><br />
 <a name="2"></a></p>
@@ -173,7 +173,7 @@ jinygit/hello를 포크하여 인사말을 풀-리퀘스트 해보세요.
 
 <p>변경한 계정의 정보로 커밋이 이루어진 것을 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git log
 commit 4ce639124ba46b21e58ca6ff28febaf9433534f2 (HEAD -&gt; master)
 Author: hojin74 &lt;infohojin@naver.com&gt;
@@ -196,7 +196,7 @@ Date:   Thu Feb 21 19:16:42 2019 +0900
 
 <p>수정한 코드를 포크된 원격 저장소로 전송합니다. 여기서 원격 저장소란 포크한 자신의 저장소를 말합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git push origin master
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -216,9 +216,9 @@ error: failed to push some refs to 'https://github.com/hojin74/hello.git'
 <p>만일 다른 컴퓨터를 이용하여 실습한다면 이와 같은 메시지는 출력하지 않습니다. 
 이를 해결하기 위해 두 번째 계정으로 환경 설정을 변경해봅니다.</p>
 
-<p>원격 저장소의 리모트 설정은 <code class="highlighter-rouge">.git/config</code>에 기록되어 있습니다.</p>
+<p>원격 저장소의 리모트 설정은 <code class="language-plaintext highlighter-rouge">.git/config</code>에 기록되어 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat .git/config
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat .git/config
 
 [remote "origin"]
         url = https://github.com/hojin74/hello.git
@@ -227,12 +227,12 @@ error: failed to push some refs to 'https://github.com/hojin74/hello.git'
 
 <p>원격 서버의 접속 정보를 2번째 계정의 호스트 형식으로 변경합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url = git@호스트이름:계정/저장소.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url = git@호스트이름:계정/저장소.git
 </code></pre></div></div>
 
 <p>다음은 이를 적용한 예제입니다. 이 부분이 이해되지 않는다면, 호스팅의 이중 계정 설정 부분을 참고해보길 바랍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
     url = git@github.com-2:hojin74/hello.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 </code></pre></div></div>
@@ -241,7 +241,7 @@ error: failed to push some refs to 'https://github.com/hojin74/hello.git'
 
 <p><img src="./img/image013.png" alt="풀리퀘스트" /></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git push origin master
 Warning: Permanently added the RSA host key for IP address '192.30.255.112' to the list of known hosts.
 Enter passphrase for key '/c/Users/infoh/.ssh/id_rsa2':
@@ -259,7 +259,7 @@ To github.com-2:hojin74/hello.git
 
 <p><img src="./img/image014.png" alt="풀리퀘스트" /></p>
 
-<p>변경된 <code class="highlighter-rouge">README.md</code>가 포크 저장소에 반영되었습니다.</p>
+<p>변경된 <code class="language-plaintext highlighter-rouge">README.md</code>가 포크 저장소에 반영되었습니다.</p>
 
 <p><br /><br /></p>
 

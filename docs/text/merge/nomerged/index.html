@@ -88,23 +88,23 @@
 
 <p>깃은 병합한 브랜치와 병합하지 않은 브랜치를 구분하는 옵션을 제공합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch --merged
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch --merged
 </code></pre></div></div>
 
 <p>master 브랜치에서 이 명령어를 실행해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git branch --merged
   feature
   footer
 * master
 </code></pre></div></div>
 
-<p>병합한 브랜치는 별표(<code class="highlighter-rouge">*</code>) 기호로 표시됩니다. 병합을 완료한 브랜치는 앞에서 배운 <code class="highlighter-rouge">-d</code> 옵션을 사용하여 삭제할 수 있습니다.</p>
+<p>병합한 브랜치는 별표(<code class="language-plaintext highlighter-rouge">*</code>) 기호로 표시됩니다. 병합을 완료한 브랜치는 앞에서 배운 <code class="language-plaintext highlighter-rouge">-d</code> 옵션을 사용하여 삭제할 수 있습니다.</p>
 
-<p>병합하지 않은 브랜치는 -<code class="highlighter-rouge">-no-merged</code> 옵션으로 확인할 수 있습니다.</p>
+<p>병합하지 않은 브랜치는 -<code class="language-plaintext highlighter-rouge">-no-merged</code> 옵션으로 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch --no-merged
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch --no-merged
 </code></pre></div></div>
 
 <p>병합하지 않은 브랜치는 -d 옵션으로 삭제되지 않으므로 -D 옵션을 사용합니다.</p>

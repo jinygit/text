@@ -1,7 +1,8 @@
 ---
 layout: home
-title: "스테이지"
+title: "스테이지 영역의 파일 수정"
 keyword: "스테이지"
+description: "스테이지 영역의 파일이 수정되면 modified로 변경되어 워킹 디렉터러로 이동됩니다."
 breadcrumb:
 - "text"
 - "concept"

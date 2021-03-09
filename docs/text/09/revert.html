@@ -110,7 +110,7 @@
 
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -am "menu5"
 [master e19c0b4] menu5
  1 file changed, 1 insertion(+)
@@ -134,7 +134,7 @@ $ code menu.htm
 
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -am "menu6"
 [master 1ea5e47] menu6
  1 file changed, 1 insertion(+)
@@ -147,7 +147,7 @@ $ code menu.htm
 <p>menu7을 추가하고 저장한 후 커밋합니다.</p>
 
 <p>menu.htm</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
     &lt;li&gt;menu1&lt;/li&gt;
     &lt;li&gt;menu2&lt;/li&gt;
     &lt;li&gt;menu3&lt;/li&gt;
@@ -159,7 +159,7 @@ $ code menu.htm
 
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -am "menu7"
 [master 5374918] menu7
  1 file changed, 1 insertion(+)
@@ -175,7 +175,7 @@ $ git commit -am "menu7"
 
 <p>직전의 커밋을 리버트할 때는 HEAD 포인터를 사용하면 편리합니다. 리셋으로 커밋을 삭제하지 않고 리버트로 취소 커밋을 생성하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git revert HEAD ☜ 현재의 커밋을 리버트
 </code></pre></div></div>
 
@@ -186,7 +186,7 @@ $ git revert HEAD ☜ 현재의 커밋을 리버트
 
 <p>메시지를 저장하면 다음과 같이 출력됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git revert HEAD
 [master 00d7770] Revert "menu7"
  1 file changed, 1 deletion(-)
@@ -194,7 +194,7 @@ $ git revert HEAD
 
 <p>성공적으로 리버트되었습니다. 이제 menu.htm 파일을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -223,12 +223,12 @@ $ code menu.htm
 
 <p>그렇다면 직전의 커밋이 아닌 다른 커밋을 취소할 때는 어떻게 해야 할까요? 커밋 해시 값을 지정합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert 커밋ID
 </code></pre></div></div>
 
-<p>깃의 범위 지정 연산자를 사용하여 여러 커밋을 리버트할 수도 있습니다. 연산자 <code class="highlighter-rouge">..</code>를 같이 사용합니다.</p>
+<p>깃의 범위 지정 연산자를 사용하여 여러 커밋을 리버트할 수도 있습니다. 연산자 <code class="language-plaintext highlighter-rouge">..</code>를 같이 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert 커밋ID .. 커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert 커밋ID .. 커밋ID
 </code></pre></div></div>
 
 <p><br />
@@ -255,7 +255,7 @@ $ code menu.htm
 
 <p>실습을 위해 menu 브랜치를 다시 병합하겠습니다. 병합 메시지 입력창이 뜨면 메시지를 입력하고 저장합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git merge menu
 Auto-merging menu.htm
 Merge made by the 'recursive' strategy.
@@ -265,7 +265,7 @@ Merge made by the 'recursive' strategy.
 
 <p>그리고 master 브랜치의 코드를 수정하고 커밋합니다. menu7을 다시 등록하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 
@@ -285,7 +285,7 @@ $ code menu.htm
 <span class="nt">&lt;/ul&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git commit -am "menu7"
 [master da4d8e4] menu7
  1 file changed, 1 insertion(+)
@@ -298,14 +298,14 @@ $ git commit -am "menu7"
 
 <p>리버트로 병합을 취소할 때는 –mainline 옵션을 같이 사용할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert --mainline 숫자 병합커밋ID
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git revert --mainline 숫자 병합커밋ID
 </code></pre></div></div>
 
 <p>참고로 병합은 두 브랜치가 결합된 형태입니다. 리버트로 병합이 취소 상태가 되면 둘 중 한 브랜치로 체크아웃해야 합니다. –mainline 옵션은 병합을 취소한 후 체크아웃되는 브랜치를 표시합니다. –mainline은 체크아웃으로 되돌아가는 커밋 번호입니다.</p>
 
 <p>아주 간단하게 실습해 보겠습니다. 먼저 로그를 확인합니다. –graph 옵션을 사용하면 그래프 형태로 지금까지 로그를 볼 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline --graph
 $ git log --oneline --graph -5
 * da4d8e4 (HEAD -&gt; master) menu7
@@ -318,7 +318,7 @@ $ git log --oneline --graph -5
 
 <p>그리고 -5처럼 숫자를 추가하면 로그 5개만 출력됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git log --oneline --graph -5
 * da4d8e4 (HEAD -&gt; master) menu7
 * 84b6618 Merge branch 'menu'
@@ -330,7 +330,7 @@ $ git log --oneline --graph -5
 
 <p>출력 결과에서 84b6618은 병합 시점의 커밋 ID입니다. 이 시점으로 리버트하겠습니다. 리버트 메시지도 작성해 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ git revert --mainline 1 84b6618
 [master 4399642] Revert "Merge branch 'menu'"
  1 file changed, 1 insertion(+), 5 deletions(-)
@@ -343,7 +343,7 @@ $ git revert --mainline 1 84b6618
 
 <p>이번에는 제대로 리버트되었는지 menu.htm 파일을 확인합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy09 (master)
 $ code menu.htm
 </code></pre></div></div>
 

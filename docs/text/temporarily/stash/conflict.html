@@ -73,19 +73,19 @@
 
 <p>다음은 새로운 브랜치를 생성한 후 스태시를 적용하는 명령입니다. 스태시 스택에 저장된 내용으로 새로운 브랜치를 동시에 생성할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash branch 브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git stash branch 브랜치이름
 </code></pre></div></div>
 
 <p>스태시로 이전 내용을 복원한 상태입니다. 아직 커밋을 수행하지 않았기 때문에 작업 중인 내용은 수정된 상태로 워킹 디렉터리에 남아 있습니다. 실습을 위해 현재의 임시 작업 내용을 다시 스태시해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git stash
 Saved working directory and index state WIP on feature: a43043e new feature start
 </code></pre></div></div>
 
 <p>현재 작업 내용을 다시 스태시하여 임시 저장했습니다. 스태시의 스택 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git stash list
 stash@{0}: WIP on feature: a43043e new feature start
 </code></pre></div></div>
@@ -94,7 +94,7 @@ stash@{0}: WIP on feature: a43043e new feature start
 
 <p>stash 명령어와 branch 명령어를 같이 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git stash branch test
 Switched to a new branch 'test'
 On branch test
@@ -110,7 +110,7 @@ Dropped refs/stash@{0} (9eb2b13f462d76dd8ffa30f6695c042932bece79)
 
 <p>새로운 브랜치 생성과 동시에 스태시의 임시 작업 내용을 복원했습니다. 다시 스태시 명령을 실행해서 스택 목록을 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (test)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (test)
 $ git stash list
 </code></pre></div></div>
 

@@ -67,23 +67,23 @@
                 <section>
                     <h1 id="등록된-파일-이름이-변경되었을-때">등록된 파일 이름이 변경되었을 때</h1>
 <hr />
-<p>작업 도중 <code class="highlighter-rouge">파일 이름</code>도 변경할 수 있습니다.<br />
+<p>작업 도중 <code class="language-plaintext highlighter-rouge">파일 이름</code>도 변경할 수 있습니다.<br />
 하지만 파일 이름을 변경했다고 별도로 깃에 통보할 필요는 없습니다.<br />
-깃은 똑똑해서 변경된 파일 이름을 <code class="highlighter-rouge">자동</code>으로 알고 있습니다.</p>
+깃은 똑똑해서 변경된 파일 이름을 <code class="language-plaintext highlighter-rouge">자동</code>으로 알고 있습니다.</p>
 
 <p><br /></p>
 
 <h2 id="git-mv-명령어">git mv 명령어</h2>
 <hr />
 <p>리눅스나 macOS에서는 mv 명령어로 파일 이름을 변경할 수 있습니다.<br />
-깃에서도 파일 이름을 변경할 때 <code class="highlighter-rouge">mv</code> 명령어를 사용합니다.</p>
+깃에서도 파일 이름을 변경할 때 <code class="language-plaintext highlighter-rouge">mv</code> 명령어를 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git mv 파일이름 새파일이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git mv 파일이름 새파일이름
 </code></pre></div></div>
 
 <p>다음과 같이 index.htm 파일의 이름을 변경하고 상태를 확인해 보면 깃에서 변경된 파일을 계속 추적하는 것을 알 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ git mv index,htm home.htm
 $ git status
 On branch master
@@ -102,14 +102,14 @@ Changes to be committed:
 깃의 git mv 명령어를 여러 단계의 명령으로 풀면 다음과 같습니다.</p>
 
 <p>[예시]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin MINGW64 /e/gitstudy04 (master)
 $ mv index.htm home.htm
 $ git rm index.htm
 $ git add home.htm
 </code></pre></div></div>
 
-<p>예에서 알 수 있듯이, 이름을 변경한다는 의미는 기존 파일을 삭제하고 새 파일을 <code class="highlighter-rouge">다시 스테이지 영역에 등록</code>하는 과정과 유사합니다.<br />
-풀어 쓴 명령에서 이름을 변경한 후에는 <code class="highlighter-rouge">rm</code>과 <code class="highlighter-rouge">add</code> 명령어를 실행해야 한다는 사실을 잊지 마세요.</p>
+<p>예에서 알 수 있듯이, 이름을 변경한다는 의미는 기존 파일을 삭제하고 새 파일을 <code class="language-plaintext highlighter-rouge">다시 스테이지 영역에 등록</code>하는 과정과 유사합니다.<br />
+풀어 쓴 명령에서 이름을 변경한 후에는 <code class="language-plaintext highlighter-rouge">rm</code>과 <code class="language-plaintext highlighter-rouge">add</code> 명령어를 실행해야 한다는 사실을 잊지 마세요.</p>
 
 <p><br /></p>
 

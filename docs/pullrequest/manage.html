@@ -106,7 +106,7 @@
 
 <p>포크 저장소에 메인 프로젝트 저장소를 등록합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add 별칭 주소
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote add 별칭 주소
 
 infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git remote add main https://github.com/jinygit/hello.git
@@ -127,7 +127,7 @@ origin  git@github.com-2:hojin74/hello.git (push)
 
 <p>메인 프로젝트 저장소에서 최신의 데이터를 페치합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git fetch main
 remote: Enumerating objects: 14, done.
 remote: Counting objects: 100% (14/14), done.
@@ -140,7 +140,7 @@ From https://github.com/jinygit/hello
 
 <p>페치한 후에는 로컬 저장소와 머지합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 /e/jinygit/hello_fork (master)
 $ git merge main/master
 Updating 2c4b5ec..7fd4685
 Fast-forward
@@ -186,7 +186,7 @@ Fast-forward
 
 <p>정상적으로 풀-리퀘스트가 승인된 병합을 리버트할 수 있습니다. 메인 저장소의 pull-request 탭으로 이동합니다. Close 부분을 체크하여 승인된 목록을 확인합니다.</p>
 
-<p>승인된 풀-리퀘스트를 선택합니다. 커밋 내역에서 다음과 같이 최종 병합 결과 옆에 <code class="highlighter-rouge">Revert</code> 버튼이 생성된 것을 확인할 수 있습니다.</p>
+<p>승인된 풀-리퀘스트를 선택합니다. 커밋 내역에서 다음과 같이 최종 병합 결과 옆에 <code class="language-plaintext highlighter-rouge">Revert</code> 버튼이 생성된 것을 확인할 수 있습니다.</p>
 
 <p><img src="./img/image045.png" alt="풀리퀘스트" /></p>
 
@@ -206,7 +206,7 @@ Fast-forward
 
 <p><img src="./img/image047.png" alt="풀리퀘스트" /></p>
 
-<p>요청한 리버트를 <code class="highlighter-rouge">Confirm merge</code>를 클릭하여 반영합니다.</p>
+<p>요청한 리버트를 <code class="language-plaintext highlighter-rouge">Confirm merge</code>를 클릭하여 반영합니다.</p>
 
 <p><br /><br /></p>
 

@@ -87,59 +87,59 @@
 <h2 id="포인터">포인터</h2>
 <p>지금까지 우리는 파일의 객체저장 과 트리, 커밋을 해보았습니다. 이렇게 작업한 결과를 log 명령을 통하여 확인해 보았습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log --stat 0ee97a
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git log --stat 0ee97a
 </code></pre></div></div>
 
-<p>하지만 로그를 확인하기 위해서는 마지막 커밋의 <code class="highlighter-rouge">sha1</code> 해쉬값을 가지고 있어야 합니다.<br />
+<p>하지만 로그를 확인하기 위해서는 마지막 커밋의 <code class="language-plaintext highlighter-rouge">sha1</code> 해쉬값을 가지고 있어야 합니다.<br />
 매번 커밋마다 복잡한 sha1 해쉬를 기억하여 사용하기에는 힘이 듭니다.</p>
 
-<p>깃은 이러한 커밋 해시를 쉽게 접근할 수 있도록 <code class="highlighter-rouge">refs</code> 라는 포인터를 제공합니다.</p>
+<p>깃은 이러한 커밋 해시를 쉽게 접근할 수 있도록 <code class="language-plaintext highlighter-rouge">refs</code> 라는 포인터를 제공합니다.</p>
 
 <h2 id="refs-폴더">Refs 폴더</h2>
-<p>다음은 저장소의 Refs 내용입니다. 모든 커밋의 포인터는 <code class="highlighter-rouge">.git/refs</code> 폴더에 저장이 됩니다.</p>
+<p>다음은 저장소의 Refs 내용입니다. 모든 커밋의 포인터는 <code class="language-plaintext highlighter-rouge">.git/refs</code> 폴더에 저장이 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy19 (master)
 $ find .git/refs/
 .git/refs/
 .git/refs/heads
 .git/refs/tags
 </code></pre></div></div>
 
-<p>아직 마스터(master) <code class="highlighter-rouge">refs</code>는 없습니다.<br />
-새로운 <code class="highlighter-rouge">refs/master</code>를 추가해 봅니다. 마지막 커밋 해쉬를 <code class="highlighter-rouge">refs</code>에 추가해 봅니다.</p>
+<p>아직 마스터(master) <code class="language-plaintext highlighter-rouge">refs</code>는 없습니다.<br />
+새로운 <code class="language-plaintext highlighter-rouge">refs/master</code>를 추가해 봅니다. 마지막 커밋 해쉬를 <code class="language-plaintext highlighter-rouge">refs</code>에 추가해 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ echo "0ee97afec0380e074080129b339e5d284f4ba7d9" &gt; .git/refs/master
 </code></pre></div></div>
 
-<p>생성된 <code class="highlighter-rouge">refs/master</code>를 이용하여 로그 기록을 확인해 보도록 합니다.</p>
+<p>생성된 <code class="language-plaintext highlighter-rouge">refs/master</code>를 이용하여 로그 기록을 확인해 보도록 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git log --pretty=oneline master
 0ee97afec0380e074080129b339e5d284f4ba7d9 (refs/master) second commit
 9d2258ca2884b8a3813692ea2900a728f1276e0e first commit
 </code></pre></div></div>
 
 <p>이제 쉽게 로그 기록을 확인할 수 있게 되었습니다.<br />
-하지만 아쉽게도 매번 커밋을 할때마다 <code class="highlighter-rouge">refs/master</code>를 새롭게 갱신해 주어야 합니다.</p>
+하지만 아쉽게도 매번 커밋을 할때마다 <code class="language-plaintext highlighter-rouge">refs/master</code>를 새롭게 갱신해 주어야 합니다.</p>
 
 <h2 id="update-ref">update-ref</h2>
-<p>매 커밋마다 <code class="highlighter-rouge">ref/master</code>의 파일을 직접 수정을 하는 것은 바람직 하지 않습니다.<br />
-깃은 <code class="highlighter-rouge">refs</code> 파일을 대신 수정할 수 있는 <code class="highlighter-rouge">update-ref</code> 명령을 제공합니다.</p>
+<p>매 커밋마다 <code class="language-plaintext highlighter-rouge">ref/master</code>의 파일을 직접 수정을 하는 것은 바람직 하지 않습니다.<br />
+깃은 <code class="language-plaintext highlighter-rouge">refs</code> 파일을 대신 수정할 수 있는 <code class="language-plaintext highlighter-rouge">update-ref</code> 명령을 제공합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git update-ref refs/head/master 0ee97afec0380e074080129b339e5d284f4ba7d9
 </code></pre></div></div>
 
 <p>update-ref 명령을 통하여 refs 값을 갱신할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ cat .git/refs/head/master
 0ee97afec0380e074080129b339e5d284f4ba7d9
 </code></pre></div></div>
 
 <p>체크아웃을 통하여 브랜치를 이동할 때, 브랜치는 항상 마지맛의 커밋의 HEAD를 가리키게 되어 있습니다.<br />
-이 또한 Refs로 체크아웃은 매번 <code class="highlighter-rouge">update-ref</code> 를 통하여 HEAD 포인터를 갱신하는 것입니다.</p>
+이 또한 Refs로 체크아웃은 매번 <code class="language-plaintext highlighter-rouge">update-ref</code> 를 통하여 HEAD 포인터를 갱신하는 것입니다.</p>
 
 
             </section>

@@ -90,19 +90,19 @@
 
 <h2 id="commit-tree">commit-tree</h2>
 <p>커밋 객체는 커밋의 정보와 트리 객체를 이용하여 하나의 sha1 해쉬 객체로 저장을 합니다.<br />
-저수준 명령어 <code class="highlighter-rouge">commit-tree</code>를 이용하여 새로운 커밋을 해보도록 합니다. 이는 고수준 명령인 <code class="highlighter-rouge">commit</code>과 같습니다.</p>
+저수준 명령어 <code class="language-plaintext highlighter-rouge">commit-tree</code>를 이용하여 새로운 커밋을 해보도록 합니다. 이는 고수준 명령인 <code class="language-plaintext highlighter-rouge">commit</code>과 같습니다.</p>
 
 <p>커밋을 입력합니다. 첫번째 생성한 트리객체(1d784f1)로 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ echo "first commit" | git commit-tree 1d784f1
 9d2258ca2884b8a3813692ea2900a728f1276e0e
 </code></pre></div></div>
 
-<p>커밋 메시지를 쉘 echo 명령과 파이프 명령을 통하여 <code class="highlighter-rouge">commit-tree</code>에 전달합니다.<br />
+<p>커밋 메시지를 쉘 echo 명령과 파이프 명령을 통하여 <code class="language-plaintext highlighter-rouge">commit-tree</code>에 전달합니다.<br />
 새로운 커밋이 하나 생성되었습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -p 9d2258c
 tree 1d784f1a9e90692ba49d941f06fb955df7b28599
 author hojin &lt;infohojin@gmail.com&gt; 1550479782 +0900
@@ -112,15 +112,15 @@ first commit
 </code></pre></div></div>
 
 <p>두번째 커밋을 해보도록 합니다. 두번째 커밋은 객체트리(7308279)로 합니다.<br />
-커밋은 링크 형태로 이전의 커밋을 참조하게 됩니다. <code class="highlighter-rouge">-p</code> 옵션을 이용하여 이전의 커밋 정보도 같이 넣어 줍니다.</p>
+커밋은 링크 형태로 이전의 커밋을 참조하게 됩니다. <code class="language-plaintext highlighter-rouge">-p</code> 옵션을 이용하여 이전의 커밋 정보도 같이 넣어 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ echo "second commit" | git commit-tree 7308279 -p 9d2258c
 0ee97afec0380e074080129b339e5d284f4ba7d9
 </code></pre></div></div>
 
 <p>두번째 커밋을 생성하였습니다. 이렇게 생성된 두개의 커밋을 log 히스토리로 확인을 해보도록 합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git log --stat 0ee97a
 commit 0ee97afec0380e074080129b339e5d284f4ba7d9
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -140,10 +140,10 @@ Date:   Mon Feb 18 17:49:42 2019 +0900
 </code></pre></div></div>
 
 <p>연결된 두개의 커밋 과 로그 기록을 확인해 볼 수 있습니다.<br />
-이처럼 고수준의 <code class="highlighter-rouge">add</code> 명령과 <code class="highlighter-rouge">commit</code>을 사용하지 않고도 객체, 트리, 커밋을 할 수 있습니다.</p>
+이처럼 고수준의 <code class="language-plaintext highlighter-rouge">add</code> 명령과 <code class="language-plaintext highlighter-rouge">commit</code>을 사용하지 않고도 객체, 트리, 커밋을 할 수 있습니다.</p>
 
 <p>지금까지 생성된 객체를 확인해 봅니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ find .git/objects -type f
 .git/objects/0e/e97afec0380e074080129b339e5d284f4ba7d9
 .git/objects/1d/784f1a9e90692ba49d941f06fb955df7b28599
@@ -154,7 +154,7 @@ $ find .git/objects -type f
 .git/objects/9d/2258ca2884b8a3813692ea2900a728f1276e0e
 </code></pre></div></div>
 
-<p>객체 폴더에는 <code class="highlighter-rouge">Blob</code>, <code class="highlighter-rouge">Tree</code>, <code class="highlighter-rouge">commit</code>등의 다양한 객체들이 sha1 해쉬에 따라 저장되는 구조를 확인 할 수 있습니다.</p>
+<p>객체 폴더에는 <code class="language-plaintext highlighter-rouge">Blob</code>, <code class="language-plaintext highlighter-rouge">Tree</code>, <code class="language-plaintext highlighter-rouge">commit</code>등의 다양한 객체들이 sha1 해쉬에 따라 저장되는 구조를 확인 할 수 있습니다.</p>
 
 
             </section>

@@ -87,7 +87,7 @@
 <h2 id="객체폴더">객체폴더</h2>
 <p>객체들은 .git/objects 디렉토리에 저장이 됩니다. 저장소의 내용을 한번 살펴 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy19 (master)
 $ ls .git/objects/
 info/  pack/
 </code></pre></div></div>
@@ -97,13 +97,13 @@ info/  pack/
 <h2 id="hash-object">hash-object</h2>
 <p>저수준 hash-object 명령은 입력된 컨덴츠의 SHA1 해쉬값을 출력합니다. 파일을 하나 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello.md
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello.md
 Hello world!
 </code></pre></div></div>
 
 <p>Hash-object 명령을 통하여 hello.md 파일의 컨덴츠를 SHA1 값으로 확인해 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git hash-object hello.md -w
 6769dd60bdf536a83c9353272157893043e9f7d0
 </code></pre></div></div>
@@ -112,7 +112,7 @@ $ git hash-object hello.md -w
 
 <p>저장된 객체를 확인해 봅니다. 리눅스 find 명령어를 이용하여 객체 폴더안에 파일만 검사를 해봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ find .git/objects/ -type f
 .git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
 </code></pre></div></div>
@@ -124,7 +124,7 @@ $ find .git/objects/ -type f
 <h2 id="cat-file">cat-file</h2>
 <p>이번에는 hash-object로 생성된 객체의 내용을 확인해 봅니다. 셀 명령어 cat은 파일의 내용을 출력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ cat .git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
 xK▒▒OR04b▒H▒▒▒W(▒/▒IQB▒▒
 </code></pre></div></div>
@@ -133,7 +133,7 @@ xK▒▒OR04b▒H▒▒▒W(▒/▒IQB▒▒
 
 <p>깃 cat-file 명령을 사용하여 앞에서 생성된 객체의 내용을 다시 한번 확인해 보도록 하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -p 6769dd60bdf536a83c9353272157893043e9f7d0
 Hello world!
 </code></pre></div></div>
@@ -153,18 +153,18 @@ Hello world!
 <p>파일의 내용을 수정해 봅니다.</p>
 
 <p>hello.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello world!
 만나서 반갑습니다.
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git hash-object hello.md -w
 2dedc914313613dba23eefd923674adee9fe559c
 </code></pre></div></div>
 
 <p>해쉬값이 기존과 달라진 것을 확인할 수 있습니다. 내용이 변경이 되면 새로운 객체가 추가로 생성이 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ find .git/objects/ -type f
 .git/objects/2d/edc914313613dba23eefd923674adee9fe559c
 .git/objects/67/69dd60bdf536a83c9353272157893043e9f7d0
@@ -172,7 +172,7 @@ $ find .git/objects/ -type f
 
 <p>현재 객체가 2개로 증가된 것을 확인할 수 있습니다. 새로운 객체의 내용을 확인해 보면 수정된 파일의 내용과 동일한 것을 보실 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -p 2dedc914313613dba23eefd923674adee9fe559c
 Hello world!
 만나서 반갑습니다.
@@ -182,7 +182,7 @@ Hello world!
 
 <p>깃은 이러한 객체를 blob 이라고 표현을 합니다. cat-file -t 옵션을 이용하여 객체 파일이 어떠한 타입인지를 알려 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -t 6769dd60bdf536a83c9353272157893043e9f7d0
 blob
 </code></pre></div></div>

@@ -103,7 +103,7 @@
 <h2 id="1262-실습-환경-준비">12.6.2 실습 환경 준비</h2>
 <p>prune 명령어를 실습할 수 있게 저장소를 하나 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 실습폴더
 $ mkdir git-prune 새 폴더 만들기
 $ cd git-prune
 infoh@DESKTOP MINGW64 /e/git-prune (master)
@@ -113,15 +113,15 @@ Initialized empty Git repository in E:/git-prune/.git/
 
 <p>prune.md 파일을 만들고 첫 번째 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ code prune.md VS Code 실행
 </code></pre></div></div>
 
 <p>prune.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Prune 실습입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Prune 실습입니다.
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git add prune.md 등록
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git commit -m "first" 커밋
@@ -132,16 +132,16 @@ create mode 100644 prune.md
 
 <p>예제 파일을 한 번 더 수정합니다. 두 번째 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ code prune.md VS Code 실행
 </code></pre></div></div>
 
 <p>prune.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Prune 실습입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Prune 실습입니다.
 </code></pre></div></div>
 <p>Prune은 깃 객체를 정리하는 내부 유틸리티입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git add prune.md 등록
 infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git commit -m "second" 커밋
@@ -164,7 +164,7 @@ $ git commit -m "second" 커밋
 
 <p>먼저 log 명령어로 커밋 기록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git log 커밋 기록
 commit 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -178,7 +178,7 @@ first
 
 <p>reset 명령어를 사용하여 마지막 커밋을 강제로 제거합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git reset --hard ea57d7f 하드 리셋으로 삭제
 HEAD is now at ea57d7f first
 </code></pre></div></div>
@@ -192,7 +192,7 @@ HEAD is now at ea57d7f first
 
 <p>로그를 확인합니다. 리셋 후 두 번째 커밋은 log에 출력되지 않습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git log 커밋 기록
 commit ea57d7fdd9be86740511c9ca81aba0c004302d5d (HEAD -&gt; master)
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -204,7 +204,7 @@ first
 지 않습니다. 삭제한 후에도 이전의 커밋으로 직접 체크아웃할 수 있습니다. 제거된 커밋 해시로
 체크아웃하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git checkout 72c9f62 삭제된 커밋
 Note: checking out '72c9f62'.
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -224,7 +224,7 @@ infoh@DESKTOP MINGW64 /e/git-prune ((72c9f62...))
 
 <p>지금까지 고립된 객체를 임의적으로 생성해 보았습니다. 다시 이전의 브랜치 상태로 돌아갑시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune ((72c9f62...))
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune ((72c9f62...))
 $ git checkout master 브랜치 이동
 </code></pre></div></div>
 
@@ -244,7 +244,7 @@ $ git checkout master 브랜치 이동
 
 <p>prune 명령어를 사용하여 남아 있는 고립된 객체를 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git prune --dry-run --verbose 객체 삭제
 </code></pre></div></div>
 
@@ -271,7 +271,7 @@ $ git prune --dry-run --verbose 객체 삭제
 리 링크도 같이 제거해야 합니다. reflog는 일정 기간이 지나면 자동으로 없어지지만, 실습을 위
 해 연결 고리를 직접 제거해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git reflog expire --expire=now --expire-unreachable=now --all reflog 삭제
 </code></pre></div></div>
 
@@ -283,7 +283,7 @@ $ git reflog expire --expire=now --expire-unreachable=now --all reflog 삭제
 
 <p>prune 명령어를 다시 실행합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git prune --dry-run --verbose 객체 삭제
 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 commit
 7b8892419d5b2dee26a1da84a01bf87788629931 tree
@@ -294,7 +294,7 @@ $ git prune --dry-run --verbose 객체 삭제
 제로 진행하지 않고, 예상되는 작업 결과만 미리 보여 줍니다.
 정말로 완전히 삭제하려면 –expire 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/git-prune (master)
 $ git prune --expire now -v 객체 삭제 실행
 72c9f62bc5f9577250fcc8437a2ad3883e35dff1 commit
 7b8892419d5b2dee26a1da84a01bf87788629931 tree
@@ -311,13 +311,13 @@ $ git prune --expire now -v 객체 삭제 실행
 있습니다. remote/fetch 명령어를 같이 조합하면 원격 저장소에서도 prune 명령어를 실행할 수 있
 습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote prune
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git remote prune
 </code></pre></div></div>
 
 <p>원격 저장소의 브랜치를 병합한 후 삭제합니다. 삭제된 원격 저장소 브랜치는 더 이상 참조할 수
 없습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch --prune
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git fetch --prune
 </code></pre></div></div>
 
 <p>fetch –prune 명령어는 오래된 브랜치를 정리합니다. 원격 저장소에 연결한 후 제거하기 전에

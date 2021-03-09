@@ -89,7 +89,7 @@ SSH를 이용하여 키를 입력하면 매번 비밀번호를 입력하지 않�
 <p>서버와 연결 작업을 할 때는 비밀번호를 입력해야 합니다.<br />
 처음 깃을 설치하고 원격 저장소와 연결하였다면 푸시(push) 명령어를 실행할 때 암호를 물어봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/git-clone/remote (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/git-clone/remote (master)
 $ git push
 git@211.110.1.195's password:
 </code></pre></div></div>
@@ -107,7 +107,7 @@ SSH 키를 생성하기 위해 먼저 자신의 계정으로 셸을 실행합니
 
 <p>자신의 계정에서 ssh-keygen -t rsa 명령어를 실행합니다. 실행 후에 암호를 입력하면 RSA 기반의 SSH 키가 생성됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 ~
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 ~
 $ ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/infoh/.ssh/id_rsa): 엔터키 입력
@@ -133,7 +133,7 @@ The key's randomart image is:
 </code></pre></div></div>
 
 <p>SSH키가 정상적으로 생성되면 .ssh 폴더가 만들어집니다. .ssh 폴더로 이동합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd .ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd .ssh
 
 infoh@DESKTOP-VAKLOFQ MINGW64 ~/.ssh
 $ ls -all
@@ -144,8 +144,8 @@ drwxr-xr-x 1 infoh 197609    0 2월   1 18:47 ../
 -rw-r--r-- 1 infoh 197609  403 2월   1 18:47 id_rsa.pub
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">.ssh</code> 폴더에는 두 개의 파일이 생성되어 있습니다. 
-<code class="highlighter-rouge">id_rda</code>와 <code class="highlighter-rouge">id_rsa.pub</code> 파일입니다. 생성된 이 키들은 한 쌍으로 짝을 이루어 생성됩니다.</p>
+<p><code class="language-plaintext highlighter-rouge">.ssh</code> 폴더에는 두 개의 파일이 생성되어 있습니다. 
+<code class="language-plaintext highlighter-rouge">id_rda</code>와 <code class="language-plaintext highlighter-rouge">id_rsa.pub</code> 파일입니다. 생성된 이 키들은 한 쌍으로 짝을 이루어 생성됩니다.</p>
 
 <p>id_rsa는 개인키를 말합니다. id_rsa.pub는 공개된 키를 말합니다.</p>
 
@@ -157,7 +157,7 @@ drwxr-xr-x 1 infoh 197609    0 2월   1 18:47 ../
 
 <p>ssh-copy-id 명령어는 자신의 SSH키를 해당 서버에 복사해주는 명령입니다. 다음과 같이 입력합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 ~
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 ~
 $ ssh-copy-id git@211.110.1.195
 /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/c/Users/infoh/.ssh/id_rsa.pub"
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -172,7 +172,7 @@ and check to make sure that only the key(s) you wanted were added.
 
 <p>한번의 비밀번호를 물어보고, 자신의 키를 서버로 복사합니다. 서버에 접속하여 키가 복사되었는지 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[git@ns ~]$ ls -all
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[git@ns ~]$ ls -all
 total 28
 drwx------  4 git  git  4096 2017-10-08 15:30 .
 drwx--x--x 22 root root 4096 2017-10-08 13:48 ..
@@ -192,7 +192,7 @@ drwx------ 4 git git 4096 2017-10-08 15:30 ..
 
 <p>만일 위의 자동 복사 방법이 잘 되지 않는다면, 직접 수동으로 키를 복사할 수도 있습니다. 원격 서버의 계정으로 접속합니다. 서버 계정의 .ssh 디렉터리로 이동합니다. 만일 .ssh 폴더가 없다면 mkdir .ssh 명령어로 새로 생성하면 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@ns /home/git]# mkdir .ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@ns /home/git]# mkdir .ssh
 [root@ns /home/git]# cd .ssh
 [root@ns /home/git/.ssh]#
 </code></pre></div></div>
@@ -205,7 +205,7 @@ drwx------ 4 git git 4096 2017-10-08 15:30 ..
 <hr />
 <p>키가 정상적으로 복사되면 자동으로 SSH 로그인을 처리합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/git-clone/remote (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/git-clone/remote (master)
 $ git push
 Everything up-to-date
 </code></pre></div></div>
@@ -221,7 +221,7 @@ Everything up-to-date
 
 <p>다음은 계정을 이용한 SSH 키 생성 방법입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
 $ ssh-keygen -t rsa -b 4096 -C "이메일"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/infoh/.ssh/id_rsa): id_rsa2
@@ -236,16 +236,16 @@ SHA256:/zeKZwgesPzy9JqtmZIi0WTw4okbjZZ9wox2N55EuvM infohojin@naver.com
 <p>기본적으로 생성되는 SSH 키의 파일 이름은 id_rsa입니다. 여러 개의 SSH 키를 생성할 때는 중복하여 덮어 쓰기할 수 있습니다. 다른 이름으로 저장하도록 합니다.</p>
 
 <p>생성된 SSH 파일들을 확인합니다. 필자는 2개의 SSH 키를 생성하였습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
 $ ls
 id_rsa  id_rsa.pub  id_rsa2  id_rsa2.pub  
 </code></pre></div></div>
 <p>두 개의 계정을 이용하여 깃을 접속할 수 있도록 호스트 환경 설정 파일을 추가합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi ~/.ssh/config
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vi ~/.ssh/config
 </code></pre></div></div>
 <p>에디터를 실행하여 다음과 같이 입력합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 첫 번째 계정
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 첫 번째 계정
 Host github.com
 HostName github.com
 User git
@@ -262,7 +262,7 @@ IdentityFile ~/.ssh/id_rsa2
 
 <p>생성된 키와 호스트는 다음과 같이 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@hojin1 MINGW64 ~/.ssh
 $ ssh -T git@github.com-2
 The authenticity of host 'github.com (192.30.255.113)' can't be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
@@ -290,7 +290,7 @@ Hi hojin74! You've successfully authenticated, but GitHub does not provide shell
 
 <p>공개키를 확인해서 복사 붙여넣기를 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 ~/.ssh
 $ cat id_rsa.pub
 ssh-rsa AAAAB3N …중간 생략 … OP-VAKLOFQ
 </code></pre></div></div>
@@ -304,21 +304,21 @@ ssh-rsa AAAAB3N …중간 생략 … OP-VAKLOFQ
 <h2 id="계정-리모트">계정 리모트</h2>
 <hr />
 <p>다수의 계정으로 구분된 경우에는 원격 서버의 설정이 약간 다릅니다.<br />
-기본적으로 깃허브의 원격 저장소를 등록하면 <code class="highlighter-rouge">.git/config</code> 파일에 리모트 정보가 추가됩니다.</p>
+기본적으로 깃허브의 원격 저장소를 등록하면 <code class="language-plaintext highlighter-rouge">.git/config</code> 파일에 리모트 정보가 추가됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
     url = https://github.com/jinygit/hello.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 </code></pre></div></div>
 
 <p>여러 계정을 이용하여 접속하는 경우 리모트 설정 부분을 약간 변경해주도록 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url = git@호스트이름:계정이름/저장소이름.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url = git@호스트이름:계정이름/저장소이름.git
 </code></pre></div></div>
 
 <p>다음은 두 번째 계정으로 접속하는 설정의 예입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[remote "origin"]
     url = git@github.com-2:hojin74/hello.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 </code></pre></div></div>

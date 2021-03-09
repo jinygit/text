@@ -86,7 +86,7 @@
 
 <p>원격 저장소와 로컬 저장소의 브랜치 이름은 보통 같지만, 반드시 일치하지 않아도 괜찮습니다. 서로 다른 이름으로 브랜치를 연결할 수도 있습니다. 두 저장소는 서로 다른 브랜치로 운영·관리할 수 있습니다.</p>
 
-<p>리모트 브랜치는 보통 <code class="highlighter-rouge">별칭/브랜치 이름</code> 형태입니다.</p>
+<p>리모트 브랜치는 보통 <code class="language-plaintext highlighter-rouge">별칭/브랜치 이름</code> 형태입니다.</p>
 
 <p><br />
 <a name="2"></a></p>
@@ -105,7 +105,7 @@
 
 <p>새 저장소를 생성했다면 다음과 같이 실행해 보세요.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git remote add origin https://github.com/jinygit/gitstudy06.git☜ 자기계정 
 
 infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
@@ -129,7 +129,7 @@ origin  https://github.com/jinygit/gitstudy06.git (push)
 <p>다른 용어로 추적 브랜치를 트래킹 브랜치라고 합니다. 트래킹 브랜치는 원격 브랜치를 가리키는 북마크와 같습니다. 추적 브랜치는 원격 브랜치의 마지막 커밋 해시 값을 가리킵니다. 이 포인터 정보는 .git/refs 폴더 안에 저장되어 있습니다.</p>
 
 <p>[예시]</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ ls .git/refs/
 heads  tags
 </code></pre></div></div>
@@ -143,9 +143,9 @@ heads  tags
 <hr />
 <p>지금까지 로컬 저장소에서만 브랜치를 생성했습니다. 로컬 저장소의 브랜치 정보는 원격 저장소에 자동으로 등록되지 않습니다.</p>
 
-<p>등록된 원격 저장소의 리모트 <code class="highlighter-rouge">브랜치는 remote show</code> 명령어로 확인할 수 있습니다.</p>
+<p>등록된 원격 저장소의 리모트 <code class="language-plaintext highlighter-rouge">브랜치는 remote show</code> 명령어로 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git remote show origin
 * remote origin
   Fetch URL: https://github.com/jinygit/gitstudy06.git
@@ -157,12 +157,12 @@ $ git remote show origin
 
 <p>로컬 저장소의 브랜치를 원격 저장소에 동기화하려면 푸시 작업을 해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push 원격저장소별칭 브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push 원격저장소별칭 브랜치이름
 </code></pre></div></div>
 
 <p>로컬 브랜치를 푸시하면 원격 저장소는 로컬 저장소와 동일한 브랜치를 생성합니다. 로컬 저장소에서 master 브랜치를 전송해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git push -u origin master
 Enumerating objects: 6, done.
 Counting objects: 100% (6/6), done.
@@ -191,7 +191,7 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 <p>그럼 다시 현재 로컬 저장소의 브랜치를 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git branch -v
   feature d84766c first
   footer  d84766c first
@@ -203,7 +203,7 @@ $ git branch -v
 
 <p>그럼 hotfix 브랜치도 원격 저장소로 등록해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git push -u origin hotfix
 Total 0 (delta 0), reused 0 (delta 0)
 remote:
@@ -229,12 +229,12 @@ Branch 'hotfix' set up to track remote branch 'hotfix' from 'origin'.
 
 <p>깃은 서로 다른 로컬 브랜치와 리모트 브랜치를 수동으로 지정하여 연결할 수 있습니다. 브랜치를 직접 수동으로 지정할 때는 콜론(:)으로 구분합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push origin 브랜치이름:새로운브랜치
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push origin 브랜치이름:새로운브랜치
 </code></pre></div></div>
 
 <p>현재 브랜치를 서버(origin)의 새로운 브랜치 이름으로 전송하라는 의미입니다. 이번에는 로컬 저장소의 feature 브랜치를 원격 저장소의 function 브랜치로 푸시해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git push -u origin feature:function
 Total 0 (delta 0), reused 0 (delta 0)
 remote:
@@ -269,7 +269,7 @@ Branch 'feature' set up to track remote branch 'function' from 'origin'.
 
 <p>새롭게 저장소를 복제해 보겠습니다. 상위 메인 폴더로 이동하여 새로운 깃 저장소를 복제합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 메인폴더
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 메인폴더
 $ git clone https://github.com/jinygit/gitstudy06.git gitstudy06_clone
 ☜ 원격 저장소를 복제합니다. 복제 폴더 이름은 gitstudy06_clone입니다.
 Cloning into 'gitstudy06_clone'...
@@ -290,19 +290,19 @@ $ cd gitstudy06_clone ☜ 복제된 폴더로 이동합니다.
 
 <p>clone 명령어는 원격 저장소의 모든 브랜치 정보를 한 번에 다 가지고 오지 않습니다. 다음과 같이 복제된 저장소의 브랜치를 확인해 보면 master 브랜치 하나만 표시됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
 $ git branch -v
 * master dcdb1c1 master working...
 </code></pre></div></div>
 
 <p>하지만 원격 저장소에는 다수의 리모트 브랜치가 있습니다. -r 옵션을 사용하면 원격 저장소의 리모트 브랜치 목록을 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -r
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -r
 </code></pre></div></div>
 
 <p>예를 들어 gitstudy06_clone 저장소와 연결된 원격 저장소의 리모트 브랜치 목록은 다음과 같이 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
 $ git branch -r ☜ 리모트 브랜치 목록
   origin/HEAD -&gt; origin/master
   origin/function
@@ -310,19 +310,19 @@ $ git branch -r ☜ 리모트 브랜치 목록
   origin/master
 </code></pre></div></div>
 
-<p>모든 브랜치 정보를 확인하고 싶다면 <code class="highlighter-rouge">-a</code> 옵션을 사용합니다.</p>
+<p>모든 브랜치 정보를 확인하고 싶다면 <code class="language-plaintext highlighter-rouge">-a</code> 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -a
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -a
 </code></pre></div></div>
 
 <p>이처럼 저장소를 복제하면 원본과 동일한 트래킹 브랜치가 자동으로 설정됩니다. 이번에는 복제 저장소의 트래킹 브랜치를 확인해 보겠습니다. 트래킹 브랜치는 -vv 옵션을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -vv
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -vv
 </code></pre></div></div>
 
 <p>다음 명령을 실행하면 복제한 저장소의 트래킹 브랜치 목록을 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
 $ git branch -vv ☜ 트래킹 브랜치 목록
 * master dcdb1c1 [origin/master] master working...
 </code></pre></div></div>
@@ -333,12 +333,12 @@ $ git branch -vv ☜ 트래킹 브랜치 목록
 
 <p>우리는 원본 로컬 저장소에서 feature 브랜치를 function 리모트 브랜치로 등록했습니다. 다음 명령어를 사용하면 새로운 업스트림을 만들 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout --track origin/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout --track origin/브랜치이름
 </code></pre></div></div>
 
 <p>복제된 저장소에서 새로운 업스트림을 만들어 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (master)
 $ git checkout --track origin/function
 Switched to a new branch 'function'
 Branch 'function' set up to track remote branch 'function' from 'origin'.
@@ -353,7 +353,7 @@ master   dcdb1c1 [origin/master] master working...
 
 <p>function 브랜치에서 코드를 수정하여 좀 더 실습해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
 $ code branch.htm ☜ VS Code 실행
 </code></pre></div></div>
 
@@ -364,7 +364,7 @@ $ code branch.htm ☜ VS Code 실행
 
 <p>커밋한 후 브랜치 정보를 다시 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
 $ git commit -am "function working"
 [function 85f1dfa] functionmaster2 working
  1 file changed, 2 insertions(+), 1 deletion(-)
@@ -377,7 +377,7 @@ master   dcdb1c1 [origin/master] master working...
 
 <p>function 브랜치 정보에 AHEAD 1이 표시됩니다. 원격 저장소로 전송되지 않은 커밋이 하나 있다는 의미입니다. push 명령어를 사용하여 원격 저장소로 새롭게 추가된 커밋을 전송합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06_clone (function)
 $ git push
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -396,7 +396,7 @@ To https://github.com/jinygit/gitstudy06.git
 
 <p>다시 원본 저장소( gitstudy06)에서 git pull 명령어를 실행하면 feature 브랜치 정보로 자동 병합됩니다. 먼저 원본 로컬 저장소로 이동한 후 feature 브랜치로 체크아웃합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ../gitstudy06 ☜ 원본 로컬 저장소로 이동
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ../gitstudy06 ☜ 원본 로컬 저장소로 이동
 
 infoh@DESKTOP MINGW64 /e/gitstudy06 (hotfix)
 $ git checkout feature ☜ feature 브랜치로 체크아웃
@@ -407,7 +407,7 @@ Your branch is behind 'origin/function' by 1 commit, and can be fast-forwarded.
 
 <p>원격 저장소의 function 브랜치를 로컬 저장소의 feature 브랜치로 내려받습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ git pull ☜ 원격 저장소의 function 브랜치를 feature 브랜치로 다운로드
 Updating d84766c..85f1dfa
 Fast-forward
@@ -420,7 +420,7 @@ Fast-forward
 
 <p>로컬 저장소의 feature 브랜치에 수정한 내용이 반영되었는지 확인해 볼까요? cat 명령어를 사용하여 잘 반영된 것을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ cat branch.htm
 &lt;h1&gt;브랜치 실습을 합니다.&lt;/h1&gt;
 복제된 gitstudy06_clone의 function 브랜치를 수정합니다.
@@ -433,7 +433,7 @@ $ cat branch.htm
 <hr />
 <p>원격 저장소와 로컬 저장소의 브랜치 목록은 서로 다를 수 있습니다. 다른 개발자가 원격 저장소에 새로운 리모트 브랜치를 생성할 수 있기 때문입니다. 이렇게 생성된 원격 저장소의 리모트 브랜치를 이용해서 로컬 저장소에도 새로운 브랜치를 생성하여 동기화할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout -b 새이름 origin/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout -b 새이름 origin/브랜치이름
 </code></pre></div></div>
 
 <p>실습을 위해 깃허브 원격 저장소에서 새로운 브랜치를 하나 생성하겠습니다. 깃허브 저장소에서 브랜치 항목(Branch: master)을 선택합니다. 입력란에 원하는 새 이름을 입력합니다. 책에서는 aaa로 만들겠습니다. 입력란에 aaa를 입력한 후 Create branch: aaa를 클릭합니다.</p>
@@ -448,7 +448,7 @@ $ cat branch.htm
 
 <p>이제 원격 저장소의 브랜치 정보를 로컬 저장소로 가져오겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ git fetch
 
 infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
@@ -464,7 +464,7 @@ $ git branch -r
 
 <p>페치된 리모트 브랜치 목록을 이용하여 새로운 로컬 브랜치를 만들어 봅시다. 원격 저장소의 브랜치 목록에서 origin/aaa가 추가된 것을 확인할 수 있습니다. origin/aaa 리모트 브랜치를 기반으로 로컬 저장소에 aaa 브랜치를 새롭게 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ git checkout -b aaa origin/aaa
 Switched to a new branch 'aaa'
 Branch 'aaa' set up to track remote branch 'aaa' from 'origin'.
@@ -477,7 +477,7 @@ infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 
 <p>잘 만들어졌는지 트래킹 브랜치 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git branch -vv
 * aaa     dcdb1c1 [origin/aaa] master working...
   feature 85f1dfa [origin/function] functionmaster2 working
@@ -488,7 +488,7 @@ master  dcdb1c1 [origin/master] master working...
 
 <p>실습을 위해 aaa 브랜치에서 코드를 수정한 후 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ code branch.htm
 </code></pre></div></div>
 
@@ -497,16 +497,16 @@ $ code branch.htm
 <span class="nt">&lt;h2&gt;</span>마스터 워킹 디렉터리 작업 중<span class="nt">&lt;/h2&gt;</span>
 </code></pre></div></div>
 
-<p>새로운 원격 브랜치 <code class="highlighter-rouge">aaa</code>에서 수정 작업을 합니다.</p>
+<p>새로운 원격 브랜치 <code class="language-plaintext highlighter-rouge">aaa</code>에서 수정 작업을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git commit -am "testing aaa"
 [aaa c162b67] testing aaa
  1 file changed, 2 insertions(+), 1 deletion(-)
 </code></pre></div></div>
 
 <p>트래킹 브랜치 목록을 다시 한 번 확인합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/gitstudy06 (aaa)
 $ git branch -vv
 * aaa     c162b67 [origin/aaa: ahead 1] testing aaa ☜ AHEAD
   feature 85f1dfa [origin/function] functionmaster2 working
@@ -515,9 +515,9 @@ $ git branch -vv
   master  dcdb1c1 [origin/master] master working...
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">aaa</code> 브랜치에 서버로 전송하지 않은 커밋이 하나 있어 AHEAD 1로 표시됩니다. push 명령어로 추가한 커밋을 다시 원격 저장소의 aaa 브랜치로 저장하겠습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">aaa</code> 브랜치에 서버로 전송하지 않은 커밋이 하나 있어 AHEAD 1로 표시됩니다. push 명령어로 추가한 커밋을 다시 원격 저장소의 aaa 브랜치로 저장하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git push 
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -541,19 +541,19 @@ To https://github.com/jinygit/gitstudy06.git
 <hr />
 <p>기존에 있는 브랜치를 업스트림으로 직접 설정할 수도 있습니다. 브랜치를 생성한 후 직접 트래킹 브랜치를 지정했습니다. 업스트림을 직접 설정하면 원격 저장소로 트래킹 브랜치가 설정됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -u origin/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git branch -u origin/브랜치이름
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">-u</code> 옵션은 <code class="highlighter-rouge">--set-upstream-to</code>의 약자입니다. 기존 브랜치를 특정 원격 브랜치로 추적합니다. 한 번만 실행하면 이후로는 계속 업스트림으로 설정되어 작업할 수 있습니다.</p>
+<p><code class="language-plaintext highlighter-rouge">-u</code> 옵션은 <code class="language-plaintext highlighter-rouge">--set-upstream-to</code>의 약자입니다. 기존 브랜치를 특정 원격 브랜치로 추적합니다. 한 번만 실행하면 이후로는 계속 업스트림으로 설정되어 작업할 수 있습니다.</p>
 
-<p>실습을 위해 깃허브에 새로운 브랜치를 추가해 봅시다. 깃허브 페이지에서 <code class="highlighter-rouge">Branch: master</code>를 클릭하고 bbb를 입력합니다. Create branch: bbb를 클릭하여 bbb 브랜치를 생성합니다.</p>
+<p>실습을 위해 깃허브에 새로운 브랜치를 추가해 봅시다. 깃허브 페이지에서 <code class="language-plaintext highlighter-rouge">Branch: master</code>를 클릭하고 bbb를 입력합니다. Create branch: bbb를 클릭하여 bbb 브랜치를 생성합니다.</p>
 
 <p>그림 6-30] bbb 브랜치 생성<br />
 <img src="./img/06-30.jpg" alt="브랜치 생성" /></p>
 
 <p>깃허브에 생성한 bbb 브랜치는 아직 로컬 저장소에 없습니다. 깃 배시에서 깃허브 원격 저장소의 리모트 브랜치 목록을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git branch -r
   origin/aaa
   origin/bbb
@@ -564,7 +564,7 @@ $ git branch -r
 
 <p>원격 저장소에는 브랜치가 총 5개 있습니다. 원격 저장소의 bbb 브랜치와 연결할 수 있는 bug라는 새 브랜치를 로컬 저장소에 하나 만들겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (aaa)
 $ git checkout -b bug
 Switched to a new branch 'bug'
 
@@ -580,7 +580,7 @@ $ git branch -vv
 
 <p>bug 브랜치는 로컬 저장소에만 있는 브랜치입니다. bug 브랜치를 원격 저장소의 bbb 리모트 브랜치로 업스트림 설정하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (bug)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (bug)
 $ git branch -u origin/bbb
 Branch 'bug' set up to track remote branch 'bbb' from 'origin'.
 

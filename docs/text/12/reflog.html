@@ -93,7 +93,7 @@
 <hr />
 <p>reflog 기록은 reflog 명령어를 사용하여 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reflog
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git reflog
 </code></pre></div></div>
 
 <p>reflog는 한 번이라도 사용했던 HEAD와 브랜치를 기록합니다. 하지만 모든 기록을 영구적으로
@@ -105,7 +105,7 @@
 
 <p>지금까지 작업한 reflog 기록을 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git reflog reflog 기록
 d0943cf (HEAD -&gt; master, feature) HEAD@{0}: commit (initial): first
 ...
@@ -120,20 +120,20 @@ d0943cf (HEAD -&gt; master, feature) HEAD@{0}: commit (initial): first
 따라서 reflog에 기록된 HEAD@{숫자} 포인터를 이용하여 커밋 정보를 확인할 수 있습니다.
 마지막에 참조한 refs 로그의 해시 값 정보를 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
-</span><span class="err">$</span> git show HEAD@{0} 커밋 정보
-<span class="p">commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master, feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+$ git show HEAD@{0} 커밋 정보
+commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master, feature)
 Author: hojin &lt;infohojin@gmail.com&gt;
 Date: Sat May 25 18:06:47 2019 +0900
 first
-</span><span class="gh">diff --git a/index.htm b/index.htm
-</span><span class="p">new file mode 100644
-</span><span class="gh">index 0000000..95d09f2
-</span><span class="gd">--- /dev/null
-</span><span class="gi">+++ b/index.htm
-</span><span class="p">@@ -0,0 +1 @@</span>
-<span class="gi">+hello world
-</span><span class="err">\</span> No newline at end of file
+diff --git a/index.htm b/index.htm
+new file mode 100644
+index 0000000..95d09f2
+--- /dev/null
++++ b/index.htm
+@@ -0,0 +1 @@
++hello world
+\ No newline at end of file
 </code></pre></div></div>
 
 <p><br />
@@ -144,13 +144,13 @@ first
 <p>커밋의 로그 기록이 많은 경우 필터링할 수 있습니다. 필터링은 특정한 날짜, 시간 등 기준을 적용
 합니다. 다음 예처럼 어제 작업한 내역만 출력할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show master@{yesterday}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git show master@{yesterday}
 </code></pre></div></div>
 
 <p>깃에서 참조하는 refs의 로그는 reflog 명령어 또는 git log -g 옵션을 사용하여 확인할 수 있습
 니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy12 (master)
 $ git log -g 커밋 로그
 commit d0943cfbc5e092668be3b96e98f32e363e05feb1 (HEAD -&gt; master, feature)
 Reflog: HEAD@{0} (hojin &lt;infohojin@gmail.com&gt;)

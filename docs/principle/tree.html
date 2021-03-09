@@ -96,7 +96,7 @@
 
 <p>이전에는 간단하게 add 명령을 통하여 파일을 스테이징 하였다면, 이번에는 저수준 명령어 update-index를 사용해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git update-index --add --cacheinfo 100644 2dedc914313613dba23eefd923674adee9fe559c hello.md
 </code></pre></div></div>
 
@@ -115,21 +115,21 @@ $ git update-index --add --cacheinfo 100644 2dedc914313613dba23eefd923674adee9fe
 
 <p>스테이지에 파일을 등록하였습니다. 스테이지 영역을 기준으로 새로운 트리 객체를 생성해 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git write-tree
 1d784f1a9e90692ba49d941f06fb955df7b28599
 </code></pre></div></div>
 
 <p>저수준 명령어 write-tree는 스테이지 영역의 내용을 기준으로 새로운 트리 객체를 생성합니다. 새로운 트리 객체가 하나 더 생성된 것을 확인 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -t 1d784f1a9e90692ba49d941f06fb955df7b28599
 tree
 </code></pre></div></div>
 
 <p>트리객체의 내용도 확인을 해봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -p 1d784f1a9e90692ba49d941f06fb955df7b28599
 100644 blob 2dedc914313613dba23eefd923674adee9fe559c    hello.md
 </code></pre></div></div>
@@ -137,22 +137,22 @@ $ git cat-file -p 1d784f1a9e90692ba49d941f06fb955df7b28599
 <p>이번에는 새로운 파일 하나를 더 생성하여 추가해 봅니다.</p>
 
 <p>readme.md</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 깃 내부 학습입니다.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 깃 내부 학습입니다.
 </code></pre></div></div>
 
 <p>스테이지에 추가한 파일을 등록합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git update-index --add readme.md
 </code></pre></div></div>
 
 <p>스테이지를 기반으로 새로운 트리 객체를 생성해 봅니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git write-tree
 7308279e324e57a08b54670b6e2ee1e2b1ab2ac3
 </code></pre></div></div>
 
 <p>새로운 파일의 추가와 트리 객체는 별개로 구분을 합니다. 새롭게 생성된 트리 객체의 내용을 확인해 봅니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git cat-file -p 7308279e324e57a08b54670b6e2ee1e2b1ab2ac3
 100644 blob 2dedc914313613dba23eefd923674adee9fe559c    hello.md
 100644 blob 78f58b67989cc07cd244e17909150b311fd5d35f    readme.md

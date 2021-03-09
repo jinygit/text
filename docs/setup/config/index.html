@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>Git TextBook | 깃 환경설정</title>
+            <meta name="title" content="깃 환경설정" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃, 환경설정, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Git Textbook</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/setup">준비 작업
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/text">기초 탄탄 깃</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part2">협업하기</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/part3">활용하기</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><div class="bg-light">
+    <div class="container"><nav aria-label="breadcrumb">
+    <ol class="breadcrumb  bg-light">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item active">setup</li></ol>    
+</nav></div>
+</div>
+
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+			<main role="main">
+                <section>
+                    <h1 id="깃-환경설정">깃 환경설정</h1>
+<hr />
+
+<h2 id="환경설정">환경설정</h2>
+<p>깃은 모든 환경 정보를 .gitconfig 라는 환경 파일에 저장이 됩니다.</p>
+
+<p>git의 명령어 config를 이용하면 직접 .gitconfig 파일을 수정하지 않고도 사용자 환경을 설정할 수 있습니다.
+<code class="language-plaintext highlighter-rouge">git config</code> 의 명령들은 <code class="language-plaintext highlighter-rouge">--list</code> 옵션으로 확인할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+:
+... 추가생략
+</code></pre></div></div>
+
+<p>마지막 줄에 <code class="language-plaintext highlighter-rouge">:</code>가 표시가 되는데, 이는 더 보여줄 명령들이 있다는 것입니다.
+엔터를 누르면 계속해서 추가 명령어들을 더 볼 수 있습니다.<br />
+그만보고 밖으로 빠져나가 실려고 하면 <code class="language-plaintext highlighter-rouge">q</code>키를 누르시면 실행이 중단됩니다.</p>
+
+<p>설정된 config의 파일을 수정하고자 한다면 <code class="language-plaintext highlighter-rouge">-e</code> 옵션을 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config -e
+</code></pre></div></div>
+
+<p>이렇게 입력을 하게 되면 작업중인 깃 저장소의 <code class="language-plaintext highlighter-rouge">.git/config</code>을 수정하게 됩니다.</p>
+
+<p>만일 전역 config 설정을 변경을 원한다면 <code class="language-plaintext highlighter-rouge">--global</code>옵션을 같이 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global -e
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">-e</code> 옵션으로 실행되는 편집기는 기본 설정된 <code class="language-plaintext highlighter-rouge">vi</code>에디터 입니다. vi 에디터를 사용하기 위해서는 관련 명령어들을 몇가지 알아 두셔야 합니다. 만일, 다른 편집기로 수정을 원하신다면 직접 경로를 입력하여 파일을 읽어 수정할 수 있습니다.</p>
+
+<p>예를들어, vscode로 수정을 원하신다면 아래와 같이 입력을 합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code .git/config
+</code></pre></div></div>
+
+<h3 id="코드-편집기-수정해-보기">코드 편집기 수정해 보기</h3>
+
+<p>git의 기본 편집기를 vscode로 변경해 봅니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config core.editor "code"
+</code></pre></div></div>
+
+<p>수정된 편집기가 정상적으로 실행이 되는지 실습을 해봅니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config -e
+
+infoh@hojin1 MINGW64 /d/jinydev/gittext (master)
+$ 
+</code></pre></div></div>
+
+<p>환경설정을 위해서 vscode 창이 실행되고, 터미널은 다음 명령을 기다리게 됩니다.
+이는 편집기인 vscode와 터미널 명령이 비동기적으로 각자 실행이 되는 것과 같습니다.</p>
+
+<p>만일, git이 vscode로 수정된 결과를 기다린후에, 다음 명령을 수행할 수 있도록 할려고 한다면 <code class="language-plaintext highlighter-rouge">--wait</code> 값도 같이 입력을 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git config core.editor "code --wait"
+$ git config -e
+hint: Waiting for your editor to close the file... 
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">--wait</code>값을 같이 설정하게 되면 깃은 <code class="language-plaintext highlighter-rouge">hint: Waiting for your editor to close the file... </code> 메시지를 출력하고, vscode에서 파일 편집이 다 완료되어 저장되기를 기다리게 됩니다. 수정작업을 한후에 파일을 닫아 주세요. 그러면 다시 깃명령을 받을 수 있는 터미널 입력 상태가 됩니다.</p>
+
+<h3 id="crlf">CRLF</h3>
+<p>윈도우와 리눅스/맥같은 운영체제는 파일의 줄바꿈 표시 방식이 약간 다릅니다. 이러한 차이점으로 몇가지 경고(waring)이 발생되는데,
+이를 방지하기 위해서 crlf 설정을 추가해 줍니다.</p>
+
+<h4 id="윈도우">윈도우</h4>
+<p>윈도우는 파일의 줄바꿈시 <code class="language-plaintext highlighter-rouge">/r</code>과 <code class="language-plaintext highlighter-rouge">/n</code>이 동시에 들어가게 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.autocrlf true
+</code></pre></div></div>
+
+<p>autocrlf를 <code class="language-plaintext highlighter-rouge">true</code>로 설정을 하게 되면, 윈도우에서 깃으로 저장할때 <code class="language-plaintext highlighter-rouge">/r</code>을 제거하여 저장을 합니다.
+반대로 깃에서 문서를 윈도우로 불러 올때는 <code class="language-plaintext highlighter-rouge">/r/n</code>으로 <code class="language-plaintext highlighter-rouge">/r</code>을 자동으로 추가하게 됩니다.</p>
+
+<h4 id="리눅스맥">리눅스/맥</h4>
+<p>리눅스/맥은 윈도우와 다르게 <code class="language-plaintext highlighter-rouge">/n</code> 한개만 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.autocrlf input
+</code></pre></div></div>
+<p>autocrlf를 <code class="language-plaintext highlighter-rouge">input</code>으로 설정하게 되면,깃에서 읽어올때는 별도의 수정을 하지 않지만 저장을 할때에는 자동으로 <code class="language-plaintext highlighter-rouge">/n</code>만 붙여 주게 됩니다.
+이는 실수로 <code class="language-plaintext highlighter-rouge">/r</code>이 추가되는 것을 방지하기 위해서 입니다.</p>
+
+
+                </section>
+			</main>
+			
+			<!--구글 애드센스-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-fb+5w+4e-db+86"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="6043271504"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+			<aside><!--사이드메뉴1-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/text">깃사용법</a>
+        <span class="badge badge-primary badge-pill">10</span>
+    </li>
+    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
+    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
+    <li class="list-group-item"><a href="/commit">커밋</a></li>
+    <li class="list-group-item"><a href="/server/">서버</a></li>
+    <li class="list-group-item"><a href="/branch">브랜치</a></li>
+    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
+    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
+    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
+    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
+    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
+    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴3-->
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/part2">협업하기</a>
+        <span class="badge badge-primary badge-pill">5</span>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/hosting">호스팅</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github">깃허브</a>
+    </li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/github/tools">깃허브 협업도구</a>
+    </li>
+    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
+    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
+    <li class="list-group-item"><a href="/hook/">Hook</a></li>
+    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/part3">활용하기</a></li>
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/gitpage">깃페이지</a>
+    </li>
+    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
+</ul>
+<br>
+
+<!--사이드메뉴4-->
+<ul class="list-group">
+    <li class="list-group-item  d-flex justify-content-between align-items-center">
+        <a href="/BetaReview">베타 리뷰</a>
+        <span class="badge badge-primary badge-pill">2</span>
+    </li>
+    <li class="list-group-item"><a href="/copyright">저작권</a></li>
+</ul>
+<br>
+
+</aside>			
+			
+			<!--구글 애드센스2-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-format="fluid"
+                data-ad-layout-key="-ef+6k-30-ac+ty"
+                data-ad-client="ca-pub-3321560028329475"
+                data-ad-slot="7661682925"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        
+       
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

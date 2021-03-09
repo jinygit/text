@@ -73,9 +73,9 @@
 
 <h2 id="브랜치의-sha1">브랜치의 sha1</h2>
 <hr />
-<p>깃의 저수준 명령어인 <code class="highlighter-rouge">rev-parse</code>를 사용하면 현재 브랜치가 어떤 커밋 해시 값(<code class="highlighter-rouge">SHA1</code>)을 가리키는지 확인할 수 있습니다.</p>
+<p>깃의 저수준 명령어인 <code class="language-plaintext highlighter-rouge">rev-parse</code>를 사용하면 현재 브랜치가 어떤 커밋 해시 값(<code class="language-plaintext highlighter-rouge">SHA1</code>)을 가리키는지 확인할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rev-parse 브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git rev-parse 브랜치이름
 </code></pre></div></div>
 
 <p><br /></p>
@@ -85,7 +85,7 @@
 <p>실습으로 브랜치와 커밋 간 관계를 확인해 보겠습니다.<br />
 먼저 커밋 로그를 확인합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ git log
 commit d84766c7f87b1d9d234050949c48681ba4e35da8 (HEAD -&gt; feature, master, footer)
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -93,7 +93,7 @@ Date:   Sat May 11 17:10:02 2019 +0900
     first
 </code></pre></div></div>
 
-<p>로그에서 커밋의 <code class="highlighter-rouge">d84766c7f87b1d9d234050949c48681ba4e35da8</code> 해시 값(SHA1)을 확인할 수 있습니다.</p>
+<p>로그에서 커밋의 <code class="language-plaintext highlighter-rouge">d84766c7f87b1d9d234050949c48681ba4e35da8</code> 해시 값(SHA1)을 확인할 수 있습니다.</p>
 
 <p><br /></p>
 
@@ -101,13 +101,13 @@ Date:   Sat May 11 17:10:02 2019 +0900
 <hr />
 <p>이번에는 footer 브랜치의 커밋 해시(SHA1)를 확인합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (feature)
 $ git rev-parse feature
 d84766c7f87b1d9d234050949c48681ba4e35da8
 </code></pre></div></div>
 
-<p>브랜치의 해시 값과 브랜치를 생성한 기준 커밋의 해시 값이 <code class="highlighter-rouge">동일</code>합니다.<br />
-브랜치가 <code class="highlighter-rouge">커밋의 해시를 기준</code>으로 생성된다는 것을 다시 한 번 알 수 있습니다.</p>
+<p>브랜치의 해시 값과 브랜치를 생성한 기준 커밋의 해시 값이 <code class="language-plaintext highlighter-rouge">동일</code>합니다.<br />
+브랜치가 <code class="language-plaintext highlighter-rouge">커밋의 해시를 기준</code>으로 생성된다는 것을 다시 한 번 알 수 있습니다.</p>
 
 <p><br /></p>
 

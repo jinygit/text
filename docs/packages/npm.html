@@ -125,80 +125,80 @@ common options: <span class="o">[</span><span class="nt">--save-prod</span>|--sa
 
 <p>깃의 저장소를 이용하여 직접 설치를 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install 저장소URL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install 저장소URL
 </code></pre></div></div>
 
 <h3 id="실습">실습</h3>
 <p>새로운 npm 모듈을 위한 폴더를 하나 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir npmtest
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir npmtest
 $ cd npmtest
 infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
 </code></pre></div></div>
 
 <p>깃 저장소를 초기화 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
 $ git init
 Initialized empty Git repository in E:/jinygit/npmtest/.git/
 </code></pre></div></div>
 
 <p>깃허브에 새로운 저장소를 하나 생성합니다. 원격 저장소를 등록합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
 $ git remote add origin https://github.com/jinygit/mpntest.git
 </code></pre></div></div>
 
 <p>NPM 패키지를 초기화 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">infoh</span><span class="p">@</span><span class="n">DESKTOP</span><span class="p">-</span><span class="n">VAKLOFQ</span> <span class="n">MINGW64</span> <span class="p">/</span><span class="n">e</span><span class="p">/</span><span class="n">jinygit</span><span class="p">/</span><span class="n">npmtest</span>
-<span class="p">$</span> <span class="n">npm</span> <span class="n">init</span>
-<span class="n">This</span> <span class="n">utility</span> <span class="n">will</span> <span class="n">walk</span> <span class="n">you</span> <span class="n">through</span> <span class="n">creating</span> <span class="n">a</span> <span class="k">package</span><span class="p">.</span><span class="n">json</span> <span class="n">file</span><span class="p">.</span>
-<span class="n">It</span> <span class="n">only</span> <span class="n">covers</span> <span class="n">the</span> <span class="n">most</span> <span class="n">common</span> <span class="n">items</span><span class="p">,</span> <span class="k">and</span> <span class="n">tries</span> <span class="k">to</span> <span class="n">guess</span> <span class="n">sensible</span> <span class="n">defaults</span><span class="p">.</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
 
-<span class="n">See</span> <span class="p">`</span><span class="n">npm</span> <span class="n">help</span> <span class="n">json</span><span class="p">`</span> <span class="n">for</span> <span class="n">definitive</span> <span class="n">documentation</span> <span class="n">on</span> <span class="n">these</span> <span class="n">fields</span>
-<span class="k">and</span> <span class="n">exactly</span> <span class="n">what</span> <span class="n">they</span> <span class="k">do</span><span class="p">.</span>
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
 
-<span class="n">Use</span> <span class="p">`</span><span class="n">npm</span> <span class="n">install</span> <span class="p">&lt;</span><span class="n">pkg</span><span class="p">&gt;`</span> <span class="n">afterwards</span> <span class="k">to</span> <span class="n">install</span> <span class="n">a</span> <span class="k">package</span> <span class="k">and</span>
-<span class="n">save</span> <span class="n">it</span> <span class="k">as</span> <span class="n">a</span> <span class="n">dependency</span> <span class="k">in</span> <span class="n">the</span> <span class="k">package</span><span class="p">.</span><span class="n">json</span> <span class="n">file</span><span class="p">.</span>
+Use `npm install &lt;pkg&gt;` afterwards to install a package and
+save it as a dependency in the package.json file.
 
-<span class="n">Press</span> <span class="p">^</span><span class="n">C</span> <span class="n">at</span> <span class="n">any</span> <span class="n">time</span> <span class="k">to</span> <span class="n">quit</span><span class="p">.</span>
-<span class="k">package</span> <span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">npmtest</span><span class="p">)</span> <span class="n">jinyjs</span><span class="p">-</span><span class="n">npmtest</span>
-<span class="k">version</span><span class="p">:</span> <span class="p">(</span><span class="m">1.0.0</span><span class="p">)</span>
-<span class="n">description</span><span class="p">:</span> <span class="err">깃허브</span> <span class="n">npm</span><span class="err">테스트</span>
-<span class="n">entry</span> <span class="n">point</span><span class="p">:</span> <span class="p">(</span><span class="n">index</span><span class="p">.</span><span class="n">js</span><span class="p">)</span>
-<span class="n">test</span> <span class="nf">command</span><span class="p">:</span>
-<span class="n">git</span> <span class="n">repository</span><span class="p">:</span>
-<span class="n">keywords</span><span class="p">:</span>
-<span class="n">author</span><span class="p">:</span>
-<span class="n">license</span><span class="p">:</span> <span class="p">(</span><span class="n">ISC</span><span class="p">)</span>
-<span class="n">About</span> <span class="k">to</span> <span class="nb">write</span> <span class="k">to</span> <span class="n">E</span><span class="p">:\</span><span class="n">jinygit</span><span class="p">\</span><span class="n">npmtest</span><span class="p">\</span><span class="k">package</span><span class="p">.</span><span class="n">json</span><span class="p">:</span>
+Press ^C at any time to quit.
+package name: (npmtest) jinyjs-npmtest
+version: (1.0.0)
+description: 깃허브 npm테스트
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to E:\jinygit\npmtest\package.json:
 
-<span class="p">{</span>
-  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"jinyjs-npmtest"</span><span class="p">,</span>
-  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"index.js"</span><span class="p">,</span>
-  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"test"</span><span class="p">:</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">Error: no test specified</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span>
-  <span class="p">},</span>
-  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"ISC"</span>
-<span class="p">}</span>
-<span class="n">Is</span> <span class="n">this</span> <span class="n">OK</span><span class="p">?</span> <span class="p">(</span><span class="n">yes</span><span class="p">)</span>
+{
+  "name": "jinyjs-npmtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+Is this OK? (yes)
 </code></pre></div></div>
 
 <p>Npm 패키지 생성을 위한 package.json 파일을 만들었습니다. 이번에는 새로운 테스트 모듈 파일을 생성해 봅니다.</p>
 
 <p>Index.js</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = () =&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module.exports = () =&gt; {
     return 'hello gitnpm package';
 }
 </code></pre></div></div>
 
 <p>파일 등록과 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
 $ git add index.js
 
 infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
@@ -216,7 +216,7 @@ $ git commit -m "first npm"
 
 <p>작성된 npm 패키지 코드를 깃허브 원격 저장소로 푸시를 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
 $ git push -u origin master
 Enumerating objects: 4, done.
 Counting objects: 100% (4/4), done.
@@ -233,7 +233,7 @@ infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/npmtest (master)
 
 <p>이제는 깃허브의 주소를 이용하여 npm 패키지를 설치해 보도록 합니다. 새로운 폴더를 하나 생성합니다. 또한, npm init을 통하여 초기화를 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
 $ npm install https://github.com/jinygit/mpntest.git
 npm notice created a lockfile as package-lock.json. You should commit this file.
 npm WARN jinyjs-npmapp@1.0.0 No description
@@ -246,7 +246,7 @@ found 0 vulnerabilities
 
 <p>깃허브 저장소를 이용하여 페키지를 설치하였습니다. ls명령을 통하여 설치 디렉토리를 확인해 봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/jinyjs-npmapp
 $ ls
 node_modules/  package.json  package-lock.json
 </code></pre></div></div>

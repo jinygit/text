@@ -82,30 +82,30 @@
         <div class="col-lg-9">
             <section>
                 <h1 id="리모트">리모트</h1>
-<p>원격저장소의 리모트도 <code class="highlighter-rouge">Refs</code> 에 저장됩니다.</p>
+<p>원격저장소의 리모트도 <code class="language-plaintext highlighter-rouge">Refs</code> 에 저장됩니다.</p>
 
 <h2 id="리모트-ref">리모트 ref</h2>
-<p>리모트 <code class="highlighter-rouge">ref</code>는 원격 저장소로 푸시(push)된 마지막 커밋을 저장하는 refs 입니다.</p>
+<p>리모트 <code class="language-plaintext highlighter-rouge">ref</code>는 원격 저장소로 푸시(push)된 마지막 커밋을 저장하는 refs 입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ ls .git/refs/
 head/  heads/  master  tags/
 </code></pre></div></div>
 <p>아직 remotes 는 폴더는 존재하지 않습니다.</p>
 
 <p>푸시를 하는 순간, 로컬 저장소에는 리모트 refs 가 생성이 됩니다.<br />
-리모트는 원격 저장소로 푸시(push)시 마다 각 브랜치의 마지막 커밋을 <code class="highlighter-rouge">refs/remotes</code> 에 저장을 합니다.</p>
+리모트는 원격 저장소로 푸시(push)시 마다 각 브랜치의 마지막 커밋을 <code class="language-plaintext highlighter-rouge">refs/remotes</code> 에 저장을 합니다.</p>
 
 <h2 id="서버-푸시">서버 푸시</h2>
 <p>새로운 깃허브 원격 저장소를 하나 생성하여 추가합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git remote add origin https://github.com/jinygit/gitstudy19.git
 </code></pre></div></div>
 
 <p>원격 저장소를 추가 하였다고 해서 remotes 폴더가 생성되지는 않습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ ls .git/refs/
 head/  heads/  master  tags/
 </code></pre></div></div>
@@ -113,12 +113,12 @@ head/  heads/  master  tags/
 <p>직접 저수준 명령을 통하여 작업을 하였기 때문에 아직 master 브랜치가 만들어 지지 않았습니다.<br />
 업로드를 위해서 master 브랜치를 추가로 생성합니다. 우리는</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git branch master
 </code></pre></div></div>
 
 <p>서버에 푸시를 합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ git push -u origin master
 Enumerating objects: 6, done.
 Counting objects: 100% (6/6), done.
@@ -131,15 +131,15 @@ To https://github.com/jinygit/gitstudy19.git
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 </code></pre></div></div>
 
-<p>로컬 저장소에서 푸시(push)를 하게 되면, 서버와 마지막으로 통신된 커밋을 <code class="highlighter-rouge">refs/remotes/origin/master</code>에 <code class="highlighter-rouge">refs</code>로 저장을 하게 됩니다.</p>
+<p>로컬 저장소에서 푸시(push)를 하게 되면, 서버와 마지막으로 통신된 커밋을 <code class="language-plaintext highlighter-rouge">refs/remotes/origin/master</code>에 <code class="language-plaintext highlighter-rouge">refs</code>로 저장을 하게 됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP-VAKLOFQ MINGW64 /e/jinygit/gitstudy19 (master)
 $ cat .git/refs/remotes/origin/master
 0ee97afec0380e074080129b339e5d284f4ba7d9
 </code></pre></div></div>
 
-<p>리모트의 <code class="highlighter-rouge">refs</code>는 읽기 전용입니다.<br />
-리모트 <code class="highlighter-rouge">refs</code>를 통하여 체크아웃 같이 브랜치를변경을 할 수는 없습니다. 북마크와 같습니다.</p>
+<p>리모트의 <code class="language-plaintext highlighter-rouge">refs</code>는 읽기 전용입니다.<br />
+리모트 <code class="language-plaintext highlighter-rouge">refs</code>를 통하여 체크아웃 같이 브랜치를변경을 할 수는 없습니다. 북마크와 같습니다.</p>
 
 
             </section>

@@ -83,15 +83,55 @@
             <section>
                 <h1 id="스테이지">스테이지</h1>
 <hr />
-<p>깃은 여러 단계의 논리적인 저장 공간을 가지고 있습니다. 스테이지(stage)는 ‘임시로 저장하는 공간’을 의미합니다. 스테이지 영역은 워킹 디렉터리에서 제출된 tracked 파일들을 관리합니다. 이 영역은 나중에 배울 커밋 작업과 연관이 매우 많습니다.</p>
+<p>깃은 여러 단계의 <code class="language-plaintext highlighter-rouge">논리적인 저장 공간</code>을 가지고 있습니다.<br />
+<code class="language-plaintext highlighter-rouge">스테이지(stage)</code>는 <code class="language-plaintext highlighter-rouge">임시로 저장하는 공간</code>을 의미합니다. 스테이지 영역은 <code class="language-plaintext highlighter-rouge">워킹 디렉터리</code>에서 등록 제출된 <code class="language-plaintext highlighter-rouge">tracked</code> 상태의 파일들을 관리합니다.</p>
+
+<p>또한 스테이지 영역은 나중에 학습할 <code class="language-plaintext highlighter-rouge">커밋</code> 작업과도 매우 연관이 많습니다. 
+최종 깃의 <code class="language-plaintext highlighter-rouge">저장소</code>에 <code class="language-plaintext highlighter-rouge">기록</code>되는 변경이력은 워킹 디렉터리에 존재하는 파일의 상태가 아니라, 스테이지 안에 있는 파일의 상태를 저장하기 때문입니다.</p>
 
 <p><br /></p>
 
+<h2 id="임시-영역"><a href="stage">임시 영역</a></h2>
+<hr />
+<p>깃의 스테이지 영역은 <code class="language-plaintext highlighter-rouge">워킹디렉터리</code>와 <code class="language-plaintext highlighter-rouge">저장소</code>의 <code class="language-plaintext highlighter-rouge">중간영역</code>에 위치하는 <code class="language-plaintext highlighter-rouge">임시 영역</code>입니다.<br />
+워킹 디렉터리에 추가된 파일과 수정된 내용을 스테이지에 등록하여 변경 이력을 관리합니다.<br />
+또한, 스테이지에 등록된 내용을 최종 저장소에 기록할 수 있는 준비 단계의 성격을 가지고 있습니다.</p>
+
 <ul>
-  <li><a href="stage">스테이지 = 임시 영역</a></li>
-  <li><a href="unstage">파일의 stage 상태와 unstage 상태</a></li>
-  <li><a href="modified">파일의 modified 상태와 unmodified 상태</a></li>
+  <li><a href="stage">워킹 디랙터리와의 관계</a></li>
+  <li><a href="stage">저장소와의 관계</a></li>
+  <li><a href="stage">저장소에 차이점만 기록</a></li>
+  <li><a href="stage">스테이지 상태 확인</a></li>
 </ul>
+
+<p><br /></p>
+
+<h2 id="스테이지-상태"><a href="unstage">스테이지 상태</a></h2>
+<hr />
+<p>스테이지 영역은 변경된 파일들의 이력을 관리하기 위한 <code class="language-plaintext highlighter-rouge">목록</code> 역할도 합니다.<br />
+스테이지에 등록되면 파일의 상태를 추적관리하고 이를 stage 상태라고 합니다. 
+또는, 변경 이력을 최종 기록하는 커밋을 하지 않는 경우 목록에서 제외 할 수도 있습니다. 이를 unstage 상태라고 합니다.</p>
+
+<ul>
+  <li><a href="unstage">상태구분</a></li>
+  <li><a href="unstage">stage</a> 상태</li>
+  <li><a href="unstage">unstage</a> 상태</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="파일수정과-스테이지">파일수정과 스테이지</h2>
+<hr />
+<p>워킹디렉터리에서 생성, 수정된 이력은 임시저장소인 스테이지 영역에 등록됩니다.<br />
+하지만 스테이지에 등록된 파일이 수정되면 계속 스테이지 영역에 남아 있지 않고 워킹디렉터리 영역으로 되돌립니다. 
+이를 기반으로 스테이지 영역에서는 변경이력을 기반으로 modifiled 와 unmodified 로 나누어 집니다.</p>
+
+<ul>
+  <li><a href="modified">modified</a> 상태</li>
+  <li><a href="modified">unmodified</a> 상태</li>
+</ul>
+
+<p><br /></p>
 
             </section>
 

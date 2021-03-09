@@ -58,6 +58,10 @@ breadcrumb:
 * [소스트리](sourcetree)
 * [깃 크라켄](kraken)
 
+#### 터미널 도구
+* 맥 : iTerm2
+* 윈도우 : cmdr, 깃이 기본탑제로 같이 설치됨
+
 <br>
 
 ## 설정

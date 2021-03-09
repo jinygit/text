@@ -94,7 +94,7 @@
 <hr />
 <p>깃허브 저장소 등록 실습을 위해 새로운 폴더를 하나 생성해봅니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir github
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir github
 $ cd github/
 </code></pre></div></div>
 
@@ -107,19 +107,19 @@ $ cd github/
 
 <p>① echo 셸 명령어를 사용해 문자열이 들어간 파일을 하나 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "# git-study" &gt;&gt; README.md
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "# git-study" &gt;&gt; README.md
 </code></pre></div></div>
 
 <p>② 저장소를 초기화합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github
 $ git init
 Initialized empty Git repository in C:/dev/github/.git/
 </code></pre></div></div>
 
 <p>③ 스테이지 영역에 파일을 등록하여 추적 상태로 변경합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
 $ git add README.md
 warning: LF will be replaced by CRLF in README.md.
 The file will have its original line endings in your working directory.
@@ -127,7 +127,7 @@ The file will have its original line endings in your working directory.
 
 <p>④ 첫 번째 커밋을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
 $ git commit -m "first Commnit"
 [master (root-commit) 0a1290c] first Commnit
  1 file changed, 1 insertion(+)
@@ -135,13 +135,13 @@ $ git commit -m "first Commnit"
 </code></pre></div></div>
 
 <p>⑤ 원격 저장소를 등록합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
 $ git remote add origin https://github.com/infohojin/git-study.git
 </code></pre></div></div>
 <p>앞에서 본 원격 저장소의 주소는 상당히 긴 이름입니다. 이를 깃에서 편리하게 작업할 수 있도록 별칭을 사용하여 짧은 이름으로 줄여서 사용할 수 있습니다. 주로 origin이라는 별칭을 많이 사용합니다.</p>
 
 <p>⑥ 원격 저장소로 푸시합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@LAPTOP-M0820HEF MINGW64 /c/dev/github (master)
 $ git push -u origin master
 Counting objects: 3, done.
 Writing objects: 100% (3/3), 221 bytes | 0 bytes/s, done.

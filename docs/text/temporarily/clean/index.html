@@ -87,12 +87,12 @@
 
 <p>clean 명령어는 단독으로 실행하거나 몇 가지 추가 옵션을 같이 사용할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clean
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clean
 </code></pre></div></div>
 
 <p>실습을 위해 feature 브랜치에 새 파일을 하나 생성합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ echo “this is temp” &gt; temp.htm ☜새로운 파일
 
 infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
@@ -111,7 +111,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 <p>새로운 파일을 하나 생성하여 추적되지 않는 새 파일을 만들었습니다. 새로 만든 파일이 불필요해졌습니다. clean 명령어를 사용하여 생성된 untracked 상태의 파일들을 삭제합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git clean
 fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; refusing to clean
 
@@ -119,7 +119,7 @@ fatal: clean.requireForce defaults to true and neither -i, -n, nor -f given; ref
 
 <p>앗, 삭제 명령이 거부되었습니다. 삭제 명령은 민감해서 몇 가지 옵션을 같이 사용해야 합니다. 어떤 옵션이 있는지 -help 옵션으로 살펴봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clean -help
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clean -help
 usage: git clean [-d] [-f] [-i] [-n] [-q] [-e &lt;pattern&gt;] [-x | -X] [--] &lt;paths&gt;...
 
     -q, --quiet           do not print names of files removed
@@ -136,7 +136,7 @@ usage: git clean [-d] [-f] [-i] [-n] [-q] [-e &lt;pattern&gt;] [-x | -X] [--] &l
 
 <p>그럼 -f 옵션을 사용하여 강제로 삭제해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy07 (feature)
 $ git clean -f
 Removing temp.htm
 </code></pre></div></div>

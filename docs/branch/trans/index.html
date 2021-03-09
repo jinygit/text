@@ -78,7 +78,7 @@
 
 <p>처음으로 로컬 저장소에 새로운 원격 저장소가 등록되면 다음과 같이 push 명령어를 사용할 때 오류 메시지가 출력됩니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git push
 fatal: The current branch master has no upstream branch.
 To push the current branch and set the remote as upstream, use
@@ -92,12 +92,12 @@ To push the current branch and set the remote as upstream, use
 
 <p>처음에는 다음과 같이 수동으로 트래킹 브랜치와 업스트림 설정을 해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push --set-upstream origin master
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git push --set-upstream origin master
 </code></pre></div></div>
 
 <p>예를 들어 현재 master 브랜치를 origin 서버의 master로 업스트림 설정하려면 다음과 같이 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy06 (master)
 $ git push --set-upstream origin master
 git@211.110.1.195's password:
 Counting objects: 36, done.
@@ -118,7 +118,7 @@ Branch master set up to track remote branch master from origin.
 
 <p>직접 서버를 운영한다면 다음과 같이 계정 권한을 변경해 줍니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@ns /home/git]# chmod -R g+ws *
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@ns /home/git]# chmod -R g+ws *
 [root@ns /home/git]# chgrp -R git *
 </code></pre></div></div>
 
@@ -131,12 +131,12 @@ Branch master set up to track remote branch master from origin.
 
 <p>리모트 브랜치가 페치되면 깃은 단순히 원격저장소별칭/브랜치 포인터만 생성합니다. 원격 저장소에서 페치된 커밋들을 새로운 로컬 브랜치로 반영하려면 병합 명령을 실행해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge 원격저장소별칭/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git merge 원격저장소별칭/브랜치이름
 </code></pre></div></div>
 
 <p>가끔은 페치된 브랜치를 병합하지 않고 테스트만 하고 싶을 때도 있습니다. 이때는 원격 브랜치의 포인터를 사용하여 임시 브랜치를 생성하거나 직접 체크아웃할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout -b 임시브랜치이름 origin/브랜치이름
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git checkout -b 임시브랜치이름 origin/브랜치이름
 </code></pre></div></div>
 
 <p><br /><br /></p>

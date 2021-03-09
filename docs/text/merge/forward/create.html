@@ -86,7 +86,7 @@
 <p>실습을 위해 새로운 feature 브랜치를 생성하겠습니다.<br />
 그리고 feature 브랜치로 체크아웃합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git branch feature ☜ 브랜치 생성
 
 infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
@@ -96,11 +96,11 @@ Switched to branch 'feature'
 infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 </code></pre></div></div>
 
-<p>브랜치를 생성할 때 분기 기준은 master의 <code class="highlighter-rouge">최종 커밋 포인터</code>입니다.<br />
-포인터를 확인할 수 있는 <code class="highlighter-rouge">rev-parse</code> 명령어로 확인해 봅시다.<br />
+<p>브랜치를 생성할 때 분기 기준은 master의 <code class="language-plaintext highlighter-rouge">최종 커밋 포인터</code>입니다.<br />
+포인터를 확인할 수 있는 <code class="language-plaintext highlighter-rouge">rev-parse</code> 명령어로 확인해 봅시다.<br />
 첫 번째 커밋 f123d5c와 값이 동일합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ git rev-parse feature
 f123d5c9fd0c1f8a2f4ec86f63451a179371ae09
 </code></pre></div></div>
@@ -123,7 +123,7 @@ f123d5c9fd0c1f8a2f4ec86f63451a179371ae09
 
 <p>생성한 feature 브랜치 안에 있는 index.htm 파일을 수정하겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ code index.htm ☜ VS Code 실행
 </code></pre></div></div>
 
@@ -137,10 +137,10 @@ $ code index.htm ☜ VS Code 실행
 <span class="nt">&lt;/head&gt;</span>
 </code></pre></div></div>
 
-<p>코드에 <code class="highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> 태그를 삽입하고 저장합니다. 기존 코드를 수정했기 때문에 파일 상태는 modified로 변경됩니다.<br />
-다음과 같이 수정한 파일을 커밋합니다. <code class="highlighter-rouge">-a</code> 옵션과 같이 사용하면 스테이지 영역을 추가하면서 동시에 커밋을 할 수 있습니다.</p>
+<p>코드에 <code class="language-plaintext highlighter-rouge">&lt;header&gt;&lt;/header&gt;</code> 태그를 삽입하고 저장합니다. 기존 코드를 수정했기 때문에 파일 상태는 modified로 변경됩니다.<br />
+다음과 같이 수정한 파일을 커밋합니다. <code class="language-plaintext highlighter-rouge">-a</code> 옵션과 같이 사용하면 스테이지 영역을 추가하면서 동시에 커밋을 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ git commit -am "add header"
 [feature 3f7799f] add header
  1 file changed, 2 insertions(+)
@@ -152,9 +152,9 @@ feature 브랜치가 master 브랜치보다 커밋이 하나 더 있는 것을 �
 <p>소스트리에서 커밋 위치 확인<br />
 <img src="./img/08-6.jpg" alt="소스트리에서 커밋 위치 확인" /></p>
 
-<p>실습을 위해 수정과 커밋을 몇 번 더 합시다. 이번에는 <code class="highlighter-rouge">&lt;header&gt;</code> 코드 안에 <code class="highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code> 태그를 추가하여 두 번 커밋할 것입니다.</p>
+<p>실습을 위해 수정과 커밋을 몇 번 더 합시다. 이번에는 <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code> 코드 안에 <code class="language-plaintext highlighter-rouge">&lt;ul&gt;&lt;li&gt;</code> 태그를 추가하여 두 번 커밋할 것입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ code index.htm
 </code></pre></div></div>
 
@@ -177,7 +177,7 @@ $ code index.htm
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ git commit -am "add menu1"
 [feature e762475] add menu1
  1 file changed, 3 insertions(+)
@@ -203,7 +203,7 @@ $ git commit -am "add menu1"
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ git commit -am "add menu2"
 [feature 7caf5f0] add menu2
  1 file changed, 1 insertion(+)
@@ -216,7 +216,7 @@ $ git commit -am "add menu2"
 
 <p>feature 브랜치에 추가된 커밋 로그를 확인해 봅시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (feature)
 $ git log
 commit 7caf5f028ba013f1eb74e2f6c8cc400c02b0eb9c (HEAD -&gt; feature)
 Author: hojin &lt;infohojin@gmail.com&gt;

@@ -85,28 +85,28 @@
 <hr />
 <p>jekyll 명령어와 옵션을 이용하여 매번 설정값을 변경하는 것은 불편합니다. 별도의 환경설정 파일을 이용하여 자주 사용하는 옵션을 지정할 수 있습니다.</p>
 
-<p>지킬의 루트폴더에 <code class="highlighter-rouge">_config.yml</code> 파일을 생성합니다. 이 파일은 지킬 프로젝트를 생성할때 자동으로 같이 생성이 되어 집니다.</p>
+<p>지킬의 루트폴더에 <code class="language-plaintext highlighter-rouge">_config.yml</code> 파일을 생성합니다. 이 파일은 지킬 프로젝트를 생성할때 자동으로 같이 생성이 되어 집니다.</p>
 
 <h2 id="_drafts">_drafts</h2>
 <p>초안이란 아직 게시하지 않은 포스트를 말한다. 파일명 형식에 날짜가 없다: title.MARKUP. 사용 방법은  초안 활용하기를 참고하라.</p>
 
 <h2 id="_includes">_includes</h2>
-<p>재사용하기 위한 파일을 담는 디렉토리로서, 필요에 따라 포스트나 레이아웃에 손쉽게 삽입할 수 있다. <code class="highlighter-rouge">{ % include file.ext % }</code> 와 같이 Liquid 태그를 사용하면 <code class="highlighter-rouge">_includes/file.ext</code> 파일에 담긴 코드가 삽입된다.</p>
+<p>재사용하기 위한 파일을 담는 디렉토리로서, 필요에 따라 포스트나 레이아웃에 손쉽게 삽입할 수 있다. <code class="language-plaintext highlighter-rouge">{ % include file.ext % }</code> 와 같이 Liquid 태그를 사용하면 <code class="language-plaintext highlighter-rouge">_includes/file.ext</code> 파일에 담긴 코드가 삽입된다.</p>
 
 <h2 id="_layouts">_layouts</h2>
-<p>포스트를 포장할 때 사용하는 템플릿이다. 각 포스트 별로 레이아웃을 선택하는 기준은 YAML 머리말이며, 자세한 내용은 다음 섹션에서 설명한다. <code class="highlighter-rouge">{ { content } }</code> 와 같이 Liquid 태그를 사용하면 페이지에 컨텐츠가 주입된다.</p>
+<p>포스트를 포장할 때 사용하는 템플릿이다. 각 포스트 별로 레이아웃을 선택하는 기준은 YAML 머리말이며, 자세한 내용은 다음 섹션에서 설명한다. <code class="language-plaintext highlighter-rouge">{ { content } }</code> 와 같이 Liquid 태그를 사용하면 페이지에 컨텐츠가 주입된다.</p>
 
 <h2 id="_posts">_posts</h2>
-<p>한마디로 말하면, 당신의 컨텐츠다. 중요한 것은 파일들의 명명규칙인데, 반드시 다음 형식을 따라야 한다: <code class="highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP.</code> 고유주소는 포스트 별로 각각 정의할 수 있지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해 결정된다.</p>
+<p>한마디로 말하면, 당신의 컨텐츠다. 중요한 것은 파일들의 명명규칙인데, 반드시 다음 형식을 따라야 한다: <code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP.</code> 고유주소는 포스트 별로 각각 정의할 수 있지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해 결정된다.</p>
 
 <h2 id="_data">_data</h2>
-<p>사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리. Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 <code class="highlighter-rouge">.yml</code> 또는 <code class="highlighter-rouge">.yaml</code>, <code class="highlighter-rouge">.json</code>, <code class="highlighter-rouge">.csv</code> 인) 모든 YAML 파일을 자동으로 읽어들여 <code class="highlighter-rouge">site.data</code> 로 사용할 수 있도록 만든다. 만약 이 디렉토리에 <code class="highlighter-rouge">members.yml</code> 라는 파일이 있다면, <code class="highlighter-rouge">site.data.members</code> 라고 입력하여 그 컨텐츠를 사용할 수 있다.</p>
+<p>사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리. Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 <code class="language-plaintext highlighter-rouge">.yml</code> 또는 <code class="language-plaintext highlighter-rouge">.yaml</code>, <code class="language-plaintext highlighter-rouge">.json</code>, <code class="language-plaintext highlighter-rouge">.csv</code> 인) 모든 YAML 파일을 자동으로 읽어들여 <code class="language-plaintext highlighter-rouge">site.data</code> 로 사용할 수 있도록 만든다. 만약 이 디렉토리에 <code class="language-plaintext highlighter-rouge">members.yml</code> 라는 파일이 있다면, <code class="language-plaintext highlighter-rouge">site.data.members</code> 라고 입력하여 그 컨텐츠를 사용할 수 있다.</p>
 
 <h2 id="_site">_site</h2>
-<p>Jekyll 이 변환 작업을 마친 뒤 생성된 사이트가 저장되는 (디폴트) 경로이다. 대부분의 경우, 이 경로를 <code class="highlighter-rouge">.gitignore</code> 에 추가하는 것은 괜찮은 생각이다.</p>
+<p>Jekyll 이 변환 작업을 마친 뒤 생성된 사이트가 저장되는 (디폴트) 경로이다. 대부분의 경우, 이 경로를 <code class="language-plaintext highlighter-rouge">.gitignore</code> 에 추가하는 것은 괜찮은 생각이다.</p>
 
 <h2 id="jekyll-metadata">.jekyll-metadata</h2>
-<p>Jekyll 은 이 파일을 참고하여, 마지막으로 빌드한 이후에 한번도 수정되지 않은 파일은 어떤 것인지, 다음 빌드 때 어떤 파일을 다시 생성해야 하는지 판단할 수 있다. 생성된 사이트에 이 파일이 복사되지는 않는다. 대부분의 경우, 이 파일을 <code class="highlighter-rouge">.gitignore</code> 에 추가하는 것은 괜찮은 생각이다.</p>
+<p>Jekyll 은 이 파일을 참고하여, 마지막으로 빌드한 이후에 한번도 수정되지 않은 파일은 어떤 것인지, 다음 빌드 때 어떤 파일을 다시 생성해야 하는지 판단할 수 있다. 생성된 사이트에 이 파일이 복사되지는 않는다. 대부분의 경우, 이 파일을 <code class="language-plaintext highlighter-rouge">.gitignore</code> 에 추가하는 것은 괜찮은 생각이다.</p>
 
 <h2 id="indexhtml-및-다른-html-markdown-textile-파일">index.html 및 다른 HTML, Markdown, Textile 파일</h2>
 <p>Jekyll 은 YAML 머리말 섹션을 가진 모든 파일을 찾아 변환 작업을 수행한다. 위에서 언급하지 않은 다른 디렉토리나 사이트의 루트 디렉토리에 있는 모든 .html, .markdown, .md, .textile 이 여기에 해당한다.</p>

@@ -111,7 +111,7 @@ parent/child 원격 저장소로 동기된 복제본입니다.</p>
 다. 이제는 수정 반영된 커밋들을 실제의 자식 저장소( gitstudy11_child)로 가져와야 합니다.
 실제 자식 저장소로 이동합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ cd ../gitstudy11_child 
 
 infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
@@ -123,7 +123,7 @@ infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ cat child.htm</p>
 <h1>자식 저장소</h1>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 부모 저장소의 parent/child에서 수정된 내용을 실제 자식 저장소에는 반영하지 않았습니다. 자
 식 저장소의 원격 저장소를 이용하여 갱신합니다.  
 
@@ -148,7 +148,7 @@ child.htm | 3 ++-
 <p>다시 child.htm 파일을 확인하면, 부모 저장소의 parent/child에서 수정한 작업들이 실제 자식
 저장소에도 적용되었습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ cat child.htm 확인
 &lt;h1&gt;자식 저장소&lt;/h1&gt;
 &lt;h2&gt;child는 서브모듈입니다.&lt;/h2&gt;
@@ -165,7 +165,7 @@ $ cat child.htm 확인
 부모 저장소의 서브모듈(parent/child)로 적용하는 방법을 알아보겠습니다.
 먼저 실제 자식 저장소에서 child.htm 파일을 수정하고 커밋합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ code child.htm 
 </code></pre></div></div>
 
@@ -175,7 +175,7 @@ $ code child.htm
 <span class="nt">&lt;h2&gt;</span>엄마 100원 주세요.<span class="nt">&lt;/h2&gt;</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git commit -am "give me 100 wan" 
 [master 8ecc866] give me 100 wan
 1 file changed, 2 insertions(+), 1 deletion(-)
@@ -183,7 +183,7 @@ $ git commit -am "give me 100 wan"
 
 <p>실제 자식 저장소의 코드를 수정했습니다. 수정된 코드를 자식 저장소의 원격 저장소로 전송합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ git push origin master 커밋 전송
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -207,18 +207,18 @@ a7709f5..8ecc866 master -&gt; master
 다. 로컬 저장소의 부모 저장소로 이동합니다.<br />
 메인 저장소로 이동합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_child (master)
 $ cd ../gitstudy11_parent 
 </code></pre></div></div>
 
 <p>그리고 메인 저장소에서 서브모듈의 자식 폴더로 이동합니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ cd child/ 
 </code></pre></div></div>
 
 <p>서브모듈 저장소의 코드 내용을 확인합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
 $ cat child.htm 
 &lt;h1&gt;자식 저장소&lt;/h1&gt;
 &lt;h2&gt;child는 서브모듈입니다.&lt;/h2&gt;
@@ -226,7 +226,7 @@ $ cat child.htm
 
 <p>파일 내용은 이전 작업 상태 그대로입니다. 자식 저장소의 원격 저장소에서 최신 정보를 갱신합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
 $ git pull origin master 
 From https://github.com/jinygit/gitstudy11_child
 * branch master -&gt; FETCH_HEAD
@@ -243,7 +243,7 @@ child.htm | 3 ++-
 
 <p>갱신된 커밋과 수정된 파일 내용을 확인합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
 $ cat child.htm 확인
 &lt;h1&gt;자식 저장소&lt;/h1&gt;
 &lt;h2&gt;child는 서브모듈입니다.&lt;/h2&gt;
@@ -257,7 +257,7 @@ $ cat child.htm 확인
 <hr />
 <p>자식 저장소의 원격 저장소를 이용하여 메인 저장소의 서브모듈을 갱신했습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
 $ git status 상태 확인
 On branch master
 Your branch is up to date with 'origin/master'.
@@ -267,7 +267,7 @@ nothing to commit, working tree clean
 <p>서브모듈을 갱신하면 메인 저장소는 자신의 서브 폴더가 변경된 것을 인식합니다.<br />
 부모 폴더로 이동해서 상태를 확인해 보겠습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent/child (master)
 $ cd .. 
 
 infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
@@ -284,7 +284,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 <p>즉, 메인 저장소는 서브모듈의 변경 내용을 모니터링하고 있는 것입니다. 메인 저장소의 서브 폴더
 자체를 변경했기 때문에 변경된 내용을 다시 메인 저장소로 커밋해야 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy11_parent (master)
 $ git commit -am "update submodule" 등록 및 커밋
 [master 6ebe93e] update submodule
 1 file changed, 1 insertion(+), 1 deletion(-)

@@ -85,7 +85,7 @@
 
 <p>파워셀을 실행하여 다음과 같이 명령을 입력 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 </code></pre></div></div>
 
 <p><img src="./img/linux02.png" alt="" /></p>
@@ -108,32 +108,32 @@
 
 <p>깃을 설치하기 위해서는 먼저 자신의 리눅스 배포본과 환경을 알아야 합니다. 다음과 같이 입력하여 자신의 환경을 확인을 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# cat /etc/issue
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# cat /etc/issue
 Ubuntu 18.04.2 LTS \n \l
 </code></pre></div></div>
 
 <p>리눅스 패키지를 다운로드 받아 설치를 합니다. 만일, 자신의 리눅스 배포판이 Fedora, CentOS 계열이라면 yum 명령어를 통하여 깃을 설치할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo yum install git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo yum install git
 </code></pre></div></div>
 
 <p>데비안 계열의 우분투는 apt 명령을 사용합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install git
 </code></pre></div></div>
 
-<p>최근들어 깃은 리눅스 시스템의 기본 설치 페키지 입니다. 대부분 리눅스 운영체제들은 깃을 기본적으로 탑제되어 있습니다. <code class="highlighter-rouge">–-version</code> 옵션으로 설치된 깃을 확인 할 수 있습니다.</p>
+<p>최근들어 깃은 리눅스 시스템의 기본 설치 페키지 입니다. 대부분 리눅스 운영체제들은 깃을 기본적으로 탑제되어 있습니다. <code class="language-plaintext highlighter-rouge">–-version</code> 옵션으로 설치된 깃을 확인 할 수 있습니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# git --version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# git --version
 git version 2.17.1
 </code></pre></div></div>
 <p><br /></p>
 
 <h2 id="재설치">재설치</h2>
 <hr />
-<p>기존의 설치되어 있던 깃 패키지를 삭제하고 다시 설치를 해보도록 합니다. <code class="highlighter-rouge">remove</code> 옵션을 사용하여 설치되어 있는 <code class="highlighter-rouge">git</code>을 제거합니다.</p>
+<p>기존의 설치되어 있던 깃 패키지를 삭제하고 다시 설치를 해보도록 합니다. <code class="language-plaintext highlighter-rouge">remove</code> 옵션을 사용하여 설치되어 있는 <code class="language-plaintext highlighter-rouge">git</code>을 제거합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# apt remove git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# apt remove git
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
@@ -144,7 +144,7 @@ Removing git (1:2.17.1-1ubuntu0.4) ...
 
 <p>이번에는 새롭게 깃을 설치해 보도록 합니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# apt install git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@hojin1:~# apt install git
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
@@ -159,6 +159,19 @@ Setting up git (1:2.17.1-1ubuntu0.4) ...
 <p>그 이외의 버전의 리눅스 배포판은 깃 공식사이트에 접속을 하여 설치 파일 또는 소스를 다운로드 받아 컴파일 하여 설치를 할 수 있습니다.</p>
 
 <p><br /></p>
+
+<h2 id="최신버전-설치">최신버전 설치</h2>
+
+<hr />
+
+<p>깃 최신 패키지를 제공하는 저장소를 등록한 후, 깃을 재설치 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo add-apt-repository ppa:git-core/ppa -y
+sudo apt-get update
+sudo apt-get install git -y
+git --version
+</code></pre></div></div>
+
 
                 </section>
 			</main>

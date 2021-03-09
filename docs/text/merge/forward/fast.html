@@ -87,7 +87,7 @@
 
 <p>이러한 상태에서 두 브랜치를 병합합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git merge feature ☜ feature 브랜치를 병함
 Updating f123d5c..7caf5f0
 Fast-forward ☜ 병합 방식 표시 
@@ -95,8 +95,8 @@ Fast-forward ☜ 병합 방식 표시
  1 file changed, 6 insertions(+)
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">feature</code> 브랜치의 커밋을 <code class="highlighter-rouge">master</code> 브랜치에 병합했습니다. 병합 메시지를 확인해 볼까요?<br />
-메시지에 <code class="highlighter-rouge">Fast-Forward</code> 방식을 사용하여 병합했다고 출력됩니다.</p>
+<p><code class="language-plaintext highlighter-rouge">feature</code> 브랜치의 커밋을 <code class="language-plaintext highlighter-rouge">master</code> 브랜치에 병합했습니다. 병합 메시지를 확인해 볼까요?<br />
+메시지에 <code class="language-plaintext highlighter-rouge">Fast-Forward</code> 방식을 사용하여 병합했다고 출력됩니다.</p>
 
 <p>이 과정을 그림으로 나타내면 다음과 같습니다.</p>
 
@@ -113,7 +113,7 @@ Fast-forward ☜ 병합 방식 표시
 
 <p>log 명령어로 커밋 기록을 확인합시다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ git log -1
 commit 7caf5f028ba013f1eb74e2f6c8cc400c02b0eb9c (HEAD -&gt; master, feature)
 Author: hojin &lt;infohojin@gmail.com&gt;
@@ -126,7 +126,7 @@ Date:   Thu May 16 16:54:30 2019 +0900
 
 <p>Fast-Forward 병합을 잘했는지 결과를 확인해 봅시다. master 브랜치의 원본 파일에 feature 브랜치에서 수정한 내용이 반영되어 있으면 잘 병합한 것입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>infoh@DESKTOP MINGW64 /e/gitstudy08 (master)
 $ code index.htm
 </code></pre></div></div>
 
