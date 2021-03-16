@@ -63,6 +63,9 @@ breadcrumb:
 
 ## 파일 관리 목록에서 제외: [.gitignore](gitignore)
 ---
+깃은 워킹디렉터리 안에 있는 모든 파일을 추적 관리 합니다.  
+추적 가능한 파일들의 목록을 별도의 설정을 통하여 관리를 배제할 수 있습니다.  
+
 + [.gitignore 파일](gitignore/file)
 + [.gitignore 파일 표기법](gitignore/rule)
 

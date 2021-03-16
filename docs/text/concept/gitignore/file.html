@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | gitignore</title>
-            <meta name="title" content="gitignore" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, gitignore" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | gitignore 파일 생성방법</title>
+            <meta name="title" content="gitignore 파일 생성방법" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, gitignore" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -83,32 +83,39 @@
             <section>
                 <h1 id="gitignore-파일">.gitignore 파일</h1>
 <hr />
+<p>깃에서 추적관리가 배제가 되는 목록을 관리하는 파일은 <code class="language-plaintext highlighter-rouge">.gitignore</code> 입니다. 텍스트 에디터를 통하여 간단하게 파일을 생성하면 됩니다.
+이때 확장자는 존재하지 않습니다.</p>
+
 <p><code class="language-plaintext highlighter-rouge">.gitignore</code>는 git과 ignore(무시하다)의 합성어입니다.</p>
 
 <p><br /></p>
 
 <h2 id="생성위치">생성위치</h2>
 <hr />
-<p><code class="language-plaintext highlighter-rouge">워킹 디렉터리</code> 루트에 <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 생성합니다.<br />
-이 파일은 앞에 점(.)이 있어 숨겨진 파일로 관리됩니다.</p>
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일은 <code class="language-plaintext highlighter-rouge">워킹 디렉터리</code> 루트에 생성합니다.<br />
+파일을 생성할때 점(.)이 있는 것을 꼭 확인해야 합니다. <code class="language-plaintext highlighter-rouge">.</code>은 숨겨진 파일을 의미합니다.</p>
+
+<p>vscode를 통하여 <code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 생성합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ code .gitignore
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일을 작성할 때는 저장소 폴더의 최상위 디렉터리에 두어야 합니다.</p>
 
 <p><br /></p>
 
-<h2 id="제외목록">제외목록</h2>
+<h2 id="목록작성">목록작성</h2>
 <hr />
-<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일은 깃에서 관리하지 않는 파일들의 <code class="language-plaintext highlighter-rouge">목록</code>을 가지고 있습니다.<br />
-깃은 이 파일에 작성된 목록들을 <code class="language-plaintext highlighter-rouge">추적하지 않습니다</code>.<br />
-또 로컬 저장소를 서버로 전송하거나 다른 사람과 공유할 때도 이를 <code class="language-plaintext highlighter-rouge">분리</code>하여 처리합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일에 추적을 배제하기 위한 파일, 폴더의 목록을 나열하면 됩니다.<br />
+이 파일안에 나열된 목록은 깃에 의해서 <code class="language-plaintext highlighter-rouge">추적하지 않습니다</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code>에 등록된 목록은 깃의 이력으로 기록되지 않기 때문에, 
+로컬 저장소의 이력이 외부 서버로 전송되어 공개되어도 같이 전송이 되지 않기 때문에 안전하게 깃 저정소를 공유할 수 있습니다.</p>
 
 <p><br /></p>
 
 <h2 id="작성방법">작성방법</h2>
 <hr />
-<p><code class="language-plaintext highlighter-rouge">.gitignore</code> 파일은 <code class="language-plaintext highlighter-rouge">텍스트 에디터</code>를 이용하여 간단하게 작성할 수 있습니다.<br />
-특별한 도구 없이 파일 이름만 .gitignore로 만들면 됩니다.</p>
-
-<p>깃에서 제외할 파일 목록을 직접 적어 주거나 <code class="language-plaintext highlighter-rouge">규칙</code>을 사용하여 나열할 수 있습니다.<br />
-.gitignore 파일을 작성할 때는 저장소 폴더의 최상위 디렉터리에 두어야 합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">.gitignore</code>은 파일명, 폴더명만 나열하면 됩니다.<br />
+만일, 규칙을 적용하여 특정 파일들만 추적을 배제하고자 할때 <code class="language-plaintext highlighter-rouge">규칙</code>을 적용할 수 있습니다.</p>
 
 <p><br /></p>
 
