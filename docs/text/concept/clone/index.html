@@ -81,37 +81,54 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="깃-저장소-복제">깃 저장소 복제</h1>
+                <h1 id="저장소-복제">저장소 복제</h1>
 <hr />
-<p>초기화 명령(git init 명령어)은 새 저장소를 생성하는 방법 중 하나입니다.1 처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">init</code> 초기화 명령은 새 저장소를 생성하는 방법 입니다.</p>
+<blockquote>
+  <p>처음 프로젝트를 시작할 때는 직접 로컬 컴퓨터에 명령어를 실행하여 저장소를 생성합니다.</p>
+</blockquote>
 
-<p>외부에 있는 기존 프로젝트(깃허브, 비트버킷)를 기반으로 저장소를 생성하고 싶다면 어떻게 해야 할까요? 외부 저장소를 복제해서 생성할 수 있습니다. 이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 ‘깃 저장소 복제’라고 합니다.</p>
+<p>깃은 <code class="language-plaintext highlighter-rouge">init</code> 명령외에 저장소를 생성할 수 있는 다른 방법이 또하나 존재 합니다. 그 방법은 기존에 생성된 저장소를 복제 하는 것입니다.</p>
 
-<p>외부의 깃 저장소 복제<br />
-<img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+<p><br /></p>
+
+<h2 id="복제">복제</h2>
+<hr />
+<p>깃은 개발작업시 실수를 줄이기 위해서 코드의 작성 이력을 순차적으로 기록합니다.<br />
+이처럼 실수를 방지하기 위한 목적외에 다른 사람들과 협업을 위해서 깃을 사용하는 용도가 더 많습니다.</p>
+
+<p>외부에는 수많은 프로젝트가 존재합니다. 이러한 프로젝트들은 깃으로 형상관리되어 깃허브, 비트버킷과 같은 외부 공개 저장소에 등록되어 배포됩니다. 이렇게 외부로 공개된 저장소를 복제하여 로컬 컴퓨터에 새로운 저장소를 생성할 수 있습니다.</p>
+
+<p><img src="./img/03-20.jpg" alt="외부의_깃_저장소_복제" /></p>
+
+<p>이처럼 외부 저장소를 이용하여 로컬 저장소를 생성하는 것을 <code class="language-plaintext highlighter-rouge">깃 저장소 복제</code>라고 합니다.</p>
 
 <p><br /></p>
 
 <h2 id="공개-저장소"><a href="open">공개 저장소</a></h2>
 <hr />
+<p>공개 저장소란? 로컬 컴퓨터가 아닌 외부의 서버에 존재하는 원격 저장소를 의미합니다. 
+원격저장소는 직접 서버를 구축하여 만들수도 있고, 깃허브와 같은 호스팅 서비스를 이용할 수도 있습니다.</p>
+
 <ul>
-  <li>호스팅 저장소</li>
-  <li>공개/비공개</li>
-  <li>오픈소스 저장소</li>
+  <li><a href="open">호스팅 저장소</a></li>
+  <li><a href="open">공개/비공개</a></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="다운로드-vs-복제"><a href="download">다운로드 vs 복제</a></h2>
+<h2 id="다운로드--vs-복제"><a href="download">다운로드</a>  vs 복제</h2>
 <hr />
+<p>원격 서버에 접속하여 깃 저장소를 자신의 컴퓨터에 복제할 수 있습니다. 깃허브와 같은 호스팅 서비스는 원격 저장소의 코드를 2가지 방십으로 받을 수 있습니다.</p>
+
 <ul>
-  <li>내려받기</li>
-  <li>복제</li>
+  <li><a href="download">내려받기</a></li>
+  <li><a href="download">복제</a></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="복제-명령어"><a href="clone">복제 명령어</a></h2>
+<h2 id="복제-명령어"><a href="clone">복제</a> 명령어</h2>
 <hr />
 <ul>
   <li>저장소 URL</li>
@@ -217,11 +234,17 @@
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container -->
-        
-       
-
-        <!--부트스트랩4-->
+<!-- /.container --><footer class="bd-footer p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+    <div class="container">
+      <p class="mb-0"> 
+        본 학습사이트는 오픈소스 프로젝트로 깃허브에 공개되어 있습니다. 누구나 접속하셔서 편집 및 개선하여 pull-request하여 프로젝트에 기여할 수 있습니다.
+      </p>
+      <p class="mb-0">
+      https://github.com/jinygit/text
+      </p>     
+      
+    </div>
+</footer><!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

@@ -83,28 +83,35 @@
             <section>
                 <h1 id="복제-명령어">복제 명령어</h1>
 <hr />
-<p>깃의 저장소를 복제하는 명령어는 <code class="language-plaintext highlighter-rouge">clone</code>입니다.</p>
+<p>깃의 저장소를 또다른 저장소로 복제를 할 수 있습니다. 저장소를 복제할때는 <code class="language-plaintext highlighter-rouge">clone</code> 명령을 사용합니다.</p>
 
 <p><br /></p>
 
 <h2 id="저장소-url">저장소 URL</h2>
 <hr />
-<p>복제하려면 공개된 저장소의 URL이 필요합니다. 복</p>
+<p>깃허브와 같은 호스팅 서비스는 원격 저장소를 쉽게 복제할 수 있도록 URL을 제공합니다.</p>
 
-<p>제할 때 폴더 이름을 지정하지 않으면 공개 저장소에서 사용된 폴더와 <code class="language-plaintext highlighter-rouge">동일한 이름</code>으로 <code class="language-plaintext highlighter-rouge">새 폴더</code>를 만듭니다.<br />
-다른 이름으로 복제하길 원한다면 새 폴더 이름을 추가 <code class="language-plaintext highlighter-rouge">인자</code>로 적어 줍니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone 원격저장소URL.git
+</code></pre></div></div>
+
+<p>위의 명령을 입력하여 저장소를 복제하면 공개 저장소에서 지정한 폴더와 <code class="language-plaintext highlighter-rouge">동일한 이름</code>으로 <code class="language-plaintext highlighter-rouge">새 폴더</code>를 만들어 저장소가 생성됩니다.</p>
+
+<p>만일 다른 이름으로 저장소를 복제하고자 할때에는 주소URL 다음에 <code class="language-plaintext highlighter-rouge">폴더 이름을 지정</code>해 줍니다.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone 원격저장소URL 새폴더이름
 </code></pre></div></div>
+
+<p>지정한 폴더로 저장소를 복제합니다. 만일 현재의 폴더로 저장소를 복제하고자 할때에는 <code class="language-plaintext highlighter-rouge">.</code>을 대신 입력하시면 됩니다.</p>
 
 <p><br /></p>
 
 <h2 id="복제-실습">복제 실습</h2>
 <hr />
 <p>다음은 필자가 운영하는 jinyphp 오픈 소스 사이트의 주소를 이용하여 저장소를 복제하는 예입니다.<br />
-새 폴더 이름을 적지 않아 공개 저장소에서 사용된 폴더와 동일한 이름으로 새 폴더를 만들 것입니다.</p>
+새 폴더 이름을 적지 않아 공개 저장소에서 사용된 폴더와 동일한 이름으로 <code class="language-plaintext highlighter-rouge">새 폴더</code>를 만들 것입니다.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/jinyphp/jiny
+
 Cloning into 'jiny'...
 remote: Enumerating objects: 975, done.
 remote: Total 975 (delta 0), reused 0 (delta 0), pack-reused 975
@@ -119,9 +126,10 @@ Resolving deltas: 100% (307/307), done.
 
 <h2 id="저장소-이름-변경">저장소 이름 변경</h2>
 <hr />
-<p>깃은 저장소 안에 있는 파일들과 <code class="language-plaintext highlighter-rouge">.git </code>리포지터리를 기반으로 이력을 관리합니다.<br />
-따라서 복제한 후에는 복제된 폴더 이름을 그대로 사용하지 않아도 됩니다. 
-필요에 따라 깃의 폴더 이름을 변경해도 괜찮습니다.</p>
+<p>깃의 저장소는 소스코드의 이력을 관리하기 위한 묶음과 같습니다. 반드시 폴더명과 일치를 유지할 필요가 없습니다.<br />
+깃은 저장소 안에 있는 파일들과 <code class="language-plaintext highlighter-rouge">.git </code>리포지터리를 기반으로 이력을 관리하기 때문입니다.</p>
+
+<p>필요에 따라서 원하는 폴더 이름으로 변경하셔도 됩니다.</p>
 
 <p><br /><br /></p>
 
@@ -222,11 +230,17 @@ Resolving deltas: 100% (307/307), done.
     </div>
     <!-- /.row -->
 </div>
-<!-- /.container -->
-        
-       
-
-        <!--부트스트랩4-->
+<!-- /.container --><footer class="bd-footer p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
+    <div class="container">
+      <p class="mb-0"> 
+        본 학습사이트는 오픈소스 프로젝트로 깃허브에 공개되어 있습니다. 누구나 접속하셔서 편집 및 개선하여 pull-request하여 프로젝트에 기여할 수 있습니다.
+      </p>
+      <p class="mb-0">
+      https://github.com/jinygit/text
+      </p>     
+      
+    </div>
+</footer><!--부트스트랩4-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
