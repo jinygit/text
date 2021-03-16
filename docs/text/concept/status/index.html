@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--SEO--><title>Git TextBook | 상태확인</title>
-            <meta name="title" content="상태확인" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 상태 확인" /><!--부트스트랩4-->
+        <!--SEO--><title>Git TextBook | 깃 status 명령으로 상태 확인하기</title>
+            <meta name="title" content="깃 status 명령으로 상태 확인하기" /><meta name="description" content="status 명령을 이용하여 깃의 상태를 확인할 수 있는 방법에 대해서 학습합니다." /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, 깃, status, 상태 확인" /><!--부트스트랩4-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <style>
             @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
@@ -81,30 +81,45 @@
         <!-- Post Content Column -->
         <div class="col-lg-9">
             <section>
-                <h1 id="파일의-상태-확인">파일의 상태 확인</h1>
+                <h1 id="상태-확인">상태 확인</h1>
 <hr />
-<p>상태 개념은 깃의 분리된 저장 영역인 <code class="language-plaintext highlighter-rouge">워킹 디렉터리</code>와 <code class="language-plaintext highlighter-rouge">스테이지</code>, <code class="language-plaintext highlighter-rouge">추적</code> 여부를 의미합니다.</p>
-
-<p>깃이 이렇게 다양한 저장 영역을 <code class="language-plaintext highlighter-rouge">구분</code>해서 가지고 있는 것은 파일들의 <code class="language-plaintext highlighter-rouge">상태를 효율적으로 모니터링</code>하기 위해서입니다.<br />
-이번에는 파일들의 상태를 모니터링할 수 있는 <code class="language-plaintext highlighter-rouge">status</code> 명령어를 알아봅니다.</p>
+<p>깃은 파일의 변경이력을 관리하기 위해서 상태를 추적합니다.</p>
 
 <p><br /></p>
 
-<h2 id="status-명령어로-깃-상태-확인"><a href="status">status 명령어로 깃 상태 확인</a></h2>
+<h2 id="상태개념">상태개념</h2>
 <hr />
+<p>깃의 상태 개념은 깃의 공간영역인 <code class="language-plaintext highlighter-rouge">워킹 디렉터리</code>와 <code class="language-plaintext highlighter-rouge">스테이지</code>간의 <code class="language-plaintext highlighter-rouge">변경된 차이</code>를 추적 관리 하는 것입니다. 
+이렇게 깃이 다양한 공간 영역을 통하여 파일의 상태를 <code class="language-plaintext highlighter-rouge">구분</code>하는 이유는 파일들의 <code class="language-plaintext highlighter-rouge">상태를 효율적으로 모니터링</code>하기 위해서입니다.<br />
+깃은 파일들의 상태를 모니터링할 수 있는 <code class="language-plaintext highlighter-rouge">status</code> 명령어를 제공합니다.</p>
+
+<p><br /></p>
+
+<h2 id="status-명령어로-깃-상태-확인"><a href="status">status</a> 명령어로 깃 상태 확인</h2>
+<hr />
+<p>깃 <code class="language-plaintext highlighter-rouge">status</code> 명령은 추적 관리되고 있는 파일들의 상태를 확인할 수 있는 명령입니다. status 명령은 다음과 같이 사용할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git status
+</code></pre></div></div>
+
+<p>status 명령을 통하여 깃의 파일 상태를 변경 감지 하는 방법과 실습을 통하여 좀더 알아 보도록 하겠습니다.</p>
+
 <ul>
-  <li>변화를 감지</li>
-  <li>명령어 실습</li>
+  <li><a href="status">변화를 감지</a></li>
+  <li><a href="status">명령어 실습</a></li>
 </ul>
 
 <p><br /></p>
 
-<h2 id="소스트리에서-깃-상태-확인"><a href="sourcetree">소스트리에서 깃 상태 확인</a></h2>
+<h2 id="소스트리에서-깃-상태-확인"><a href="sourcetree">소스트리</a>에서 깃 상태 확인</h2>
 <hr />
+<p>콘솔, bash 셀에서 status 명령을 통하여 깃의 상태를 확인하는 것은 초보자에게 약간 불편할 수 있습니다.<br />
+GUI 도구인 소스트리를 이용하면 좀더 편하게 깃의 상태를 확인 할 수 있습니다.</p>
+
 <ul>
-  <li>파일상태</li>
-  <li>상태표시 영역</li>
-  <li>새파일 추가</li>
+  <li><a href="sourcetree">파일상태</a></li>
+  <li><a href="sourcetree">상태표시 영역</a></li>
+  <li><a href="sourcetree">영역이동</a></li>
 </ul>
 
 <p><br /></p>
