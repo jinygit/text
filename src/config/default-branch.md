@@ -1,3 +1,10 @@
+---
+layout: git
+title: "깃 기본 프랜치 설정하기"
+keyword: "git config"
+description: "깃의 다양한 환경 설정 방법에 대해서 알아 보도록 합니다."
+---
+
 # 기본 브랜치 설정
 깃의 `init` 명령은 깃저장소를 초기화 합니다. 기본적으로 깃이 저장소를 초기화 할때 `master` 브랜치를
 기본적으로 생성해 주지만, 깃허브와 같은 서비스는 `master` 브랜치 대신에 `main` 브랜치를 사용하기도 합니다.
@@ -46,5 +53,28 @@ git config --global init.defaultBranch master
 ```
 
 이제 깃을 통하여 초기화 할때, 기본 브랜치가 master로 설정이 될 것입니다.
+
+## 기본 브랜치 생성
+
+`branch`명령을 통하여 브랜치의 목록을 확인해 봅니다.
+
+```
+jinyerp@jinyerp:/var/www/jinyerp/tms/Modules/UIBootstrap$ git banch
+git: 'banch' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+```
+
+아직 브랜치 목록이 없는 것을 확인할 수 있습니다.
+
+`master` 브랜치를 생성해 보도록 합니다.
+
+```
+git branch -m master
+```
+
+> -m, --move
+> Move/rename a branch, together with its config and reflog.
 
 
