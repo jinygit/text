@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "브랜치 생성과 이동"
 keyword: "브랜치 생성과 이동"
 ---

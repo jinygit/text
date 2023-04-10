@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "상용과 오픈 소스"
 keyword: "상용과 오픈 소스"
 breadcrumb:

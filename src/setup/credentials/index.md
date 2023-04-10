@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 자격증명(Credentials)"
 keyword: "git, 깃, 자격증명, 깃사용법, 깃허브, 소스트리, 깃교과서"
 description : "깃 사용자 계정 변경 및 자격증명을 재설정 하는 방법에 대해서 설명합니다."

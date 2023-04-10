@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "git 원격저장소를 삭제합니다."
 keyword: "git, 원격저장소, 삭제"
 description: "git 콘솔에서 등록된 원격저장소를 삭제하는 방법에 대해서 학습합니다. remote rm 옵션을 사용합니다."

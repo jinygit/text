@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "메시지가 없는 빈 커밋"
 keyword: "메시지가 없는 빈 커밋"
 breadcrumb:

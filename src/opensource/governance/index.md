@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "거버넌스"
 keyword: "거버넌스, 군주제, 연방제, 리더십, 프로세스"
 breadcrumb:

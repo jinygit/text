@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "라이선스 적용"
 keyword: "라이선스, 검증, 귀속, 충돌, 듀얼 라이선스"
 breadcrumb:

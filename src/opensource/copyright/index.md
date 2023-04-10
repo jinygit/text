@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "무형의 상품 권한"
 keyword: "무형의 상품 권한"
 breadcrumb:

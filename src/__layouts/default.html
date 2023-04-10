@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO-->
+        {%- if page.title -%}
+            <title>Git교과서 - {{ page.description }}</title>
+            <meta name="title" content="{{ page.title }}" />
+          
+
+        {%- else -%}
+            <title>Git TextBook</title>
+        {%- endif -%}
+
+        {%- if page.description -%}
+            <meta name="description" content="{{ page.description| default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+        {%- endif -%}
+
+        {%- if page.keyword -%}
+            <meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, {{ page.keyword }}" />
+        {%- else -%}
+            <meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서" />
+        {%- endif -%}
+
+
+        <!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+            body {
+                font-family: "Nanum Gothic", sans-serif;
+            }
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        
+
+    </head>
+    <body>
+        <!--네비게이션-->
+        {%- include navigation.html -%}
+        
+        {{ content }}
+        
+        {%- include footer.html -%}
+
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-159909206-1');
+        </script>
+    </body>
+
+</html>

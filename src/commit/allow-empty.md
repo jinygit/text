@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 빈커밋 작성하기"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 description: "--allow-emplty 옵션을 사용하면 비어 있는 커밋 메시지를 작성할 수 있습니다."

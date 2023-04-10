@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "서버 전송"
 keyword: "서버 전송, push"
 breadcrumb:

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "자유소프트"
 keyword: "자유소프트"
 breadcrumb:

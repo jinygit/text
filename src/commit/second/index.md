@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "두 번째 커밋"
 keyword: "두 번째 커밋"
 breadcrumb:

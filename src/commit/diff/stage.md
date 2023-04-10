@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "diff"
 keyword: "diff"
 breadcrumb:

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 호스팅 서비스의 장점"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 description: "자체 원격저장소를 직접 운영하는 것보다 외부 호스팅서비스를 이용하면 다음과 같은 장점들이 있습니다.  "

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "새 파일 등록"
 keyword: "새 파일 등록"
 breadcrumb:

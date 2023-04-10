@@ -2,6 +2,7 @@
 layout: home
 title: "Git 교과서"
 keyword: "기초탄탄 Git, 깃 학습하기"
+
 ---
 
 # 기초탄탄 Git

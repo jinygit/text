@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 파일이름 변경하여 재등록하기"
 keyword: "스테이지, 추적, untracted, 이름변경"
 description: "스테이지에 등록된 파일의 이릉을 변경하는 방법에 대해서 학습합니다."

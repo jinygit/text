@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "서버 저장소"
 keyword: "서버 저장소"
 breadcrumb:

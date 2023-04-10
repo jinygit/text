@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 호스팅"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 description: "깃호스팅은 외부 저장소를 운영할 수 있는 원격저장소 서비스 입니다. 대표적으로 깃허브, 빅버킷, 깃랩등이 있습니다."

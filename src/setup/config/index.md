@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 환경설정"
 keyword: "git, 깃, 환경설정, 깃사용법, 깃허브, 소스트리, 깃교과서"
 breadcrumb:

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "브랜치 공간"
 keyword: "브랜치 공간"
 ---

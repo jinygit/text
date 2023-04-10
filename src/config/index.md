@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 환경설정"
 keyword: "git config"
 description: "깃의 다양한 환경 설정 방법에 대해서 알아 보도록 합니다."

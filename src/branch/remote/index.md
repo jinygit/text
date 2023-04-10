@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "원격 브랜치"
 keyword: "원격 브랜치"
 ---

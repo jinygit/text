@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 서버"
 breadcrumb:
 - "server"

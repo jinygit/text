@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "GitHub 신규 저장소 생성하기"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 breadcrumb:

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "실습 준비"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 breadcrumb:

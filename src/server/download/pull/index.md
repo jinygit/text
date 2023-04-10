@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 서버에서 코드 내려받기"
 breadcrumb:
 - "server"

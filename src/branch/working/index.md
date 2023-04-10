@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "새로운 작업"
 keyword: "새로운 작업"
 breadcrumb:

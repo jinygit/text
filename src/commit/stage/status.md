@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "status 명령으로 스테이지의 상태를 확인하기"
 keyword: "status, 스테이지, 상태확인"
 description: "status를 이용하여 스테이지의 상태를 확인합니다."

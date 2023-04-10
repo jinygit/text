@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "스태시"
 keyword: "스태시, stash"
 ---

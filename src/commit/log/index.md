@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "커밋 로그"
 keyword: "커밋 로그"
 breadcrumb:

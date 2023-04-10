@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "커밋 아이디"
 keyword: "커밋 아이디, 해쉬키, sha1"
 breadcrumb:

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 커밋하기"
 keyword: "commit, 커밋, 코드기록"
 description: "깃을 통하여 코드를 기록하고 관리하는 방법에 대해서 알아봅니다. 직접 커밋 명령을 입력하여 동작방법을 학습합니다."

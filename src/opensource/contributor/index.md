@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "오픈소스 참여"
 keyword: "오픈소스 참여, 오픈소스 생태계"
 breadcrumb:

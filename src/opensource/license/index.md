@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "라이선스"
 keyword: "라이선스"
 breadcrumb:

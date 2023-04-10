@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "소스트리를 이용한 스테이지 등록"
 keyword: "스테이지, 추적, untracted, 소스트리"
 description: "소스트리를 이용하여 스테이지에 파일을 등록하여 추적 가능한 상태로 전환합니다."

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "개발 방식"
 keyword: "개발 방식"
 breadcrumb:

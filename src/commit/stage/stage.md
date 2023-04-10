@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 스테이지 파일 등록하기"
 keyword: "스테이지, 추적, untracted"
 description: "add 명령어를 이용하여 스테이지에 파일을 등록하여 추적 가능한 상태로 전환합니다."

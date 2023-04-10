@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "GitHub SSH 설정방법"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 breadcrumb:

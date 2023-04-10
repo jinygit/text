@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "커밋 확인"
 keyword: "커밋 확인"
 breadcrumb:

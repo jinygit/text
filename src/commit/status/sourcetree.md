@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "소스트리 Untracked 파일 확인하기"
 keyword: "status, 워킹디렉터리, Untracked, 소스트리"
 description: "소스트리를 이용하여 깃의 파일 상태를 확인하는 방법에 대해서 학습니다. gui를 통하여 쉽게 상태를 확인할 수 있습니다."

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "브랜치 전송"
 keyword: "git, 깃사용법, 깃허브, 소스트리, 깃교과서"
 ---

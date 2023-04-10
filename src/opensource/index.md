@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "오픈 소스"
 keyword: "오픈 소스, 저작권, 상용과 오픈 소스, 라이센스, 자유소프트, 커뮤니티, 거버넌스"
 breadcrumb:

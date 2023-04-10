@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 서버"
 keyword: "서버, 소셜코딩"
 description: "git 서버 및 호스팅을 통한 원격저장소를 생성하는 방법에 대해서 알아봅니다."

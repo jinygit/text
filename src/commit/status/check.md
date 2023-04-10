@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃 Untracked 파일 확인하기"
 keyword: "status, 워킹디렉터리, Untracked"
 description: "깃은 새로운 파일이 워킹디렉터리 저장소에 생성되면, 자동으로 감지됩니다. 또한 Untracked 파일의 추적여부를 결정해 주어야 합니다."

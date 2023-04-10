@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "GNU"
 keyword: "GNU"
 breadcrumb:

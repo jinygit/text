@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 서버에서 코드 내려받기"
 keyword: "git, unrelated pull"
 description: "서로다른 저장소의 코드를 pull로 내려받는 방법에 대해서 알아 봅니다. "

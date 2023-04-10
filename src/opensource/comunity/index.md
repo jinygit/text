@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "Git 교과서"
 keyword: "커뮤니티, 양파 모델, 분업"
 breadcrumb:

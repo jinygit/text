@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "깃의 파일 생성 감지"
 keyword: "status, 워킹디렉터리"
 description: "깃의 커밋을 실습해 보기 위해서 새로운 파일을 하나 생성합니다. 파일을 생성하는 방법과 깃이 이를 어떻게 관리하고 처리하는지 과정을 알 봅시다."

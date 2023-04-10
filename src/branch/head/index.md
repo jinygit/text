@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "HEAD 포인터"
 keyword: "HEAD 포인터"
 ---

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "순서"
 keyword: "순서"
 breadcrumb:

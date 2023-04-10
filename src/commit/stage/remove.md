@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "스테이지 등록 취소하기"
 keyword: "스테이지, 추적, untracted, 취소"
 description: "스테이지에 등록한 파일을 untracted 로 변경하여 취소를 합니다."

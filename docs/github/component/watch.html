@@ -1,71 +1,314 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jiny linux">
+    <meta name="author" content="HojinLee">
 
-        <!--SEO--><title>Git TextBook | GitHub 저장소 알람받기</title>
-            <meta name="title" content="GitHub 저장소 알람받기" /><meta name="keyword" content="git, 깃사용법, 깃허브, 소스트리, 깃교과서, git, 깃사용법, 깃허브, 소스트리, 깃교과서" /><!--부트스트랩4-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <style>
-            @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-            body {
-                font-family: "Nanum Gothic", sans-serif;
-            }
-            img {
-                max-width:100%;
-            }
-        </style>
+    <!--SEO--><title>Git교과서 - </title>
+        <meta name="title" content="GitHub 저장소 알람받기" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="GitHub 저장소 알람받기" />
+<meta property="og:locale" content="ko" />
+<link rel="canonical" href="http://localhost:4000/github/component/watch.html" />
+<meta property="og:url" content="http://localhost:4000/github/component/watch.html" />
+<meta property="og:site_name" content="Git Text" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GitHub 저장소 알람받기" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"GitHub 저장소 알람받기","url":"http://localhost:4000/github/component/watch.html"}</script>
+<!-- End Jekyll SEO tag -->
 
-        <link rel="stylesheet" href="/assets/highlight.css">
-        <link rel="stylesheet" href="/assets/style.css">
-        
 
-    </head>
-    <body>
-        <!--네비게이션--><!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/">Git Textbook</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/setup">준비 작업
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/text">기초 탄탄 깃</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/part2">협업하기</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/part3">활용하기</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav><div class="bg-light">
-    <div class="container"><nav aria-label="breadcrumb">
-    <ol class="breadcrumb  bg-light">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">github</a></li><li class="breadcrumb-item "><a href="../">component</a></li><li class="breadcrumb-item active">watch</li></ol>    
-</nav></div>
+
+    
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/docs.css" rel="stylesheet" />
+
+    <style>
+      h1 a {
+        text-decoration: none;
+      }
+
+      h2 a {
+        text-decoration: none;
+      }
+
+      h3 a {
+        text-decoration: none;
+      }
+
+      h4 a {
+        text-decoration: none;
+      }
+
+      h5 a {
+        text-decoration: none;
+      }
+
+      h6 a {
+        text-decoration: none;
+      }
+
+      img {
+        width: 100%;
+        vertical-align:top
+      }
+
+      strong a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* 스크롤바 커스텀 */
+      /* 임의의 영역 생성 */
+      .scrollBar { 
+
+      }
+
+      /* 아래의 모든 코드는 영역::코드로 사용 */
+      .scrollBar::-webkit-scrollbar {
+          width: 7px;  /* 스크롤바의 너비 */
+      }
+
+      .scrollBar::-webkit-scrollbar-thumb {
+          height: 30%; /* 스크롤바의 길이 */
+          background: #cccccc; /* 스크롤바의 색상 */
+          
+          border-radius: 5px;
+      }
+
+      .scrollBar::-webkit-scrollbar-track {
+          background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+      }
+
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R4VBPCT3CR');
+    </script>
+
+    <!-- 구글 에드센스 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="bd-navbar-toggle">
+            <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+                aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                    </path>
+                </svg>
+
+                <span class="d-none fs-6 pe-1">Browse</span>
+            </button>
+        </div>
+
+        <!-- 로고, 모바일시 가운데 정렬 -->
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="jinydev">
+            GitText
+        </a>
+
+        <!-- 모바일 좌측메뉴 mobile-right -->
+        <div class="d-flex">
+    <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+        </svg>
+    </button>
 </div>
 
+    <div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <!-- Post Content Column -->
-        <div class="col-lg-9">
-			<main role="main">
-                <section>
-                    <h1 id="watch-기능">Watch 기능</h1>
+        <div class="offcanvas-header px-4 pb-0">
+        <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">JinyDev</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+            data-bs-target="#bdNavbar">
+        </button>
+    </div>
+
+    <div class="offcanvas-body p-4 pt-0 p-lg-0">
+        <hr class="d-lg-none text-white-50">
+
+        <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+            
+        </ul>
+    
+        <hr class="d-lg-none text-white-50">
+
+        <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            <li class="nav-item col-6 col-lg-auto">
+                <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/gittext" target="_blank"
+                    rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                        viewBox="0 0 512 499.36" role="img">
+                        <title>GitHub</title>
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                        </path>
+                    </svg>
+                    <small class="d-lg-none ms-2">GitHub</small>
+                </a>
+            </li>
+   
+            
+
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+                <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+                <hr class="d-lg-none my-2 text-white-50">
+            </li>            
+    
+        </ul>
+ 
+    </div>
+
+
+    </nav>
+</header>
+
+    <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <!-- 네비게이션 -->
+            <nav class="bd-links w-100 " id="bd-docs-nav" aria-label="Docs navigation">
+	<ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2 ">
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        <a href="/text">깃사용법</a>
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="/setup" class="bd-links-link d-inline-block rounded">준비 작업</a>
+        </li>
+        <li>
+          <a href="/text/concept" class="bd-links-link d-inline-block rounded">컨셉잡기</a>
+        </li>
+        <li>
+          <a href="/commit" class="bd-links-link d-inline-block rounded">커밋</a>
+        </li>
+        <li>
+          <a href="/server" class="bd-links-link d-inline-block rounded">서버</a>
+        </li>
+        <li>
+          <a href="/branch" class="bd-links-link d-inline-block rounded">브랜치</a>
+        </li>
+        <li>
+          <a href="/text/temporarily" class="bd-links-link d-inline-block rounded">스태시</a>
+        </li>
+        <li>
+          <a href="/text/merge" class="bd-links-link d-inline-block rounded">병합</a>
+        </li>
+        <li>
+          <a href="/text/09" class="bd-links-link d-inline-block rounded">복귀</a>
+        </li>
+        <li>
+          <a href="/text/tag" class="bd-links-link d-inline-block rounded">테그</a>
+        </li>
+        <li>
+          <a href="/text/submodule" class="bd-links-link d-inline-block rounded">서브모듈</a>
+        </li>
+        <li>
+          <a href="/text/12" class="bd-links-link d-inline-block rounded">고급기능</a>
+        </li>   
+      </ul>
+    </li>
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        <a href="/part2">
+          협업하기
+        </a>
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="/hosting" class="bd-links-link d-inline-block rounded">호스팅</a>
+        </li>
+        <li>
+          <a href="/github" class="bd-links-link d-inline-block rounded">깃허브</a>
+        </li>
+        <li>
+          <a href="/github/tools" class="bd-links-link d-inline-block rounded">협업도구</a>
+        </li>
+        <li>
+          <a href="/pullrequest" class="bd-links-link d-inline-block rounded">풀리퀘스트</a>
+        </li>
+        <li>
+          <a href="/gitflow" class="bd-links-link d-inline-block rounded">브랜치전략</a>
+        </li>
+        <li>
+          <a href="/hook" class="bd-links-link d-inline-block rounded">Hook</a>
+        </li> 
+        <li>
+          <a href="/opensource" class="bd-links-link d-inline-block rounded">오픈소스</a>
+        </li>    
+      </ul>
+    </li>
+
+
+
+    <li class="bd-links-group py-2">
+        <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+          <a href="/part3">
+            활용하기
+          </a>
+        </strong>     
+      
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="/gitpage" class="bd-links-link d-inline-block rounded">깃페이지</a>
+        </li>
+        <li>
+          <a href="/packages" class="bd-links-link d-inline-block rounded">코드배포</a>
+      </ul>
+    </li>
+
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        사이트
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="/BetaReview" class="bd-links-link d-inline-block rounded">베타 리뷰</a>
+        </li>
+        <li>
+          <a href="/copyright" class="bd-links-link d-inline-block rounded">저작권</a>
+        </li>	
+      </ul>
+    </li>
+
+	</ul>
+</nav>
+        </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+        <div class="bd-content ps-lg-2">
+    <h1 id="watch-기능">Watch 기능</h1>
 <hr />
 <p>깃허브에는 수많은 개발 프로젝트가 진행되고 있습니다.<br />
 관심이 있는 프로젝트가 있는데 매번 해당 프로젝트로 들어가 최신 사항을 알아보는 것은 힘들 것입니다.</p>
@@ -86,129 +329,152 @@ Watch 기능은 관심 있는 저장소의 프로젝트에 대한 정보를 쉽�
 
 <p><br /></p>
 
-                </section>
-			</main>
-			
-			<!--구글 애드센스-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-fb+5w+4e-db+86"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="6043271504"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
 
-        <!-- Sidebar Column -->
-        <div class="col-md-3">
-			<aside><!--사이드메뉴1-->
-<ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/text">깃사용법</a>
-        <span class="badge badge-primary badge-pill">10</span>
-    </li>
-    <li class="list-group-item"><a href="/setup">준비 작업</a></li>
-    <li class="list-group-item"><a href="/text/concept/">컨셉잡기</a></li>
-    <li class="list-group-item"><a href="/commit">커밋</a></li>
-    <li class="list-group-item"><a href="/server/">서버</a></li>
-    <li class="list-group-item"><a href="/branch">브랜치</a></li>
-    <li class="list-group-item"><a href="/text/temporarily/">스태시</a></li>
-    <li class="list-group-item"><a href="/text/merge/">병합</a></li>
-    <li class="list-group-item"><a href="/text/09/">복귀</a></li>
-    <li class="list-group-item"><a href="/text/tag/">테그</a></li>
-    <li class="list-group-item"><a href="/text/submodule/">서브모듈</a></li>
-    <li class="list-group-item"><a href="/text/12/">고급기능</a></li>
-</ul>
-<br>
-
-<!--사이드메뉴3-->
-<ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="/part2">협업하기</a>
-        <span class="badge badge-primary badge-pill">5</span>
-    </li>
-    <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/hosting">호스팅</a>
-    </li>
-    <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/github">깃허브</a>
-    </li>
-    <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/github/tools">깃허브 협업도구</a>
-    </li>
-    <li class="list-group-item"><a href="/pullrequest/">풀리퀘스트</a></li>
-    <li class="list-group-item"><a href="/gitflow/">브랜치전략</a></li>
-    <li class="list-group-item"><a href="/hook/">Hook</a></li>
-    <li class="list-group-item"><a href="/opensource/">오픈소스</a></li>
-</ul>
-<br>
-
-<ul class="list-group">
-    <li class="list-group-item"><a href="/part3">활용하기</a></li>
-    <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/gitpage">깃페이지</a>
-    </li>
-    <li class="list-group-item"><a href="/packages/">코드배포</a></li>
-</ul>
-<br>
-
-<!--사이드메뉴4-->
-<ul class="list-group">
-    <li class="list-group-item  d-flex justify-content-between align-items-center">
-        <a href="/BetaReview">베타 리뷰</a>
-        <span class="badge badge-primary badge-pill">2</span>
-    </li>
-    <li class="list-group-item"><a href="/copyright">저작권</a></li>
-</ul>
-<br>
-
-</aside>			
-			
-			<!--구글 애드센스2-->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-format="fluid"
-                data-ad-layout-key="-ef+6k-30-ac+ty"
-                data-ad-client="ca-pub-3321560028329475"
-                data-ad-slot="7661682925"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            
-        </div>
-
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /.container --><footer class="bd-footer p-3 p-md-5 mt-5 bg-light text-center text-sm-start">
-    <div class="container">
-      <p class="mb-0"> 
-        본 학습사이트는 오픈소스 프로젝트로 깃허브에 공개되어 있습니다. 누구나 접속하셔서 편집 및 개선하여 pull-request하여 프로젝트에 기여할 수 있습니다.
-      </p>
-      <p class="mb-0">
-      https://github.com/jinygit/text
-      </p>     
-      
-    </div>
-</footer><!--부트스트랩4-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909206-1"></script>
+    <div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+       crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-format="fluid"
+            data-ad-layout-key="-fb+5w+4e-db+86"
+            data-ad-client="ca-pub-3321560028329475"
+            data-ad-slot="6043271504"></ins>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-159909206-1');
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </body>
+    </div>  
+</div>
 
+    
+        <div class="bd-toc mt-3 mb-5 my-lg-0 ps-xl-3 mb-lg-5 text-body-secondary">
+  
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+      data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+      깃교과서
+      <svg class="bi d-md-none ms-2" aria-hidden="true">
+        <use xlink:href="#chevron-expand"></use>
+      </svg>
+  </button>
+  <strong class="d-none d-md-block h6 my-2">깃교과서</strong>
+  <hr class="d-none d-md-block my-2">
+
+  <div class="collapse bd-toc-collapse" id="tocContents">
+    <img src="/img/gittext.png">
+    <p>버전 관리 시스템의 이해와 설치부터 커밋, 브랜치, 임시 처리, 병합, 복귀, 서브모듈, 태그까지<br>
+      깃, 소스트리, 깃허브로 실습하며 기본기를 탄탄하게 다진다!<br>
+    </p>
+
+    <nav id="TableOfContents">
+      <ul>
+        <li><a href="http://bit.ly/2TP6bKB">Yes24</a></li>
+        <li><a href="http://bit.ly/2Qb1JDD">교보문고</a></li>
+        <li><a href="http://bit.ly/3cOAqc1">알라딘</a></li>
+        <li><a href="http://bit.ly/2TMAeT9">인터파크</a></li>
+        <li><a href="https://thebook.io/080212/">길벗</a></li>
+      </ul>
+    </nav>
+
+  </div>
+  
+
+  <!--
+  <h1>Git 교과서</h1>
+  <h2>코드 이력, 하나도 놓치지 마라!</h2>
+  -->
+  
+
+
+
+  <!--
+  <button class="btn btn-link p-md-0 mb-2 mb-md-0 text-decoration-none bd-toc-toggle d-md-none" type="button"
+      data-bs-toggle="collapse" data-bs-target="#tocContents" aria-expanded="false" aria-controls="tocContents">
+      On this page
+      <svg class="bi d-md-none ms-2" aria-hidden="true">
+        <use xlink:href="#chevron-expand"></use>
+      </svg>
+  </button>
+  <strong class="d-none d-md-block h6 my-2">On this page</strong>
+  <hr class="d-none d-md-block my-2">
+    <div class="collapse bd-toc-collapse" id="tocContents">
+      <nav id="TableOfContents">
+        <ul>
+          <li><a href="#quick-start">Quick start</a></li>
+          <li><a href="#cdn-links">CDN links</a></li>
+          <li><a href="#next-steps">Next steps</a></li>
+          <li><a href="#js-components">JS components</a></li>
+          <li><a href="#important-globals">Important globals</a>
+            <ul>
+              <li><a href="#html5-doctype">HTML5 doctype</a></li>
+              <li><a href="#responsive-meta-tag">Responsive meta tag</a></li>
+              <li><a href="#box-sizing">Box-sizing</a></li>
+              <li><a href="#reboot">Reboot</a></li>
+            </ul>
+          </li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </nav>
+  </div>
+  -->
+</div>
+    </main>
+</div>
+
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+
+      <div class="row">
+
+        <div class="col-lg-3 mb-3">
+          <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/" >
+
+            <span class="fs-5">JinyDev</span>
+          </a>
+          <ul class="list-unstyled small">
+            <li class="mb-2">지니와 함께 다양한 ICT 기술을 학습합니다.</li>
+            <li class="mb-2">Code licensed MIT</li>
+            <li class="mb-2">Currently v0.0.1</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          <h5>FrontEnd</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://html5.jiny.dev">HtML</a></li>
+            <li class="mb-2"><a href="https://css.jiny.dev">CSS</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Language</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://php.jiny.dev">PHP</a></li>
+            <li class="mb-2"><a href="https://javascript.jiny.dev">Javascript</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>DevOps</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://linux.jiny.dev">Linux</a></li>
+            <li class="mb-2"><a href="https://window.jiny.dev">Windows</a></li>
+            <li class="mb-2"><a href="/">Mac</a></li>
+          </ul>
+
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://git.jiny.dev">Git</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Hardware</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://arduino.jiny.dev">Arduino</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+  </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "오픈 소스 시대"
 keyword: "오픈 소스 시대"
 breadcrumb:

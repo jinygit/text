@@ -1,5 +1,5 @@
 ---
-layout: git
+layout: home
 title: "연동 및 원격 등록"
 keyword: "연동 및 원격 등록"
 breadcrumb:

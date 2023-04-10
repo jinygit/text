@@ -1,1052 +1,960 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://git.jiny.dev/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>http://localhost:4000/text/server/05.1.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/github/05.2.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.2.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/part2</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.3.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/part3</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.4.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.5.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.6.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/server/05.7.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/09/09.1.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/hosting/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.1.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.2.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.3.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.4.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/BetaReview/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.5.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/copyright</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>http://localhost:4000/text/tag/10.6.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/windows/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/tag/10.7.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/linux/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/tag/10.8.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/sourcetree/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/tag/10.9.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/kraken/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.1.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/setup/CRLF</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.2.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/init/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.3.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/working/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.4.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/stage/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.5.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/status/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.6.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/gitignore/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/11.7.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/concept/clone/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/setup/CRLF.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/history</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/principle/Refspec.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/04.5</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/remote/add.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/04.6</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/allow-empty.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/06.2</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/bare.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/07/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/12/blame.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/07/stash</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/01/book_01.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/07/clean</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/3way/branch.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/remote/branch.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.1</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitflow/branch.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.2</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/bts.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.3</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/jekyll/build.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.4</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/history/change.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.5</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/status/check.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/08.6</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/checkout/clean.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/merge/rebase</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/init/cli.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/09/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/clone/clone.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/09/09.1</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/download/clone.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/09/revert</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/repository/collaboration.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/commit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.1</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/3way/commit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.2</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/diff/commit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.3</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/principle/commit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.4</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/3way/common.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.5</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/step/complit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.6</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/packages/composer.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.7</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/jekyll/config.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.8</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/stash/conflict.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/tag/10.9</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/repository/continuous.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.1</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/collaborate/contributor.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.2</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/stash/copy.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.3</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/copyright.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.4</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/forward/create.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.5</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/create/create.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.6</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/milestones/create.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/submodule/11.7</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/jekyll/create.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/regist/dash.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/refs</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/milestones/deadline.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/reflog</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/config/default-branch.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/blame</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/stash/delete.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/replace</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/remote/delete.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/gc</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/description.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/prune</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/list/detail.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/12/rerere</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitflow/develop.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/bare</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/diff/difference.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/bitbucket/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/directory.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitlab/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/domain.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/clone/download.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/collaboration/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/stash/edit.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/project/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/email.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/fork/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/error/error.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/clone/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/etc.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/code/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/download/pull/exercise.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/request/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/forward/fast.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/discuss/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitflow/feature.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/review/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/working/feature.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/test/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/download/fetch.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/receive/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/history/file.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/pullrequest/manage</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/gitignore/file.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/log/file.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/branch</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/diff/file.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/practice</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/init/folder.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/init</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/fork.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/master</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/12/gc.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/develop</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/packages/gem.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/feature</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/github.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/release</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/list/hash.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitflow/hotfix</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/principle/head.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/hook/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/diff/history.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/hook/github</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/hook.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitflow/hotfix.html</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/copyright</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/create/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/copyleft</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/download/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/license</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/remote/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/freesoft</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/ssh/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/opensource</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/openlicense</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/setting/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/apply</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/gist/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/comunity</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/issue/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/governance</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/label/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/develop</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/snap/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/opensource/contributor</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/second/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/static</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/milestones/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/setting</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/stage/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/regist/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/wiki/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/composer</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/log/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/npm</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/tools/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/pip</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/stash/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/gem</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/packages/nuget</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitlab/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/status/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/delete/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/stage/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/id/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/snap/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/history/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/empty/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/jekyll/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/id/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/regist/organization/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/id/sha1</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/merge/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/id/short</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/empty/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/log/list</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/log/file</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/diff/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/diff/file</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/markdown/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/diff/stage</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitpage/ruby/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/diff/difference</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/gitflow/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/diff/history</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/nomerged/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/commit/diff/commit</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/submodule/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/repository/collaboration</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/regist/account/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/repository/continuous</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/forward/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/repository/member</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/repo/clone/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/local</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/12/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/protocal</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/release/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/list</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/code/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/origin</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/component/branch/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/add</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hook/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/branch</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/check/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/rename</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/hosting/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/show</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/3way/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/remote/delete</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/push</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/intro/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/09/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/clone</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/apply/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/pull/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/comunity/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/fetch</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/contributor/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/step/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/copyleft/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/step/last</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/copyright/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/step/complit</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/develop/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/working/new</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/freesoft/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/working/feature</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/governance/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/create/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/license/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/create/create</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/openlicense/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/create/name</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/opensource/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/create/sourcetree</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/opensource/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/list/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/bts/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/checkout/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/collaborate/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/log/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/packages/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/head/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/init/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/change/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/commit/status/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/remote/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/trans/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/working/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/text/branch/delete/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/collaborate/team/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/hosting/open</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/principle/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/hosting/service</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/collaborate/insights/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/about/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/trans/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/about/social</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/gitignore/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/regist/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/remote/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/regist/dash</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/merge/complicit/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/regist/shotcut</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/prepare/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/regist/account/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/server/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/create/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/log/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/ssh/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/list/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/remote/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/clone/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/setting/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/code/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/collaboration/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/download/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/discuss/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/repo/clone/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/fork/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/project/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/star</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/receive/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/watch</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/request/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/fork</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/review/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/description</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/test/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/code/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/pullrequest/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/branch/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/collaborate/collaborators/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/component/release/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/concept/stage/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/collaborate/collaborators/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/github/about/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/collaborate/team/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/download/pull/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/collaborate/contributor</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/head/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/collaborate/insights/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/delete/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/bts</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/text/temporarily/clean/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/wiki/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/download/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/gist/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/label/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/branch/create/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/milestones/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/config/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/markdown/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/server/remote/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/domain</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>http://localhost:4000/team/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/install</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/setup/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/create</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/commit/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/build</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/text/concept/status/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/config</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/text/concept/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/liquid</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/text/concept/working/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/gitpage/jekyll/structure</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/branch/checkout/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/pull/exercise</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/branch/change/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/server/download/pull/unrelated</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/server/repository/</loc>
 </url>
 <url>
-  <loc>https://git.jiny.dev/github/tools/issue/</loc>
-  <lastmod>2020-08-27T17:56:39+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>http://localhost:4000/text/concept/clone/</loc>
 </url>
-
-
+<url>
+<loc>http://localhost:4000/bitbucket/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/step/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/BetaReview/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/tag/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/merge/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/config/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/credentials/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/kraken/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/linux/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/sourcetree/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/setup/windows/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitflow/init.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/prepare/init.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/jekyll/install.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/internal.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/tools/milestones/issue.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/step/last.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/jekyll/liquid.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/temporarily/stash/list.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/log/list.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/list.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/temporarily/stash/load.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/local.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/pullrequest/manage.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/prepare/master.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/merge/3way/master.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitflow/master.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/working/mean.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/repository/member.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/merge/merge.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/merge/3way/message.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/stage/modified.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/create/name.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/working/new.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/status/newfile.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/packages/npm.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/packages/nuget.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/objects.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/clone/open.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/hosting/open.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/origin.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/checkout/out.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/packfile.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/part0.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/part1.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/part2.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/part3.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/packages/pip.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/plumbling.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/merge/forward/position.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitflow/practice.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/checkout/prev.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/checkout/principle.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/tools/milestones/progress.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/protocal.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/12/prune.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/push.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/remote/push/push.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/merge/rebase.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/clone/recursive.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/12/reflog.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/refs.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/12/refs.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitflow/release.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/remote.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/stage/remove.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/rename.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/stage/rename.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/12/replace.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/init/repo.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/12/rerere.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/09/reset.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/09/revert.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/gitignore/rule.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/temporarily/stash/save.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/jekyll/seo.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/hook/server.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/hosting/service.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/setting.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/id/sha1.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/id/short.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/regist/shotcut.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/remote/show.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/list/simple.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/jekyll/sitename.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/about/social.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/checkout/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/branch/create/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/status/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/temporarily/stash/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/init/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/status/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/stage/sourcetree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/diff/stage.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/stage/stage.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/stage/stage.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/component/star.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/static.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/status/status.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/commit/stage/status.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/jekyll/structure.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/tag.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/gitpage/theme.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/principle/tree.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/server/download/pull/unrelated.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/stage/unstage.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/concept/working/untracked.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/github/component/watch.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/text/temporarily/stash/work.html</loc>
+</url>
 </urlset>
