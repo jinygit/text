@@ -2,14 +2,14 @@ title: Git Text
 lang: ko
 email: infohojin@naver.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://git.jiny.dev"  # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: infohojin
 github_username:  infohojin
 
 source: src
 destination: docs
 
-github_url: https://github.com/jinydev/linux
+github_url: https://github.com/jinygit/text
 
 sass:
   load_paths:
